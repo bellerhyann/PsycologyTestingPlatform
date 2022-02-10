@@ -1,0 +1,15 @@
+.user-login {
+  text-align: center;
+}
+
+.admin-log {
+  text-align: left;
+}
+
+a.user-login {
+  display: block;
+}
+
+a.admin-log {
+  display: block;
+}
