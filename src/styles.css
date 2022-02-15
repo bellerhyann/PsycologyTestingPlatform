@@ -2,6 +2,8 @@
  * user-login refers to the button that users will click to redirect to the sign in page.
  * admin-login refers to the button that the admin will use to get to admin log in.
  * landing_page helps center everything else
+
+ * Reminder: .(word) are classes (for div). #(word) are ids.
  */
  .landing_page {
   margin-top: 20%;
