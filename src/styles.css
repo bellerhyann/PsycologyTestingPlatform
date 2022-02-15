@@ -6,7 +6,7 @@
  * Reminder: .(word) are classes (for div). #(word) are ids.
  */
 body {
-    background: url("./images/backgroundphoto1.jpg");
+    background: url("../images/backgroundphoto1.jpg");
     background-size: cover;
 }
  .landing_page {
