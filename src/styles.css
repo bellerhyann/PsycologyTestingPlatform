@@ -6,18 +6,7 @@
  * Reminder: .(word) are classes (.class) (for div). #(word) are ids (#ID).
  */
 
-/* CSS for Multiple Pages*/
-#login_form{
-   background: url("../images/backgroundphoto1.jpg");
-   background-size: cover;
-   margin-top: 20%;
-   margin-bottom: 20%;
-   display: flex;
-   margin-left: auto;
-   margin-right: auto;
-   justify-content: center;
-}
-
+/* CSS For All Pages*/
 .textField{
     width:10pc;
 }
@@ -75,7 +64,17 @@
 
 
  /* userLogin.html CSS */
-#user_login{
+#user_login_body{
+    background: url("../images/backgroundphoto1.jpg");
+    background-size: cover;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+#user_login_form{
     background-color: black;
     border-color: white;
     border-style: solid;
@@ -92,7 +91,17 @@
 
 
  /* adminLogin.html CSS */
-#admin_login{
+#admin_login_body{
+    background: url("../images/backgroundphoto1.jpg");
+    background-size: cover;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+#admin_login_form{
     background-color: black;
     border-color: white;
     border-style: solid;
@@ -104,4 +113,27 @@
     justify-content: center;
     color: white;
     text-decoration: none;
+}
+
+
+/* adminDashboard.html CSS */
+#admin_dashboard_body{
+    background: url("../images/backgroundphoto1.jpg");
+    background-size: cover;
+}
+
+#dashboard{
+    background-color: gray;
+    margin-top: 5%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: center;
+    justify-content: center;
+    width: 60pc;
+    height: 35pc;
+}
+
+#welcomeUserMsg{
+    
 }
