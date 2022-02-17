@@ -3,23 +3,38 @@
  * admin-login refers to the button that the admin will use to get to admin log in.
  * landing_page helps center everything else
 
- * Reminder: .(word) are classes (for div). #(word) are ids.
+ * Reminder: .(word) are classes (.class) (for div). #(word) are ids (#ID).
  */
 
+/* CSS for Multiple Pages*/
+#login_form{
+   background: url("../images/backgroundphoto1.jpg");
+   background-size: cover;
+   margin-top: 20%;
+   margin-bottom: 20%;
+   display: flex;
+   margin-left: auto;
+   margin-right: auto;
+   justify-content: center;
+}
+
+.textField{
+    width:10pc;
+}
+
  /* Landing Page CSS */
-.landing_page {
+#landing_page {
     background: url("../images/backgroundphoto1.jpg");
     background-size: cover;
     margin-top: 20%;
     margin-bottom: 20%;
 }
 
-a.button{ 
+#userLoginButton{ 
   display: flex;
   background-color: black;
   border-color: white;
   border-style: solid;
-  border-radius: 1pc;
   border-width: .25pc;
   vertical-align: center;
   width: 19pc;
@@ -30,7 +45,7 @@ a.button{
   text-decoration: none;
 }
 
-a.button:hover{
+#userLoginButton:hover{
   background-color: white;
   color: black;
   border-color: black;
@@ -38,28 +53,55 @@ a.button:hover{
 
 #adminLoginButton{
   opacity: .1;
-}
-#adminLoginButton:hover{
-  opacity: 1;
-}
-
-
- /* User Login Page CSS */
- .user_login_page {
-  background: url("../images/backgroundphoto1.jpg");
-  background-size: cover;
-  margin-top: 20%;
-  margin-bottom: 20%;
   display: flex;
+  background-color: black;
+  border-color: white;
+  border-style: solid;
+  border-width: .25pc;
+  vertical-align: center;
+  width: 19pc;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
+  color: white;
+  text-decoration: none;
+}
+#adminLoginButton:hover{
+    background-color: white;
+    color: black;
+    border-color: black;
+    opacity: 1;
 }
 
- /* Admin Login Page CSS */
- .admin_login_page {
-  background: url("../images/backgroundphoto1.jpg");
-  background-size: cover;
-  margin-top: 20%;
-  margin-bottom: 20%;
+
+ /* userLogin.html CSS */
+#user_login{
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: .25pc;
+    vertical-align: center;
+    width: 11pc;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+}
+
+
+
+ /* adminLogin.html CSS */
+#admin_login{
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: .25pc;
+    vertical-align: center;
+    width: 11pc;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
 }
