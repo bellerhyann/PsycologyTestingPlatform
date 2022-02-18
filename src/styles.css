@@ -8,8 +8,28 @@
 
 /* CSS For All Pages*/
 .textField{
-    width:10pc;
+    width:10.75pc;
+    background-color: white;
+    color: black;
+    margin-bottom: 5%;
+    border: none;
 }
+#remember_me{
+    vertical-align: center;
+}
+#login{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+    width: 10pc;
+}
+#login:hover{
+    background-color: #C8B362;
+}
+#remember_login{
+    margin-left: 10%;
+}
+
 
  /* Landing Page CSS */
 #landing_page {
@@ -22,7 +42,6 @@
 #userLoginButton{ 
   display: flex;
   background-color: black;
-  border-color: white;
   border-style: solid;
   border-width: .25pc;
   vertical-align: center;
@@ -30,21 +49,20 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  color: white;
+  color: #C8B362;
   text-decoration: none;
+  border: none;
 }
 
 #userLoginButton:hover{
-  background-color: white;
+  background-color: #C8B362;
   color: black;
-  border-color: black;
 }
 
 #adminLoginButton{
   opacity: .1;
   display: flex;
   background-color: black;
-  border-color: white;
   border-style: solid;
   border-width: .25pc;
   vertical-align: center;
@@ -52,13 +70,13 @@
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
-  color: white;
+  color: #C8B362;
   text-decoration: none;
+  border: none;
 }
 #adminLoginButton:hover{
-    background-color: white;
+    background-color: #C8B362;
     color: black;
-    border-color: black;
     opacity: 1;
 }
 
@@ -76,16 +94,31 @@
 }
 #user_login_form{
     background-color: black;
-    border-color: white;
-    border-style: solid;
-    border-width: .25pc;
     vertical-align: center;
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-width: .75pc;
     width: 11pc;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     color: white;
     text-decoration: none;
+}
+
+.{
+    color: black;
+    background-color: white;
+    border-radius: 25px;
+    border-color: black;
+    border-style: solid;
+    border-width: .75pc;
+}
+#login_button:hover{
+    background-color: #C8B362;
+    color: black;
+    border-color: black;
 }
 
 
@@ -103,9 +136,10 @@
 }
 #admin_login_form{
     background-color: black;
-    border-color: white;
+    border-radius: 25px;
+    border-color: black;
     border-style: solid;
-    border-width: .25pc;
+    border-width: .75pc;
     vertical-align: center;
     width: 11pc;
     margin-left: auto;
@@ -120,20 +154,34 @@
 #admin_dashboard_body{
     background: url("../images/backgroundphoto1.jpg");
     background-size: cover;
+    justify-content: center;
+    vertical-align: center;
 }
 
 #dashboard{
-    background-color: gray;
+    color: #C8B362;
+    background-color: black;
+    border-radius: 50px;
     margin-top: 5%;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
-    vertical-align: center;
-    justify-content: center;
     width: 60pc;
     height: 35pc;
 }
+#welcomeUserMsg{
+    justify-content: center;
+    width: 275px;
+    vertical-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 340px;
+    margin-right: 142px;
+}
 
 table, th, td {
-  border: 1px solid black;
+    margin-top: 10px;
+    margin-left: 300px;
+    color: #C8B362;
+    border: 1px solid #C8B362;
 }
