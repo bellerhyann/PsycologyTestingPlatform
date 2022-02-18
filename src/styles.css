@@ -13,21 +13,53 @@
     color: black;
     margin-bottom: 5%;
     border: none;
+    border-radius: 5px;
 }
+
 #remember_me{
     vertical-align: center;
 }
+
 #login{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 60px;
+    margin-right: 50px;
     margin-bottom: 5%;
-    width: 10pc;
+    width: 50px;
+    border: none;
+    border-radius: 5px;
 }
+
 #login:hover{
     background-color: #C8B362;
 }
+
 #remember_login{
     margin-left: 10%;
+    margin-bottom:5%;
+}
+#register{
+    display: flex;
+    background-color: white;
+    width: 70px;
+    border-style: solid;
+    border-width: .25pc;
+    border-radius: 5px;
+    vertical-align: center;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size:14px;
+    height: 20px;
+    color: black;
+    text-decoration: none;
+    border: none;
+}
+
+#register:hover{
+  background-color: #C8B362;
+  color: black;
 }
 
 
@@ -107,20 +139,6 @@
     text-decoration: none;
 }
 
-.{
-    color: black;
-    background-color: white;
-    border-radius: 25px;
-    border-color: black;
-    border-style: solid;
-    border-width: .75pc;
-}
-#login_button:hover{
-    background-color: #C8B362;
-    color: black;
-    border-color: black;
-}
-
 
 
  /* adminLogin.html CSS */
@@ -170,6 +188,7 @@
     height: 35pc;
 }
 #welcomeUserMsg{
+    text-decoration: underline;
     justify-content: center;
     width: 275px;
     vertical-align: center;
@@ -180,8 +199,10 @@
 }
 
 table, th, td {
+    background-color: white;
+    border-radius: 5px;
     margin-top: 10px;
-    margin-left: 300px;
-    color: #C8B362;
-    border: 1px solid #C8B362;
+    margin-left: 280px;
+    color: black;
+    border: 1px solid black;
 }
