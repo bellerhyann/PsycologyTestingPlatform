@@ -9,21 +9,45 @@
 /* CSS For All Pages*/
 .textField{
     width:10.75pc;
-    background-color: white;
-    color: black;
-    margin-bottom: 5%;
     border: none;
     border-radius: 5px;
+    
+    display: flex;
+    background-color: black;
+
+    border-radius: 5px;
+    vertical-align: center;
+    justify-content: center;
+    height: 20px;
+    color: #C8B362;
 }
 
-#remember_me{
+#remember_login{
+    margin-left: 10%;
+    display: flex;
+    background-color: black;
+    width: 145px;
+    border-style: solid;
+    border-width: .25pc;
+    border-radius: 5px;
     vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size:14px;
+    height: 20px;
+    color: #C8B362;
+    text-decoration: none;
+    border: none;
 }
 
 #login{
     margin-left: 60px;
     margin-right: 50px;
     margin-bottom: 5%;
+    background-color: black;
+    color: #C8B362;
     width: 50px;
     border: none;
     border-radius: 5px;
@@ -31,15 +55,12 @@
 
 #login:hover{
     background-color: #C8B362;
+    color: black;
 }
 
-#remember_login{
-    margin-left: 10%;
-    margin-bottom:5%;
-}
 #register{
     display: flex;
-    background-color: white;
+    background-color: black;
     width: 70px;
     border-style: solid;
     border-width: .25pc;
@@ -52,7 +73,7 @@
     font-family: sans-serif;
     font-size:14px;
     height: 20px;
-    color: black;
+    color: #C8B362;
     text-decoration: none;
     border: none;
 }
@@ -76,6 +97,7 @@
   background-color: black;
   border-style: solid;
   border-width: .25pc;
+  border-radius: 5px;
   vertical-align: center;
   width: 19pc;
   margin-left: auto;
@@ -97,6 +119,7 @@
   background-color: black;
   border-style: solid;
   border-width: .25pc;
+  border-radius: 5px;
   vertical-align: center;
   width: 19pc;
   margin-left: auto;
@@ -106,6 +129,7 @@
   text-decoration: none;
   border: none;
 }
+
 #adminLoginButton:hover{
     background-color: #C8B362;
     color: black;
@@ -124,6 +148,7 @@
     margin-right: auto;
     justify-content: center;
 }
+
 #user_login_form{
     background-color: black;
     vertical-align: center;
@@ -137,6 +162,8 @@
     justify-content: center;
     color: white;
     text-decoration: none;
+    background:none;
+    border:none;
 }
 
 
@@ -152,19 +179,15 @@
     margin-right: auto;
     justify-content: center;
 }
+
 #admin_login_form{
-    background-color: black;
     border-radius: 25px;
-    border-color: black;
-    border-style: solid;
-    border-width: .75pc;
     vertical-align: center;
     width: 11pc;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
     color: white;
-    text-decoration: none;
 }
 
 
