@@ -18,8 +18,12 @@
     border-radius: 5px;
     vertical-align: center;
     justify-content: center;
-    height: 20px;
     color: #C8B362;
+    height: 20px;
+}
+.textField::placeholder{
+    color: #C8B362;
+    opacity: 0.4;
 }
 
 #remember_login{
