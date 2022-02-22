@@ -22,6 +22,7 @@
     height: 38px;
     font-size: 20px;
 }
+
 .textField::placeholder{
     color: #C8B362;
     opacity: 0.4;
@@ -91,7 +92,6 @@
   background-color: #C8B362;
   color: black;
 }
-
 
  /* Landing Page CSS */
 #landing_page {
@@ -195,8 +195,6 @@
     border:none;
 }
 
-
-
  /* adminLogin.html CSS */
 #admin_login_body{
     background: url("../images/backgroundphoto1.jpg");
@@ -219,7 +217,6 @@
     color: white;
 }
 
-
 /* adminDashboard.html CSS */
 #admin_dashboard_body{
     background: url("../images/backgroundphoto1.jpg");
@@ -239,6 +236,7 @@
     width: 60pc;
     height: 35pc;
 }
+
 #welcomeUserMsg{
     text-decoration: underline;
     justify-content: center;
