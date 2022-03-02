@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Question</title>
+    <script type = "text/javascript">
+        function displayFirstImg() {
+            document.getElementById("img").src = "./images/apple.jpg";
+        }
+        
+        function displaySecondImg() {
+          document.getElementById("img").src = "./images/banana.jpg";
+          setTimeout(hideImage, 3000);
+          setTimeout(showButton, 3000);
+        }
+
+        function hideImage() {
+          document.getElementById("img").style.display="none";
+        }
+
+        function showButton() {
+          document.getElementById("button").style.display="block";
+        }
+
+        function changeImage() {
+          document.getElementById("button").style.display="none";
+          document.getElementById("img").style.display="inline";
+          displayFirstImg();
+          setTimeout(displaySecondImg, 5000);
+        }
+    </script>
+ </head>
+
+ <body onload = "changeImage()">
+     <img id="img"/>
+     <button id="button">Press</button>
+ </body>
+</html>
