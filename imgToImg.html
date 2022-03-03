@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
         function displayFirstImg() {
+            
             document.getElementById("img").src = "./images/apple.jpg";
+            document.getElementById("img").style.display = "none";
         }
         
         function displaySecondImg() {
@@ -28,10 +31,11 @@
           setTimeout(displaySecondImg, 5000);
         }
     </script>
+
  </head>
 
  <body onload = "changeImage()">
      <img id="img"/>
-     <button id="button">Press</button>
+     <button id="pressButton">Press</button>
  </body>
 </html>

@@ -265,3 +265,30 @@ table, th, td {
     color: black;
     border: 1px solid black;
 }
+
+
+/* Image to Image CSS */
+#imgtoimgBody{
+    background-color: white;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+#image{
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+
+}
+#pressButton{
+  display: flex;
+  vertical-align: center;
+  width: 19pc;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
