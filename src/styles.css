@@ -11,8 +11,8 @@
     width:10.75pc;
     border: none;
     border-radius: 5px;
-    
-    display: flex;
+    margin: 0;
+    margin-bottom: 5%;
     background-color: black;
 
     border-radius: 5px;
@@ -50,16 +50,26 @@
 }
 
 #login{
-    margin-left: 60px;
-    margin-right: 50px;
-    margin-bottom: 5%;
+    display: flex;
     background-color: black;
-    color: #C8B362;
-    width: 60px;
-    font-size: 20px;
-    border: none;
+    width: 90px;
+    border-style: solid;
+    border-width: .25pc;
     border-radius: 5px;
-    padding-top: 4px;
+    vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5%;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size:20px;
+    height: 30px;
+    padding-top: 5px;
+    color: #C8B362;
+    text-decoration: none;
+    border: none;
+    text-decoration-color: #C8B362;
+    
 }
 
 #login:hover{
@@ -227,7 +237,6 @@
 
 #dashboard{
     color: #C8B362;
-    background-color: black;
     border-radius: 50px;
     margin-top: 5%;
     margin-bottom: auto;
@@ -255,4 +264,31 @@ table, th, td {
     margin-left: 280px;
     color: black;
     border: 1px solid black;
+}
+
+
+/* Image to Image CSS */
+#imgtoimgBody{
+    background-color: white;
+    margin-top: 20%;
+    margin-bottom: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+
+#image{
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+
+}
+#pressButton{
+  display: flex;
+  vertical-align: center;
+  width: 19pc;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
