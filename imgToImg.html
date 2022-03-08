@@ -19,11 +19,11 @@
         }
 
         function showButton() {
-          document.getElementById("button").style.display="block";
+          document.getElementById("pressButton").style.display="block";
         }
 
-        function changeImage() {
-          document.getElementById("button").style.display="none";
+        function displayQuestion() {
+          document.getElementById("pressButton").style.display="none";
           document.getElementById("img").style.display="inline";
           displayFirstImg();
           setTimeout(displaySecondImg, 5000);
@@ -32,8 +32,8 @@
 
  </head>
 
- <body onload = "changeImage()">
-     <img id="img"/>
+ <body onload = "displayQuestion()">
+     <img id="img">
      <button id="pressButton">Press</button>
  </body>
 </html>
