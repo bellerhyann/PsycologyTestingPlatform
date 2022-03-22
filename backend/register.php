@@ -35,7 +35,9 @@ $userID = 123;
 		//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
 	//}	
 	//add new user to database
-	$conn->query("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 123456, NULL)";
+	$queryString("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)";
+	mysqli_query($conn, $queryString);
+		     
 //} else {
 	//credentials do match
 	//die("Full name already signed up." . $conn->error() );
