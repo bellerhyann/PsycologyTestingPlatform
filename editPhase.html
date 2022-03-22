@@ -2,77 +2,103 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-    .dropbtn {
-        background-color: #04AA6D;
+    .center{
+        text-align: center;
         color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
+    }
+    .background{
+        background-color: rgb(26, 16, 41);
+        text-align: center;
+        
+    }
+    .boxMain{
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 10px;
+        justify-content: center;
+        color: white;
+    }
+    .box2{
+        margin-right: 20px;
+        margin-left: 20px;
+        margin-top: 50px;
+        justify-content: center;
+        color: white;
+        border: 1px solid grey;
+        background-color: grey;
+        padding: 10px;
+    }
+    .box3{
+        margin-right: 20px;
+        margin-left: 20px;
+        border: 1px solid grey;
+        background-color: grey;
+        padding: 10px;
     }
 
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-        .dropdown-content a {
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: #3e8e41;
-    }
 </style>
 <head>
     <link rel="stylesheet" href="./src/styles.css">
     <title>Experiment Builder</title>
 </head>
-<title>Phase Name</title>
-<body id=admin_dashboard_body>
-    <table>
-        <tr>
-            <th>Phase Progression</th>
-        </tr>
+<title>Edit Phase</title>
+<body class="background">
+    <h1 class="center">Edit Phase</h1>
+    <form>
+    <div class="box3">
+    <div class="boxMain">
+    
+        <div>
+        <button>Pretraining</button>
+        <button>Symmetry Pretest</button>
+        <button>Transitivity Pretest</button>
+        <button>Baseline Training</button>
+        <button>Baseline Test</button>
+        <button>Transitivity Test</button>
+        <button>Symmetry Test</button>
+        <br>
+        <p>Shows the Scoreboards</p>
+            <input type="radio" id="trueScore" name="scrBoard" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falseScore" name="scrBoard" value="false"> <label for="false">False</label>
+        </div>
+        <p>Gives the option to ask for Prompt</p>
+            <input type="radio" id="truePrompt" name="prmpt" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falsePrompt" name="prmpt" value="false"> <label for="false">False</label>
 
-        <tr> <td>Block 1</td> </tr>
-        <tr> <td>Block 2</td> </tr>
-        <tr> <td>Block 5</td> </tr>
-        <tr> <td>Block 3</td> </tr>
-    </table>
-    <div class="dropdown">
-        <button class="dropbtn">ADD BLOCK</button>
-    </div>
-    <div class="dropdown">
-        <button class="dropbtn">DELETE BLOCK</button>
-    </div>
-    <br>
-        <label for="displaytimer"> Input the amount of time you'd like each stim shown (Between 1-30 seconds):</label>
-        <input type="number" id="timer" name="timer" min="1" max="30">
+        <p>Gives alloted time for audible Prompts</p>
+            <input type="radio" id="trueScore" name="audTime" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falseScore" name="audTime" value="false"> <label for="false">False</label><br><br>
+            
+            <label for="seconds">Time: </label>
+            <input type="number" id="seconds" name="seconds" min="1" max="999">
+            <br>
+            <br>
 
-        <form action="/some.php">
-            <input type="checkbox" id="VisibleScore" name="VisibleScore" value="Scoreboard">
-            <label for="vehicle1"> Show the Scoreboard</label><br>
-            <input type="submit" value="Submit">
-        </form>
+         <label for="audio">Audible Prompt File: </label>
+         <input type="file" id="audio" name="audioFile">
+         
+         <p>Written Prompt: </p>
+         <textarea name="prompt" rows="5" cols="50"></textarea></br></br>
+         <input type="submit" value="Update">
+
+    </div>
+    </div>
+    <div class="box2">
+        <label for="phase">Phase:</label>
+        <select name="phase" id="phase">
+            <option value="testPhase1">Phase1</option>
+            <option value="testPhase2">Phase2</option>
+            <option value="testPhase3">Phase3</option>
+        </select>
+        <br>
+        <br>
+        <label for="blockid">Block ID:</label>
+        <input type="text" id="blockID" name="blockID" minlength="4" maxlength="15" size="15">
+        <br>
+        <br>
+        <button class="addButton"> ADD </button>
+        <button class="delButton"> DELETE </button>
+    </div>
+    </form>
 </body>
 </html>
