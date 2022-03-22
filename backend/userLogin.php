@@ -12,7 +12,7 @@ else
 	die("UserID not found: Database Error.".mysqli_connect_error());
 
 	//check if userID matches one in the database
-$query = "SELECT * FROM user_T WHERE userID = $userID"; //int doesn't need to be in quotations
+$query = "SELECT * FROM user_T WHERE userID = $SESSION["userID"]"; //int doesn't need to be in quotations
 $result = mysqli_query($conn, $query);
 if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do not match
