@@ -2,7 +2,7 @@
 //get the session log in
 session_start();
 $adminUserID = $_POST["userID"];
-$password" = $_POST["password"];
+$password = $_POST["password"];
 //$adminUser = $_SESSION["adminUserID"];
 //$pass = $_SESSION["password"];
 
