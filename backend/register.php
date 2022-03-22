@@ -17,10 +17,11 @@
 
 //check if name is already in database
 $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
-$status = mysqli_query($conn, $queryString);
+$result = mysqli_query($conn, $queryString);
 
-if($status) {
-	echo "Name already signed up";
+if(mysqli_fetch_assoc($result) == NULL) {
+	//credentials do match
+	die("Name already exists." .mysqli_connect_error());
 }
 else
 {
