@@ -19,8 +19,8 @@
 $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
 $status = mysqli_query($conn, $queryString);
 
-if($result) {
-	die(" name already signed up." );
+if($status) {
+	die(" name already signed up.".mysqli_connect_error());
 }
 else
 {
