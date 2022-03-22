@@ -15,7 +15,7 @@ $LName = $_POST["LName"];
 echo "Attempting to connect to DB server: $host ...";
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com", "admin", "welovesecurity!", "labdata");
 if (!$conn)
-        echo "DID NOT CONNECT;
+        echo "DID NOT CONNECT";
 else
        echo " connected!";
 
