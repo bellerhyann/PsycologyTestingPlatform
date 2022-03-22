@@ -5,7 +5,6 @@ $_SESSION["userID"] = $_POST["userID"];
 
 //reach out to database to see if the userID exists
 	//connect to database
-echo "Attempting to connect to DB server: $host ...";
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "welovesecurity!", "labdata");
 if (!$conn)
         die("UserID not found: Database Error.".mysqli_connect_error());
