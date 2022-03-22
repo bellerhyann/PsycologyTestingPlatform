@@ -16,12 +16,18 @@
 	}
 
 //check if name is already in database
-//$result = $conn->query("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
-//if($result->num_rows == 0) {
+$queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
+$status = mysqli_query($conn, $queryString);
+
+if($result) {
+	die("Full name already signed up." );
+}
+else
+{
 	//credentials do not match
 	//generate random userID
-	//$userID = rand(1, 10000);
-	$userID = 123;
+	$userID = rand(1, 10000);
+
 	//make sure userID does not exist
 	//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
 	//while($result->num_rows != 0) { //I am not actually sure if this is going to work like this
@@ -34,12 +40,7 @@
 	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
 	mysqli_query($conn, $queryString);
 		     
-//} else {
-	//credentials do match
-	//die("Full name already signed up." . $conn->error() );
-//}
-
-
+} 
 
 	//close connection
 	mysqli_close($conn);
