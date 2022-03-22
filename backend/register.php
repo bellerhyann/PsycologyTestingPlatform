@@ -16,15 +16,15 @@
 	}
 
 //check if name is already in database
-$queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
-$result = mysqli_query($conn, $queryString);
+//$queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
+//$result = mysqli_query($conn, $queryString);
 
-if(mysqli_fetch_assoc($result) == NULL) {
+//if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do match
-	die("Name already exists." .mysqli_connect_error());
-}
-else
-{
+	//die("Name already exists." .mysqli_connect_error());
+//}
+//else
+//{
 	//credentials do not match
 	//generate random userID
 	$userID = rand(1, 10000);
