@@ -13,7 +13,7 @@ $LName = $_POST["LName"];
 //reach out to database to add the name and generate a userID
 //connect to database
 echo "Attempting to connect to DB server: ...";
-$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "welovesecurity!", "labdata");
+$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com", "admin", "welovesecurity!", "labdata", 3306);
 if (!$conn)
         echo "DID NOT CONNECT";
 else
