@@ -12,8 +12,6 @@ $password = $_POST["password"];
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
 if (!$conn)
         die("Username or Password not found: Database Error.".mysqli_connect_error());
-else
-        echo " connected!<br>";
 
 	//check if userID and password matches an admin
 $query = "SELECT * FROM user_T WHERE userID = $adminUserID and password = \"$password\"";
