@@ -5,7 +5,7 @@ $_SESSION["userID"] = $_POST["userID"];
 
 //reach out to database to see if the userID exists
 	//connect to database
-$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "welovesecurity!", "labdata");
+$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "skeet", "welovesecurity!", "labdata");
 if ($conn)
         echo " connected.<br>";
 else
