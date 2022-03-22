@@ -20,7 +20,7 @@ $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LNa
 $status = mysqli_query($conn, $queryString);
 
 if($result) {
-	die("Full name already signed up." );
+	die(" name already signed up." );
 }
 else
 {
