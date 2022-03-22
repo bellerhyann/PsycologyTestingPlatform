@@ -9,7 +9,7 @@
 	echo "Attempting to connect to DB server: ...";
 	$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
 	if (!$conn) {
-		echo "DID NOT CONNECT";
+		die("Unable to Connect.".mysqli_connect_error());
 	}
 	else {
 		echo " connected!";
@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $queryString);
 
 //if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do match
-	//die("Name already exists." .mysqli_connect_error());
+	
 //}
 //else
 //{
