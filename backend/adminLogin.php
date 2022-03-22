@@ -1,10 +1,10 @@
 <?php
 //get the session log in
 session_start();
-$_SESSION["adminUserID"] = $_POST["userID"];
-$_SESSION["password"] = $_POST["password"];
-$adminUser = $_SESSION["adminUserID"];
-$pass = $_SESSION["password"];
+$adminUserID = $_POST["userID"];
+$password" = $_POST["password"];
+//$adminUser = $_SESSION["adminUserID"];
+//$pass = $_SESSION["password"];
 
 
 //reach out to database to see if the credentials match admin credentials
@@ -16,7 +16,7 @@ else
         echo " connected!<br>";
 
 	//check if userID and password matches an admin
-$query = "SELECT * FROM User_T WHERE userID = $adminUser and password = \"$pass\"";
+$query = "SELECT * FROM User_T WHERE userID = $adminUserID and password = \"$password\"";
 $result = mysqli_query($conn, $query);
 if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do not match
