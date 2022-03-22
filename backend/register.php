@@ -31,7 +31,7 @@
 		//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
 	//}	
 	//add new user to database
-	$queryString("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
+	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
 	mysqli_query($conn, $queryString);
 		     
 //} else {
