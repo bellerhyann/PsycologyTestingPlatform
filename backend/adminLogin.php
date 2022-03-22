@@ -16,7 +16,7 @@ else
         echo " connected!<br>";
 
 	//check if userID and password matches an admin
-$query = "SELECT * FROM User_T WHERE userID = $adminUserID and password = \"$password\"";
+$query = "SELECT * FROM user_T WHERE userID = $adminUserID and password = \"$password\"";
 $result = mysqli_query($conn, $query);
 if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do not match
