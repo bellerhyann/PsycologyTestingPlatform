@@ -19,13 +19,13 @@
 $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\"");
 $result = mysqli_query($conn, $queryString);
 
-//if(mysqli_fetch_assoc($result) == NULL) {
+if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do match
-	//die("Name already exists, please contact admin.".mysqli_connect_error());
+	die("Name already exists, please contact admin.".mysqli_connect_error());
 	
-//}
-//else
-//{
+}
+else
+{
 	//credentials do not match
 	//generate random userID
 	$userID = rand(1, 10000);
@@ -47,7 +47,7 @@ $result = mysqli_query($conn, $queryString);
 							
 	echo "Completed. Please contact admin for further instructions.";
 		     
-//} 
+} 
 
 
 ?>
