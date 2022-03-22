@@ -45,6 +45,7 @@ $userID = 123;
 
 //close connection
 mysqli_close($conn);
-
+						 
+echo "Completed. Please contact admin for further instructions."
 
 ?>
