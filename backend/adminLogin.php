@@ -16,11 +16,11 @@ else
         echo " connected!<br>";
 
 	//check if userID and password matches an admin
-$query = "SELECT * FROM User_T WHERE userID = $adminUser and password = \"$pass\" and isAdmin = True";
+$query = "SELECT * FROM User_T WHERE userID = $adminUser and password = \"$pass\"";
 $result = mysqli_query($conn, $query);
-if($result->num_rows == 0) {
+if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do not match
-	die("Username or Password not found." . $conn->error() );
+	die("Username or Password not found." . mysqli_connect_error());
 } else {
 	//credentials do match
 	//close connection
