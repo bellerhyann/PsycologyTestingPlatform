@@ -21,7 +21,7 @@ $result = mysqli_query($conn, $queryString);
 
 //if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do match
-	die("Name already exists, please contact admin.".mysqli_connect_error());
+	//die("Name already exists, please contact admin.".mysqli_connect_error());
 	
 //}
 //else
