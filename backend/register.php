@@ -1,8 +1,8 @@
-//<?php
+//
 //require '/vendor/autoload.php';
 //header("Location: http://www.example.com/another-page.php");
 //exit();
-//?>
+//
 <?php
 //get the session log in
 session_start();
