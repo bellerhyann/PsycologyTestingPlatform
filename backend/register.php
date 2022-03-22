@@ -20,7 +20,7 @@ $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LNa
 $status = mysqli_query($conn, $queryString);
 
 if($status) {
-	die("Name already signed up." . mysqli_connect_error());
+	echo "Name already signed up";
 }
 else
 {
@@ -39,9 +39,7 @@ else
 	//add new user to database
 	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
 	mysqli_query($conn, $queryString);
-		     
-} 
-
+		
 	//close connection
 	mysqli_close($conn);
 							
@@ -49,4 +47,8 @@ else
 
 	header("Location: /userDashboard.html");
 	exit;
+		     
+} 
+
+
 ?>
