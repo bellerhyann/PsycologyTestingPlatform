@@ -7,7 +7,7 @@ $_SESSION["userID"] = $_POST["userID"];
 	//connect to database
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "welovesecurity!", "labdata");
 if ($conn)
-        echo " connected!<br>";
+        echo " connected.<br>";
 else
 	die("UserID not found: Database Error.".mysqli_connect_error());
 
