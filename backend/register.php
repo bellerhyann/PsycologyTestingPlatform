@@ -16,7 +16,7 @@
 	}
 
 //check if name is already in database
-$queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\");
+$queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\"");
 $result = mysqli_query($conn, $queryString);
 
 //if(mysqli_fetch_assoc($result) == NULL) {
