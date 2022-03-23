@@ -2,7 +2,7 @@
 //Insert new phase into phase table and blockphase table
 
 //open connection to database
-$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "welovesecurity!", "labdata");
+$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
 
 $phaseID = $_POST["phaseID"];
 $allowedTime = $_POST["allowedTime"];
