@@ -7,24 +7,29 @@
  */
 
 /* CSS For All Pages*/
-#body
+.body
 {
-    background: url("images/backgroundphoto1.jpg");
-    background-size: cover;
-    justify-content: center;
-    vertical-align: center;
+    background: url("../images/backgroundphoto1.jpg");
+      background-size: cover;
+      margin-bottom: 20%;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
 } 
 
-#dashboard
+.body_content
 {
-color: #C8B362;
-border-radius: 50px;
-margin-top: 5%;
-margin-bottom: auto;
-margin-left: auto;
-margin-right: auto;
-width: 60pc;
-height: 35pc;
+    color: #C8B362;
+    border-radius: 50px;
+    margin-top: 5%;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60pc;
+    justify-content: center;
+    vertical-align: middle;
+    height: 35pc;
 }
 
 table, th, td 
@@ -44,9 +49,8 @@ border: 1px solid black;
     margin: 0;
     margin-bottom: 5%;
     background-color: black;
-
     border-radius: 5px;
-    vertical-align: center;
+    vertical-align: middle;
     justify-content: center;
     color: #C8B362;
     height: 38px;
@@ -67,7 +71,7 @@ border: 1px solid black;
     border-style: solid;
     border-width: .25pc;
     border-radius: 5px;
-    vertical-align: center;
+    vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -86,7 +90,7 @@ border: 1px solid black;
     border-style: solid;
     border-width: .25pc;
     border-radius: 5px;
-    vertical-align: center;
+    vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 5%;
@@ -114,7 +118,7 @@ border: 1px solid black;
     border-style: solid;
     border-width: .25pc;
     border-radius: 5px;
-    vertical-align: center;
+    vertical-align: middle;
     margin-top: 5%;
     margin-left: auto;
     margin-right: auto;
@@ -131,15 +135,4 @@ border: 1px solid black;
 #register:hover{
   background-color: #C8B362;
   color: black;
-}
-
-#welcomeUserMsg{
-    text-decoration: underline;
-    justify-content: center;
-    width: 275px;
-    vertical-align: center;
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 340px;
-    margin-right: 142px;
 }
