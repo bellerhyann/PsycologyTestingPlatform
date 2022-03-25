@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    #user_register_body
+    {
+      background: url("images/backgroundphoto1.jpg");
+      background-size: cover;
+      margin-top: 20%;
+      margin-bottom: 20%;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+
+    #user_register_form
+    {
+      background-color: black;
+      vertical-align: center;
+      border-radius: 25px;
+      border-color: black;
+      border-style: solid;
+      border-width: .75pc;
+      width: 11pc;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      background:none;
+      border:none;
+    }
+  </style>
   <head>
     <link rel="stylesheet" href="./src/styles.css">
   </head>
-  <body id="user_login_body">
+  <body id="user_register_body">
       <!--- User REGISTER Form, "Register" button performs code inside "register.php" from backend --->
     <form action="./backend/register.php" id="user_register_form" method="post">
-            <input type="text" placeholder="First Name" name="FName" class="textField" required><br>
-            
-            <input type="text" placeholder="Last Name" name="LName" class="textField" required><br>
-            
-            <button type="submit" class="textField" id="register">Register</button>
-            
+
+      <input type="text" placeholder="First Name" name="FName" class="textField" required><br>
+      <input type="text" placeholder="Last Name" name="LName" class="textField" required><br>
+      <button type="submit" class="textField" id="register">Register</button>   
+      
     </form>
   </body>
 </html>

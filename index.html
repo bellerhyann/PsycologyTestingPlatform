@@ -1,10 +1,69 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    #landing_page 
+    {
+      background: url("images/backgroundphoto1.jpg");
+      background-size: cover;
+      margin-top: 20%;
+      margin-bottom: 20%;
+    }
+
+    #userLoginButton
+    { 
+      display: flex;
+      background-color: black;
+      border-style: solid;
+      border-width: .25pc;
+      border-radius: 5px;
+      vertical-align: center;
+      width: 25pc;
+      height: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      color: #C8B362;
+      text-decoration: none;
+      border: none;
+      font-size: 50px;
+      text-align:center;
+    }
+
+    #userLoginButton:hover
+    {
+      background-color: #C8B362;
+      color: black;
+    }
+
+    #adminLoginButton
+    {
+      opacity: .1;
+      display: flex;
+      background-color: black;
+      border-style: solid;
+      border-width: .25pc;
+      border-radius: 5px;
+      vertical-align: center;
+      width: 19pc;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      color: #C8B362;
+      text-decoration: none;
+      border: none;
+    }
+
+    #adminLoginButton:hover
+    {
+      background-color: #C8B362;
+      color: black;
+      opacity: 1;
+    }
+  </style>
   <head>
-    <link rel="stylesheet" href="./src/styles.css">
   </head>
   <body id="landing_page">
-      <h1><a href="userLogin.html" class="button" id="userLoginButton">User Log In</a></h1>
-      <h2><a href="adminLogin.html" class="button" id="adminLoginButton">Admin Log In</a></h2>
+      <h1><a href="userLogin.html" id="userLoginButton">User Log In</a></h1>
+      <h2><a href="adminLogin.html" id="adminLoginButton">Admin Log In</a></h2>
   </body>
 </html>

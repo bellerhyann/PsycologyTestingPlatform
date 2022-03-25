@@ -1,15 +1,73 @@
 <!DOCTYPE html>
 <html>
+  <style>
+    #user_dashboard_body
+    {
+      background: url("images/backgroundphoto1.jpg");
+      background-size: cover;
+      justify-content: center;
+      vertical-align: center;
+    } 
+
+    #dashboard
+    {
+      color: #C8B362;
+      border-radius: 50px;
+      margin-top: 5%;
+      margin-bottom: auto;
+      margin-left: auto;
+      margin-right: auto;
+      width: 60pc;
+      height: 35pc;
+    }
+
+    #welcomeUserMsg
+    {
+      text-decoration: underline;
+      justify-content: center;
+      width: 275px;
+      vertical-align: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      margin-left: 340px;
+      margin-right: 142px;
+    }
+
+    #beginSessionButton
+    { 
+      display: flex;
+      background-color: black;
+      border-style: solid;
+      border-width: .25pc;
+      border-radius: 5px;
+      vertical-align: center;
+      width: 25pc;
+      height: 60px;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+      color: #C8B362;
+      text-decoration: none;
+      border: none;
+      font-size: 50px;
+      text-align:center;
+    }
+
+    #beginSessionButton:hover
+    {
+      background-color: #C8B362;
+      color: black;
+    }
+  </style>
   <head>
-    <link rel="stylesheet" href="./src/styles.css">
   </head>
   <!-- For CSS, make new id for user dashboard-->
-  <body id=admin_dashboard_body>
+  <body id="user_dashboard_body">
       <div id="dashboard">
           <h1 id="welcomeUserMsg">Welcome, $userID!</h1>
           <!-- Iron out the example test -->
           <!-- For CSS, make new id for begin session button-->
-          <h1><a href="/imgToImg.html" class="button" id="userLoginButton">Begin Session</a></h1>
+          <h1><a href="/imgToImg.html" class="button" id="beginSessionButton">Begin Session</a></h1>
       </div>
   </body>
 </html>

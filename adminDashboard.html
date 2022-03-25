@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="./src/styles.css">
-    <title>Admin Dashboard</title>
-  </head>
-  <body id=admin_dashboard_body>
-      <div id="dashboard">
-          <h1 id="welcomeUserMsg">Welcome, $userID!</h1>
-          <table>
-              <tr>
-                  <th>Experiment Session</th>
-                  <th>Experiment Name</th>
-                  <th>Data (link)</th>
-                  <th>Test (link)</th>
-              </tr>
-              <tr>
-                  <td>#123456</td>
-                  <td>Sample Experiment Name</td>
-                  <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
-                  <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Test</a></td>
-              </tr>
-          </table>
-          
-          <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
+    <style>
+        #admin_dashboard_body
+        {
+            background: url("images/backgroundphoto1.jpg");
+            background-size: cover;
+            justify-content: center;
+            vertical-align: center;
+        } 
 
-          <table>
-              <tr>
-                  <th>Experiment Session</th>
-                  <th>User ID</th>
-                  <th>Data (link)</th>
-              </tr>
-              <tr>
-                  <td>#123456</td>
-                  <td>#20312</td>
-                  <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
-              </tr>
-          </table>
-      </div>
-  </body>
+        #dashboard
+        {
+            color: #C8B362;
+            border-radius: 50px;
+            margin-top: 5%;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60pc;
+            height: 35pc;
+        }
+
+        table, th, td 
+        {
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 280px;
+            color: black;
+            border: 1px solid black;
+        }  
+    </style>
+    <head>
+        <link rel="stylesheet" href="./src/styles.css">
+        <title>Admin Dashboard</title>
+    </head>
+    <body id="admin_dashboard_body">
+        <div id="dashboard">
+            <h1 id="welcomeUserMsg">Welcome, $userID!</h1>
+            <table>
+                <tr>
+                    <th>Experiment Session</th>
+                    <th>Experiment Name</th>
+                    <th>Data (link)</th>
+                    <th>Test (link)</th>
+                </tr>
+                <tr>
+                    <td>#123456</td>
+                    <td>Sample Experiment Name</td>
+                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
+                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Test</a></td>
+                </tr>
+            </table>
+            <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
+            <table>
+                <tr>
+                    <th>Experiment Session</th>
+                    <th>User ID</th>
+                    <th>Data (link)</th>
+                </tr>
+                <tr>
+                    <td>#123456</td>
+                    <td>#20312</td>
+                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
+                </tr>
+            </table>
+        </div>
+    </body>
 </html>
