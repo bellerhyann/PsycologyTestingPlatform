@@ -7,6 +7,36 @@
  */
 
 /* CSS For All Pages*/
+#body
+{
+    background: url("images/backgroundphoto1.jpg");
+    background-size: cover;
+    justify-content: center;
+    vertical-align: center;
+} 
+
+#dashboard
+{
+color: #C8B362;
+border-radius: 50px;
+margin-top: 5%;
+margin-bottom: auto;
+margin-left: auto;
+margin-right: auto;
+width: 60pc;
+height: 35pc;
+}
+
+table, th, td 
+{
+background-color: white;
+border-radius: 5px;
+margin-top: 10px;
+margin-left: 280px;
+color: black;
+border: 1px solid black;
+}  
+
 .textField{
     width:10.75pc;
     border: none;
@@ -101,17 +131,6 @@
 #register:hover{
   background-color: #C8B362;
   color: black;
-}
-
-#dashboard{
-    color: #C8B362;
-    border-radius: 50px;
-    margin-top: 5%;
-    margin-bottom: auto;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60pc;
-    height: 35pc;
 }
 
 #welcomeUserMsg{
