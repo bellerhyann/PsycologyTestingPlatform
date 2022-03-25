@@ -15,7 +15,7 @@
   ]);
     
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = "s3://elasticbeanstalk-us-west-1-391170265189/stimuli/images/" . $_FILES['imgFile']['name'];
+  $file_Path = "./stimuli/images" . $_FILES['imgFile']['name'];
   $key = basename($file_Path);
 
   echo $file_Path;
@@ -27,7 +27,7 @@
         'Bucket' => $bucket,
         'Key'    => $key,
         'SourceFile' => $file_Path,
-        'ACL'    => 'public-read', // make file 'public'
+        'ACL'    => 'private', // make file 'public'
     ]);
     echo "Image uploaded successfully. Image path is: ". $result->get('ObjectURL');
   } catch (Aws\S3\Exception\S3Exception $e) {
