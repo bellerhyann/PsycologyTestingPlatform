@@ -22,7 +22,7 @@
   echo $file_Path;
   echo "<br>";
 
-  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], '/stimuli/images/upload/'.$filename))
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], '/upload/'.$filename))
     try {
       echo "Trying to upload";
       $result = $s3Client->putObject([
