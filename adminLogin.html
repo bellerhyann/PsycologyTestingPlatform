@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/styles.css">
+    <title>Admin Login</title>
+  </head>
   <style>
     #admin_login_body
     {
@@ -24,9 +29,6 @@
       color: white;
     }
   </style>
-  <head>
-    <link rel="stylesheet" href="./src/styles.css">
-  </head>
   <body id="admin_login_body">
       <form action="./backend/adminLogin.php" id="admin_login_form" method="post">
         <input type="text" placeholder="User ID" name="userID" class="textField" required><br>

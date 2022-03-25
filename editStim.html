@@ -1,122 +1,122 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-    #edit_stim_body
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./src/styles.css">
+        <title>Stimuli Editor</title>
+    </head>
+    <style>
+        #edit_stim_body
+            {
+                background: url("images/backgroundphoto1.jpg");
+                background-size: cover;
+                justify-content: center;
+                vertical-align: center;
+            } 
+
+        #dashboard
         {
-            background: url("images/backgroundphoto1.jpg");
-            background-size: cover;
-            justify-content: center;
-            vertical-align: center;
-        } 
+            color: #C8B362;
+            border-radius: 50px;
+            margin-top: 5%;
+            margin-bottom: auto;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60pc;
+            height: 35pc;
+        }
 
-    #dashboard
-    {
-        color: #C8B362;
-        border-radius: 50px;
-        margin-top: 5%;
-        margin-bottom: auto;
-        margin-left: auto;
-        margin-right: auto;
-        width: 60pc;
-        height: 35pc;
-    }
-
-    table, th, td 
-    {
-        background-color: white;
-        border-radius: 5px;
-        margin-top: 10px;
-        margin-left: 280px;
-        color: black;
-        border: 1px solid black;
-    }  
-
-    .dropbtn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f1f1f1;
-        min-width: 160px;
-        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        z-index: 1;
-    }
-
-        .dropdown-content a {
+        table, th, td 
+        {
+            background-color: white;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-left: 280px;
             color: black;
-            padding: 12px 16px;
-            text-decoration: none;
+            border: 1px solid black;
+        }  
+
+        .dropbtn {
+            background-color: #04AA6D;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
-            .dropdown-content a:hover {
-                background-color: #ddd;
-            }
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+    <body id=admin_dashboard_body>
+        <div id="dashboard">
+            <table>
+                <tr>
+                    <th>Stimulant ID</th>
+                    <th>File Type</th>
+                    <th>Catagory/ Note</th>
+                </tr>
+                <tr>
 
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-    .dropdown:hover .dropbtn {
-        background-color: #3e8e41;
-    }
-</style>
-<head>
-    <link rel="stylesheet" href="./src/styles.css">
-    <title>Experiment Builder</title>
-</head>
-<body id=admin_dashboard_body>
-    <div id="dashboard">
-        <table>
-            <tr>
-                <th>Stimulant ID</th>
-                <th>File Type</th>
-                <th>Catagory/ Note</th>
-            </tr>
-            <tr>
-
-                <td>Stim 1</td>
-                <td>PNG File</td>
-                <td>Catagory 2</td>
-            </tr>
-            <tr>
-                
-                <td>Stim 4</td>
-                <td>PNG File</td>
-                <td>Catagory 1</td>
-            </tr>
-            <tr>
-                
-                <td>Stim 2</td>
-                <td>Audio File</td>
-                <td>Catagory 1</td>
-            </tr>
-        </table>
-        <div class="dropdown">
-            <button class="dropbtn">Add Sound</button>
+                    <td>Stim 1</td>
+                    <td>PNG File</td>
+                    <td>Catagory 2</td>
+                </tr>
+                <tr>
+                    
+                    <td>Stim 4</td>
+                    <td>PNG File</td>
+                    <td>Catagory 1</td>
+                </tr>
+                <tr>
+                    
+                    <td>Stim 2</td>
+                    <td>Audio File</td>
+                    <td>Catagory 1</td>
+                </tr>
+            </table>
+            <div class="dropdown">
+                <button class="dropbtn">Add Sound</button>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Add Images</button>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Delete Stimuli</button>
+            </div>
+            <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
+                <input type="file" name="imgFile">
+                <input type="submit" name="submit" value="Upload">
+            </form>
         </div>
-        <div class="dropdown">
-            <button class="dropbtn">Add Images</button>
-        </div>
-        <div class="dropdown">
-            <button class="dropbtn">Delete Stimuli</button>
-        </div>
-        <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
-            <input type="file" name="imgFile">
-            <input type="submit" name="submit" value="Upload">
-        </form>
-    </div>
-</body>
+    </body>
 </html>

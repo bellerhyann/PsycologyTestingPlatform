@@ -1,35 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <style>
-    #imgtoimgBody
-    {
-      background-color: white;
-      margin-top: 20%;
-      margin-bottom: 20%;
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: center;
-    }
-
-    #image
-    {
-      position: fixed; /* or absolute */
-      top: 50%;
-      left: 50%;
-    }
-
-    #pressButton
-    {
-      display: flex;
-      vertical-align: center;
-      width: 19pc;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: center;
-    }
-  </style>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
@@ -59,6 +31,35 @@
         }
     </script>
   </head>
+  <style>
+    #imgtoimgBody
+    {
+      background-color: white;
+      margin-top: 20%;
+      margin-bottom: 20%;
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+
+    #image
+    {
+      position: fixed; /* or absolute */
+      top: 50%;
+      left: 50%;
+    }
+
+    #pressButton
+    {
+      display: flex;
+      vertical-align: center;
+      width: 19pc;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+    }
+  </style>
   <body onload = "displayQuestion()">
     <img id="img">
     <button id="pressButton">Press</button>
