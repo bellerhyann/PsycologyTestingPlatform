@@ -13,26 +13,28 @@
           'secret' => 'Ilovesecurity!'
       ]
   ]);
-    
+
+  $filename = $_FILES['imgFile']['name'];
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = "./stimuli/images/" . $_FILES['imgFile']['name'];
+  $file_Path = "./stimuli/images/upload/" . $filename;
   $key = basename($file_Path);
 
   echo $file_Path;
   echo "<br>";
 
-  try {
-    echo "Trying to upload";
-    $result = $s3Client->putObject([
-        'Bucket' => $bucket,
-        'Key'    => $key,
-        'SourceFile' => $file_Path,
-        'ACL'    => 'private', // make file 'public'
-    ]);
-    echo "Image uploaded successfully. Image path is: ". $result->get('ObjectURL');
-  } catch (Aws\S3\Exception\S3Exception $e) {
-    echo "There was an error uploading the file.\n";
-    echo $e->getMessage();
-  }
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], 'upload/'.$filename))
+    try {
+      echo "Trying to upload";
+      $result = $s3Client->putObject([
+          'Bucket' => $bucket,
+          'Key'    => $key,
+          'SourceFile' => fopen($file_Path,'r'),
+          'ACL'    => 'public-read', // make file 'public'
+      ]);
+      echo "Image uploaded successfully. Image path is: ". $result->get('ObjectURL');
+    } catch (Aws\S3\Exception\S3Exception $e) {
+      echo "There was an error uploading the file.\n";
+      echo $e->getMessage();
+    }
 
 ?>
