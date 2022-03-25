@@ -15,7 +15,7 @@
   ]);
     
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = '/stimuli/images/' . $_FILES['imgFile']['name'];
+  $file_Path = $bucket . '/stimuli/images/' . $_FILES['imgFile']['name'];
   $key = basename($file_Path);
 
   echo $file_Path;
