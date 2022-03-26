@@ -26,6 +26,11 @@
             height: 35pc;
         }
 
+        #content
+        {
+            margin-left: 250px;
+        }
+
         table, th, td 
         {
             background-color: white;
@@ -37,8 +42,8 @@
         }  
 
         .dropbtn {
-            background-color: #04AA6D;
-            color: white;
+            background-color: #C8B362;
+            color: black;
             padding: 16px;
             font-size: 16px;
             border: none;
@@ -74,10 +79,10 @@
         }
 
         .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
+            background-color: #706538;
         }
     </style>
-    <body id=admin_dashboard_body>
+    <body class="body">
         <div id="dashboard">
             <table>
                 <tr>
@@ -104,19 +109,21 @@
                     <td>Catagory 1</td>
                 </tr>
             </table>
-            <div class="dropdown">
-                <button class="dropbtn">Add Sound</button>
+            <div id="content">
+                <div class="dropdown">
+                    <button class="dropbtn">Add Sound</button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Add Images</button>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">Delete Stimuli</button>
+                </div>
+                <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
+                    <div class="dropdown"><input type="file" name="imgFile" class="dropbtn"></div>
+                    <div class="dropdown"><input type="submit" name="submit" value="Upload" class="dropbtn"></div>
+                </form>
             </div>
-            <div class="dropdown">
-                <button class="dropbtn">Add Images</button>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Delete Stimuli</button>
-            </div>
-            <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
-                <input type="file" name="imgFile">
-                <input type="submit" name="submit" value="Upload">
-            </form>
         </div>
     </body>
 </html>
