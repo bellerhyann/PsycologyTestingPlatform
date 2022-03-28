@@ -1,5 +1,10 @@
 <?php
 
+  define('AWS_KEY', 'bernadetteko');
+  define('AWS_SECRET_KEY', 'Ilovesecurity!');
+  define('HOST', 'https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com');
+  define('REGION', 'us-west-1');
+
   require 'vendor/autoload.php';
   
   use Aws\S3\S3Client;
@@ -8,10 +13,11 @@
   // Instantiate an Amazon S3 client.
   $s3Client = new S3Client([
       'version' => 'latest',
-      'region'  => 'us-west-1',
+      'region'  => REGION,
+      'endpoint' => HOST,
       'credentials' => [
-          'key'    => 'bernadetteko',
-          'secret' => 'Ilovesecurity!'
+          'key'    => AWS_KEY,
+          'secret' => AWS_SECRET_KEY
       ]
   ]);
 
