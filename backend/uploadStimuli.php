@@ -3,6 +3,7 @@
   require 'vendor/autoload.php';
   
   use Aws\S3\S3Client;
+  use Aws\S3\ObjectUploader;
 
   // Instantiate an Amazon S3 client.
   $s3Client = new S3Client([
@@ -16,12 +17,32 @@
 
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = "stimuli/images/" . $filename;
+  $file_Path = __DIR__  . '/' . $filename;
+  $source = fopen($file_Path);
   $key = basename($file_Path);
+
 
   echo $file_Path;
   echo "<br>";
 
+  $uploader = new ObjectUploader(
+    $s3Client,
+    $bucket,
+    $key,
+    $source,
+    'public-read',
+  );
+
+  try {
+    $result = $uploader->upload();
+    if ($result['@metadata']['statusCode'] == '200') {
+      print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
+    }
+  }
+  catch (Exception $e) {
+    print($e);
+  }
+  /*
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $filename)) {
     try {
       echo "Trying to upload";
@@ -37,5 +58,5 @@
       echo $e->getMessage();
     }
   }
-
+  */
 ?>
