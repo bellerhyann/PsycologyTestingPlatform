@@ -22,7 +22,7 @@
   ]);
 
   $filename = $_FILES['imgFile']['name'];
-  $bucket = 'elasticbeanstalk-us-west-1-391170265189';
+  $bucket = 'behaviorsci-assets';
   $file_Path = '/stimuli/images/' . $filename;
   $source = fopen($file_Path, 'rb');
   $key = basename($file_Path);
