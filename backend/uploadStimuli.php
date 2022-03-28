@@ -39,14 +39,16 @@
     'public-read',
   );
 
-  try {
-    $result = $uploader->upload();
-    if ($result['@metadata']['statusCode'] == '200') {
-      print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $filename)) {
+    try {
+      $result = $uploader->upload();
+      if ($result['@metadata']['statusCode'] == '200') {
+        print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
+      }
     }
-  }
-  catch (Exception $e) {
-    print($e);
+    catch (Exception $e) {
+      print($e);
+    }
   }
   /*
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $filename)) {
