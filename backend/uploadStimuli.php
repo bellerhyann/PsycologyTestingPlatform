@@ -2,7 +2,7 @@
 
   define('AWS_KEY', 'bernadetteko');
   define('AWS_SECRET_KEY', 'Ilovesecurity!');
-  define('HOST', 'https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com');
+  define('HOST', 'https://s3.us-west-1.amazonaws.com');
   define('REGION', 'us-west-1');
 
   require 'vendor/autoload.php';
@@ -23,7 +23,7 @@
 
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = 'stimuli/images/' . $filename;
+  $file_Path = '/stimuli/images/' . $filename;
   $source = fopen($file_Path, 'rb');
   $key = basename($file_Path);
 
