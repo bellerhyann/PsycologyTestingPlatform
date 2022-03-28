@@ -10,7 +10,7 @@
       'version' => 'latest',
       'region'  => 'us-west-1',
       'credentials' => [
-          'key'    => 'admin',
+          'key'    => 'bernadetteko',
           'secret' => 'Ilovesecurity!'
       ]
   ]);
