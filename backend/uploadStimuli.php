@@ -16,14 +16,13 @@
 
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
-  $file_Path = "./stimuli/images/upload/" . $filename;
-  $uploadDir = "/var/app/current/backend/uploads/";
+  $file_Path = "/stimuli/images/" . $filename;
   $key = basename($file_Path);
 
   echo $file_Path;
   echo "<br>";
 
-  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $uploadDir.basename($filename)))
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], "upload/" . basename($filename)))
     try {
       echo "Trying to upload";
       $result = $s3Client->putObject([
