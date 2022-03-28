@@ -1,7 +1,7 @@
 <?php
 
-  define('AWS_KEY', 'bernadetteko');
-  define('AWS_SECRET_KEY', 'Ilovesecurity!');
+  define('AWS_KEY', 'AKIAVWE4QSBSUPIB62WQ');
+  define('AWS_SECRET_KEY', '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');
   define('HOST', 'https://s3.us-west-1.amazonaws.com');
   define('REGION', 'us-west-1');
 
