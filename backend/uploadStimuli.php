@@ -18,7 +18,7 @@
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'elasticbeanstalk-us-west-1-391170265189';
   $file_Path = __DIR__  . '/' . $filename;
-  $source = fopen($file_Path);
+  $source = fopen($file_Path, 'rb');
   $key = basename($file_Path);
 
 
