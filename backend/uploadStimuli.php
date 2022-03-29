@@ -14,8 +14,8 @@
       'region'  => REGION,
       'endpoint' => HOST,
       'credentials' => [
-          'key'    => $_SERVER("AWS_KEY"),
-          'secret' => $_SERVER("AWS_SECRET_KEY")
+          'key'    => $_SERVER["AWS_KEY"],
+          'secret' => $_SERVER["AWS_SECRET_KEY"]
       ]
   ]);
 
