@@ -1,10 +1,12 @@
 <?php
-//get the session log in
-session_start();
+//get the login info from frontend html
 $adminUserID = $_POST["userID"];
 $password = $_POST["password"];
-//$adminUser = $_SESSION["adminUserID"];
-//$pass = $_SESSION["password"];
+
+//if we need to save the login info as a session, this code will work
+//session.start()
+//$_SESSION["adminUserID"] = $adminUser;
+//$_SESSION["password"] = $password;
 
 
 //reach out to database to see if the credentials match admin credentials
