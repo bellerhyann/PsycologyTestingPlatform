@@ -1,7 +1,9 @@
 <?php
-//get the session log in
 session_start();
 $userID = $_POST["userID"];
+
+//attatch the login to the session to transfer it between php files
+$_SESSION["userID"] = $userID
 
 //reach out to database to see if the userID exists
 	//connect to database
