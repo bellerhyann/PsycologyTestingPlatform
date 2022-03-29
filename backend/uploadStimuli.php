@@ -37,7 +37,7 @@
     'public-read',
   );
 
-  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], "/upload/".$filename)) {
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], "/uploads/".$filename)) {
     try {
       $result = $uploader->upload();
       if ($result['@metadata']['statusCode'] == '200') {
