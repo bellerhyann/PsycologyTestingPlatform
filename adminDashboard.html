@@ -36,16 +36,32 @@
                 </tr>
             </table>
             <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
-            <table>
-                <tr>
-                    <th>User ID</th>
-                    <th>Trial Data</th>
-                </tr>
-                <tr>
-                    <td>#20312</td>
-                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
-                </tr>
-            </table>
+
+            <?php
+            //connect to SQL using Username Password Ect
+            $mysql= new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
+
+            if ($mysql->connect_errno)
+            {
+            printf("Connect failed: %s\n", $mysqli->connect_error);
+            exit();
+            }
+            if ($result = $mysql->query("SELECT UserID FROM User LIMIT 10"))
+            {
+            printf("Select returned %d rows.\n", $result->UserID);
+            $result->close();
+            }
+            else
+            {
+            $result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT 
+            if (!$mysqli->query("SET @a:='this will not work'"))
+            {printf("Error: %s\n", $mysqli->error);
+            $result->close();
+            }
+
+            $mysqli->close();
+            ?>
+
         </div>
     </body>
 </html>
