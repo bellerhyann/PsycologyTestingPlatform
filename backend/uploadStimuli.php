@@ -21,26 +21,22 @@
 
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'behaviorsci-assets';
-  $file_Path = '/var/app/current/backend/upload/'.$filename;
-  $source = fopen($file_Path, 'rb');
-  $key = basename($file_Path);
-
-  echo "<br>";
-  echo $file_Path;
-  echo "<br>";
-
-  $uploader = new ObjectUploader(
-    $s3Client,
-    $bucket,
-    $key,
-    $source,
-    'public-read',
-  );
-
+  
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
     try {
+      $file_Path = __DIR__.'/upload/'.$filename;
+      $key = basename($file_Path);
+
+      $uploader = new ObjectUploader(
+        $s3Client,
+        $bucket,
+        $key,
+        $source,
+        'public-read',
+      );
+    
       $result = $uploader->upload();
       if ($result['@metadata']['statusCode'] == '200') {
         print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
