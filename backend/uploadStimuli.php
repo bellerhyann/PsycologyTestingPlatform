@@ -20,8 +20,8 @@
   ]);
 
   $filename = $_FILES['imgFile']['name'];
-  $bucket = 'behaviorsci-assets/stimuli/images';
-  $file_Path = $_SERVER['DOCUMENT_ROOT'].'/upload/'.$filename;
+  $bucket = 'behaviorsci-assets';
+  $file_Path = $_SERVER['DOCUMENT_ROOT'].'/uploads/'.$filename;
   $source = fopen($file_Path, 'rb');
   $key = basename($file_Path);
 
