@@ -21,7 +21,7 @@
 
   $filename = $_FILES['imgFile']['name'];
   $bucket = 'behaviorsci-assets';
-  $file_Path = '/stimuli/images/' . $filename;
+  $file_Path = '/stimuli/images/'.DIRECTORY_SEPARATOR.$filename;
   $source = fopen($file_Path, 'rb');
   $key = basename($file_Path);
 
