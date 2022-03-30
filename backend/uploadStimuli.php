@@ -26,7 +26,7 @@
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
     try {
-      $file_Path = __DIR__.'/upload/'.$filename;
+      $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
       $source = fopen($file_Path, 'rb');
 
