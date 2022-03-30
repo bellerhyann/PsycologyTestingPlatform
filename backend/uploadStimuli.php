@@ -28,6 +28,7 @@
     try {
       $file_Path = __DIR__.'/upload/'.$filename;
       $key = basename($file_Path);
+      $source = fopen($file_Path, 'rb');
 
       $uploader = new ObjectUploader(
         $s3Client,
