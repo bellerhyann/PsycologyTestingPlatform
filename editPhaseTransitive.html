@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./src/styles.css">
+        <title>Phase Editor</title>
+    </head>
+    <style>
+        body{
+            font-family: 'Verdana', sans-serif;
+        }
+        .center
+        {
+            text-align: center;
+            color: white;
+        }
+
+        .background
+        {
+            background-color: rgb(26, 16, 41);
+            text-align: center;
+            
+        }
+
+        .boxMain
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 10px;
+            justify-content: center;
+            color: white;
+        }
+
+        .box2
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            color: white;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+
+        .box3
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+        .button{
+            background-color: #384e5c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+    <body class="background">
+        <h1 class="center">Edit Phase Transitive</h1>
+        <form>
+        <div class="box3">
+        <div class="boxMain">
+
+        <!-- --------FORM to send data to editPhase.php---------->
+
+        <form action="/backend/editPhase.php" method="post">
+            <div>
+                <a href="/editPhasePre.html" class="button">Pretraining</a>
+                <a href="/editPhaseSymmetry.html" class="button">Symmetry</a>
+                <a href="/editPhaseTransitive.html" class="button">Transitivity</a>
+                <a href="/editPhaseBaseline.html" class="button">Baseline</a>
+            <br>
+            <p>Test Type: </p>
+            <input type="radio" id="testType" name="testType" value="pretest"> <label for="pretest">Pretest</label><br>
+            <input type="radio" id="testType" name="testType" value="test"> <label for="training">Test</label><br>
+            <p>Shows the Scoreboards</p>
+                <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
+                <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
+            </div>
+            <p>Gives the option to ask for Prompt</p>
+                <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
+                <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
+
+            <p>Gives alloted time for audible Prompts</p>
+                <input type="radio" id="trueAprmpt" name="timeAudprmpt" value="true"> <label for="true">True</label><br>
+                <input type="radio" id="falseAprmpt" name="timeAudprmpt" value="false"> <label for="false">False</label><br><br>
+                
+                <label for="audTime">Time: </label>
+                <input type="number" id="seconds" name="seconds" min="1" max="999">
+
+                <br>
+                <br>
+
+            <label for="audio">Audible Prompt File: </label>
+            <input type="file" id="audio" name="audioFile">
+            
+            <p>Written Prompt: </p>
+            <textarea name="prompt" rows="5" cols="50"></textarea>
+                </br>
+                </br>
+            <label for="blockid">Block ID:</label>
+            <select name="blockid" id="blockid">
+                <option value="16">1</option>
+                <option value="17">2</option>
+                <option value="18">3</option>
+                <option value="19">4</option>
+                <option value="20">5</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit" formaction="/backend/editPhase.php"> Update </button>
+        </form>
+        </div>
+    </div>
+</body>
+</html>
