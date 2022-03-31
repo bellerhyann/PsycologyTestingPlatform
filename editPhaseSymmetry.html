@@ -6,6 +6,9 @@
         <title>Phase Editor</title>
     </head>
     <style>
+        body{
+            font-family: 'Verdana', sans-serif;
+        }
         .center
         {
             text-align: center;
@@ -48,9 +51,21 @@
             background-color: grey;
             padding: 10px;
         }
+        .button{
+            background-color: #384e5c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
     </style>
     <body class="background">
-        <h1 class="center">Edit Phase</h1>
+        <h1 class="center">Edit Phase Symmetry</h1>
         <form>
         <div class="box3">
         <div class="boxMain">
@@ -59,14 +74,14 @@
 
         <form action="/backend/editPhase.php" method="post">
             <div>
-            <button name="tab" type="submit" value="Pretraining">Pretraining</button>
-            <button name="tab" type="submit" value="Symmetry Pretest">Symmetry Pretest</button>
-            <button name="tab" type="submit" value="Transitivity Pretest">Transitivity Pretest</button>
-            <button name="tab" type="submit" value="Baseline Training">Baseline Training</button>
-            <button name="tab" type="submit" value="Baseline Test">Baseline Test</button>
-            <button name="tab" type="submit" value="Transitivity Test">Transitivity Test</button>
-            <button name="tab" type="submit" value="Symmetry Test">Symmetry Test</button>
+                <a href="/editPhasePre.html" class="button">Pretraining</a>
+                <a href="/editPhaseSymmetry.html" class="button">Symmetry</a>
+                <a href="/editPhaseTransitive.html" class="button">Transitivity</a>
+                <a href="/editPhaseBaseline.html" class="button">Baseline</a>
             <br>
+            <p>Test Type: </p>
+            <input type="radio" id="testType" name="testType" value="pretest"> <label for="pretest">Pretest</label><br>
+            <input type="radio" id="testType" name="testType" value="test"> <label for="training">Test</label><br>
             <p>Shows the Scoreboards</p>
                 <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
                 <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
@@ -92,27 +107,19 @@
             <textarea name="prompt" rows="5" cols="50"></textarea>
                 </br>
                 </br>
-            <input type="submit" value="Update">
-            </div>
-            </div>
-        </form>
-
-        <div class="box2">
-            <label for="phase">Phase:</label>
-            <select name="phase" id="phase">
-                <option value="testPhase1">Phase1</option>
-                <option value="testPhase2">Phase2</option>
-                <option value="testPhase3">Phase3</option>
+            <label for="phase">Block ID:</label>
+            <select name="blockid" id="blockid">
+                <option value="11">1</option>
+                <option value="12">2</option>
+                <option value="13">3</option>
+                <option value="14">4</option>
+                <option value="15">5</option>
             </select>
             <br>
             <br>
-            <label for="blockid">Block ID:</label>
-            <input type="text" id="blockID" name="blockID" minlength="4" maxlength="15" size="15">
-            <br>
-            <br>
-            <button class="addButton"> ADD </button>
-            <button class="delButton"> DELETE </button>
-        </div>
+            <button type="submit" value="Update" formaction="/backend/editPhase.php"> Update </button>
         </form>
+    </div>
+    </div>
     </body>
 </html>
