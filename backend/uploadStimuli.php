@@ -20,7 +20,7 @@
       ]
   ]);
 
-  $filename = $_FILES['imgFile']['name'];
+  $filename = $_POST['stim_key'];
   $bucket = 'behaviorsci-assets';
   
   $destination_path = getcwd().DIRECTORY_SEPARATOR;

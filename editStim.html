@@ -7,9 +7,11 @@
         <script type="text/javascript">
             function showEditStimuli() {
                 document.getElementById("upload_stim").style.display="block";
+                hideDeleteStimuli();
             }
             function showDeleteStimuli() {
                 document.getElementById("delete_stim").style.display="block";
+                hideEditStimuli();
             }
             function hideEditStimuli() {
                 document.getElementById("upload_stim").style.display="none";
