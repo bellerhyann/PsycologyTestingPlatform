@@ -20,7 +20,7 @@
 
 .body_content
 {
-    color: #C8B362;
+    color: #6C2037;
     border-radius: 50px;
     margin-top: 5%;
     margin-bottom: auto;
@@ -48,24 +48,24 @@ border: 1px solid black;
     border-radius: 5px;
     margin: 0;
     margin-bottom: 5%;
-    background-color: black;
+    background-color: #6C2037;
     border-radius: 5px;
     vertical-align: middle;
     justify-content: center;
-    color: #C8B362;
+    color: #F0C975;
     height: 38px;
     font-size: 20px;
 }
 
 .textField::placeholder{
-    color: #C8B362;
-    opacity: 0.4;
+    color: #F0C975;
+    opacity: 0.5;
 }
 
 #remember_login{
     margin-left: 10%;
     display: flex;
-    background-color: black;
+    background-color: #6C2037;
     padding-top: 5px;
     width: 190px;
     border-style: solid;
@@ -78,14 +78,14 @@ border: 1px solid black;
     font-family: sans-serif;
     font-size:20px;
     height: 30px;
-    color: #C8B362;
+    color: #F0C975;
     text-decoration: none;
     border: none;
 }
 
 #login{
     display: flex;
-    background-color: black;
+    background-color: #6C2037; /* #6C2037 #F0C975*/
     width: 90px;
     border-style: solid;
     border-width: .25pc;
@@ -99,21 +99,21 @@ border: 1px solid black;
     font-size:20px;
     height: 30px;
     padding-top: 5px;
-    color: #C8B362;
+    color: #F0C975;
     text-decoration: none;
     border: none;
-    text-decoration-color: #C8B362;
+    text-decoration-color: #6C2037;
     
 }
 
 #login:hover{
-    background-color: #C8B362;
-    color: black;
+    background-color: #F0C975;
+    color: #6C2037;
 }
 
 #register{
     display: flex;
-    background-color: black;
+    background-color: #6C2037;
     width: 90px;
     border-style: solid;
     border-width: .25pc;
@@ -127,12 +127,12 @@ border: 1px solid black;
     font-size:20px;
     height: 30px;
     padding-top: 5px;
-    color: #C8B362;
+    color: #F0C975;
     text-decoration: none;
     border: none;
 }
 
 #register:hover{
-  background-color: #C8B362;
-  color: black;
+  background-color: #F0C975;
+  color: #6C2037;
 }
