@@ -5,31 +5,36 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
-        function getQuestionData(){
-          var stimType = '<?php echo $stimType; ?>'; // grab filetype from database
-          var stimID = '<?php echo $stimID; ?>'; // grab fileName from database
-          
+        function getQuestionData()
+        {
+          var stimType = '<?php echo $stimType; ?>'; // grab file type from database
+          var stimID = '<?php echo $stimID; ?>'; // grab file name from database
         }
 
-        function displayFirstImg() {    
+        function displayFirstImg() 
+        {    
             document.getElementById("img").src = "./images/apple.jpg";
         }
         
-        function displaySecondImg() {
+        function displaySecondImg() 
+        {
           document.getElementById("img").src = "./images/banana.jpg";
           setTimeout(hideImage, 3000);
           setTimeout(showButton, 3000);
         }
 
-        function hideImage() {
+        function hideImage() 
+        {
           document.getElementById("img").style.display="none";
         }
 
-        function showButton() {
+        function showButton() 
+        {
           document.getElementById("pressButton").style.display="block";
         }
 
-        function displayQuestion() {
+        function displayQuestion() 
+        {
           document.getElementById("pressButton").style.display="none";
           document.getElementById("img").style.display="inline";
           displayFirstImg();
