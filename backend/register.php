@@ -32,8 +32,8 @@ if(mysqli_num_rows($result) > 0){
 //else
 //{
 	//credentials do not match
-	//generate random userID
-	//$userID = rand(1, 10000);
+//generate random userID
+$userID = rand(1, 10000);
 
 	//make sure userID does not exist
 	//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
@@ -82,6 +82,7 @@ else {
 // 	mysqli_close($conn);
 
 	echo "Completed. Please contact admin for further instructions.";
+
 
 // } 
 
