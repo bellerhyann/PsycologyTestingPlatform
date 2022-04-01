@@ -5,6 +5,12 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
+        function getQuestionData(){
+          var stimType = '<?php echo $stimType; ?>'; // grab filetype from database
+          var stimID = '<?php echo $stimID; ?>'; // grab fileName from database
+          
+        }
+
         function displayFirstImg() {    
             document.getElementById("img").src = "./images/apple.jpg";
         }
@@ -28,6 +34,12 @@
           document.getElementById("img").style.display="inline";
           displayFirstImg();
           setTimeout(displaySecondImg, 5000);
+        }
+
+        function getQuestionData(){
+          var fileType = '<?php echo $fileType; ?>'; // grab filetype from database
+          var fileName = ''; // grab fileName from database
+
         }
     </script>
   </head>
