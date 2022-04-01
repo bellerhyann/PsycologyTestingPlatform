@@ -1,4 +1,5 @@
 <?php
+  // File that uploads stimuli to S3 and adds info the SQL DB
 
   define('HOST', 'https://s3.us-west-1.amazonaws.com');
   define('REGION', 'us-west-1');
