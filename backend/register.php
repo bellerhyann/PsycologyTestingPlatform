@@ -16,24 +16,13 @@
 $queryString = ("SELECT * FROM user_T WHERE FName =\"$FName\" and LName = \"$LName\"");
 $result = mysqli_query($conn, $queryString);
 
-//if(mysqli_fetch_assoc($result) == NULL) {
-	//credentials do match
-	//die("Name already exists, please contact admin.".mysqli_connect_error());
-// if(mysqli_fetch_assoc($result) == NULL) {
-// 	//credentials do match
-// 	die("Name already exists, please contact admin.".mysqli_connect_error());
-
-// }
-
 //Updated code to check if User exists - 3/31/2022
 if(mysqli_num_rows($result) > 0){
-    echo('User Already exists');
+    die('User Already exists'.mysqli_connect_error());
 }
-//else
-//{
-	//credentials do not match
+
 //generate random userID
-$userID = rand(1, 10000);
+$userID = rand(1, 999) + 1000;
 
 	//make sure userID does not exist
 	//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
@@ -48,33 +37,9 @@ $userID = rand(1, 10000);
 	//mysqli_query($conn, $queryString);
 
 
-    //Updated code - 3/31/22
-else {
+    //add new user to database
     $queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
 	mysqli_query($conn, $queryString);
-	
-   	$code = rand(1000,9999);
-    $query1 = "UPDATE user_T SET userId = '".$code."' WHERE FName = '".$FName."' AND LName = '".$LName."'";
-    $res = mysqli_query($mysqli,$query1);
-	
-}
-// else
-// {
-// 	//credentials do not match
-// 	//generate random userID
-// 	$userID = rand(1, 10000);
-
-// 	//make sure userID does not exist
-// 	//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
-// 	//while($result->num_rows != 0) { //I am not actually sure if this is going to work like this
-// 		//userID does already exist
-// 		//generate new random userID
-// 		//$userID = rand(1, 10000);
-// 		//$result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
-// 	//}	
-// 	//add new user to database
-// 	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
-// 	mysqli_query($conn, $queryString);
 
 	//close connection
 	mysqli_close($conn);
