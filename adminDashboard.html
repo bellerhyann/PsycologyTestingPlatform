@@ -39,13 +39,11 @@
 
            <?php
             //connect to SQL using Username Password Ect
-            $mysql= new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
-
-            if ($mysql->connect_errno)
-            {
-            printf("Connect failed: %s\n", $mysqli->connect_error);
-            exit();
+           $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+            if (!$conn) {
+	            die("Unable to Connect.".mysqli_connect_error());
             }
+
             //if ($result = $mysql->query("SELECT UserID FROM User LIMIT 10"))
             //{
             //printf("Select returned %d rows.\n", $result->UserID);
