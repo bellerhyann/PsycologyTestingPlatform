@@ -23,7 +23,8 @@
         function getQuestionData()
         {
           document.getElementById("questionHelpButton").addEventListener("mouseover", helpToolTip);
-          /*<?php 
+          
+          <?php 
           $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
           $queryString = ("SELECT stimID FROM stimuli_T");
           $stimID = mysqli_query($conn, $queryString);
@@ -42,7 +43,7 @@
           else if(stimType == ".png")
           {
 
-          }*/
+          }
         }
 
         function helpToolTip()
