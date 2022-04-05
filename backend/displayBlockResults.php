@@ -22,4 +22,8 @@ $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 $txt = "BlockID:\t" . $blockID\n;
 fwrite($myfile, $txt);
 
+//delete view
+
+//close connection
+
 ?>
