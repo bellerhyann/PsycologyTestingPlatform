@@ -67,8 +67,7 @@
     }
   </style>
   <body onload = "getQuestionData()">
-    <img id="helpTooltip" src="/images/helpToolTip.png">
+    <img id="helpTooltip" src="/images/helpToolTip.png" width="10" height="10">
     <img id="img">
-    <button id="pressButton">Press</button>
   </body>
 </html>
