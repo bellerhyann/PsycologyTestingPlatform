@@ -17,12 +17,9 @@ $queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime FROM 
 //create new file
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 
+//iterate through query and add each line to the file
 //write top of file info
 $txt = "BlockID:\t" . $blockID\n;
 fwrite($myfile, $txt);
-
-
-//iterate through query and add each line to the file
-
 
 ?>
