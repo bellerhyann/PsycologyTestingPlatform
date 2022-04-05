@@ -15,44 +15,20 @@
 
           $queryString = ("SELECT stimType from stumuli_T");
           $stimType = mysqli_query($conn, $queryString);
-          
-          
+
           ?>;
 
-          var stimID = "<?php echo"$stimID"?>";
-          var stimType = "<?php echo"$stimType"?>";
+          var stimID = "<?php echo "$stimID" ?>";
+          var stimType = "<?php echo "$stimType" ?>";
 
-          document.write(stimID, stimType);
-        }
+          window.print(stimID, stimType);
+          if(stimType == ".wav")
+          {
+          }
+          else if(stimType == ".png")
+          {
 
-        function displayFirstImg() 
-        {    
-            document.getElementById("img").src = "./images/apple.jpg";
-        }
-        
-        function displaySecondImg() 
-        {
-          document.getElementById("img").src = "./images/banana.jpg";
-          setTimeout(hideImage, 3000);
-          setTimeout(showButton, 3000);
-        }
-
-        function hideImage() 
-        {
-          document.getElementById("img").style.display="none";
-        }
-
-        function showButton() 
-        {
-          document.getElementById("pressButton").style.display="block";
-        }
-
-        function displayQuestion() 
-        {
-          document.getElementById("pressButton").style.display="none";
-          document.getElementById("img").style.display="inline";
-          displayFirstImg();
-          setTimeout(displaySecondImg, 5000);
+          }
         }
     </script>
   </head>
@@ -86,6 +62,7 @@
     }
   </style>
   <body onload = "getQuestionData()">
+    <img id="helpTooltip">
     <img id="img">
     <button id="pressButton">Press</button>
   </body>
