@@ -7,8 +7,22 @@
     <script type = "text/javascript">
         function getQuestionData()
         {
-          <?php $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306); ?>;
-          var stimID = '<?php echo "ShutUP" ?>'; // grab file type from database
+          <?php 
+          
+          $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+          $queryString = ("SELECT stimID FROM stimuli_T");
+          $stimID = mysqli_query($conn, $queryString);
+
+          $queryString = ("SELECT stimType from stumuli_T");
+          $stimType = mysqli_query($conn, $queryString);
+          
+          
+          ?>;
+
+          var stimID = "<?php echo"$stimID"?>";
+          var stimType = "<?php echo"$stimType"?>";
+
+          document.write(stimID, stimType);
         }
 
         function displayFirstImg() 
