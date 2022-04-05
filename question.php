@@ -7,9 +7,7 @@
     <script type = "text/javascript">
         function getQuestionData()
         {
-          var stimType = '<?php SELECT stimID FROM stimuli_T; ?>'; // grab file type from database
-          var stimID = '<?php echo $stimID; ?>'; // grab file name from database
-          Window.print(stimID);
+          var stimID = '<?php stimID = SELECT stimID FROM stimuli_T; ?>'; // grab file type from database
         }
 
         function displayFirstImg() 
