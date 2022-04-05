@@ -37,15 +37,15 @@
             </table>
             <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
 
-          //  <?php
+           <?php
             //connect to SQL using Username Password Ect
-           // $mysql= new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
+            $mysql= new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
 
-            //if ($mysql->connect_errno)
-            //{
-            //printf("Connect failed: %s\n", $mysqli->connect_error);
-            //exit();
-            //}
+            if ($mysql->connect_errno)
+            {
+            printf("Connect failed: %s\n", $mysqli->connect_error);
+            exit();
+            }
             //if ($result = $mysql->query("SELECT UserID FROM User LIMIT 10"))
             //{
             //printf("Select returned %d rows.\n", $result->UserID);
@@ -59,8 +59,8 @@
             //$result->close();
             //}
 
-            //$mysqli->close();
-            //?>
+            $mysqli->close();
+            ?>
 
         </div>
     </body>
