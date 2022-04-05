@@ -9,6 +9,7 @@
         {
           var stimType = '<?php echo $stimType; ?>'; // grab file type from database
           var stimID = '<?php echo $stimID; ?>'; // grab file name from database
+          Window.print(stimID);
         }
 
         function displayFirstImg() 
@@ -39,12 +40,6 @@
           document.getElementById("img").style.display="inline";
           displayFirstImg();
           setTimeout(displaySecondImg, 5000);
-        }
-
-        function getQuestionData(){
-          var fileType = '<?php echo $fileType; ?>'; // grab filetype from database
-          var fileName = ''; // grab fileName from database
-
         }
     </script>
   </head>
@@ -77,7 +72,7 @@
       justify-content: center;
     }
   </style>
-  <body onload = "displayQuestion()">
+  <body onload = "getQuestionData()">
     <img id="img">
     <button id="pressButton">Press</button>
   </body>
