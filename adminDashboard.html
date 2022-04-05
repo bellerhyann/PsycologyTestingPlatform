@@ -44,18 +44,17 @@
 	            die("Unable to Connect.".mysqli_connect_error());
             }
 
-            if ($result = $conn->query("SELECT * FROM user_T LIMIT 10"))
+	    $queryString = "select userID, FName from user_T";
+	    $result = mysqli_query($conn, $queryString);
+
+	    echo "<table border=1>";
+	    echo "<tr> <th>First Name</th> <th>User ID</th> </tr>";
+            while ($row = sqli_fetch_assoc($result))
             {
-            printf("Select returned %d rows.\n", $result->userID);
-            //$result->close();
+            	//printf("Select returned %d rows.\n", $result->userID)
+		  echo "<tr> <td>".$row["FName"]."</td>".
+  		"<td>".$row["userID"]."</td> </tr>";
             }
-            //else
-            //{
-            //$result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT 
-            //if (!$mysqli->query("SET @a:='this will not work'"))
-            //{printf("Error: %s\n", $mysqli->error);
-            //$result->close();
-            //}
 
             //close connection
 	    mysqli_close($conn);
