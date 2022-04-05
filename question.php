@@ -8,7 +8,7 @@
         function getQuestionData()
         {
           <?php $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306); ?>;
-          var stimID = '<?php $stimID = SELECT stimID FROM stimuli_T; ?>'; // grab file type from database
+          var stimID = '<?php echo "ShutUP" ?>'; // grab file type from database
         }
 
         function displayFirstImg() 
