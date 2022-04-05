@@ -57,7 +57,8 @@
             //$result->close();
             //}
 
-            $mysqli->close();
+            //close connection
+	    mysqli_close($conn);
             ?>
 
         </div>
