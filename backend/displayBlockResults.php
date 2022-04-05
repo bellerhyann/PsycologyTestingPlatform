@@ -10,7 +10,7 @@ $createView = "create view dataBlock if not exists AS SELECT * FROM data_T WHERE
 
 
 //create query
-$queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime FROM trial_T, dataBlock WHERE trialID.trial_T = trialID.dataBlock";
+$queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime FROM trial_T, dataBlock WHERE trialID.trial_T = trialID.dataBlock GROUP BY blockID";
 //run query
 
 
