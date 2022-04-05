@@ -44,11 +44,11 @@
 	            die("Unable to Connect.".mysqli_connect_error());
             }
 
-            //if ($result = $mysql->query("SELECT UserID FROM User LIMIT 10"))
-            //{
-            //printf("Select returned %d rows.\n", $result->UserID);
+            if ($result = $conn->query("SELECT UserID FROM user_T LIMIT 10"))
+            {
+            printf("Select returned %d rows.\n", $result->userID);
             //$result->close();
-            //}
+            }
             //else
             //{
             //$result = $mysqli->query("SELECT * FROM City", MYSQLI_USE_RESULT 
