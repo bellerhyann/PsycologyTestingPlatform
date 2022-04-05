@@ -7,19 +7,19 @@
     <script type = "text/javascript">
         function getQuestionData()
         {
-          <?php 
+          /*<?php 
           
-          $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
-          $queryString = ("SELECT stimID FROM stimuli_T");
-          $stimID = mysqli_query($conn, $queryString);
+          //$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+          //$queryString = ("SELECT stimID FROM stimuli_T");
+          //$stimID = mysqli_query($conn, $queryString);
 
-          $queryString = ("SELECT stimType from stumuli_T");
-          $stimType = mysqli_query($conn, $queryString);
+         // $queryString = ("SELECT stimType from stumuli_T");
+          //$stimType = mysqli_query($conn, $queryString);
 
-          ?>;
+          //?>;
 
-          var stimID = "<?php echo "$stimID" ?>";
-          var stimType = "<?php echo "$stimType" ?>";
+          //var stimID = "<?php echo "$stimID" ?>";
+          //var stimType = "<?php echo "$stimType" ?>";
 
           window.print(stimID, stimType);
           if(stimType == ".wav")
@@ -28,7 +28,12 @@
           else if(stimType == ".png")
           {
 
-          }
+          }*/
+        }
+
+        function helpButtonClick
+        {
+          
         }
     </script>
   </head>
@@ -62,7 +67,7 @@
     }
   </style>
   <body onload = "getQuestionData()">
-    <img id="helpTooltip">
+    <img id="helpTooltip" src="/images/question">
     <img id="img">
     <button id="pressButton">Press</button>
   </body>
