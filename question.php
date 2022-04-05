@@ -37,10 +37,10 @@
           var stimType = "<?php echo "$stimType" ?>";
 
           window.print(stimID, stimType);
-          if(stimType == ".wav")
+          if(stimType == "sound")
           {
           }
-          else if(stimType == ".png")
+          else if(stimType == "image")
           {
 
           }
