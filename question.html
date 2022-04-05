@@ -5,26 +5,33 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
-        <?php 
+        var questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
+        var questionsLeft = 999;
+
+        function onLoad()
+        {
+          questionHelpButton = document.getElementById("questionHelpButton");
+          questionHelpButton.addEventListener("mouseover", helpToolTip);
+          questionHelpPrompt = document.getElementById("questionHelpPrompt");
+          image_stim1 = document.getElementById("image_stim1");
+          image_stim2 = document.getElementById("image_stim2");
+          sound_stim1 = document.getElementById("sound_stim1");
+          sound_stim2 = document.getElementById("sound_stim2");
+          questionsLeft = 999;
+        }
+
+        function getQuestionData()
+        {
+          document.getElementById("questionHelpButton").addEventListener("mouseover", helpToolTip);
+          /*<?php 
           $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
           $queryString = ("SELECT stimID FROM stimuli_T");
           $stimID = mysqli_query($conn, $queryString);
 
           $queryString = ("SELECT stimType from stumuli_T");
           $stimType = mysqli_query($conn, $queryString);
-        ?>;
+          ?>;
 
-        var helpToolTip = document.getElementById(helpToolTip);
-        
-        var image_stim1 = document.getElementById(image_stim1);
-        var image_stim2 = document.getElementById(image_stim2);
-        var sound_stim1 = document.getElementById(sound_stim1);
-        var sound_stim2 = document.getElementById(sound_stim2);
-
-        var questionsLeft = 1;
-
-        function getQuestionData()
-        {
           var stimID = "<?php echo "$stimID" ?>";
           var stimType = "<?php echo "$stimType" ?>";
 
@@ -35,8 +42,18 @@
           else if(stimType == ".png")
           {
 
-          }
+          }*/
         }
+
+        function helpToolTip()
+        {
+          if(questionHelpPrompt.style.display == "none")
+            questionHelpPrompt.style.display = "flex";
+          else // questionHelpPrompt.style.display == "flex"
+            questionHelpPrompt.style.display = "none";
+        }
+
+
     </script>
   </head>
   <style>
@@ -68,10 +85,12 @@
       justify-content: center;
     }
   </style>
-  <body onload = "getQuestionData()">
-    <img id="helpTooltip" src="/images/helpToolTip.png" width="10" height="10">
+  <body onload = "onLoad()">
+    <img id="questionHelpButton" src="./images/questionHelpButton.png" width="50" height="50">
+    <br>
+    <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
-    <div >
+    <div>
       <img id="image_stim1">
       <img id="image_stim2">
     </div>
