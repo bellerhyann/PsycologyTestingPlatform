@@ -5,21 +5,28 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
+        <?php 
+          $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+          $queryString = ("SELECT stimID FROM stimuli_T");
+          $stimID = mysqli_query($conn, $queryString);
+
+          $queryString = ("SELECT stimType from stumuli_T");
+          $stimType = mysqli_query($conn, $queryString);
+        ?>;
+
+        var helpToolTip = document.getElementById(helpToolTip);
+        
+        var image_stim1 = document.getElementById(image_stim1);
+        var image_stim2 = document.getElementById(image_stim2);
+        var sound_stim1 = document.getElementById(sound_stim1);
+        var sound_stim2 = document.getElementById(sound_stim2);
+
+        var questionsLeft = 1;
+
         function getQuestionData()
         {
-          /*<?php 
-          
-          //$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
-          //$queryString = ("SELECT stimID FROM stimuli_T");
-          //$stimID = mysqli_query($conn, $queryString);
-
-         // $queryString = ("SELECT stimType from stumuli_T");
-          //$stimType = mysqli_query($conn, $queryString);
-
-          //?>;
-
-          //var stimID = "<?php echo "$stimID" ?>";
-          //var stimType = "<?php echo "$stimType" ?>";
+          var stimID = "<?php echo "$stimID" ?>";
+          var stimType = "<?php echo "$stimType" ?>";
 
           window.print(stimID, stimType);
           if(stimType == ".wav")
@@ -28,12 +35,7 @@
           else if(stimType == ".png")
           {
 
-          }*/
-        }
-
-        function helpButtonClick
-        {
-          
+          }
         }
     </script>
   </head>
@@ -68,6 +70,15 @@
   </style>
   <body onload = "getQuestionData()">
     <img id="helpTooltip" src="/images/helpToolTip.png" width="10" height="10">
-    <img id="img">
+
+    <div >
+      <img id="image_stim1">
+      <img id="image_stim2">
+    </div>
+
+    <audio>
+      <source id="sound_stim1">
+      <source id="sound_stim2">
+    </audio>
   </body>
 </html>
