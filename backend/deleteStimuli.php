@@ -26,8 +26,8 @@
       'Bucket' => $bucket
     ]);
 
-    foreach ($objects['Contents']  as $object) {
-      echo $object['Key'] . PHP_EOL;
+    foreach ($result['Contents']  as $object) {
+      echo $result['Key'] . PHP_EOL;
   }
   }
   catch (Aws\S3\Exception\S3Exception $e){
