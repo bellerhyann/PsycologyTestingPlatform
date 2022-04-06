@@ -37,9 +37,10 @@
           ?>
 
           var stims = <?php echo json_encode($stims); ?>;
-          console.log(stims);
+          
+          
 
-          window.print(stimID, stimType);
+          window.print(stims);
           if(stimType == "sound")
           {
           }
