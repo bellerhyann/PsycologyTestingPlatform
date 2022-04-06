@@ -7,7 +7,7 @@
     <script type = "text/javascript">
         var questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var questionsLeft = 999;
-
+        var dummy = "chris";
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
