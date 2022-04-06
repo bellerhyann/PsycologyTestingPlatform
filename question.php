@@ -5,9 +5,9 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
-        var questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
-        var questionsLeft = 999;
-        var dummy = "chrissssxxxssss";
+        // 
+        var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
+        var numStims; // used for total number of stims in database
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
@@ -22,6 +22,7 @@
         }
 
         // get question data from database, convert PHP to JS and store
+        // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData()
         {
           <?php 
@@ -39,8 +40,8 @@
 
           ?>
 
-          var stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
-          var numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
+          stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
+          numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
           
           // to access web console: inspect element then click console to view the below messages!!
           console.log(stims); // throws stims object to web console for testing
