@@ -18,6 +18,7 @@
           sound_stim1 = document.getElementById("sound_stim1");
           sound_stim2 = document.getElementById("sound_stim2");
           questionsLeft = 999;
+          getQuestionData();
         }
 
         function getQuestionData()
