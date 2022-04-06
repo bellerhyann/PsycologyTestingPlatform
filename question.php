@@ -52,7 +52,8 @@
 
         function getNextComparison(index)
         {
-            console.log("Sound stim detected", stims[index].stimID);
+          if(stims[index].stimType == "sound")
+            console.log("Sound stim detected, stimID: ", stims[index].stimID);
         }
 
         function helpToolTip()
