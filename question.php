@@ -42,10 +42,10 @@
 
           for(let i = 0; i < stims.length; i++)
           {
-            console.log(stims[i]);
+            document.write(stims[i]);
           }
 
-          console.log("Completed PHP to JS array!");
+          document.write("Completed PHP to JS array!");
         }
 
         function helpToolTip()
