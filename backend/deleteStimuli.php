@@ -26,7 +26,9 @@
       'Bucket' => $bucket
     ]);
 
-    echo $result;
+    foreach ($result->get('Contents')  as $object) {
+      echo $object['Key'] . PHP_EOL;
+  }
   }
   catch (Aws\S3\Exception\S3Exception $e){
     echo $e->getMessage() . PHP_EOL;
