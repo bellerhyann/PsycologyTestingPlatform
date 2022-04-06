@@ -39,16 +39,12 @@
 
           var stims = <?php echo json_encode($stims); ?>;
           var numOfStims = <?php echo $numOfStims; ?>;
-          /*for(i=0; i< numOfStims ; i++)
-          {
-            stims[i] = <?php echo json_encode($stims[i]); ?>;
-          }*/
           
           
           var arrayData = document.getElementById("arrayData");
           for(let i = 0; i < numOfStims ; i++)
           {
-            arrayData.innerHTML += stims[i]
+            console.log(stims[i]);
           }
         }
 
