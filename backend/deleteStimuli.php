@@ -26,7 +26,9 @@
       'Bucket' => $bucket
     ]);
 
-    foreach ($result->get('Contents')  as $object) {
+    echo $result . PHP_EOL;
+
+    foreach ($result['Contents'] as $object) {
       echo $object['Key'] . PHP_EOL;
   }
   }
