@@ -21,33 +21,30 @@
           getQuestionData();
         }
 
+        // get question data from database, convert PHP to JS and store
         function getQuestionData()
         {
-          document.getElementById("questionHelpButton").addEventListener("mouseover", helpToolTip);
-          
           <?php 
-            $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
-            $queryString = ("SELECT stimID, stimType FROM labdata.stimuli_T");
-            $stimIDs = mysqli_query($conn, $queryString);
-            $i = 0;
-            while($row = mysqli_fetch_array($stimIDs))
+            $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306); // establish mysqli connection
+            $queryString = ("SELECT stimID, stimType FROM labdata.stimuli_T"); // grab stim data from stimuli datatable
+            $stimIDs = mysqli_query($conn, $queryString); // query with above info
+
+            $i = 0; // incrementor variable
+            while($row = mysqli_fetch_array($stimIDs)) // fetch data
             {
-                $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']);
-                $i++;
+                $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']); // store values in PHP array
+                $i++; // next index
             }
-            $numOfStims = $stimIDs -> num_rows;
+            $numOfStims = $stimIDs -> num_rows; // grab total # of rows in database
 
           ?>
 
-          var stims = <?php echo json_encode($stims); ?>;
-          var numOfStims = <?php echo $numOfStims; ?>;
+          var stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
+          var numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
           
-          
-          var arrayData = document.getElementById("arrayData");
-          for(let i = 0; i < numOfStims ; i++)
-          {
-            console.log(stims[i]);
-          }
+          // to access web console: inspect element then click console to view the below messages!!
+          console.log(stims); // throws stims object to web console for testing
+          console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
         }
 
         function helpToolTip()
