@@ -31,7 +31,7 @@
             $i = 0;
             while($row = mysqli_fetch_array($stimIDs))
             {
-                $stims[$row[$i]] = array('stimID' => $row['stimId'], 'stimType' => $row['stimType']);
+                $stims[$i] = array('stimID' => $row['stimId'], 'stimType' => $row['stimType']);
             }
 
           ?>
