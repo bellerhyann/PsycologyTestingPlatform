@@ -36,7 +36,7 @@
 
           ?>
 
-          var stims = <?php echo json_encode($stims); ?>;
+          var stims = <?php echo json_encode($stimIDs); ?>;
           
           
 
