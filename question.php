@@ -33,6 +33,7 @@
             while($row = mysqli_fetch_array($stimIDs))
             {
                 $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']);
+                i++;
             }
             $numOfStims = $stimIDs -> num_rows;
 
