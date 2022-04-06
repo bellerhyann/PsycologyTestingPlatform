@@ -9,13 +9,14 @@
 /* CSS For All Pages*/
 .body
 {
-    background: url("../images/backgroundphoto1.jpg");
-      background-size: cover;
-      margin-bottom: 20%;
-      display: flex;
-      margin-left: auto;
-      margin-right: auto;
-      justify-content: center;
+    /*background: url("../images/backgroundphoto1.jpg");*/
+    background-color: gray;
+    background-size: cover;
+    margin-bottom: 20%;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
 } 
 
 .body_content

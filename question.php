@@ -25,13 +25,16 @@
           document.getElementById("questionHelpButton").addEventListener("mouseover", helpToolTip);
           
           <?php 
-          $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
-          $queryString = ("SELECT stimID FROM stimuli_T");
-          $stimID = mysqli_query($conn, $queryString);
+            $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+            $queryString = ("SELECT stimID, stimType FROM stimuli_T");
+            $stimIDs = mysqli_query($conn, $queryString);
+            $i = 0;
+            while($row = mysqli_fetch_array($stimIDs))
+            {
+                $stims[$row[$i]] = array('stimID' => $row['stimId'], 'stimType' => $row['stimType']);
+            }
 
-          $queryString = ("SELECT stimType from stumuli_T");
-          $stimType = mysqli_query($conn, $queryString);
-          ?>;
+          ?>
 
           var stimID = "<?php echo "$stimID" ?>";
           var stimType = "<?php echo "$stimType" ?>";
