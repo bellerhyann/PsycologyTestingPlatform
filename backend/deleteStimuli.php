@@ -22,7 +22,7 @@
   $bucket = 'behaviorsci-assets';
 
   try {
-    $result = $s3Client->listObject([
+    $result = $s3Client->listObjects([
       'Bucket' => $bucket
     ]);
 
