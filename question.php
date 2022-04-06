@@ -39,19 +39,17 @@
 
           var stims = <?php echo json_encode($stims); ?>;
           var numOfStims = <?php echo $numOfStims; ?>;
-          for(i=0; i< numOfStims ; i++)
+          /*for(i=0; i< numOfStims ; i++)
           {
-
-          }
+            stims[i] = <?php echo json_encode($stims[i]); ?>;
+          }*/
           
           
-
-          for(let i = 0; i < stims.length; i++)
+          var arrayData = document.getElementById("arrayData");
+          for(let i = 0; i < numOfStims ; i++)
           {
-            document.write(stims[i]);
+            arrayData.innerHTML += stims[i]
           }
-
-          document.write("Completed PHP to JS array!");
         }
 
         function helpToolTip()
@@ -108,5 +106,7 @@
       <source id="sound_stim1">
       <source id="sound_stim2">
     </audio>
+
+    <p id="arrayData"></p>
   </body>
 </html>
