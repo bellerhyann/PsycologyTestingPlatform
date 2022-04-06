@@ -26,7 +26,7 @@
           
           <?php 
             $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
-            $queryString = ("SELECT stimID, stimType FROM stimuli_T");
+            $queryString = ("SELECT stimID, stimType FROM labdata.stimuli_T");
             $stimIDs = mysqli_query($conn, $queryString);
             $i = 0;
             while($row = mysqli_fetch_array($stimIDs))
@@ -36,8 +36,8 @@
 
           ?>
 
-          var stimID = "<?php echo "$stimID" ?>";
-          var stimType = "<?php echo "$stimType" ?>";
+          var stimID = "<?php echo $stimID ?>";
+          var stimType = "<?php echo $stimType ?>";
 
           window.print(stimID, stimType);
           if(stimType == "sound")
