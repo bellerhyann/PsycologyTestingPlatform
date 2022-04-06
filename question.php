@@ -5,20 +5,22 @@
     <link rel="stylesheet" href="./src/styles.css">
     <title>Question</title>
     <script type = "text/javascript">
-        // 
+        var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
         var numStims; // used for total number of stims in database
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
-          questionHelpButton.addEventListener("mouseover", helpToolTip);
+          questionHelpButton.addEventListener("click", helpToolTip);
           questionHelpPrompt = document.getElementById("questionHelpPrompt");
+
           image_stim1 = document.getElementById("image_stim1");
           image_stim2 = document.getElementById("image_stim2");
           sound_stim1 = document.getElementById("sound_stim1");
           sound_stim2 = document.getElementById("sound_stim2");
-          questionsLeft = 999;
-          getQuestionData();
+
+          getQuestionData(); // gets all question data from database
+          getNextComparison(0); // gets next comparison
         }
 
         // get question data from database, convert PHP to JS and store
@@ -43,9 +45,15 @@
           stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
           numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
           
-          // to access web console: inspect element then click console to view the below messages!!
+          // to access web console: inspect element in web browser then click console to view the below messages!!
           console.log(stims); // throws stims object to web console for testing
           console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
+        }
+
+        function getNextComparison(index)
+        {
+          if(stims[index].stimID == "sound")
+            console.log("Sound stim detected");
         }
 
         function helpToolTip()
