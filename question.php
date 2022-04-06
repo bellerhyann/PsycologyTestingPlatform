@@ -33,10 +33,16 @@
             {
                 $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']);
             }
+            $numOfStims = $stimIDs -> num_rows;
 
           ?>
 
-          var stims = <?php echo json_encode($stimIDs); ?>;
+          var stims = <?php echo json_encode($stims); ?>;
+          var numOfStims = <?php echo $numOfStims; ?>;
+          for(i=0; i< numOfStims ; i++)
+          {
+
+          }
           
           
 
