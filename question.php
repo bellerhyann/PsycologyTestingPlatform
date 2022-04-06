@@ -36,8 +36,8 @@
 
           ?>
 
-          var stimID = "<?php echo $stimID ?>";
-          var stimType = "<?php echo $stimType ?>";
+          var stimID = "<?php echo "$stimID" ?>";
+          var stimType = "<?php echo "$stimType" ?>";
 
           window.print(stimID, stimType);
           if(stimType == "sound")
