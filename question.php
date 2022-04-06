@@ -40,14 +40,12 @@
           
           
 
-          window.print(stims);
-          if(stimType == "sound")
+          for(let i = 0; i < stims.length; i++)
           {
+            console.log(stims[i]);
           }
-          else if(stimType == "image")
-          {
 
-          }
+          console.log("Completed PHP to JS array!");
         }
 
         function helpToolTip()
