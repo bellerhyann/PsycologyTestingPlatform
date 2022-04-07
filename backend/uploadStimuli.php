@@ -29,8 +29,8 @@
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
   
   // First check if a file exists with the stim_key same, but not same extension
-  $soundFileExists = $s3->doesObjectExist($bucket, $soundFile);
-  $imgFileExists = $s3->doesObjectExist($bucket, $imgFile);
+  $soundFileExists = $s3Client->doesObjectExist($bucket, $soundFile);
+  $imgFileExists = $s3Client->doesObjectExist($bucket, $imgFile);
 
   // If we catch that case - delete the current file
   if ($soundFileExists and $soundFile != $filename) {

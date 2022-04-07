@@ -4,26 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./src/styles.css">
         <title>Stimuli Editor</title>
-        <script type="text/javascript">
-            function showEditStimuli() {
-                document.getElementById("upload_stim").style.display="block";
-                hideDeleteStimuli();
-            }
-            function showDeleteStimuli() {
-                document.getElementById("delete_stim").style.display="block";
-                hideEditStimuli();
-            }
-            function hideEditStimuli() {
-                document.getElementById("upload_stim").style.display="none";
-            }
-            function hideDeleteStimuli() {
-                document.getElementById("delete_stim").style.display="none";
-            }
-            function hideBothForms() {
-                hideDeleteStimuli();
-                hideEditStimuli();
-            }
-        </script>
     </head>
     <style>
         #edit_stim_body
@@ -102,7 +82,7 @@
             background-color: #706538;
         }
     </style>
-    <body class="body" onload="hideBothForms()">
+    <body class="body">
         <div id="dashboard">
             <table>
                 <tr>
@@ -130,12 +110,6 @@
                 </tr>
             </table>
             <div id="content">
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="showEditStimuli()">Add Stimuli</button>
-                </div>
-                <div class="dropdown">
-                    <button class="dropbtn" onclick="showDeleteStimuli()">Delete Stimuli</button>
-                </div>
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <div class="dropdown"><input type="file" name="imgFile" class="dropbtn"></div>
                     <div class="dropdown">
