@@ -35,7 +35,7 @@
       $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
       $source = fopen($file_Path, 'rb');
-      /*
+      
       $uploader = new ObjectUploader(
         $s3Client,
         $bucket,
@@ -45,12 +45,6 @@
       );
     
       $result = $uploader->upload();
-      */
-      $result = $s3Client->putObject([
-        'Bucket' => $bucket,
-        'Key' => $key,
-        'SourceFile' => $source
-      ]);
       
       if ($result['@metadata']['statusCode'] == '200') {
         print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
