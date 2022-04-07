@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $queryString);
 
 echo "<table border=1>";
 echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th> </tr>";
-while ($row = sqli_fetch_assoc($result))
+while ($row = mysqli_fetch_array($result))
   {
     //printf("Select returned %d rows.\n", $result->userID)
 	echo "<tr> <td>".$row["FName"]."</td>"."<td>".$row["LName"]."</td>".
