@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_array($block))
 //Phase: 1  | avg response Time: 783 ms 
 $file = "phaseData.txt";
 $txt = fopen($file, "w");
-fwrite($txt, "Phase: ");
+fwrite($txt, "Phase: ".$phaseNum."\n Hello");
 fclose($txt);
 
 //BlockID     | avg response time | % correct
