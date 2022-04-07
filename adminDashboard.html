@@ -44,7 +44,7 @@
 	            die("Unable to Connect.".mysqli_connect_error());
             }
 
-	    $queryString = "select userID, FName from user_T";
+	    $queryString = "SELECT * FROM user_T";
 	    $result = mysqli_query($conn, $queryString);
 
 	    echo "<table border=1>";
