@@ -1,7 +1,8 @@
 <?php
 //This file will output all data current held for a phase 
 //needs to be sent which phase we are looking at 
-$phaseNum = $_POST["phaseNum"];
+//$phaseNum = $_POST["phaseNum"];
+$phaseNum = 1;
 
 //connect to the database
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
