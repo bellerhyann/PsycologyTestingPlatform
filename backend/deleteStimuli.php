@@ -31,7 +31,7 @@
     foreach ($result['Contents'] as $object) {
       $keyWOExt = substr($object['Key'],0,2);
       if ($keyWOExt == $stimuli) {
-        $deleteStimuli = $s3Client->deleteObjects([
+        $deleteStimuli = $s3Client->deleteObject([
           'Bucket' => $bucket,
           'Key' => $object
         ]);
