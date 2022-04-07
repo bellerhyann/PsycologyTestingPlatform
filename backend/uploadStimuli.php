@@ -20,7 +20,7 @@
       ]
   ]);
 
-  $soundFile = $_POST['stim_key'] . '.mov';
+  $soundFile = $_POST['stim_key'] . '.wav';
   $imgFile = $_POST['stim_key'] . '.png';
 
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
@@ -32,17 +32,18 @@
   $soundFileExists = $s3Client->doesObjectExist($bucket, $soundFile);
   $imgFileExists = $s3Client->doesObjectExist($bucket, $imgFile);
 
+  $s3 = S3Client::factory();
   // If we catch that case - delete the current file
   if ($soundFileExists and $soundFile != $filename) {
     // delete sound file
-    $deleteStimuli = $s3Client->deleteObject([
+    $deleteStimuli = $s3->deleteObject([
       'Bucket' => $bucket,
       'Key' => $soundFile
     ]);
   }
   else if ($imgFileExists and $imgFile != $filename) {
     // delete image file
-    $deleteStimuli = $s3Client->deleteObject([
+    $deleteStimuli = $s3->deleteObject([
       'Bucket' => $bucket,
       'Key' => $imgFile
     ]);
