@@ -40,7 +40,8 @@
         $s3Client,
         $bucket,
         $key,
-        $source
+        $source,
+        'public-read',
       );
     
       $result = $uploader->upload();
