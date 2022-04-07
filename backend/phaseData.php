@@ -54,21 +54,21 @@ while ($row = mysqli_fetch_array($block))
         if ($correctRSP)
         {
             //clicked should be 1
-            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
+            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows["trialID"] AND clicked = 1";
 
         }
         //else its a no go 
         else
         {
             //clicked should be 0
-            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 0";
+            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows["trialID"] AND clicked = 0";
         }
 
         $count = mysqli_query($conn, $queryString);
 
         //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
         //$correctPER = (bcdiv($count,$userNum, 2)) * 100;
-	//$correctPER = $count/$userNum;
+	$correctPER = $count/$userNum;
     }
 
 }
