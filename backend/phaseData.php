@@ -23,7 +23,7 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 
 //overall average time of entire phase
 //This works I tested it in sql workbench
-$queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID =\"$phaseNum\" AND clicked = 1";
+$queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND clicked = 1";
 $entPhaseCT = mysqli_query($conn, $queryString);
 
 //number of users who have done the phase 
