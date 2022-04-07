@@ -28,9 +28,9 @@
   
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
   echo $destination_path . PHP_EOL;
+  echo move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename));
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
-    echo move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename));
     try {
       $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
