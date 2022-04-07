@@ -41,7 +41,10 @@ while($row = mysqli_fetch_assoc($stats)) {
 }
 
 //delete view
+$dropView = "DROP VIEW[dataBlock]";
+$result =  mysqli_query($conn, $dropView);
 
 //close connection
+mysqli_close($conn);
 
 ?>
