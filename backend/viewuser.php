@@ -13,7 +13,7 @@ echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th> </tr>";
 while ($row = sqli_fetch_assoc($result))
   {
     //printf("Select returned %d rows.\n", $result->userID)
-	echo "<tr> <td>".$row["FName"]."</td>"."<td>".$row["LName"].
+	echo "<tr> <td>".$row["FName"]."</td>"."<td>".$row["LName"]."</td>".
   	"<td>".$row["userID"]."</td> </tr>";
   }
 
