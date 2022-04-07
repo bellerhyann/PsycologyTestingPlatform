@@ -19,6 +19,7 @@
       ]
   ]);
 
+  $stimuli = $_POST['stim_key']; 
   $bucket = 'behaviorsci-assets';
 
   try {
@@ -26,11 +27,16 @@
       'Bucket' => $bucket
     ]);
 
-    echo $result . PHP_EOL;
 
     foreach ($result['Contents'] as $object) {
-      echo $object['Key'] . PHP_EOL;
-  }
+      $keyWOExt = substr($object['Key'],0,2);
+      if ($keyWOExt == $stimuli) {
+        $deleteStimuli = $s3Client->deleteObjects([
+          'Bucket' => $bucket,
+          'Key' => $object
+        ]);
+      }
+   }
   }
   catch (Aws\S3\Exception\S3Exception $e){
     echo $e->getMessage() . PHP_EOL;
