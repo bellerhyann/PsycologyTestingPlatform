@@ -39,7 +39,7 @@ while ($row = mysqli_fetch_array($block))
 
     //finding correct % within each block 
     //we are gonna need to look at each trial so let's select all trials frrom blockTrial_T
-    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row["blockID"]";
+    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
     $trials = mysqli_query($conn, $queryString);
 
     //loop through each trial 
