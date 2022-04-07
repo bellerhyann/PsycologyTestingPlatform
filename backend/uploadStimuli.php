@@ -32,21 +32,26 @@
   $soundFileExists = $s3Client->doesObjectExist($bucket, $soundFile);
   $imgFileExists = $s3Client->doesObjectExist($bucket, $imgFile);
 
-  $s3 = S3Client::factory(['key' => $_SERVER["AWS_KEY"], 'secret' => $_SERVER["AWS_SECRET_KEY"], 'region' => REGION, 'version' => 'latest']);
   // If we catch that case - delete the current file
   if ($soundFileExists and $soundFile != $filename) {
     // delete sound file
-    $deleteStimuli = $s3->deleteObject([
+    $deleteStimuli = $s3Client->deleteObject([
       'Bucket' => $bucket,
       'Key' => $soundFile
     ]);
+    if ($deleteStimuli['DeleteMarker']) {
+      echo '<p> Successfully deleted ' . $soundFile . ' </p>' . PHP_EOL;
+    }
   }
   else if ($imgFileExists and $imgFile != $filename) {
     // delete image file
-    $deleteStimuli = $s3->deleteObject([
+    $deleteStimuli = $s3Client->deleteObject([
       'Bucket' => $bucket,
       'Key' => $imgFile
     ]);
+    if ($deleteStimuli['DeleteMarker']) {
+      echo '<p> Successfully deleted ' . $imgFile . ' </p>' . PHP_EOL;
+    }
   }
 
   // Then we upload to S3 normally
