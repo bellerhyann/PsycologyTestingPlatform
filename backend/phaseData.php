@@ -27,14 +27,14 @@ $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND 
 $entPhaseCT = mysqli_query($conn, $queryString);
 
 //number of users who have done the phase 
-$queryString = "SELECT COUNT(DISTINCT userID) FROM data_T WHERE phaseID =\"$phaseNum\"";
+$queryString = "SELECT COUNT(DISTINCT userID) FROM data_T WHERE phaseID = $phaseNum";
 $userNum = mysqli_query($conn, $queryString);
 
 //now find the average of each block and % correct
 while ($row = mysqli_fetch_array($block))
 {
     //avg click time
-    $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID =\"$phaseNum\" AND blockID = $row["blockID"] AND clicked = 1";
+    $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row["blockID"] AND clicked = 1";
     $blockavg = mysqli_query($conn, $queryString);
 
     //finding correct % within each block 
