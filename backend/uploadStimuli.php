@@ -32,7 +32,7 @@
   $soundFileExists = $s3Client->doesObjectExist($bucket, $soundFile);
   $imgFileExists = $s3Client->doesObjectExist($bucket, $imgFile);
 
-  $s3 = S3Client::factory();
+  $s3 = S3Client::factory(['key' => $_SERVER["AWS_KEY"], 'secret' => $_SERVER["AWS_SECRET_KEY"], 'region' => REGION]);
   // If we catch that case - delete the current file
   if ($soundFileExists and $soundFile != $filename) {
     // delete sound file
