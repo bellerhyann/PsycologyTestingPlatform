@@ -21,21 +21,18 @@
   ]);
 
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
-  echo $filename . "<br>";
-  echo $_FILES['imgFile']['type'] . "<br>";
+  echo $filename;
   $bucket = 'behaviorsci-assets';
 
   
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
-  echo $destination_path . "<br>";
-  echo move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename));
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
     try {
       $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
       $source = fopen($file_Path, 'rb');
-      
+
       $uploader = new ObjectUploader(
         $s3Client,
         $bucket,
@@ -45,7 +42,6 @@
       );
     
       $result = $uploader->upload();
-      
       if ($result['@metadata']['statusCode'] == '200') {
         print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
       }
