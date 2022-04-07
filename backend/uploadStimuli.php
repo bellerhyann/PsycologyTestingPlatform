@@ -21,13 +21,13 @@
   ]);
 
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
-  echo $filename.PHP_EOL;
-  echo $_FILES['imgFile']['type'].PHP_EOL;
+  echo $filename . "<br>";
+  echo $_FILES['imgFile']['type'] . "<br>";
   $bucket = 'behaviorsci-assets';
 
   
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
-  echo $destination_path . PHP_EOL;
+  echo $destination_path . "<br>";
   echo move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename));
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
@@ -40,8 +40,7 @@
         $s3Client,
         $bucket,
         $key,
-        $source,
-        'public-read',
+        $source
       );
     
       $result = $uploader->upload();
