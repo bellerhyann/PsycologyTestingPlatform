@@ -34,7 +34,7 @@ $userNum = mysqli_query($conn, $queryString);
 while ($row = mysqli_fetch_array($block))
 {
     //avg click time
-    $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row["blockID"] AND clicked = 1";
+    $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND clicked = 1";
     $blockavg = mysqli_query($conn, $queryString);
 
     //finding correct % within each block 
