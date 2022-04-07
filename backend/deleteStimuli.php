@@ -33,7 +33,7 @@
       if ($keyWOExt == $stimuli) {
         $deleteStimuli = $s3Client->deleteObject([
           'Bucket' => $bucket,
-          'Key' => $object
+          'Key' => $object['Key']
         ]);
       }
    }

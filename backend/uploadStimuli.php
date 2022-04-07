@@ -21,14 +21,16 @@
   ]);
 
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
-  echo $filename;
-  echo $_FILES['imgFile']['type'];
+  echo $filename.PHP_EOL;
+  echo $_FILES['imgFile']['type'].PHP_EOL;
   $bucket = 'behaviorsci-assets';
 
   
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
+  echo $destination_path . PHP_EOL;
 
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
+    echo move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename));
     try {
       $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
