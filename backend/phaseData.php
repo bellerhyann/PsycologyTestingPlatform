@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array($block))
         $correctRSP = mysqli_query($conn, $queryString);
 
         //if it's a go trial 
-        if ($correctRPS)
+        if ($correctRSP)
         {
             //clicked should be 1
             $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
