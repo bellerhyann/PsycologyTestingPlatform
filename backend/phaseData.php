@@ -46,7 +46,7 @@ while ($row = mysqli_fetch_array($block))
     while ($trialRows = mysqli_fetch_array($trials))
     {
         //grab the correct response for this trial 
-        $queryString = "";
+        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
         $correctRSP = mysqli_query($conn, $queryString);
 
         //if it's a go trial 
