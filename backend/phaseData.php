@@ -12,10 +12,10 @@ if (!$conn) {
 //finds all data in data_T that matches our phase and all of it's blocks 
 
 //gives us all rows in data_T for our phase 
-$queryString = "SELECT * FROM data_T WHERE phaseID =\"$phaseNum\""; 
+$queryString = "SELECT * FROM data_T WHERE phaseID = $phaseNum"; 
 $result = mysqli_query($conn, $queryString);
 
-$queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID =\"$phaseNum\"";
+$queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseNum ";
 $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
 
 //find avg response time for each block 
