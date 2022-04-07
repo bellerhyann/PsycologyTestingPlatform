@@ -53,14 +53,14 @@ while ($row = mysqli_fetch_array($block))
         if ($correctRPS)
         {
             //clicked should be 1
-            $queryString = "SELECT Count(clicked) FROM data_T WHERE phaseID =\"$phaseNum\" AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
+            $queryString = "SELECT Count(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
 
         }
         //else its a no go 
         else
         {
             //clicked should be 0
-            $queryString = "SELECT Count(clicked) FROM data_T WHERE phaseID =\"$phaseNum\" AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 0";
+            $queryString = "SELECT Count(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 0";
         }
 
         $count = mysqli_query($conn, $queryString);
