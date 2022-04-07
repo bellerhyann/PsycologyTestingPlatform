@@ -66,8 +66,9 @@ while ($row = mysqli_fetch_array($block))
 
         $count = mysqli_query($conn, $queryString);
 
-        //this gives us a decimal with .00 and then multiple by 100 to give us the %
-        $correctPER = (bcdiv($count,$userNum, 2)) * 100;
+        //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
+        //$correctPER = (bcdiv($count,$userNum, 2)) * 100;
+	$correctPER = ($count / $userNum) * 100;
     }
 
 }
