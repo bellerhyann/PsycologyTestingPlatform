@@ -21,6 +21,7 @@
   ]);
 
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
+  $filename = trim($filename);
   echo $filename;
   $bucket = 'behaviorsci-assets';
 
