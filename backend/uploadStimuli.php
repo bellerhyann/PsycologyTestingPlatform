@@ -20,14 +20,38 @@
       ]
   ]);
 
+  $soundFile = $_POST['stim_key'] . '.mov';
+  $imgFile = $_POST['stim_key'] . '.png';
+
   $filename = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
-  $filename = trim($filename);
   echo $filename;
   $bucket = 'behaviorsci-assets';
-
-  
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
+  
+  // First check if a file exists with the stim_key same, but not same extension
+  $soundFileExists = $s3->doesObjectExist($bucket, $soundFile);
+  $imgFileExists = $s3->doesObjectExist($bucket, $imgFile);
 
+  // If we catch that case - delete the current file
+  if ($soundFileExists and $soundFile != $filename) {
+    // delete sound file
+    $deleteStimuli = $s3Client->deleteObject([
+      'Bucket' => $bucket,
+      'Key' => $soundFile
+    ]);
+  }
+  else if ($imgFileExists and $imgFile != $filename) {
+    // delete image file
+    $deleteStimuli = $s3Client->deleteObject([
+      'Bucket' => $bucket,
+      'Key' => $imgFile
+    ]);
+  }
+
+  // Then we upload to S3 normally
+  // Uploading something that has the same full name - will just update on upload
+
+  // Upload file to S3
   if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
     try {
       $file_Path = $destination_path.basename($filename);
