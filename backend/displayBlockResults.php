@@ -13,12 +13,12 @@ $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
 $count =  mysqli_query($conn, $queryString);
 
 //create view where blockID is used
-$createView = "create view dataBlock if not exists AS SELECT * FROM data_T WHERE blockID = $blockID";
+$createView = "create view dataBlock AS SELECT * FROM data_T WHERE blockID = $blockID";
 //run query
 $result =  mysqli_query($conn, $createView);
 
 //create query
-$queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime, phaseID FROM trial_T, dataBlock WHERE trialID.trial_T = trialID.dataBlock GROUP BY phaseID";
+$queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime, phaseID FROM trial_T, dataBlock WHERE trial_T.trialID = dataBlock.trialID GROUP BY phaseID";
 //run query
 $stats =  mysqli_query($conn, $queryString);
 
@@ -42,7 +42,7 @@ while($row = mysqli_fetch_assoc($stats)) {
 }
 
 //delete view
-$dropView = "DROP VIEW[dataBlock]";
+$dropView = "DROP VIEW dataBlock";
 $result =  mysqli_query($conn, $dropView);
 
 //close connection
