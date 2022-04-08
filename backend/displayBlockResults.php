@@ -29,7 +29,7 @@ $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
   //line 31
-  $test = $row % $count;
+  echo $row % $count;
   if($test == 0) {
     //write top of file info
     $txt = "BlockID:\t" . $blockID . "\n PhaseID:\t" . $row["phaseID"] . "\n";
