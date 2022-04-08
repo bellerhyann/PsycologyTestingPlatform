@@ -28,6 +28,8 @@ $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 //iterate through query and add each line to the file
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
+  echo gettype($count);
+  echo gettype($row);
   $test = bcmod($row, $count);
   if($test == 0) {
     //write top of file info
