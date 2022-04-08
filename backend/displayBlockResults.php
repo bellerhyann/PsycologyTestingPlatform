@@ -28,7 +28,8 @@ $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 //iterate through query and add each line to the file
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
-  if($row % $count == 0) {
+    $test = $row % $count;
+  if($test == 0) {
     //write top of file info
     $txt = "BlockID:\t" . $blockID . "\n PhaseID:\t" . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
