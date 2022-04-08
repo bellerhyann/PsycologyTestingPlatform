@@ -1,7 +1,7 @@
 <?php
 //get blockID from post
 //$blockID = $_POST["blockID"];
-$blockID = 4;
+$blockID = 1;
 
 //open connection to database
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
@@ -11,6 +11,7 @@ if (!$conn)
 //find how many trials are in this block
 $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
 $count =  mysqli_query($conn, $queryString);
+echo $count;
 
 //create view where blockID is used
 $createView = "create view dataBlock AS SELECT * FROM data_T WHERE blockID = $blockID";
