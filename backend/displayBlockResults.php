@@ -1,7 +1,7 @@
 <? php
 //get blockID from post
 //$blockID = $_POST["blockID"];
-$blockID = 4;
+//$blockID = 4;
 
 //open connection to database
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
