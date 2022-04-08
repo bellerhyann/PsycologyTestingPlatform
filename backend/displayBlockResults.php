@@ -3,7 +3,7 @@
 //$blockID = $_POST["blockID"];
 $blockID = 4;
 
-//open connection to database
+/*//open connection to database
 $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
 if (!$conn)
         die("BlockID not found: Database Error.".mysqli_connect_error());
@@ -28,9 +28,7 @@ $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 //iterate through query and add each line to the file
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
-  //line 31
-  echo $row % $count;
-  if($test == 0) {
+  if($row % $count == 0) {
     //write top of file info
     $txt = "BlockID:\t" . $blockID . "\n PhaseID:\t" . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
@@ -48,6 +46,9 @@ $dropView = "DROP VIEW dataBlock";
 $result =  mysqli_query($conn, $dropView);
 
 //close connection
-mysqli_close($conn);
+mysqli_close($conn);*/
+
+$test = 4 % 3;
+echo $test;
 
 ?>
