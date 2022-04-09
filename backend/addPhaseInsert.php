@@ -13,12 +13,15 @@ $nextPhase = $_POST["nextPhase"];
 //insert each block/phase into blockphase table.
 //$blockIDs should be an array of whatever blocks admin selected for this phase.
 foreach ($_POST["blockIDs"] as $blockIDs){
-    $stmt = "INSERT INTO blockphase_T values (\"$phaseID\", \"$blockIDs\")";
-    $conn->query($stmt); 
+    $queryString = "INSERT INTO blockphase_T values (\"$phaseID\", \"$blockIDs\")";
+    $stmt = mysqli_query($conn, $queryString);
 }
 
 //insert phase into phase table.
-$conn->query("INSERT INTO phase_T values (\"$phaseID\", \"$allowedTime\", \"$nextPhase\", \"$instructions\")");
+//I need to check the order of these values for phase_T and update it! 
+$queryString = ("INSERT INTO phase_T values (\"$phaseID\", \"$allowedTime\", \"$nextPhase\", \"$instructions\")");
+$phaseINS = mysqli_query($conn, $queryString);
+
 
 //close connection
 $conn->close();
