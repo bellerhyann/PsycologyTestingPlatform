@@ -34,7 +34,7 @@ $entPhaseCT = mysqli_query($conn, $queryString);
 $data = mysqli_fetch_assoc($entPhaseCT)
 
 //writing avg to output file 
-fwrite($txt,' AVG Click Time: '.$data["avgColName"]);
+fwrite($txt," AVG Click Time: ".$data[avgColName]);
 
 //now print phase results from the user 
 //trialID     | response time | correct
