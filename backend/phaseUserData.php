@@ -44,18 +44,18 @@ while ($row = mysqli_fetch_array($block))
 {
     fwrite($txt, "\n BlockID: ".$row["blockID"]."\n TrialID | Response Time (ms) | Correct ");
     //grabing the trials in the block
-    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row["blockID"]";
+    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
     $trials = mysqli_query($conn, $queryString);
 
     //loop through each trial 
     while ($trialRows = mysqli_fetch_array($trials))
     {
         //grab the correct the response for the trial 
-        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows["trialID"]";
+        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
         $ans = mysqli_query($conn, $queryString); //holds if the trial is a go or no go 
 
         //what the user found
-        $queryString = "SELECT clicked FROM data_T WHERE trialID = $trialRows["trialID"] AND blockID = $row["blockID"] AND userID = $user";
+        $queryString = "SELECT clicked FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
         $userAns = mysqli_query($conn, $queryString);
 
         if ($ans == $userAns)
@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_array($block))
             $printANS = "-";
         
         //grab resp time
-        $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows["trialID"] AND blockID = $row["blockID"] AND userID = $user";
+        $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
         $time = mysqli_query($conn, $queryString);
 
 
