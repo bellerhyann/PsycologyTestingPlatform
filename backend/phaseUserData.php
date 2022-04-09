@@ -31,10 +31,9 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 //This works I tested it in sql workbench
 $queryString = "SELECT AVG(clickTime) AS avgColName FROM data_T WHERE phaseID = $phaseNum  AND clicked = 1 AND userID = $user";
 $entPhaseCT = mysqli_query($conn, $queryString);
-$whatWeprint = mysql_fetch_assoc($entPhaseCT);
 
 //writing avg to output file 
-fwrite($txt, " AVG Click Time: ".$whatWeprint['avgColName']);
+fwrite($txt, " AVG Click Time: ".$entPhaseCT['avgColName']);
 
 //now print phase results from the user 
 //trialID     | response time | correct
