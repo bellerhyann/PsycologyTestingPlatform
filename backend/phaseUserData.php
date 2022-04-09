@@ -42,7 +42,7 @@ fwrite($txt," AVG Click Time: ".$data["avgColName"]);
 //loops through each block in the phase
 while ($row = mysqli_fetch_array($block))
 {
-    fwrite($txt, "\n BlockID: ".$row["blockID"]."\n TrialID | Response Time (ms) | Correct ");
+    fwrite($txt, "\nBlockID: ".$row["blockID"]."\nTrialID | Response Time (ms) | Correct ");
     //grabing the trials in the block
     $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
     $trials = mysqli_query($conn, $queryString);
