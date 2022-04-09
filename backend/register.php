@@ -26,7 +26,7 @@ $userID = rand(1, 999) + 1000;
 
 //make sure userID does not exist
 $result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
-while($result->num_rows != 0) { //I am not actually sure if this is going to work like this
+while($result->num_rows > 0) { //I am not actually sure if this is going to work like this; It works after I changed it to "> 0" from "!=0";4/8/22
 		//userID does already exist
 //generate new random userID
 $userID = rand(1, 999) + 1000;
