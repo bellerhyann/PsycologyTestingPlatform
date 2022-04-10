@@ -33,7 +33,6 @@ while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
   $test = bcmod($i, $count);
   if($test == 0) {
-    echo "Success \n";
     //write top of file info
     $txt = "BlockID:\t" . $blockID . "\n PhaseID:\t" . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
@@ -42,6 +41,7 @@ while($row = mysqli_fetch_assoc($stats)) {
   }
   
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t| " . $row["clicked"] . "\n";
+  echo $row["clicked"]
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
