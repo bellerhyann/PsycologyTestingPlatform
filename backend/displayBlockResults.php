@@ -56,4 +56,14 @@ $result =  mysqli_query($conn, $dropView);
 //close connection
 mysqli_close($conn);
 
+fclose($myfile);
+header('Content-Description: File Transfer');
+header('Content-Disposition: attachment; filename='.basename("renameMe.txt"));
+header('Expires: 0');
+header('Cache-Control: must-revalidate');
+header('Pragma: public');
+header('Content-Length: ' . filesize("renameMe.txt"));
+header("Content-Type: text/plain");
+readfile("renameMe.txt");
+
 ?>
