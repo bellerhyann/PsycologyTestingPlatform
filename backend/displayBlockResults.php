@@ -28,7 +28,7 @@ $stats =  mysqli_query($conn, $queryString);
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 
 //iterate through query and add each line to the file
-$i = 1;
+$i = 0;
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
   $test = bcmod($i, $count);
