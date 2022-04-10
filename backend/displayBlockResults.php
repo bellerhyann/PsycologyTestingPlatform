@@ -40,7 +40,7 @@ while($row = mysqli_fetch_assoc($stats)) {
     fwrite($myfile, $txt);
   }
   
-  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t\t| " . $row["clicked"] . "\n";
+  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t| " . $row["clicked"] . "\n";
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
