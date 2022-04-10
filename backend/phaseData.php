@@ -28,8 +28,10 @@ $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND 
 $entPhaseCT = mysqli_query($conn, $queryString);
 
 //number of users who have done the phase 
-$queryString = "SELECT COUNT(DISTINCT userID) FROM data_T WHERE phaseID = $phaseNum";
-$userNum = mysqli_query($conn, $queryString);
+$queryString = "SELECT COUNT(DISTINCT userID) AS result FROM data_T WHERE phaseID = $phaseNum";
+$users = mysqli_query($conn, $queryString);
+$userNum = $users->fetchassoc();
+$userNum = $userNum['result'];
 
 //now find the average of each block and % correct
 while ($row = mysqli_fetch_array($block))
@@ -54,21 +56,24 @@ while ($row = mysqli_fetch_array($block))
         if ($correctRSP)
         {
             //clicked should be 1
-            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
+            $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 1";
 
         }
         //else its a no go 
         else
         {
             //clicked should be 0
-            $queryString = "SELECT COUNT(clicked) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 0";
+            $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = 0";
         }
 
-        $count = mysqli_query($conn, $queryString);
+        $stat = mysqli_query($conn, $queryString);
+	$count = $stat->fetchassoc();
+	$count = $count['result'];
+	    
 	    
         //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
-        //$correctPER = (bcdiv($count,$userNum, 2)) * 100;
-	$correctPER = $count/$userNum;
+        $correctPER = (bcdiv($count,$userNum, 2)) * 100;
+
     }
 
 }
