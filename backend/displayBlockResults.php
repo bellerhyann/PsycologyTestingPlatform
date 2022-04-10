@@ -29,10 +29,10 @@ $stats =  mysqli_query($conn, $queryString);
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 
 //iterate through query and add each line to the file
+$i = 0;
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
-  echo $row;
-  $test = bcmod($row, $count);
+  $test = bcmod($i, $count);
   if($test == 0) {
     //write top of file info
     $txt = "BlockID:\t" . $blockID . "\n PhaseID:\t" . $row["phaseID"] . "\n";
@@ -43,7 +43,8 @@ while($row = mysqli_fetch_assoc($stats)) {
   
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t| " . $row["clicked"] . "\n";
   fwrite($myfile, $txt);
-  
+        
+  $i = $i + 1;  
 }
 
 //delete view
