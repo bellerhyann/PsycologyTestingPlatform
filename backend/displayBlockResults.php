@@ -13,7 +13,6 @@ $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
 $trialNum =  mysqli_query($conn, $queryString);
 $count = $trialNum->fetch_assoc();
 $count = $count['trialNum'];
-echo $count;
 
 //create view where blockID is used
 $createView = "create view dataBlock AS SELECT * FROM data_T WHERE blockID = $blockID";
@@ -29,7 +28,7 @@ $stats =  mysqli_query($conn, $queryString);
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 
 //iterate through query and add each line to the file
-$i = 0;
+$i = 1;
 while($row = mysqli_fetch_assoc($stats)) {
   //if this is the start of a block
   $test = bcmod($i, $count);
@@ -43,7 +42,6 @@ while($row = mysqli_fetch_assoc($stats)) {
   }
   
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t| " . $row["clicked"] . "\n";
-  echo $txt;
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
