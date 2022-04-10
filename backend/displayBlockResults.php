@@ -10,7 +10,9 @@ if (!$conn)
 
 //find how many trials are in this block
 $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
-$count =  mysqli_query($conn, $queryString);
+$trialNum =  mysqli_query($conn, $queryString);
+$count = $trialNum->fetch_assoc();
+$count = $count['trialNum'];
 echo $count;
 
 //create view where blockID is used
