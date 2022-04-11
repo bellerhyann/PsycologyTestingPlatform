@@ -22,7 +22,7 @@
 
 
   $fileName = $_POST['stim_key']; // Name of uploaded file
-  $fileExtension = $_POST['uFile']['type']; // Type of uploaded file
+  $fileExtension = $_FILES['uFile']['type']; // Type of uploaded file
 
   $bucket = 'behaviorsci-assets';
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
