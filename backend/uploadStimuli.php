@@ -20,24 +20,18 @@
       ]
   ]);
 
-
-  $fileName = $_POST['stim_key']; // Name of uploaded file
-  $fileExtension = $_FILES['uFile']['type']; // Type of uploaded file
-
+  $fileName = $_POST['stim_key'];
+  echo $fileName."<br>";
+  $fileType = $_FILES['imgFile']['type'];
+  echo $fileType."<br>";
   $bucket = 'behaviorsci-assets';
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
-
-  echo $fileName."<br>";
-  echo $fileExtension."<br>";
-
-
-  // Then we upload to S3 normally
-  // Uploading something that has the same full name - will just update on upload
+  
 
   // Upload file to S3
-  if (move_uploaded_file($_FILES['uFile']['tmp_name'], $destination_path.basename($fileName))) {
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
     try {
-      $file_Path = $destination_path.basename($fileName);
+      $file_Path = $destination_path.basename($filename);
       $key = basename($file_Path);
       $source = fopen($file_Path, 'rb');
 
