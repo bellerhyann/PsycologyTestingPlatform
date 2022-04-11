@@ -29,9 +29,9 @@
   
 
   // Upload file to S3
-  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($filename))) {
+  if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($fileName))) {
     try {
-      $file_Path = $destination_path.basename($filename);
+      $file_Path = $destination_path.basename($fileName);
       $key = basename($file_Path);
       $source = fopen($file_Path, 'rb');
 
