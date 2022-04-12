@@ -44,7 +44,7 @@ while ($row = mysqli_fetch_array($block))
 {
     fwrite($txt, "\nBlockID: ".$row["blockID"]."\nTrialID | Response Time (ms) | Correct ");
     //grabing the trials in the block
-    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row['blockID']";
+    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
     $trials = mysqli_query($conn, $queryString);
 
     //loop through each trial 
