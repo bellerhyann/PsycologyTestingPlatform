@@ -26,6 +26,10 @@
   echo $fileType."<br>";
   $bucket = 'behaviorsci-assets';
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
+
+  /*
+    INSERT INTO SQL HERE
+  */
   
 
   // Upload file to S3
