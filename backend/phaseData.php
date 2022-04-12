@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_array($block))
 	$curr = $correctRPS->fetch_assoc();
 	$curr = $curr['isCorrect'];
 	    
-        $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $curr;
+        $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $curr";
 
         $stat = mysqli_query($conn, $queryString);
 	$count = $stat->fetch_assoc();
