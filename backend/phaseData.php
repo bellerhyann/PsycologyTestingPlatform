@@ -33,7 +33,7 @@ $phaseCT = $phaseCT['result'];
 //number of users who have done the phase 
 $queryString = "SELECT COUNT(DISTINCT userID) AS result FROM data_T WHERE phaseID = $phaseNum";
 $users = mysqli_query($conn, $queryString);
-$userNum = $users->fetchassoc();
+$userNum = $users->fetch_assoc();
 $userNum = $userNum['result'];
 
 //now print to a file 
@@ -49,7 +49,7 @@ while ($row = mysqli_fetch_array($block))
     //avg click time
     $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND clicked = 1";
     $blockin = mysqli_query($conn, $queryString);
-    $blockAVG = $blockin->fetchassoc();
+    $blockAVG = $blockin->fetch_assoc();
     $blockAVG = $blockAVG['result'];
 	
 
@@ -80,7 +80,7 @@ while ($row = mysqli_fetch_array($block))
         }
 
         $stat = mysqli_query($conn, $queryString);
-	$count = $stat->fetchassoc();
+	$count = $stat->fetch_assoc();
 	$count = $count['result'];
 	    
 	    
