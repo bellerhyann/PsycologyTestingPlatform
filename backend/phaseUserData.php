@@ -67,7 +67,7 @@ while ($row = mysqli_fetch_array($block))
             $printANS = "-";
         
         //grab resp time
-        $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows['trialID'] AND blockID = $row['blockID'] AND userID = $user";
+        $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
         $time = mysqli_query($conn, $queryString);
 
 
