@@ -26,7 +26,7 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 //This works I tested it in sql workbench
 $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND clicked = 1";
 $entPhaseCT = mysqli_query($conn, $queryString);
-$phaseCT = $entPhaseCT->fetchassoc();
+$phaseCT = $entPhaseCT->fetch_assoc();
 $phaseCT = $phaseCT['result'];
 
 
