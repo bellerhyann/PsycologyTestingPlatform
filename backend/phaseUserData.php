@@ -16,7 +16,7 @@ if (!$conn) {
 //Phase: 1  | avg response Time: 783 ms 
 $file = "phaseUserData.txt";
 $txt = fopen($file, "w");
-fwrite($txt, "UserID: ".$user."PhaseID: ".$phaseNum); //this will need to be updated later for ease of user 
+fwrite($txt, "UserID: ".$user." PhaseID: ".$phaseNum); //this will need to be updated later for ease of user 
 
 
 //gives us all rows in data_T for our phase with our user 
@@ -53,12 +53,16 @@ while ($row = mysqli_fetch_array($block))
         //grab the correct the response for the trial 
         $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
         $ans = mysqli_query($conn, $queryString); //holds if the trial is a go or no go 
+	$useANS = $ans->fetch_assoc();
+	$useANS = $useANS['isCorrect'];
 
         //what the user found
         $queryString = "SELECT clicked FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
         $userAns = mysqli_query($conn, $queryString);
+	$userF = $userAns->fetch_assoc();
+	$userF = $userF['clicked'];
 
-        if ($ans == $userAns)
+        if ($useAns == $userAns)
         {
             //user gave the correct response
             $printANS = "+";
@@ -69,10 +73,12 @@ while ($row = mysqli_fetch_array($block))
         //grab resp time
         $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
         $time = mysqli_query($conn, $queryString);
+	$timeP = $time->fetch_assoc();
+	$timeP = $timeP['clickTime'];
 
 
 
-        fwrite($txt, "\n".$trialRows["trialID"]." | ".$time." | ".$printANS);
+        fwrite($txt, "\n".$trialRows["trialID"]." | ".$timeP." | ".$printANS);
     }
 
 }
