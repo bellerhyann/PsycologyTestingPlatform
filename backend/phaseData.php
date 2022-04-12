@@ -24,8 +24,11 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 
 //overall average time of entire phase
 //This works I tested it in sql workbench
-$queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND clicked = 1";
+$queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND clicked = 1";
 $entPhaseCT = mysqli_query($conn, $queryString);
+$phaseCT = $entPhaseCT->fetchassoc();
+$phaseCT = $phaseCT['result'];
+
 
 //number of users who have done the phase 
 $queryString = "SELECT COUNT(DISTINCT userID) AS result FROM data_T WHERE phaseID = $phaseNum";
@@ -33,12 +36,22 @@ $users = mysqli_query($conn, $queryString);
 $userNum = $users->fetchassoc();
 $userNum = $userNum['result'];
 
+//now print to a file 
+//Phase: 1  | avg response Time: 783 ms 
+$file = "phaseData.txt";
+$txt = fopen($file, "w");
+fwrite($txt, "Phase: ".$phaseNum." | Number of students taken phase: ".$userNum." | Phase avg ".$phaseCT);
+fwrite($txt, "BlockID  | avg response time | % correct");
+
 //now find the average of each block and % correct
 while ($row = mysqli_fetch_array($block))
 {
     //avg click time
-    $queryString = "SELECT AVG(clickTime) FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND clicked = 1";
-    $blockavg = mysqli_query($conn, $queryString);
+    $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND clicked = 1";
+    $blockin = mysqli_query($conn, $queryString);
+    $blockAVG = $blockin->fetchassoc();
+    $blockAVG = $blockAVG['result'];
+	
 
     //finding correct % within each block 
     //we are gonna need to look at each trial so let's select all trials frrom blockTrial_T
@@ -73,19 +86,15 @@ while ($row = mysqli_fetch_array($block))
 	    
         //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
+	    
+	//BlockID     | avg response time | % correct
+	fwrite($txt,"\n".$row["blockID"]." | ".$blockAVG." | ".$correctPER);	    
 
     }
 
 }
 
-//now print to a file 
-//Phase: 1  | avg response Time: 783 ms 
-$file = "phaseData.txt";
-$txt = fopen($file, "w");
-fwrite($txt, "Phase: ".$phaseNum."\n Hello");
 fclose($txt);
-
-//BlockID     | avg response time | % correct
 header('Content-Description: File Transfer');
 header('Content-Disposition: attachment; filename='.basename($file));
 header('Expires: 0');
