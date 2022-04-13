@@ -1,6 +1,6 @@
 <?php
  //connect to SQL using Username Password Ect
- $conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306","admin","Ilovesecurity!","labdata",3306);
+$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn) {
 	 die("Unable to Connect.".mysqli_connect_error());
      }
