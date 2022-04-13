@@ -4,7 +4,7 @@
 $blockID = 1;
 
 //open connection to database
-$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
+$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn)
         die("BlockID not found: Database Error.".mysqli_connect_error());
 
