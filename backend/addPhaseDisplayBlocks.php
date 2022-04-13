@@ -2,7 +2,7 @@
 //get both stimFiles for each block to display blocks that can be added to new phase.
 
 //open connection to database
-$conn = new mysqli("newoneplease.ciqqgo3etyax.us-west-1.rds.amazonaws.com:3306", "admin", "Ilovesecurity!", "labdata");
+$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 
 //retrieve all created blocks
 $stmt = "SELECT * FROM block_T";
