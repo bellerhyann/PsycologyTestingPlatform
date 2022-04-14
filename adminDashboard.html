@@ -20,7 +20,7 @@
     </style>
     <body class="body">
         <div class="body_content">
-            <h1 id="welcomeUserMsg">Welcome, $userID!</h1>
+            <h1 id="welcomeUserMsg">Welcome, admin <?php session_start(); echo $_SESSION["userID"]; ?>!</h1>
             <table>
                 <tr>
                     <th>Experiment Session</th>
