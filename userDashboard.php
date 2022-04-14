@@ -10,16 +10,10 @@
     {
       background: url("images/backgroundphoto1.jpg");
       background-size: cover;
-      justify-content: center;
-      vertical-align: center;
     } 
 
     #dashboard
     {
-      color: #F0C975;
-      border-radius: 50px;
-      margin-top: 5%;
-      margin-bottom: auto;
       margin-left: auto;
       margin-right: auto;
       width: 60pc;
@@ -28,6 +22,7 @@
 
     #welcomeUserMsg
     {
+      color: #F0C975;
       margin-top: 341px;
       margin-bottom: auto;
       text-align: center;
