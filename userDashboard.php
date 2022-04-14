@@ -28,9 +28,8 @@
 
     #welcomeUserMsg
     {
-      text-decoration: underline;
       justify-content: center;
-      width: 275px;
+      width: 295px;
       vertical-align: center;
       margin-top: auto;
       margin-bottom: auto;
