@@ -42,9 +42,9 @@ while($row = mysqli_fetch_assoc($stats)) {
   
   //fix the "clicked" row to display Y/N 
   if($row["isCorrect"] == $row["clicked"]) {
-        $correct = "Y"
+        $correct = "Y";
   } else {
-        $correct = "N"
+        $correct = "N";
   }
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t| $correct\n";
   fwrite($myfile, $txt);
