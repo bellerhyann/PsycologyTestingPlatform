@@ -36,11 +36,17 @@ while($row = mysqli_fetch_assoc($stats)) {
     //write top of file info
     $txt = "BlockID:  " . $blockID . "\nPhaseID:  " . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
-    $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | User Clicked\n";
+    $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | Correct\n";
     fwrite($myfile, $txt);
   }
   
-  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t| " . $row["clicked"] . "\n";
+  //fix the "clicked" row to display Y/N 
+  if($row["isCorrect"] == $row["clicked"]) {
+        $correct = "Y"
+  } else {
+        $correct = "N"
+  }
+  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t| $correct\n";
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
