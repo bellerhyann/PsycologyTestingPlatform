@@ -28,13 +28,10 @@
 
     #welcomeUserMsg
     {
-      justify-content: center;
-      width: 295px;
-      vertical-align: center;
       margin-top: 341px;
       margin-bottom: auto;
-      margin-left: 340px;
-      margin-right: 142px;
+      text-align: center;
+
     }
 
     #beginSessionButton
