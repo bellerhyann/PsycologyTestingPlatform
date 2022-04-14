@@ -22,7 +22,7 @@ if(mysqli_fetch_assoc($result) == NULL) {
 	//close connection
 	mysqli_close($conn);
 	//redirect to dashboard.html
-	header("location: /userDashboard.html");
+	header("location: /userDashboard.php");
 	exit;
 }
 
