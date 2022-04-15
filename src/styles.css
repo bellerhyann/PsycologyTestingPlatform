@@ -46,13 +46,9 @@ border: 1px solid black;
 .textField{
     width:10.75pc;
     border: none;
-    border-radius: 5px;
-    margin: 0;
     margin-bottom: 5%;
     background-color: #6C2037;
     border-radius: 5px;
-    vertical-align: middle;
-    justify-content: center;
     color: #F0C975;
     height: 38px;
     font-size: 20px;
