@@ -25,7 +25,7 @@
 		    				if (!$conn)
         						die("Database Error.".mysqli_connect_error());
 		    				$userID = $_SESSION["adminUserID"];
-		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
+		    				$queryString = ("SELECT FName FROM user_T WHERE userID = 1223");
 		    				$result =  mysqli_query($conn, $queryString);
 		    				echo gettype($result);
 						while ($row=mysqli_fetch_row($result)) {
