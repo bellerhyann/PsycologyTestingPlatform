@@ -4,9 +4,9 @@ $adminUserID = $_POST["userID"];
 $password = $_POST["password"];
 
 //if we need to save the login info as a session, this code will work
-//session_start()
-//$_SESSION["adminUserID"] = $adminUser;
-//$_SESSION["password"] = $password;
+session_start()
+$_SESSION["adminUserID"] = $adminUser;
+$_SESSION["password"] = $password;
 
 
 //reach out to database to see if the credentials match admin credentials
