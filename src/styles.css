@@ -124,6 +124,7 @@ border: 1px solid black;
     color: #F0C975;
     text-decoration: none;
     border: none;
+    margin-bottom: 5%;
 }
 
 #register:hover{
