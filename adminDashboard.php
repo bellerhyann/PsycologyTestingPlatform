@@ -22,11 +22,10 @@
         <div class="body_content">
             <h1 id="welcomeUserMsg">Welcome, <?php session_start(); $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
 		    				$userID = $_SESSION["adminUserID"];
-		    				$queryString = ("SELECT * FROM user_T WHERE userID = $userID");
-						$result = mysqli_query($conn, $queryString); 
-		    				while($row = mysqli_fetch_assoc($result)) {
-							echo $row["FName"];
-						}
+		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
+						$Name = $result->fetch_assoc();
+						$Name = $count['FName'];
+		    				echo $Name;
 		    			      ?>!</h1>
             <table>
                 <tr>
