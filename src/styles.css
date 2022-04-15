@@ -84,6 +84,7 @@ border: 1px solid black;
     display: flex;
     background-color: #6C2037; /* #6C2037 #F0C975*/
     width: 90px;
+    cursor: pointer;
     border-style: solid;
     border-width: .25pc;
     border-radius: 5px;
