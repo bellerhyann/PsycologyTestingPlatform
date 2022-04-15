@@ -71,15 +71,11 @@ border: 1px solid black;
     color: #F0C975;
 }
 #remember_login{
-    margin-left: 10%;
     display: flex;
     background-color: #6C2037;
     padding-top: 5px;
     padding-bottom: 5px;
-    border-style: solid;
-    border-width: .25pc;
     border-radius: 5px;
-    vertical-align: middle;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -93,7 +89,6 @@ border: 1px solid black;
     cursor: pointer;
     margin-bottom: 5%;
     font-family: sans-serif;
-
     display: flex;
     background-color: #6C2037;
     padding-top: 5px;
