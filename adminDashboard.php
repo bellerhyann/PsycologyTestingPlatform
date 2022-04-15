@@ -24,7 +24,7 @@
 		    				$userID = $_SESSION["adminUserID"];
 		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
 						$result = mysqli_query($conn, $queryString); 
-		    				echo $result;
+		    				echo gettype($result);
 		    			      ?>!</h1>
             <table>
                 <tr>
