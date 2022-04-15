@@ -8,6 +8,7 @@
         var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
         var numStims; // used for total number of stims in database
+        var fileName = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/"
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
@@ -53,7 +54,11 @@
         function getNextComparison(index)
         {
           if(stims[index].stimType == "sound")
+          {
             console.log("Sound stim detected, stimID:", stims[index].stimID);
+            fileName += stims[index].stimID + ".wav"
+            console.log("Got stim file: ", fileName);
+          }
         }
 
         function helpToolTip()
