@@ -56,7 +56,13 @@
           if(stims[index].stimType == "sound")
           {
             console.log("Sound stim detected, stimID:", stims[index].stimID);
-            fileName += stims[index].stimID + ".wav"
+            fileName += stims[index].stimID + ".wav"; 
+            console.log("Got stim file: ", fileName);
+          }
+          else stimType == "image"
+          {
+            console.log("Sound stim detected, stimID:", stims[index].stimID);
+            fileName += stims[index].stimID + ".wav"; 
             console.log("Got stim file: ", fileName);
           }
         }
