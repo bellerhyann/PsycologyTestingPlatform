@@ -23,6 +23,7 @@
             <h1 id="welcomeUserMsg">Welcome, <?php session_start(); $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
 		    				$userID = $_SESSION["adminUserID"];
 		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
+		    				$result =  mysqli_query($conn, $queryString);
 						$Name = $result->fetch_assoc();
 						$Name = $count['FName'];
 		    				echo $Name;
