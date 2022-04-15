@@ -33,6 +33,8 @@
     { 
       display: flex;
       background-color: #6C2037;
+      border-radius: 5px;
+      vertical-align: center;
       width: 25pc;
       height: 60px;
       margin-left: auto;
