@@ -24,9 +24,9 @@
 		    				$userID = $_SESSION["adminUserID"];
 		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
 		    				$result =  mysqli_query($conn, $queryString);
-						$Name = $result->fetch_assoc();
-						$Name = $count['FName'];
-		    				echo $Name;
+						while ($row=mysqli_fetch_row($result)) {
+							echo $row[0];	
+						}
 		    			      ?>!</h1>
             <table>
                 <tr>
