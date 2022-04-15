@@ -29,6 +29,10 @@
 
     }
 
+    #beginSessionButtontag
+    {
+      margin-top: auto;
+    }
     #beginSessionButton
     { 
       display: flex;
@@ -59,7 +63,7 @@
           <h1 id="welcomeUserMsg">Welcome, admin <?php session_start(); echo $_SESSION["userID"]; ?>!</h1>
           <!-- Iron out the example test -->
           <!-- For CSS, make new id for begin session button-->
-          <h1><a href="./question.php" class="button" id="beginSessionButton">Begin Session</a></h1>
+          <h1 id="beginSessionButtontag"><a href="./question.php" class="button" id="beginSessionButton">Begin Session</a></h1>
       </div>
   </body>
 </html>
