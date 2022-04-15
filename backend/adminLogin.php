@@ -25,8 +25,8 @@ if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do match
 	//close connection
   mysqli_close($conn);
-	//redirect to adminDashboard.html
-	header("location: /adminDashboard.html");
+	//redirect to adminDashboard.php
+	header("location: /adminDashboard.php");
 	exit;
 }
 
