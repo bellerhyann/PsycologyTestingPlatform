@@ -33,10 +33,6 @@
     { 
       display: flex;
       background-color: #6C2037;
-      border-style: solid;
-      border-width: .25pc;
-      border-radius: 5px;
-      vertical-align: center;
       width: 25pc;
       height: 60px;
       margin-left: auto;
@@ -46,7 +42,6 @@
       text-decoration: none;
       border: none;
       font-size: 50px;
-      text-align:center;
     }
 
     #beginSessionButton:hover
