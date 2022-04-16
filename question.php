@@ -30,19 +30,16 @@
           console.log
           (
             <?php 
-              session_start();
+              session_start(); 
               $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
               if (!$conn)
                   die("Database Error.".mysqli_connect_error());
-              
-              // fetch phase ID and push out to html
               $userID = $_SESSION["userID"];
               $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
               $result =  mysqli_query($conn, $queryString);
-              while ($row=mysqli_fetch_row($result)) {
+              while ($row=mysqli_fetch_row($result))
                 echo $row[0];	
-              }
-            ?>
+		        ?>
           );
         }
         // get question data from database, convert PHP to JS and store
