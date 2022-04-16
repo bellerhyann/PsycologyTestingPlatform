@@ -80,13 +80,13 @@
             //console.log("Sound stim detected, stimID:", stims[index].stimID);
             fileName += stims[index].stimID + ".wav"; 
             sound_stim1
-            //console.log("Got stim file: ", fileName);
+            console.log("Got sound file: ", fileName);
           }
           else stimType == "image"
           {
             //console.log("Image stim detected, stimID:", stims[index].stimID);
             fileName += stims[index].stimID + ".png"; 
-            //console.log("Got stim file: ", fileName);
+            console.log("Got image file: ", fileName);
           }
         }
 
@@ -136,13 +136,9 @@
     <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
     <div>
-      <img id="image_stim1">
-      <img id="image_stim2">
     </div>
 
     <audio>
-      <source id="sound_stim1">
-      <source id="sound_stim2">
     </audio>
 
 
