@@ -64,27 +64,19 @@
 
           stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
           numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
-          
-          // to access web console: inspect element in web browser then click console to view the below messages!!
-          //console.log(stims); // throws stims object to web console for testing
-          //console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
         }
 
         function getNextComparison(index)
         {
           if(stims[index].stimType == "sound")
           {
-            var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
-            fileName += "/sounds/" + stims[index].stimID + ".wav";
-            soundStim = "<audio src='" + fileName + "'></audio>";
-            console.log("Got sound file: ", fileName);
+            soundStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + stims[index].stimID + ".wav";
+            console.log("Got image file: ", soundStim.src);
           }
           else stimType == "image"
           {
-            var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
-            fileName += "/images/" + stims[index].stimID + ".png";
-            imageStim.innerHTML += "<img src='" + fileName + "'>";
-            console.log("Got image file: ", fileName);
+            imageStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + stims[index].stimID + ".png";
+            console.log("Got image file: ", imageStim.src);
           }
         }
 
@@ -133,11 +125,9 @@
     <br>
     <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
-    <div id="imageStim">
-    </div>
+    <img id="imageStim"></img>
 
-    <audio id="soundStim">
-    </audio>
+    <audio id="soundStim"></audio>
 
     <p id="arrayData"></p>
   </body>
