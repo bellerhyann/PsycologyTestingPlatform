@@ -9,6 +9,7 @@
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
         var numStims; // used for total number of stims in database
         var fileName = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/"
+        
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
@@ -30,7 +31,7 @@
           console.log
           (
             <?php 
-              session_start(); 
+              session_start();
               $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
               if (!$conn)
                   die("Database Error.".mysqli_connect_error());
@@ -47,7 +48,6 @@
         function getQuestionData()
         {
           <?php
-            session_start();
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn)
                 die("Database Error.".mysqli_connect_error());
