@@ -27,6 +27,22 @@
 
         function getUserData()
         {
+          console.log
+          (
+            <?php 
+              $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
+              if (!$conn)
+                  die("Database Error.".mysqli_connect_error());
+              
+              // fetch phase ID and push out to html
+              $userID = $_SESSION["userID"];
+              $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
+              $result =  mysqli_query($conn, $queryString);
+              while ($row=mysqli_fetch_row($result)) {
+                echo $row[0];	
+              }
+            ?>
+          );
         }
         // get question data from database, convert PHP to JS and store
         // getQuestionData() written by Chris B & Nick Wood
@@ -55,24 +71,24 @@
           numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
           
           // to access web console: inspect element in web browser then click console to view the below messages!!
-          console.log(stims); // throws stims object to web console for testing
-          console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
+          //console.log(stims); // throws stims object to web console for testing
+          //console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
         }
 
         function getNextComparison(index)
         {
           if(stims[index].stimType == "sound")
           {
-            console.log("Sound stim detected, stimID:", stims[index].stimID);
+            //console.log("Sound stim detected, stimID:", stims[index].stimID);
             fileName += stims[index].stimID + ".wav"; 
             sound_stim1
-            console.log("Got stim file: ", fileName);
+            //console.log("Got stim file: ", fileName);
           }
           else stimType == "image"
           {
-            console.log("Image stim detected, stimID:", stims[index].stimID);
+            //console.log("Image stim detected, stimID:", stims[index].stimID);
             fileName += stims[index].stimID + ".png"; 
-            console.log("Got stim file: ", fileName);
+            //console.log("Got stim file: ", fileName);
           }
         }
 
@@ -133,23 +149,6 @@
 
 
 
-    <p id="arrayData">
-      <?php 
-        $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
-        if (!$conn)
-            die("Database Error.".mysqli_connect_error());
-        
-        // fetch phase ID and push out to html
-        $userID = $_SESSION["userID"];
-        $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
-        $result =  mysqli_query($conn, $queryString);
-        while ($row=mysqli_fetch_row($result)) {
-          echo $row[0];	
-        }
-      ?>
-
-
-
-    </p>
+    <p id="arrayData"></p>
   </body>
 </html>
