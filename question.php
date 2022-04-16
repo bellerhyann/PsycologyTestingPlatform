@@ -8,7 +8,6 @@
         var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
         var numStims; // used for total number of stims in database
-        var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
         
         function onLoad()
         {
@@ -75,6 +74,7 @@
         {
           if(stims[index].stimType == "sound")
           {
+            var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
             //console.log("Sound stim detected, stimID:", stims[index].stimID);
             fileName += "/sounds/" + stims[index].stimID + ".wav";
             soundStim.innerHTML += "<source src='" + fileName + "'>";
@@ -82,7 +82,7 @@
           }
           else stimType == "image"
           {
-            //console.log("Image stim detected, stimID:", stims[index].stimID);
+            var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
             fileName += "/images/" + stims[index].stimID + ".png";
             imageStim.innerHTML += "<img src='" + fileName + "'>";
             console.log("Got image file: ", fileName);
