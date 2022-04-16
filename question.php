@@ -123,7 +123,6 @@
   </style>
   <body onload = "onLoad()">
     <img id="questionHelpButton" src="./images/questionHelpButton.png" width="50" height="50">
-    <br>
     <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
     <img id="imageStim"></img>
