@@ -60,7 +60,17 @@
   <!-- For CSS, make new id for user dashboard-->
   <body id="user_dashboard_body">
       <div id="dashboard">
-          <h1 id="welcomeUserMsg">Welcome, User <?php session_start(); echo $_SESSION["userID"]; ?>!</h1>
+      <h1 id="welcomeUserMsg">Welcome, <?php session_start(); 
+		    				$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
+		    				if (!$conn)
+        						die("Database Error.".mysqli_connect_error());
+		    				$userID = $_SESSION["adminUserID"];
+		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
+		    				$result =  mysqli_query($conn, $queryString);
+						while ($row=mysqli_fetch_row($result)) {
+							echo $row[0];	
+						}
+		    			      ?>!</h1>
           <!-- Iron out the example test -->
           <!-- For CSS, make new id for begin session button-->
           <h1 id="beginSessionButtontag"><a href="./question.php" class="button" id="beginSessionButton">Begin Session</a></h1>
