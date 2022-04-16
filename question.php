@@ -70,16 +70,16 @@
           //console.log("Successfully loaded stimuli data!!!!!!!"); // confirmation message
         }
 
-        function getNextComparison(index, isFirst)
+        function getNextComparison(index)
         {
-          /*if(stims[index].stimType == "sound")
+          if(stims[index].stimType == "sound")
           {
             var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
             fileName += "/sounds/" + stims[index].stimID + ".wav";
-            soundStim.innerHTML += "<source src='" + fileName + "'>";
+            soundStim.innerHTML += "<audio src='" + fileName + "'></audio>";
             console.log("Got sound file: ", fileName);
-          }*/
-          if stimType == "image"
+          }
+          else stimType == "image"
           {
             var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
             fileName += "/images/" + stims[index].stimID + ".png";
