@@ -77,7 +77,7 @@
           {
             //console.log("Sound stim detected, stimID:", stims[index].stimID);
             fileName += "/sounds/" + stims[index].stimID + ".wav";
-            soundStim.innerHTML += "<source src='" + fileName + "' type='audio/mpeg'>";
+            soundStim.innerHTML += "<source src='" + fileName + "'>";
             console.log("Got sound file: ", fileName);
           }
           else stimType == "image"
