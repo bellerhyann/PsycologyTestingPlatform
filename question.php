@@ -70,8 +70,8 @@
         {
           if(stims[index].stimType == "sound")
           {
-            soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
-            //soundStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + stims[index].stimID + ".wav";
+            //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
+            soundStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + stims[index].stimID + ".wav";
             console.log("Got sound file: ", soundStim.src);
           }
           else stimType == "image"
@@ -128,7 +128,7 @@
 
     <img id="imageStim"></img>
 
-    <audio id="soundStim" controls></audio>
+    <audio id="soundStim" src="" type="audio/wav"controls></audio>
 
     <p id="arrayData"></p>
   </body>
