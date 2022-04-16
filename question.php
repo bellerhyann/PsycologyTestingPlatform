@@ -76,7 +76,7 @@
           {
             var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
             fileName += "/sounds/" + stims[index].stimID + ".wav";
-            soundStim.innerHTML += "<audio src='" + fileName + "'></audio>";
+            soundStim = "<audio src='" + fileName + "'></audio>";
             console.log("Got sound file: ", fileName);
           }
           else stimType == "image"
