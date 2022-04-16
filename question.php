@@ -8,7 +8,7 @@
         var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
         var numStims; // used for total number of stims in database
-        var fileName = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/"
+        var fileName = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli"
         
         function onLoad()
         {
@@ -16,10 +16,8 @@
           questionHelpButton.addEventListener("click", helpToolTip);
           questionHelpPrompt = document.getElementById("questionHelpPrompt");
 
-          image_stim1 = document.getElementById("image_stim1");
-          image_stim2 = document.getElementById("image_stim2");
-          sound_stim1 = document.getElementById("sound_stim1");
-          sound_stim2 = document.getElementById("sound_stim2");
+          imageStim = document.getElementById("imageStim");
+          soundStim = document.getElementById("soundStim");
           getUserData();
           getQuestionData(); // gets all question data from database
           getNextComparison(0); // gets next comparison
@@ -78,14 +76,14 @@
           if(stims[index].stimType == "sound")
           {
             //console.log("Sound stim detected, stimID:", stims[index].stimID);
-            fileName += stims[index].stimID + ".wav"; 
-            sound_stim1
+            fileName += "/sounds/" + stims[index].stimID + ".wav";
+            soundStim.innerHTML += "<source src='" + fileName + "' type='audio/mpeg'>";
             console.log("Got sound file: ", fileName);
           }
           else stimType == "image"
           {
             //console.log("Image stim detected, stimID:", stims[index].stimID);
-            fileName += stims[index].stimID + ".png"; 
+            fileName += "/images/" + stims[index].stimID + ".png";
             console.log("Got image file: ", fileName);
           }
         }
@@ -135,10 +133,10 @@
     <br>
     <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
-    <div>
+    <div id="imageStim">
     </div>
 
-    <audio>
+    <audio id="soundStim">
     </audio>
 
 
