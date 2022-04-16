@@ -127,7 +127,7 @@
 
     <img id="imageStim"></img>
 
-    <a id="soundStim"></a>
+    <audio id="soundStim" type="audio/mpeg"></audio>
 
     <p id="arrayData"></p>
   </body>
