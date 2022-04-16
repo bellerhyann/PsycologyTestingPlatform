@@ -19,17 +19,25 @@
           image_stim2 = document.getElementById("image_stim2");
           sound_stim1 = document.getElementById("sound_stim1");
           sound_stim2 = document.getElementById("sound_stim2");
-
+          getUserData();
           getQuestionData(); // gets all question data from database
           getNextComparison(0); // gets next comparison
         }
 
+
+        function getUserData()
+        {
+        }
         // get question data from database, convert PHP to JS and store
         // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData()
         {
-          <?php 
+          <?php
+            session_start();
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+            if (!$conn)
+                die("Database Error.".mysqli_connect_error());
+            
             $queryString = ("SELECT stimID, stimType FROM stimuli_T"); // grab stim data from stimuli datatable
             $stimIDs = mysqli_query($conn, $queryString); // query with above info
 
@@ -123,6 +131,26 @@
       <source id="sound_stim2">
     </audio>
 
-    <p id="arrayData"></p>
+
+
+    <p id="arrayData">
+      <?php 
+        session_start(); 
+        $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
+        if (!$conn)
+            die("Database Error.".mysqli_connect_error());
+        
+        // fetch phase ID and push out to html
+        $userID = $_SESSION["userID"];
+        $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
+        $result =  mysqli_query($conn, $queryString);
+        while ($row=mysqli_fetch_row($result)) {
+          echo $row[0];	
+        }
+      ?>
+
+
+
+    </p>
   </body>
 </html>
