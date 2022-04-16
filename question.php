@@ -84,6 +84,7 @@
           {
             //console.log("Image stim detected, stimID:", stims[index].stimID);
             fileName += "/images/" + stims[index].stimID + ".png";
+            imageStim.innerHTML += "<img src='" + fileName + "'>";
             console.log("Got image file: ", fileName);
           }
         }
@@ -138,8 +139,6 @@
 
     <audio id="soundStim">
     </audio>
-
-
 
     <p id="arrayData"></p>
   </body>
