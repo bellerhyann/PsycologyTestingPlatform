@@ -104,11 +104,11 @@
             <input type="file" id="audio" name="audioFile">
             
             <p>Written Prompt: </p>
-            <textarea name="prompt" rows="5" cols="50"></textarea>
+            <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
                 </br>
                 </br>
             <label for="blockid">Block ID:</label>
-            <select name="blockid" id="blockid">
+            <select id="block_id" name="blockid">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -122,7 +122,7 @@
             </select>
             <br>
             <br>
-            <button type="submit" formaction="/backend/editPhase.php"> Update </button>
+            <button type="submit"> Update </button>
         </form>
         </div>
         </div>
