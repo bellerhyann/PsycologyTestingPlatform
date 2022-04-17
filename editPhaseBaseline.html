@@ -72,7 +72,7 @@
 
         <!-- --------FORM to send data to editPhase.php---------->
 
-        <form action="./backend/editPhase.php" id="edit_phase" method="post">
+        <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
             <div>
                 <a href="/editPhasePre.html" class="button">Pretraining</a>
                 <a href="/editPhaseSymmetry.html" class="button">Symmetry</a>
@@ -107,7 +107,7 @@
             <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
                 </br>
                 </br>
-            <label for="blockid">Block ID:</label>
+            <label for="block_id">Block ID:</label>
             <select id="block_id" name="blockid">
                 <option value="1">1</option>
                 <option value="2">2</option>
