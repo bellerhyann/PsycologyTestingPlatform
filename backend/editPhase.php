@@ -3,8 +3,8 @@
   //this needs to be sending multiple values 
   $blockID = $_POST['blockid'];
   $prompt = $_POST['prompt'];
-  $time = $_POST['prompt'];
-  $score = $_POST['prompt'];
+  $time = $_POST['seconds'];
+  $score = $_POST['trueSb'];
 
   //We also still need something from front end to identify which base like baseline ect 
   $phaseNum = $_POST['prompt'];
