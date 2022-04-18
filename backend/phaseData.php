@@ -36,6 +36,8 @@ $users = mysqli_query($conn, $queryString);
 $userNum = $users->fetch_assoc();
 $userNum = $userNum['result'];
 
+echo $userNum "/n/n";
+
 //now print to a file 
 //Phase: 1  | avg response Time: 783 ms 
 $file = "phaseData.txt";
@@ -51,7 +53,7 @@ while ($row = mysqli_fetch_array($block))
     $blockin = mysqli_query($conn, $queryString);
     $blockAVG = $blockin->fetch_assoc();
     $blockAVG = $blockAVG['result'];
-	
+
 
     //finding correct % within each block 
     //we are gonna need to look at each trial so let's select all trials frrom blockTrial_T
@@ -59,7 +61,7 @@ while ($row = mysqli_fetch_array($block))
     $trials = mysqli_query($conn, $queryString);
 
     //loop through each trial 
-    while ($trialRows = mysqli_fetch_assoc($trials))
+    while ($trialRows = mysqli_fetch_array($trials))
     {
         //grab the correct response for this trial 
         $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
