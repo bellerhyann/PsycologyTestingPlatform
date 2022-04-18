@@ -64,10 +64,10 @@ while ($row = mysqli_fetch_array($block))
         //grab the correct response for this trial 
         $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
         $correctRSP = mysqli_query($conn, $queryString);
-	//$curr = $correctRSP->fetch_assoc();
-	//$curr = $curr['isCorrect'];
+	$curr = $correctRSP->fetch_assoc();
+	$curr = $curr['isCorrect'];
 	    
-        $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $correctRSP";
+        $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $curr";
         $stat = mysqli_query($conn, $queryString);
 	$count = $stat->fetch_assoc();
 	$count = $count['result'];
