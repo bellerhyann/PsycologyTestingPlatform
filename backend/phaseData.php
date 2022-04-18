@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_array($block))
     $trials = mysqli_query($conn, $queryString);
 
     //loop through each trial 
-    while ($trialRows = mysqli_fetch_array($trials))
+    while ($trialRows = mysqli_fetch_assoc($trials))
     {
         //grab the correct response for this trial 
         $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
