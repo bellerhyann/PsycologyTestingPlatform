@@ -23,7 +23,7 @@ while ($row = mysqli_fetch_row($block))
     {
     	//echo "Trial ".$trialRows[0]."   ";
        //grab the correct response for this trial 
-       $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[0]";
+       $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = \"$trialRows[0]\"";
        $correctRSP = mysqli_query($conn, $queryString);
        $curr = $correctRSP->fetch_assoc();
        $curr = $curr['isCorrect'];
