@@ -13,18 +13,21 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 while ($row = mysqli_fetch_row($block))
 {
 
-echo $row[0]."";
+  echo "BLOCK" ". $row[0]."<br>"; //this prints out each blockID we find belonging to the phaseNum
 
- //$queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
-   // $trials = mysqli_query($conn, $queryString);
+  //Now grab the TrialID's for each block
+  $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
+  $trials = mysqli_query($conn, $queryString);
 
-//while ($trialRows = mysqli_fetch_array($trials))
-   // {
-        //grab the correct response for this trial 
+  while ($trialRows = mysqli_fetch_row($trials))
+    {
+    	echo "Trial ".$trialRows[0]."   ";
+       //grab the correct response for this trial 
        // $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
        // $correctRSP = mysqli_query($conn, $queryString);
 	//$curr = $correctRSP->fetch_assoc();
 	//$curr = $curr['isCorrect'];
+    }
 
 }
 ?>
