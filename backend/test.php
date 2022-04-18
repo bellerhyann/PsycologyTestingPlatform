@@ -10,7 +10,7 @@ $phaseNum = 1;
 $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseNum ";
 $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
 
-while ($row = mysqli_fetch_row($block)
+while ($row = mysqli_fetch_row($block))
 {
 
 echo $row[1]."<br";
