@@ -13,7 +13,7 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 while ($row = mysqli_fetch_row($block))
 {
 
-  echo "BLOCK" ". $row[0]."<br>"; //this prints out each blockID we find belonging to the phaseNum
+  echo "BLOCK ".$row[0]."<br>"; //this prints out each blockID we find belonging to the phaseNum
 
   //Now grab the TrialID's for each block
   $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
