@@ -13,7 +13,7 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 while ($row = mysqli_fetch_row($block))
 {
 
-echo $row[0]."<br";
+echo $row[1]."<br";
 
  //$queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
    // $trials = mysqli_query($conn, $queryString);
