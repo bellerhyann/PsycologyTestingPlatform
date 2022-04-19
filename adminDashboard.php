@@ -34,15 +34,9 @@
             <table>
                 <tr>
                     <th>Experiment Session</th>
-                    <th>Experiment Name</th>
-                    <th>Data (link)</th>
-                    <th>Test (link)</th>
                 </tr>
                 <tr>
-                    <td>#123456</td>
-                    <td>Sample Experiment Name</td>
-                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Data</a></td>
-                    <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Test</a></td>
+                    <td>#123456</td>                 
                 </tr>
             </table>
             <button onclick="window.location.href='/experimentBuilder.php'">Click here to build a new lab</button>
