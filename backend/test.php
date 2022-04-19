@@ -70,7 +70,7 @@ while ($row = mysqli_fetch_row($block))
        $curr = $curr['isCorrect'];
 	  
 	  
-       $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $curr";
+       $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[0] AND trialID = $trialRows[0] AND clicked = $curr";
        $stat = mysqli_query($conn, $queryString);
        $count = $stat->fetch_assoc();
        $count = $count['result'];
