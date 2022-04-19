@@ -125,4 +125,9 @@
          </div>
         
     </body>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./src/styles.css">
+        <title>User Table</title>
+    </head>
 </html>
