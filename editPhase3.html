@@ -65,14 +65,13 @@
         }
     </style>
     <body class="background">
-        <h1 class="center">Edit Phase Symmetry</h1>
-        <form>
+        <h1 class="center">Edit Phase Baseline</h1>
         <div class="box3">
         <div class="boxMain">
 
         <!-- --------FORM to send data to editPhase.php---------->
 
-        <form action="/backend/editPhase.php" method="post">
+        <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
             <div>
                 <a href="/editPhasePre.html" class="button">Pretraining</a>
                 <a href="/editPhaseSymmetry.html" class="button">Symmetry</a>
@@ -80,7 +79,7 @@
                 <a href="/editPhaseBaseline.html" class="button">Baseline</a>
             <br>
             <p>Test Type: </p>
-            <input type="radio" id="testType" name="testType" value="pretest"> <label for="pretest">Pretest</label><br>
+            <input type="radio" id="testType" name="testType" value="training"> <label for="training">Training</label><br>
             <input type="radio" id="testType" name="testType" value="test"> <label for="training">Test</label><br>
             <p>Shows the Scoreboards</p>
                 <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
@@ -89,37 +88,29 @@
             <p>Gives the option to ask for Prompt</p>
                 <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
                 <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
-
-            <p>Gives alloted time for audible Prompts</p>
-                <input type="radio" id="trueAprmpt" name="timeAudprmpt" value="true"> <label for="true">True</label><br>
-                <input type="radio" id="falseAprmpt" name="timeAudprmpt" value="false"> <label for="false">False</label><br><br>
-                
-                <label for="audTime">Time: </label>
-                <input type="number" id="seconds" name="seconds" min="1" max="999">
-
-                <br>
-                <br>
-
-            <label for="audio">Audible Prompt File: </label>
-            <input type="file" id="audio" name="audioFile">
             
             <p>Written Prompt: </p>
-            <textarea name="prompt" rows="5" cols="50"></textarea>
+            <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
                 </br>
                 </br>
-            <label for="phase">Block ID:</label>
-            <select name="blockid" id="blockid">
-                <option value="11">1</option>
-                <option value="12">2</option>
-                <option value="13">3</option>
-                <option value="14">4</option>
-                <option value="15">5</option>
+            <label for="block_id">Block ID:</label>
+            <select id="block_id" name="blockid">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
             </select>
             <br>
             <br>
-            <button type="submit" value="Update" formaction="/backend/editPhase.php"> Update </button>
+            <input type="submit" name="submit" value="Update">
         </form>
-    </div>
-    </div>
+        </div>
+        </div>
     </body>
 </html>
