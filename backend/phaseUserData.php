@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_row($block))
     //loop through each trial 
 	
     fwrite($txt,"TrialID:   |  avg response time (ms) |  Correct Response \n"); 
-    while ($trialRows = mysqli_fetch_array($trials))
+    while ($trialRows = mysqli_fetch_row($trials))
     {
         //grab the correct the response for the trial 
         $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = \"$trialRows[0]\"";
@@ -61,11 +61,11 @@ while ($row = mysqli_fetch_row($block))
 
         //what the user found
         $queryString = "SELECT clicked FROM data_T WHERE trialID = \"$trialRows[0]\" AND blockID = $row[0] AND userID = $user";
-        $userAns = mysqli_query($conn, $queryString);
-	$userF = $userAns->fetch_assoc();
+        $userrps = mysqli_query($conn, $queryString);
+	$userF = $userrps->fetch_assoc();
 	$userF = $userF['clicked'];
 
-        if ($useAns == $userAns)
+        if ($useAns == $userF)
         {
             //user gave the correct response
             $printANS = "+";
