@@ -28,6 +28,9 @@ $stats =  mysqli_query($conn, $queryString);
 
 //create new file
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
+//write some info at the top of the document
+$txt = "All data for User " . $userID . " on BlockID: " . $blockID;
+fwrite($myfile, $txt);
 
 //iterate through query and add each line to the file
 $i = 0;
@@ -36,7 +39,7 @@ while($row = mysqli_fetch_assoc($stats)) {
   $test = bcmod($i, $count);
   if($test == 0) {
     //write top of file info
-    $txt = "UserID:\t\t" . $userID . "\nBlockID:\t" . $blockID . "\nPhaseID:\t" . $row["phaseID"] . "\n";
+    $txt = "\nUserID:\t\t" . $userID . "\nBlockID:\t" . $blockID . "\nPhaseID:\t" . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
     $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | User Clicked\n";
     fwrite($myfile, $txt);
