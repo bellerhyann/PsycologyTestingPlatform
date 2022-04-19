@@ -47,7 +47,7 @@ while ($row = mysqli_fetch_row($block))
     
 	
     $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
-    $trialRows = mysqli_query($conn, $queryString);
+    $trials = mysqli_query($conn, $queryString);
     //loop through each trial 
 	
     fwrite($txt,"TrialID:   |  avg response time (ms) |  Correct Response \n"); 
