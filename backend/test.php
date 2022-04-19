@@ -33,7 +33,7 @@ echo $userNum."<br>";
 $file = "phaseData.txt";
 $txt = fopen($file, "w");
 fwrite($txt, "Phase: ".$phaseNum." | Number of students taken phase: ".$userNum." | Phase avg ".$phaseCT);
-fwrite($txt, "BlockID  | avg response time | % correct");
+fwrite($txt, " ms\nBlockID  | avg response time ms | % correct");
 
 
 //*********************************************************************************************************************
@@ -81,7 +81,7 @@ while ($row = mysqli_fetch_row($block))
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
 	    
 	//BlockID     | avg response time | % correct
-	fwrite($txt,"\n".$row[0]." | ".$blockAVG." | ".$correctPER);	
+	fwrite($txt,"\n".$row[0]."    | ".$blockAVG."    | ".$correctPER);	
     }
 
 }
