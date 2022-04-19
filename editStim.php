@@ -110,7 +110,7 @@
                 </tr>
             </table>
             <div id="content">
-                <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
+                <form action="" id="upload_stim" method="post" enctype="multipart/form-data">
                     <div class="dropdown"><input name="imgFile" type="file" class="dropbtn">
                     
                     <select id="stim_key" name="stim_key">
@@ -132,6 +132,63 @@
                     </div>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" class="dropbtn"></div>
                 </form>
+                <?php
+                    // File that uploads stimuli to S3 and adds info the SQL DB
+
+                    define('HOST', 'https://s3.us-west-1.amazonaws.com');
+                    define('REGION', 'us-west-1');
+
+                    require 'vendor/autoload.php';
+                    
+                    use Aws\S3\S3Client;
+                    use Aws\S3\ObjectUploader;
+
+                    // Instantiate an Amazon S3 client.
+                    $s3Client = new S3Client([
+                        'version' => 'latest',
+                        'region'  => REGION,
+                        'endpoint' => HOST,
+                        'credentials' => [
+                            'key'    => $_SERVER["AWS_KEY"],
+                            'secret' => $_SERVER["AWS_SECRET_KEY"]
+                        ]
+                    ]);
+
+                    $fileName = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
+                    $fileType = $_FILES['imgFile']['type'];
+                    $bucket = 'behaviorsci-assets';
+                    $destination_path = getcwd().DIRECTORY_SEPARATOR;
+
+                    /*
+                        INSERT INTO SQL HERE
+                    */
+                    
+
+                    // Upload file to S3
+                    if (move_uploaded_file($_FILES['imgFile']['tmp_name'], $destination_path.basename($fileName))) {
+                        try {
+                        $file_Path = $destination_path.basename($fileName);
+                        $key = basename($file_Path);
+                        $source = fopen($file_Path, 'rb');
+
+                        $uploader = new ObjectUploader(
+                            $s3Client,
+                            $bucket,
+                            $key,
+                            $source,
+                            'public-read',
+                        );
+                        
+                        $result = $uploader->upload();
+                        if ($result['@metadata']['statusCode'] == '200') {
+                            print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p>'); 
+                        }
+                        }
+                        catch (Aws\S3\Exception\S3Exception $e) {
+                        echo $e->getMessage();
+                        }
+                    }
+                ?>
             </div>
         </div>
     </body>

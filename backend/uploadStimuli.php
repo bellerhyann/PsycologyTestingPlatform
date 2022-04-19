@@ -21,9 +21,7 @@
   ]);
 
   $fileName = $_POST['stim_key'].substr($_FILES['imgFile']['name'],-4);
-  echo $fileName."<br>";
   $fileType = $_FILES['imgFile']['type'];
-  echo $fileType."<br>";
   $bucket = 'behaviorsci-assets';
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
 
