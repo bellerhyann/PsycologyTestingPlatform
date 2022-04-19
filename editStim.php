@@ -138,7 +138,7 @@
                     define('HOST', 'https://s3.us-west-1.amazonaws.com');
                     define('REGION', 'us-west-1');
 
-                    require 'vendor/autoload.php';
+                    require 'backend/vendor/autoload.php';
                     
                     use Aws\S3\S3Client;
                     use Aws\S3\ObjectUploader;
