@@ -134,22 +134,9 @@
                     <td>Block 3</td>
                 </tr>
             </table>
-            <table>
-                <tr>
-                    <th>Pretesting Phase 3</th>
-                </tr>
-                <tr>
-                    <td>Block 1</td>
-                </tr>
-                <tr>
-                    <td>Block 2</td>
-                </tr>
-                <tr>
-                    <td>Block 3</td>
-                </tr>
-            </table>
+            
             <div class="dropdown">
-                <button class="dropbtn"><a href="editPhaseBaseline.html">EDIT PHASE</a></button>
+                <button class="dropbtn"><a href="editPhase1.html">EDIT PHASE</a></button>
             </div>
             <div class="dropdown">
                 <button class="dropbtn"><a href="editStim.html">EDIT STIMULI</a></button>
