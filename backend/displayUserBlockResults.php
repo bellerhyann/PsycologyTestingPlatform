@@ -39,9 +39,9 @@ while($row = mysqli_fetch_assoc($stats)) {
   $test = bcmod($i, $count);
   if($test == 0) {
     //write top of file info
-    $txt = "\nPhaseID:  " . $row["phaseID"] . "\n";
+    $txt = "\nUserID:\t\t" . $userID . "\nBlockID:\t" . $blockID . "\nPhaseID:  " . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
-    $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | User Clicked\n";
+    $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | Correct\n";
     fwrite($myfile, $txt);
   }
         
