@@ -1,5 +1,6 @@
 <?php
 
+//!!!Need these values postes from Front End !!!
 //$phaseNum = $_POST["phaseNum"];
 //$user = $_POST["user"];
 $phaseNum = 1;
@@ -13,51 +14,53 @@ if (!$conn) {
 }
 
 //now print to a file 
-//Phase: 1  | avg response Time: 783 ms 
 $file = "phaseUserData.txt";
 $txt = fopen($file, "w");
-fwrite($txt, "UserID: ".$user." PhaseID: ".$phaseNum); //this will need to be updated later for ease of user 
+fwrite($txt, "UserID: ".$user." PhaseID: ".$phaseNum); 
+
+//see how a user did on response time for the entire phase 
+$queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND userID = $user AND clicked = 1";
+$phaseT = mysqli_query($conn, $queryString);
+$phasetavg = $phaseT->fetch_assoc();
+$phasetavg = $phasetavg['result'];
+
+fwrite($txt, " avg response time (ms): ".$phasetavg."\n"); 
 
 
-//gives us all rows in data_T for our phase with our user 
-$queryString = "SELECT * FROM data_T WHERE phaseID = $phaseNum AND userID = $user"; 
-$result = mysqli_query($conn, $queryString);
-
-$queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseNum ";
-$block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
 
 
-//overall average time of entire phase
-//This works I tested it in sql workbench
-$queryString = "SELECT AVG(clickTime) AS avgColName FROM data_T WHERE phaseID = $phaseNum  AND clicked = 1 AND userID = $user";
-$entPhaseCT = mysqli_query($conn, $queryString);
-$data = mysqli_fetch_assoc($entPhaseCT);
+//****************************************************************************************************************************
+//info about blocks in phase 
 
-//writing avg to output file 
-fwrite($txt," AVG Click Time: ".$data["avgColName"]);
-
-//now print phase results from the user 
-//trialID     | response time | correct
-
+$queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseNum";
+$block = mysqli_query($conn, $queryString);
 //loops through each block in the phase
-while ($row = mysqli_fetch_array($block))
+while ($row = mysqli_fetch_row($block))
 {
-    fwrite($txt, "\nBlockID: ".$row["blockID"]."\nTrialID | Response Time (ms) | Correct ");
-    //grabing the trials in the block
-    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[blockID]";
-    $trials = mysqli_query($conn, $queryString);
-
+   //response time avg in this block
+   $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[0] AND clicked = 1 AND userID = $user";
+   $blockt = mysqli_query($conn, $queryString);
+   $blockavg = $blockt->fetch_assoc();
+   $blockavg = $blockavg['result'];
+	   
+   fwrite($txt,"BlockID: ".$row[0]." avg response time (ms): ".$blockavg."\n"); 
+    
+	
+    $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
+    $trialRows = mysqli_query($conn, $queryString);
     //loop through each trial 
+	
+    fwrite($txt,"TrialID:   |  avg response time (ms) |  Correct Response \n"); 
     while ($trialRows = mysqli_fetch_array($trials))
     {
         //grab the correct the response for the trial 
-        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = $trialRows[trialID]";
+        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = \"$trialRows[0]\"";
         $ans = mysqli_query($conn, $queryString); //holds if the trial is a go or no go 
 	$useANS = $ans->fetch_assoc();
 	$useANS = $useANS['isCorrect'];
 
         //what the user found
-        $queryString = "SELECT clicked FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
+        $queryString = "SELECT clicked FROM data_T WHERE trialID = \"$trialRows[0]\" AND blockID = $row[0] AND userID = $user";
         $userAns = mysqli_query($conn, $queryString);
 	$userF = $userAns->fetch_assoc();
 	$userF = $userF['clicked'];
@@ -71,14 +74,14 @@ while ($row = mysqli_fetch_array($block))
             $printANS = "-";
         
         //grab resp time
-        $queryString = "SELECT clickTime FROM data_T WHERE trialID = $trialRows[trialID] AND blockID = $row[blockID] AND userID = $user";
+        $queryString = "SELECT clickTime FROM data_T WHERE trialID = \"$trialRows[0]\" AND blockID = $row[0] AND userID = $user";
         $time = mysqli_query($conn, $queryString);
 	$timeP = $time->fetch_assoc();
 	$timeP = $timeP['clickTime'];
 
 
 
-        fwrite($txt, "\n".$trialRows["trialID"]." | ".$timeP." | ".$printANS);
+        fwrite($txt,$trialRows[0]."     | ".$timeP."      | ".$printANS);
     }
 
 }
