@@ -111,8 +111,8 @@
             </table>
             <div id="content">
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
-                    <div class="dropdown"><input name="imgFile" type="file" class="dropbtn"></div>
-                    <div class="dropdown">
+                    <div class="dropdown"><input name="imgFile" type="file" class="dropbtn">
+                    
                     <select id="stim_key" name="stim_key">
                         <option value="A1">A1</option>
                         <option value="A2">A2</option>
@@ -123,6 +123,11 @@
                         <option value="C1">C1</option>
                         <option value="C2">C2</option>
                         <option value="C3">C3</option>
+                    </select>
+
+                    <select id="stim_ext" name="stim_ext">
+                        <option value="image">image</option>
+                        <option value="sound">sound</option>
                     </select>
                     </div>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" class="dropbtn"></div>
