@@ -111,4 +111,8 @@ readfile($file);
 //close connection
 mysqli_close($conn);
 
+echo "Phase Data sucessfully Downloaded!\n";
+
 ?>
+
+<a href=adminDashboard.php>Back to Admin Dashboard</a>
