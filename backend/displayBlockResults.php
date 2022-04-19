@@ -46,7 +46,7 @@ while($row = mysqli_fetch_assoc($stats)) {
   } else {
         $correct = "N";
   }
-  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t\t| $correct\n";
+  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t   | $correct\n";
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
