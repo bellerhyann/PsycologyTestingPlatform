@@ -120,8 +120,8 @@
         
          </div>
          <div>
-                <a href="/experimentBuilder.php'" class="button">Edit Lab</a>
-                <a href="/experimentBuilder.php'" class="button">View Data</a
+                <a href="./backend/experimentBuilder.php'" class="button">Edit Lab</a>
+                <a href="'" class="button">View Data</a
                 <br>
          </div>
         
