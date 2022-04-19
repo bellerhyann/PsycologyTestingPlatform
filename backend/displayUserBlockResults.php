@@ -29,7 +29,7 @@ $stats =  mysqli_query($conn, $queryString);
 //create new file
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 //write some info at the top of the document
-$txt = "All data for User " . $userID . " on BlockID: " . $blockID;
+$txt = "All data for UserID: " . $userID . " on BlockID: " . $blockID . "\n";
 fwrite($myfile, $txt);
 
 //iterate through query and add each line to the file
@@ -39,7 +39,7 @@ while($row = mysqli_fetch_assoc($stats)) {
   $test = bcmod($i, $count);
   if($test == 0) {
     //write top of file info
-    $txt = "\nUserID:\t\t" . $userID . "\nBlockID:\t" . $blockID . "\nPhaseID:\t" . $row["phaseID"] . "\n";
+    $txt = "\nPhaseID:  " . $row["phaseID"] . "\n";
     fwrite($myfile, $txt);
     $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | User Clicked\n";
     fwrite($myfile, $txt);
@@ -47,9 +47,9 @@ while($row = mysqli_fetch_assoc($stats)) {
         
   //fix the "clicked" row to display Y/N 
   if($row["isCorrect"] == $row["clicked"]) {
-        $correct = "Y";
+        $correct = "+";
   } else {
-        $correct = "N";
+        $correct = "-";
   }
   
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t   | " . $correct . "\n";
