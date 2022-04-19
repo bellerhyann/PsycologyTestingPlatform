@@ -46,7 +46,7 @@
                 </tr>
             </table>
             <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
-		    <button onclick="window.location.href='./backend/viewuser.php'" > view users </button>
+            
             <?php
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
