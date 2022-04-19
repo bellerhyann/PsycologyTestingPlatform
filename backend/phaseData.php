@@ -32,8 +32,7 @@ $userNum = $userNum['result'];
 //Phase: 1  | avg response Time: 783 ms 
 $file = "phaseData.txt";
 $txt = fopen($file, "w");
-fwrite($txt, "Phase: ".$phaseNum." | Number of students taken phase: ".$userNum." | Phase avg ".$phaseCT);
-fwrite($txt, " ms\nBlockID  | avg response time ms | % correct");
+fwrite($txt, "Phase: ".$phaseNum." | Number of students taken phase: ".$userNum." | Phase avg ".$phaseCT." ms\n");
 
 
 //*********************************************************************************************************************
@@ -58,6 +57,12 @@ while ($row = mysqli_fetch_row($block))
   $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
   $trials = mysqli_query($conn, $queryString);
 
+	
+  fwrite($txt, "BlockID  | avg response time ms");
+  fwrite($txt,"\n".$row[0]."    | ".$blockAVG);
+  
+  fwrite($txt, "\nTrialID  | avg response time ms | % correct");
+	
   //loop looks at each trial in the block
   while ($trialRows = mysqli_fetch_row($trials))
     {
@@ -69,6 +74,11 @@ while ($row = mysqli_fetch_row($block))
        $curr = $correctRSP->fetch_assoc();
        $curr = $curr['isCorrect'];
 	  
+       $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[0] AND trialID = \"$trialRows[0]\" AND clicked = 1";
+       $trialt = mysqli_query($conn, $queryString);
+       $tAVG = $trialt->fetch_assoc();
+       $tAVG = $tAVG['result'];
+	  
 	  
        $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[0] AND trialID = \"$trialRows[0]\" AND clicked = $curr";
        $stat = mysqli_query($conn, $queryString);
@@ -77,11 +87,11 @@ while ($row = mysqli_fetch_row($block))
 	  
        //echo $curr."<br>";
 	  
-        //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
+        //this gives us a decimal with .00 and then multiple by 100 to give us the %
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
 	    
-	//BlockID     | avg response time | % correct
-	fwrite($txt,"\n".$row[0]."    | ".$blockAVG."    | ".$correctPER);	
+	//TrialID     | avg response time | % correct
+	fwrite($txt,"\n".$row[0]."    | ".$tAVG."    | ".$correctPER);	
     }
 
 }
