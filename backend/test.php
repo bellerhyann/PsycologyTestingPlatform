@@ -82,7 +82,7 @@ while ($row = mysqli_fetch_row($block))
 	echo $correctPER."<br>";
 	    
 	//BlockID     | avg response time | % correct
-	fwrite($txt,"\n".$row["blockID"]." | ".$blockAVG." | ".$correctPER);	
+	fwrite($txt,"\n".$row[0]." | ".$blockAVG." | ".$correctPER);	
     }
 
 }
