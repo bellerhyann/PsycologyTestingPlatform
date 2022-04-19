@@ -63,7 +63,6 @@ while ($row = mysqli_fetch_row($block))
   
   fwrite($txt, "\nTrialID  | avg response time ms | % correct");
 	
-  echo "BEANS BEANS <BR>";
 	
   //loop looks at each trial in the block
   while ($trialRows = mysqli_fetch_row($trials))
@@ -93,8 +92,9 @@ while ($row = mysqli_fetch_row($block))
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
 	    
 	//TrialID     | avg response time | % correct
-	fwrite($txt,"\n".$row[0]."    | ".$tAVG."    | ".$correctPER);	
+	fwrite($txt,"\n".$trialRows[0]."    | ".$tAVG."    | ".$correctPER);	
     }
+  fwrite($txt,"\n");
 
 }
 
