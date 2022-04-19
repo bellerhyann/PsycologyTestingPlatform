@@ -16,7 +16,7 @@ $entPhaseCT = mysqli_query($conn, $queryString);
 $phaseCT = $entPhaseCT->fetch_assoc();
 $phaseCT = $phaseCT['result'];
 
-echo $phaseCT."<br>";
+//echo $phaseCT."<br>";
 
 
 //number of users who have done the phase 
@@ -26,7 +26,7 @@ $userNum = $users->fetch_assoc();
 $userNum = $userNum['result'];
 
 
-echo $userNum."<br>";
+//echo $userNum."<br>";
 
 //now print to a file 
 //Phase: 1  | avg response Time: 783 ms 
