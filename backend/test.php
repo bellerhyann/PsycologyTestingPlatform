@@ -79,11 +79,24 @@ while ($row = mysqli_fetch_row($block))
 	  
         //this gives us a decimal with .00 and then multiple by 100 to give us the % - DOES NOT WORK BEACUSE NOT STRING
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
-	echo $correctPER."<br>";
 	    
 	//BlockID     | avg response time | % correct
 	fwrite($txt,"\n".$row[0]." | ".$blockAVG." | ".$correctPER);	
     }
 
 }
+
+fclose($txt);
+header('Content-Description: File Transfer');
+header('Content-Disposition: attachment; filename='.basename($file));
+header('Expires: 0');
+header('Cache-Control: must-revalidate');
+header('Pragma: public');
+header('Content-Length: ' . filesize($file));
+header("Content-Type: text/plain");
+readfile($file);
+
+//close connection
+mysqli_close($conn);
+
 ?>
