@@ -17,6 +17,65 @@
             margin-left: 340px;
             margin-right: 142px;
         }
+
+        body{
+            font-family: 'Verdana', sans-serif;
+        }
+        .center
+        {
+            text-align: center;
+            color: white;
+        }
+
+        .background
+        {
+            background-color: rgb(26, 16, 41);
+            text-align: center;
+            
+        }
+
+        .boxMain
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 10px;
+            justify-content: center;
+            color: white;
+        }
+
+        .box2
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            color: white;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+
+        .box3
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+        .button{
+            background-color: #384e5c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
     </style>
     <body class="body">
         <div class="body_content">
