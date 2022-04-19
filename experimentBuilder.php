@@ -136,7 +136,7 @@
             </table>
             
             <div class="dropdown">
-                <button class="dropbtn"><a href="./backend/experimentBuilder.php">EDIT PHASE</a></button>
+                <button class="dropbtn"><a href="editPhase1.html">EDIT PHASE</a></button>
             </div>
             <div class="dropdown">
                 <button class="dropbtn"><a href="editStim.html">EDIT STIMULI</a></button>
