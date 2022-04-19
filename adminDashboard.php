@@ -31,15 +31,9 @@
 							echo $row[0];	
 						}
 		    			      ?>!</h1>
-            <table>
-                <tr>
-                    <th>Experiment Session</th>
-                </tr>
-                <tr>
-                    <td>#123456</td>                 
-                </tr>
-            </table>
-            <button onclick="window.location.href='/experimentBuilder.php'">Click here to build a new lab</button>
+
+        
+            
             
             <?php
             //connect to SQL using Username Password Ect
@@ -63,7 +57,13 @@
             //close connection
             mysqli_close($conn);
             ?>
-
-        </div>
+        
+         </div>
+         <div>
+                <a href="/experimentBuilder.php'" class="button">Edit Lab</a>
+                <a href="/experimentBuilder.php'" class="button">View Data</a
+                <br>
+         </div>
+        
     </body>
 </html>
