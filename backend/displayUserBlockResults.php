@@ -41,8 +41,15 @@ while($row = mysqli_fetch_assoc($stats)) {
     $txt = "Stim1\t| Stim2\t| Match\t| Comparison Time  | User Clicked\n";
     fwrite($myfile, $txt);
   }
+        
+  //fix the "clicked" row to display Y/N 
+  if($row["isCorrect"] == $row["clicked"]) {
+        $correct = "Y";
+  } else {
+        $correct = "N";
+  }
   
-  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t\t| " . $row["clicked"] . "\n";
+  $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t\t| " . $correct . "\n";
   fwrite($myfile, $txt);
         
   $i = $i + 1;  
