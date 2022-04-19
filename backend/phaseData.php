@@ -63,6 +63,8 @@ while ($row = mysqli_fetch_row($block))
   
   fwrite($txt, "\nTrialID  | avg response time ms | % correct");
 	
+  echo "BEANS BEANS <BR>";
+	
   //loop looks at each trial in the block
   while ($trialRows = mysqli_fetch_row($trials))
     {
