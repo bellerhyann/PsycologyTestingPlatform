@@ -28,9 +28,15 @@ $userNum = $userNum['result'];
 
 echo $userNum."<br>";
 
+//now print to a file 
+//Phase: 1  | avg response Time: 783 ms 
+$file = "phaseData.txt";
+$txt = fopen($file, "w");
+fwrite($txt, "Phase: ".$phaseNum." | Number of students taken phase: ".$userNum." | Phase avg ".$phaseCT);
+fwrite($txt, "BlockID  | avg response time | % correct");
 
 
-
+//*********************************************************************************************************************
 //info about the blocks in the phase 
 
 //grabs all the blocks in the phase
@@ -39,23 +45,37 @@ $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our 
 
 while ($row = mysqli_fetch_row($block))
 {
+    //avg click time for the block 
+    $queryString = "SELECT AVG(clickTime) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[0] AND clicked = 1";
+    $blockin = mysqli_query($conn, $queryString);
+    $blockAVG = $blockin->fetch_assoc();
+    $blockAVG = $blockAVG['result'];
+	
 
-  echo "BLOCK ".$row[0]."<br>"; //this prints out each blockID we find belonging to the phaseNum
+  //echo "BLOCK ".$row[0]."<br>"; //this prints out each blockID we find belonging to the phaseNum
 
   //Now grab the TrialID's for each block
   $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
   $trials = mysqli_query($conn, $queryString);
 
+  //loop looks at each trial in the block
   while ($trialRows = mysqli_fetch_row($trials))
     {
-       echo "Trial ".$trialRows[0]."   ";
+       //echo "Trial ".$trialRows[0]."   ";
+	  
        //grab the correct response for this trial 
        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = \"$trialRows[0]\"";
        $correctRSP = mysqli_query($conn, $queryString);
        $curr = $correctRSP->fetch_assoc();
        $curr = $curr['isCorrect'];
 	  
-       echo $curr."<br>";
+	  
+       $queryString = "SELECT COUNT(clicked) AS result FROM data_T WHERE phaseID = $phaseNum AND blockID = $row[blockID] AND trialID = $trialRows[trialID] AND clicked = $curr";
+       $stat = mysqli_query($conn, $queryString);
+       $count = $stat->fetch_assoc();
+       $count = $count['result'];
+	  
+       //echo $curr."<br>";
     }
 
 }
