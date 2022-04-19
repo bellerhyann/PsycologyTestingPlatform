@@ -22,7 +22,7 @@ $createView = "create view dataBlock AS SELECT * FROM data_T WHERE blockID = $bl
 $result =  mysqli_query($conn, $createView);
 
 //create query
-$queryString = "SELECT stimIDOne, stimIDTwo, isCorrect, clicked, clickTime, phaseID FROM trial_T, dataBlock WHERE trial_T.trialID = dataBlock.trialID GROUP BY phaseID";
+$queryString = "SELECT BO, stimIDOne, stimIDTwo, isCorrect, clicked, clickTime, phaseID FROM trial_T, dataBlock WHERE trial_T.trialID = dataBlock.trialID ORDER BY phaseID, BO;";
 //run query
 $stats =  mysqli_query($conn, $queryString);
 
