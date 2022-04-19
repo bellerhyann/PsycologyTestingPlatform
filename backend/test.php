@@ -21,14 +21,14 @@ while ($row = mysqli_fetch_row($block))
 
   while ($trialRows = mysqli_fetch_row($trials))
     {
-    	//echo "Trial ".$trialRows[0]."   ";
+       echo "Trial ".$trialRows[0]."   ";
        //grab the correct response for this trial 
        $queryString = "SELECT isCorrect FROM trial_T WHERE trialID = \"$trialRows[0]\"";
        $correctRSP = mysqli_query($conn, $queryString);
        $curr = $correctRSP->fetch_assoc();
        $curr = $curr['isCorrect'];
 	  
-	echo $curr;
+	echo $curr."<br>";
     }
 
 }
