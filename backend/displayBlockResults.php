@@ -27,7 +27,7 @@ $stats =  mysqli_query($conn, $queryString);
 //create new file
 $myfile = fopen("renameMe.txt", "w") or die("Unable to open file!");
 //write some info at the top of the document
-$txt = "All data for BlockID: " . $blockID;
+$txt = "All data for BlockID: " . $blockID . "\n";
 fwrite($myfile, $txt);
 
 //iterate through query and add each line to the file
