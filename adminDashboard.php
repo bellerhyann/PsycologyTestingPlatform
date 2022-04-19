@@ -58,12 +58,12 @@
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
-            echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th> </tr>";
+            echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th><th>Phase ID</th></tr>";
             while ($row = mysqli_fetch_array($result))
             {
                 //printf("Select returned %d rows.\n", $result->userID)
                 echo "<tr> <td>".$row["FName"]."</td>"."<td>".$row["LName"]."</td>".
-                "<td>".$row["userID"]."</td> </tr>";
+                "<td>".$row["userID"]."</td><td>".$row["phaseID"]."</td></tr>";
             }
 
             //close connection
