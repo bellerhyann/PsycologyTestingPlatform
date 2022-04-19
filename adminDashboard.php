@@ -45,7 +45,7 @@
                     <td><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Link To Test</a></td>
                 </tr>
             </table>
-            <button onclick="window.location.href='/experimentBuilder.html'">Click here to build a new lab</button>
+            <button onclick="window.location.href='/experimentBuilder.php'">Click here to build a new lab</button>
             
             <?php
             //connect to SQL using Username Password Ect
