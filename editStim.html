@@ -110,7 +110,7 @@
                 </tr>
             </table>
             <div id="content">
-                <form action="" id="upload_stim" method="post" enctype="multipart/form-data">
+                <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <div class="dropdown"><input name="imgFile" type="file" class="dropbtn">
                     
                     <select id="stim_key" name="stim_key">
@@ -132,6 +132,7 @@
                     </div>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" class="dropbtn"></div>
                 </form>
+<<<<<<< HEAD:editStim.php
                 <?php
                     // File that uploads stimuli to S3 and adds info the SQL DB
 
@@ -189,6 +190,8 @@
                         }
                     }
                 ?>
+=======
+>>>>>>> parent of c6ac2ec (editStim update test):editStim.html
             </div>
         </div>
     </body>
