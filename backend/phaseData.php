@@ -59,7 +59,7 @@ while ($row = mysqli_fetch_row($block))
 
 	
   fwrite($txt, "BlockID  | avg response time ms");
-  fwrite($txt,"\n".$row[0]."    | ".$blockAVG);
+  fwrite($txt,"\n".$row[0]."        | ".$blockAVG);
   
   fwrite($txt, "\nTrialID  | avg response time ms | % correct");
 	
@@ -92,7 +92,7 @@ while ($row = mysqli_fetch_row($block))
         $correctPER = (bcdiv($count,$userNum, 2)) * 100;
 	    
 	//TrialID     | avg response time | % correct
-	fwrite($txt,"\n".$trialRows[0]."    | ".$tAVG."    | ".$correctPER);	
+	fwrite($txt,"\n".$trialRows[0]."     | ".$tAVG."    | ".$correctPER);	
     }
   fwrite($txt,"\n");
 
