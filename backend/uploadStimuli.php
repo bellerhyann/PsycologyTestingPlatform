@@ -26,18 +26,16 @@
   $destination_path = getcwd().DIRECTORY_SEPARATOR;
 
 
-    //INSERT INTO SQL HERE
-$stimName = $_POST['stim_key'];
-$stimTYP = $_POST['stim_ext'];
+  //INSERT INTO SQL HERE
+  $stimName = $_POST['stim_key'];
+  $stimTYP = $_POST['stim_ext'];
 
-    $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+  $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
   if (!$conn)
-        die("Username or Password not found: Database Error.".mysqli_connect_error());
+    die("Username or Password not found: Database Error.".mysqli_connect_error());
 
   $queryString = "UPDATE stimuli_T SET stimtype = \"$stimTYP\" WHERE stimID = \"$stimName\"";
   $queryUPD = mysqli_query($conn, $queryString);
-
-
   
 
   // Upload file to S3
