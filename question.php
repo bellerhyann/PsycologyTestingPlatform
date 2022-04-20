@@ -76,6 +76,10 @@
 		 //$trialInfo[2] = stimIDTwo   ^
 		 //$trialInfo[3] = isCorrect   ^
 		       
+		 //stim ID's are in a java variable      
+		 stimOne = <?php echo json_encode($trialInfo[1]); ?>;
+	  	 stimTwo = <?php echo json_encode($trialInfo[2]); ?>;
+		       
 		 //So now inside this loop I would call what you need to display for each trial
 		       
 	       }
@@ -94,10 +98,9 @@
 
           ?>
 
-	  stimOne = <?php echo json_encode($trialInfo[1]); ?>;
-	  stimTwo = <?php echo json_encode($trialInfo[2]); ?>;
-          stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
-          numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
+	 
+          //stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
+          //numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
         }
 
         function getNextComparison(index)
