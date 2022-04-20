@@ -22,9 +22,9 @@
           getNextComparison(0); // gets next comparison
         }
 
-
+	
         function getUserData()
-        {
+        { 
           console.log
           (
             <?php 
@@ -32,12 +32,16 @@
               $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
               if (!$conn)
                   die("Database Error.".mysqli_connect_error());
+		  
               $userID = $_SESSION["userID"];
               $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
               $result =  mysqli_query($conn, $queryString);
-              while ($row=mysqli_fetch_row($result))
-                echo $row[0];	
-		        ?>
+	      $userPH = $result->fetch_assoc();
+	      $userPH = $userPH['phaseID']; //userPH now stores the phase yje user is on 
+		  
+              //while ($row=mysqli_fetch_row($result))
+                //echo $row[0];	
+	     ?>
           );
         }
         // get question data from database, convert PHP to JS and store
@@ -48,17 +52,45 @@
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn)
                 die("Database Error.".mysqli_connect_error());
+		
+	     //grab the blocks for the phase 
+	     $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ";
+	     $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
+		
+	     while ($row = mysqli_fetch_row($row))
+	     {
+	       //Now grab the TrialID's for each block
+               $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
+               $trials = mysqli_query($conn, $queryString);
+	
+	       //loops through each trial in each block 
+	       while ($trialRows = mysqli_fetch_row($trials))
+	       {
+		 //$trialRows holds the trialID so now let's grab each stim in that trial 
+		 $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
+		 $infoQuery = mysqli_query($conn, $queryString);
+		  
+		 $trialInfo = mysqli_fetch_row($infoQuery);
+		 //$trialInfo[0] = trialID     ^
+		 //$trialInfo[1] = stimIDOne   ^
+		 //$trialInfo[2] = stimIDTwo   ^
+		 //$trialInfo[3] = isCorrect   ^
+		       
+		 //So now inside this loop I would call what you need to display for each trial
+		       
+	       }
+	     }
             
-            $queryString = ("SELECT stimID, stimType FROM stimuli_T"); // grab stim data from stimuli datatable
-            $stimIDs = mysqli_query($conn, $queryString); // query with above info
+            //$queryString = ("SELECT stimID, stimType FROM stimuli_T"); // grab stim data from stimuli datatable
+            //$stimIDs = mysqli_query($conn, $queryString); // query with above info
 
             $i = 0; // incrementor variable
-            while($row = mysqli_fetch_array($stimIDs)) // fetch data
-            {
-                $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']); // store values in PHP array
-                $i++; // next index
-            }
-            $numOfStims = $stimIDs -> num_rows; // grab total # of rows in database
+            //while($row = mysqli_fetch_array($stimIDs)) // fetch data
+            //{
+              //  $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']); // store values in PHP array
+               // $i++; // next index
+            //}
+            //$numOfStims = $stimIDs -> num_rows; // grab total # of rows in database
 
           ?>
 
