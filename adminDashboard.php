@@ -121,7 +121,7 @@
          </div>
          <div>
                 <a href="experimentBuilder.php" class="button">Edit Lab</a>
-                <a href="'" class="button">View Data</a
+                <a href="dataDownload.html'" class="button">View Data</a
                 <br>
          </div>
         
