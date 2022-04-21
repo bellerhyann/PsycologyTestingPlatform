@@ -39,9 +39,10 @@
 	      $userPH = $result->fetch_assoc();
 	      $userPH = $userPH['phaseID']; //userPH now stores the phase yje user is on 
 		  
-              //while ($row=mysqli_fetch_row($result))
-                //echo $row[0];	
+	      //CREATE ARRAY OF BLOCKIDS 
+	      //session the array   
 	     ?>
+	  //create the json array 
           );
         }
         // get question data from database, convert PHP to JS and store
