@@ -7,7 +7,7 @@
   $score = $_POST['trueSb'];
 
   //We also still need something from front end to identify which base like baseline ect 
-  $phaseNum = $_POST['prompt'];
+  $phaseNum = $_POST['prompt']; //add 4000
 
   //this keeps track when we put in the order
   $count = 1;
