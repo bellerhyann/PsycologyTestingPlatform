@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./src/styles.css">
+        <title>Phase Editor</title>
+    </head>
+    <style>
+        body{
+            font-family: 'Verdana', sans-serif;
+        }
+        .center
+        {
+            text-align: center;
+            color: white;
+        }
+
+        .background
+        {
+            background-color: rgb(26, 16, 41);
+            text-align: center;
+        }
+
+        .boxMain
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 10px;
+            justify-content: center;
+            color: white;
+        }
+
+        .box2
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            margin-top: 50px;
+            justify-content: center;
+            color: white;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+
+        .box3
+        {
+            margin-right: 20px;
+            margin-left: 20px;
+            border: 1px solid grey;
+            background-color: grey;
+            padding: 10px;
+        }
+        .button{
+            background-color: #384e5c;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+        .text{
+            color: white;
+            font-family: 'Verdana', sans-serif;
+            font-weight: 700;
+        }
+    </style>
+    <script>
+        //JS to submit multiple forms to different PHPs
+        function submitBlockForms(){
+            document.getElementById("blockForm").submit();
+            document.getElementById("blockUserForm").submit();
+        }
+        function submitPhaseForms(){
+            document.getElementById("phaseForm").submit();
+            document.getElementById("phaseUserForm").submit();
+        }
+    </script>
+    <body class="background">
+        <h1 class="center">Welcome to the Data Center</h1>
+        <div class="box3">
+            <p class="text">Phase Specific Data: </p>
+            <div class="boxMain">
+                <form action="/backend/phaseUserData.php" id="phaseUserForm" method="post">
+                        <label for="userID">User ID:</label>
+                        <textarea id="userID" name="userID" rows="1" cols="10"></textarea>
+                </form>
+                    <br>
+                    <br>
+                <form action="/backend/phaseData.php" id="phaseForm" method="post" enctype="multipart/form-data"></form>
+                    <label for="phase_num">phase ID:</label>
+                    <select id="phaseNum" name="phaseNum">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="submit" name="submit" value="Download" onclick="submitPhaseForms()">
+                </form>
+            </div>
+            <br>
+            <br>
+            <p class="text">Block Specific Data: </p>
+            <!-- Block Specific-->
+            <div class="boxMain">
+                    <form action="/backend/displayUserBlockResults.php" id="blockUserForm" method="post">
+                        <label for="userID">User ID:</label>
+                        <textarea id="userID" name="userID" rows="1" cols="10"></textarea>
+                    </form>
+
+                    <form action="/backend/displayBlockResults.php" id="blockForm" method="post" enctype="multipart/form-data"></form>
+                    <br>
+                    <br>
+                    <input type="radio" id="preTraining" name="phaseType" value="preTraining" form="blockForm"> <label for="phase1">Pretraining</label>
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="symPre" name="phaseType" value="symPre" form="blockForm"> <label for="phase2">Symmetry Pretest</label>
+                    
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="11">1</option>
+                        <option value="12">2</option>
+                        <option value="13">3</option>
+                        <option value="14">4</option>
+                        <option value="15">5</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="transPre" name="phaseType" value="transPre" form="blockForm"> <label for="phase3">Transitivity Pretest</label>
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="16">1</option>
+                        <option value="17">2</option>
+                        <option value="18">3</option>
+                        <option value="19">4</option>
+                        <option value="20">5</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="baseTrain" name="phaseType" value="baseTrain" form="blockForm"> <label for="phase4">Baseline Training</label>
+                    
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="baseTest" name="phaseType" value="baseTest" form="blockForm"> <label for="phase5">Baseline Test</label>
+                    
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="symTest" name="phaseType" value="symTest" form="blockForm"> <label for="phase6">Symmetry Test</label>
+                    
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="11">1</option>
+                        <option value="12">2</option>
+                        <option value="13">3</option>
+                        <option value="14">4</option>
+                        <option value="15">5</option>
+                    </select>
+                    <br>
+                    <br>
+                    <input type="radio" id="transTest" name="phaseType" value="transTest" form="blockForm"> <label for="phase7">Transitivity Test</label>
+                    
+                    <label for="block_id">/ Block ID:</label>
+                    <select id="blockID" name="blockID" form="blockForm">
+                        <option value="16">1</option>
+                        <option value="17">2</option>
+                        <option value="18">3</option>
+                        <option value="19">4</option>
+                        <option value="20">5</option>
+                    </select>
+                    <br>  
+                    <br>
+                <input type="submit" name="submit" value="Download" onclick="submitBlockForms()">
+                </form>
+            </div>
+            <br>
+            <br>
+            
+
+            <p class="text">Line Graphs: </p>
+            <!-- User -->
+            <div class="boxMain">
+
+                <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
+
+                    <label for="userID">User ID:</label>
+                    <textarea id="userID" name="ID" rows="1" cols="10"></textarea>
+
+                    <input type="submit" name="submit" value="Download">
+                </form>
+            </div>
+            <br>
+            <br>
+
+            <!-- Default -->
+            <div class="boxMain">
+
+                <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
+
+                   <p class="text">Lab Line Graph</p> <input type="submit" name="submit" value="Download">
+                </form>
+            </div>
+            <br>
+            <br>
+
+
+        </div>
+    </body>
+</html>
