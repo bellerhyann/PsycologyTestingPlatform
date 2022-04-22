@@ -84,45 +84,14 @@
     </style>
     <body class="body">
         <div id="dashboard">
-            //<table>
-               // <tr>
-                    //<th>Stimulant ID</th>
-                   // <th>File Type</th>
-                    //<th>Catagory/ Note</th>
-                //</tr>
-               // <tr>
-
-                    //<td>Stim 1</td>
-                    //<td>PNG File</td>
-                   // <td>Catagory 2</td>
-                //</tr>
-                //<tr>
-                    
-                    //<td>Stim 4</td>
-                    //<td>PNG File</td>
-                    //<td>Catagory 1</td>
-               // </tr>
-               // <tr>
-                    
-                   // <td>Stim 2</td>
-                    //<td>Audio File</td>
-                    //<td>Catagory 1</td>
-                //</tr>
-           //</table>
             <?php
-		session_start(); 
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn) {
                 die("Unable to Connect.".mysqli_connect_error());
                 }
             
-            $userID = $_SESSION["adminUserID"];
-		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
-		    				$result =  mysqli_query($conn, $queryString);
-						while ($row=mysqli_fetch_row($result)) {
-							echo $row[0];	
-						}
+   
 
             $queryString = "SELECT * FROM stimuli_t";
             $result = mysqli_query($conn, $queryString);
