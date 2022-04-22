@@ -120,23 +120,23 @@
                   //<td>Block 3</td>
                 //</tr>
             //</table>
-     <?php
+<?php
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn) {
                 die("Unable to Connect.".mysqli_connect_error());
                 }
 
-            $queryString = "SELECT * FROM phase_t";
+            $queryString = "SELECT * FROM phaseblock_t";
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
-            echo "<tr> <th>Phase ID</th> <th>Time allowed</th> <th>Next Phase</th> <th>Instructions</th> <th>Audio file name</th>< /tr>";
+            echo "<tr> <th>Phase ID</th> <th>block ID</th> <th>Order</th>< /tr>";
             while ($row = mysqli_fetch_array($result))
             {
                 //printf("Select returned %d rows.\n", $result->phaseID)
-                echo "<tr> <td>".$row["phaseID"]."</td>"."<td>".$row["allowedTime"]."</td>".
-                "<td>".$row["nextPhase"]."</td><td>".$row["instructions"]."</td><td>".$row["audiofileName"]."</td></tr>";
+                echo "<tr> <td>".$row["phaseID"]."</td>"."<td>".$row["blockID"]."</td>".
+                "<td>".$row["order"]."</td></tr>";
             }
 
             //close connection
