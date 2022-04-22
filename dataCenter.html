@@ -70,13 +70,23 @@
     </style>
     <script>
         //JS to submit multiple forms to different PHPs
-        function submitBlockForms(){
-            document.getElementById("blockForm").submit();
-            document.getElementById("blockUserForm").submit();
+        function phaseFormChange(){
+            if(document.getElementById("userIDphase").value == "")
+                {
+                    document.phaseForm.action ="./backend/phaseData.php";
+                }
+                else{
+                    document.phaseForm.action ="./backend/phaseUserData.php";
+                }
         }
-        function submitPhaseForms(){
-            document.getElementById("phaseForm").submit();
-            document.getElementById("phaseUserForm").submit();
+        function blockFormChange(){
+            if(document.getElementById("userIDblock").value == "")
+                {
+                    document.blockForm.action ="./backend/displayBlockResults.php";
+                }
+                else{
+                    document.blockForm.action ="./backend/displayUserBlockResults.php";
+                }
         }
     </script>
     <body class="background">
@@ -84,13 +94,11 @@
         <div class="box3">
             <p class="text">Phase Specific Data: </p>
             <div class="boxMain">
-                <form action="/backend/phaseUserData.php" id="phaseUserForm" method="post">
+                <form name="phaseForm" action="/" id="phaseUserForm" method="post">
                         <label for="userID">User ID:</label>
-                        <textarea id="userID" name="userID" rows="1" cols="10"></textarea>
-                </form>
+                        <textarea id="userIDphase" name="userID" rows="1" cols="10"></textarea>
                     <br>
                     <br>
-                <form action="/backend/phaseData.php" id="phaseForm" method="post" enctype="multipart/form-data"></form>
                     <label for="phase_num">phase ID:</label>
                     <select id="phaseNum" name="phaseNum">
                         <option value="1">1</option>
@@ -103,7 +111,7 @@
                     </select>
                     <br>
                     <br>
-                    <input type="submit" name="submit" value="Download" onclick="submitPhaseForms()">
+                    <input type="submit" name="submit" value="Download" onclick="phaseFormChange()">
                 </form>
             </div>
             <br>
@@ -111,68 +119,9 @@
             <p class="text">Block Specific Data: </p>
             <!-- Block Specific-->
             <div class="boxMain">
-                    <form action="/backend/displayUserBlockResults.php" id="blockUserForm" method="post">
+                    <form name="blockForm" action="/" id="blockUserForm" method="post">
                         <label for="userID">User ID:</label>
-                        <textarea id="userID" name="userID" rows="1" cols="10"></textarea>
-                    </form>
-
-                    <form action="/backend/displayBlockResults.php" id="blockForm" method="post" enctype="multipart/form-data"></form>
-                    <br>
-                    <br>
-                    <input type="radio" id="preTraining" name="phaseType" value="preTraining" form="blockForm"> <label for="phase1">Pretraining</label>
-                    <label for="block_id">/ Block ID:</label>
-                    <select id="blockID" name="blockID" form="blockForm">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
-                    <br>
-                    <br>
-                    <input type="radio" id="symPre" name="phaseType" value="symPre" form="blockForm"> <label for="phase2">Symmetry Pretest</label>
-                    
-                    <label for="block_id">/ Block ID:</label>
-                    <select id="blockID" name="blockID" form="blockForm">
-                        <option value="11">1</option>
-                        <option value="12">2</option>
-                        <option value="13">3</option>
-                        <option value="14">4</option>
-                        <option value="15">5</option>
-                    </select>
-                    <br>
-                    <br>
-                    <input type="radio" id="transPre" name="phaseType" value="transPre" form="blockForm"> <label for="phase3">Transitivity Pretest</label>
-                    <label for="block_id">/ Block ID:</label>
-                    <select id="blockID" name="blockID" form="blockForm">
-                        <option value="16">1</option>
-                        <option value="17">2</option>
-                        <option value="18">3</option>
-                        <option value="19">4</option>
-                        <option value="20">5</option>
-                    </select>
-                    <br>
-                    <br>
-                    <input type="radio" id="baseTrain" name="phaseType" value="baseTrain" form="blockForm"> <label for="phase4">Baseline Training</label>
-                    
-                    <label for="block_id">/ Block ID:</label>
-                    <select id="blockID" name="blockID" form="blockForm">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                    </select>
+                        <textarea id="userIDblock" name="userID" rows="1" cols="10"></textarea>
                     <br>
                     <br>
                     <input type="radio" id="baseTest" name="phaseType" value="baseTest" form="blockForm"> <label for="phase5">Baseline Test</label>
@@ -216,7 +165,7 @@
                     </select>
                     <br>  
                     <br>
-                <input type="submit" name="submit" value="Download" onclick="submitBlockForms()">
+                <input type="submit" name="submit" value="Download" onclick="blockFormChange()">
                 </form>
             </div>
             <br>
