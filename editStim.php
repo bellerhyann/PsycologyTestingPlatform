@@ -84,31 +84,61 @@
     </style>
     <body class="body">
         <div id="dashboard">
-            <table>
-                <tr>
-                    <th>Stimulant ID</th>
-                    <th>File Type</th>
-                    <th>Catagory/ Note</th>
-                </tr>
-                <tr>
+            //<table>
+               // <tr>
+                    //<th>Stimulant ID</th>
+                   // <th>File Type</th>
+                    //<th>Catagory/ Note</th>
+                //</tr>
+               // <tr>
 
-                    <td>Stim 1</td>
-                    <td>PNG File</td>
-                    <td>Catagory 2</td>
-                </tr>
-                <tr>
+                    //<td>Stim 1</td>
+                    //<td>PNG File</td>
+                   // <td>Catagory 2</td>
+                //</tr>
+                //<tr>
                     
-                    <td>Stim 4</td>
-                    <td>PNG File</td>
-                    <td>Catagory 1</td>
-                </tr>
-                <tr>
+                    //<td>Stim 4</td>
+                    //<td>PNG File</td>
+                    //<td>Catagory 1</td>
+               // </tr>
+               // <tr>
                     
-                    <td>Stim 2</td>
-                    <td>Audio File</td>
-                    <td>Catagory 1</td>
-                </tr>
-            </table>
+                   // <td>Stim 2</td>
+                    //<td>Audio File</td>
+                    //<td>Catagory 1</td>
+                //</tr>
+           //</table>
+            <?php
+            //connect to SQL using Username Password Ect
+            $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+            if (!$conn) {
+                die("Unable to Connect.".mysqli_connect_error());
+                }
+            
+            $userID = $_SESSION["adminUserID"];
+		    				$queryString = ("SELECT FName FROM user_T WHERE userID = $userID");
+		    				$result =  mysqli_query($conn, $queryString);
+						while ($row=mysqli_fetch_row($result)) {
+							echo $row[0];	
+						}
+
+            $queryString = "SELECT * FROM stimuli_t";
+            $result = mysqli_query($conn, $queryString);
+
+            echo "<table border=1>";
+            echo "<tr> <th>Stimuli ID</th> <th>Stimuli Type</th> <th>Group ID</th> </tr>";
+            while ($row = mysqli_fetch_array($result))
+            {
+                //printf("Select returned %d rows.\n", $result->phaseID)
+                echo "<tr> <td>".$row["stimID"]."</td>"."<td>".$row["stimtype"]."</td>".
+                "<td>".$row["groupID"]."</td></tr>";
+            }
+
+            //close connection
+            mysqli_close($conn);
+            ?>
+            
             <div id="content">
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <div class="dropdown"><input name="imgFile" type="file" class="dropbtn">
