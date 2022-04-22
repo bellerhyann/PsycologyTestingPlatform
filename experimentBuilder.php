@@ -106,20 +106,7 @@
                 echo $row[0];	
             }
                   ?>!</h1>
-            //<table>
-              //<tr>
-                    //<th>Pretesting Phase 1</th>
-                //</tr>
-                //<tr>
-                  //<td>Block 1</td>
-                //</tr>
-                //<tr>
-                  //<td>Block 2</td>
-                //</tr>
-                //<tr>
-                  //<td>Block 3</td>
-                //</tr>
-            //</table>
+  
 <?php
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
