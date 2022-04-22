@@ -107,17 +107,17 @@
             }
                   ?>!</h1>
             //<table>
-              //  <tr>
-                    <th>Pretesting Phase 1</th>
+              //<tr>
+                    //<th>Pretesting Phase 1</th>
                 //</tr>
                 //<tr>
-                  //  <td>Block 1</td>
+                  //<td>Block 1</td>
                 //</tr>
                 //<tr>
-                  //  <td>Block 2</td>
+                  //<td>Block 2</td>
                 //</tr>
                 //<tr>
-                  //  <td>Block 3</td>
+                  //<td>Block 3</td>
                 //</tr>
             //</table>
      <?php
@@ -142,11 +142,13 @@
             //close connection
             mysqli_close($conn);
             ?>
+            
+            
             <div class="dropdown">
                 <button class="dropbtn"><a href="editPhase1.html">EDIT PHASE</a></button>
             </div>
             <div class="dropdown">
-                <button class="dropbtn"><a href="editStim.html">EDIT STIMULI</a></button>
+                <button class="dropbtn"><a href="editStim.php">EDIT STIMULI</a></button>
             </div>
            
         </div>
