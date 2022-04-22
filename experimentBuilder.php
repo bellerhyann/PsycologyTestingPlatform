@@ -120,7 +120,7 @@
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
-            echo "<tr> <th>Phase ID</th> <th>block ID</th> <th>Order</th>< /tr>";
+            echo "<tr> <th>Phase ID</th> <th>block ID</th> <th>Order</th></tr>";
             while ($row = mysqli_fetch_array($result))
             {
                 //printf("Select returned %d rows.\n", $result->phaseID)
