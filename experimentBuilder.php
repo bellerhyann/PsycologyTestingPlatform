@@ -106,35 +106,42 @@
                 echo $row[0];	
             }
                   ?>!</h1>
-            <table>
-                <tr>
+            //<table>
+              //  <tr>
                     <th>Pretesting Phase 1</th>
-                </tr>
-                <tr>
-                    <td>Block 1</td>
-                </tr>
-                <tr>
-                    <td>Block 2</td>
-                </tr>
-                <tr>
-                    <td>Block 3</td>
-                </tr>
-            </table>
-            <table>
-                <tr>
-                    <th>Pretesting Phase 2</th>
-                </tr>
-                <tr>
-                    <td>Block 1</td>
-                </tr>
-                <tr>
-                    <td>Block 2</td>
-                </tr>
-                <tr>
-                    <td>Block 3</td>
-                </tr>
-            </table>
-            
+                //</tr>
+                //<tr>
+                  //  <td>Block 1</td>
+                //</tr>
+                //<tr>
+                  //  <td>Block 2</td>
+                //</tr>
+                //<tr>
+                  //  <td>Block 3</td>
+                //</tr>
+            //</table>
+     <?php
+            //connect to SQL using Username Password Ect
+            $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+            if (!$conn) {
+                die("Unable to Connect.".mysqli_connect_error());
+                }
+
+            $queryString = "SELECT * FROM phase_t";
+            $result = mysqli_query($conn, $queryString);
+
+            echo "<table border=1>";
+            echo "<tr> <th>Phase ID</th> <th>Time allowed</th> <th>Next Phase</th> <th>Instructions</th> <th>Audio file name</th>< /tr>";
+            while ($row = mysqli_fetch_array($result))
+            {
+                //printf("Select returned %d rows.\n", $result->phaseID)
+                echo "<tr> <td>".$row["phaseID"]."</td>"."<td>".$row["allowedTime"]."</td>".
+                "<td>".$row["nextPhase"]."</td><td>".$row["instructions"]."</td><td>".$row["audiofileName"]."</td></tr>";
+            }
+
+            //close connection
+            mysqli_close($conn);
+            ?>
             <div class="dropdown">
                 <button class="dropbtn"><a href="editPhase1.html">EDIT PHASE</a></button>
             </div>
