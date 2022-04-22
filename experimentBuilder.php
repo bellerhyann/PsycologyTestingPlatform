@@ -95,7 +95,8 @@
     </style>
     <body class="body">
         <div id="dashboard">
-            <h1 id="welcomeUserMsg">Welcome, <?php session_start(); 
+            <h1 id="welcomeUserMsg">Welcome, 
+                <?php session_start(); 
                 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
                 if (!$conn)
                     die("Database Error.".mysqli_connect_error());
@@ -105,7 +106,8 @@
             while ($row=mysqli_fetch_row($result)) {
                 echo $row[0];	
             }
-                  ?>!</h1>
+                  ?>
+                !</h1>
   
 <?php
             //connect to SQL using Username Password Ect
@@ -123,7 +125,7 @@
             {
                 //printf("Select returned %d rows.\n", $result->phaseID)
                 echo "<tr> <td>".$row["phaseID"]."</td>"."<td>".$row["blockID"]."</td>".
-                "<td>".$row["order"]."</td></tr>";
+                "<td>".$row["order"]."</td>";
             }
 
             //close connection
