@@ -10,7 +10,7 @@
  if (!$conn) {
    	die("Unable to Connect.".mysqli_connect_error());
  }
-
+//THE LINE BELOW THIS STILL NEEDS TO BE GIVEN PHASE ID FROM USER
  $queryString = ("SELECT * FROM data_T where phaseID = 4111 ORDER BY blockID ASC, BO ASC, userID ASC"); // grab data from data table ordered as shown
  $data = mysqli_query($conn, $queryString); // query with above info
 //var_dump($data);
@@ -31,7 +31,7 @@
         {//If the block changed, we need to increment block index
             if($blockIndex >= 0)
             {//block will change on first iteration but we can't record percentCorrect yet
-                $percentCorrect[$blockIndex] = $sumCorrect/$numTrials;
+                $percentCorrect[$blockIndex] = ($sumCorrect/$numTrials)*100;
                 //record percent correct as array of floats corresponding to each block in the phase
             }
             //increment blockIndex as the above if statement specifies we are on data for a new block.
@@ -66,7 +66,7 @@
         $prevBlock = $currBlock;
         $prevTrial = $trialID;
      }
-	   $percentCorrect[$blockIndex] = $sumCorrect/$numTrials;
+     $percentCorrect[$blockIndex] = ($sumCorrect/$numTrials)*100;
      //create data for X-axis that is just an array of values 1 through i
      //where i is the blocks in order from first in phase to last in phase.
      $i = 0;
@@ -93,8 +93,8 @@ var data = [{
 // Define Layout
 var layout = {
   xaxis: {range: [1, upperRange], title: "Block"},
-  yaxis: {range: [0, 1], title: "% Correct"},  
-  title: "User Results"
+  yaxis: {range: [0, 100], title: "% Correct"},  
+  title: "Phase Results"
 };
 
 // Display using Plotly
