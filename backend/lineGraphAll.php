@@ -27,7 +27,7 @@
      while($row = mysqli_fetch_array($data))
      {
         $trialID = $row['trialID'];
-		$currPhase = $row['phaseID'];
+	$currPhase = $row['phaseID'];
         $currBlock = $row['blockID'];
         $currUser = $row['userID'];
         
@@ -74,6 +74,7 @@
         }
         $numTrials++;
 
+	$prevPhase = $currPhase;
         $prevBlock = $currBlock;
         $prevTrial = $trialID;
      }
