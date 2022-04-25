@@ -43,14 +43,14 @@
 	
 	      	//create an array of blockID's from that phase 
 		$blockList = array();
-	      	$queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseID ORDER BY __"); //have to change the name of this item in the database
+	      	$queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
 	      	$result =  mysqli_query($conn, $queryString);
 	      	while($row = mysqli_fetch_array($result)) {
-    			array_push($blockList, $row);
+    			array_push($blockList, $row['blockID']);
 		}
 	     ?>
-	  //create the json array 
           );
+	  //grab the array '$blockList' from the php 
         }
         // get question data from database, convert PHP to JS and store
         // getQuestionData() written by Chris B & Nick Wood
