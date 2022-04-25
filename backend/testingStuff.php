@@ -22,5 +22,5 @@
     			array_push($blockList, $row);
 	  }
 
-    echo gettype($blockList[0]);
+    echo implode(" ", $blockList[0]);
 ?>
