@@ -106,16 +106,26 @@ var upperRange = <?php echo ($highestBlockIndex+1); ?>;
 
 // Define Data
 var i = 0;
+var dontInclude = 0;
+data[10];
 while(i<=(<?php echo $phaseIndex; ?>))
 {
-	var data[i] = [{x: <?php echo json_encode($blockOrder[i]); ?>, y: <?php echo json_encode($percentCorrect[i]); ?>, mode:"lines", name:<?php echo json_encode($usedPhases[i]); ?>}];
+	//check if phase has 2 or more blocks.
+	if(yArray[i].length > 1)
+	{
+		var data[i - dontInclude] = [{x: xArray[i], y: yArray[i], mode:"lines", name:phaseIDs[i]}];
+	}
+	else
+	{
+		dontInclude++;
+	}
 	i++;
 }
 // Define Layout
 var layout = {
   xaxis: {range: [1, upperRange], title: "Block"},
   yaxis: {range: [0, 100], title: "% Correct"},  
-  title: "Phase Results"
+  title: "All Phase Results"
 };
 
 // Display using Plotly
