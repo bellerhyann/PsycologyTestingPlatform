@@ -27,7 +27,7 @@
 		echo gettype($result);
 	      	while($row = mysqli_fetch_assoc($result)) {
     			array_push($stimList, $row['stimID']);
-			array_push($stimList, $row['stimType']);
+			array_push($stimList, $row['stimtype']);
 		}	
 	}
 	echo implode(" ", $stimList);
