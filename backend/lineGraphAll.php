@@ -5,7 +5,7 @@
 
 <div id="myPlot" style="width:100%;max-width:700px"></div>
 <script type = "text/javascript">
- <?php
+  <?php
  $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
  if (!$conn) {
    	die("Unable to Connect.".mysqli_connect_error());
@@ -27,26 +27,38 @@
      while($row = mysqli_fetch_array($data))
      {
         $trialID = $row['trialID'];
-	$currPhase = $row['phaseID'];
+		$currPhase = $row['phaseID'];
         $currBlock = $row['blockID'];
         $currUser = $row['userID'];
-        
-        if($prevBlock != $currBlock)
+
+        if($prevBlock != $currBlock || $prevPhase != $currPhase)
         {//If the block changed, we need to increment block index
-            if($blockIndex >= 0)
+            if($blockIndex >= 0 && $phaseIndex >= 0)
             {//block will change on first iteration but we can't record percentCorrect yet
                 $percentCorrect[$phaseIndex][$blockIndex] = ($sumCorrect/$numTrials)*100;
                 //record percent correct as array of floats corresponding to each block in the phase
             }
+            //increment blockIndex as the above if statement specifies we are on data for a new block.
 			if($prevPhase != $currPhase)
 			{
+				$bi = 0;
+				while($bi <= $blockIndex)
+				{//create X axis for phase
+					$blockOrder[$phaseIndex][$bi] = $bi+1;
+					$bi++;
+				}
 				$phaseIndex++;
 				$usedPhases[$phaseIndex] = $currPhase;
+				echo "current phase : ";
+				var_dump($currPhase);
+				echo ";<br>";
 				if($highestBlockIndex <$blockIndex) $highestBlockIndex = $blockIndex;
-				$blockIndex = -1;
+				$blockIndex = 0;
 			}
-            //increment blockIndex as the above if statement specifies we are on data for a new block.
-            $blockIndex++;
+			else if($prevBlock != $currBlock)
+			{
+				$blockIndex++;
+			}
             //reset variables for next block
             $sumCorrect = 0;
             $numTrials = 0;
@@ -73,20 +85,28 @@
             $sumCorrect++;
         }
         $numTrials++;
-
-	$prevPhase = $currPhase;
+		echo "block index : ";
+		var_dump($blockIndex);
+		echo ";<br>";
+		$prevPhase = $currPhase;
         $prevBlock = $currBlock;
         $prevTrial = $trialID;
      }
      $percentCorrect[$phaseIndex][$blockIndex] = ($sumCorrect/$numTrials)*100;
      //create data for X-axis that is just an array of values 1 through i
      //where i is the blocks in order from first in phase to last in phase.
-     $i = 0;
-     while($i <= $blockIndex)
-     {
-        $blockOrder[$i] = $i+1;
-        $i++;
-     }
+     $bi = 0;
+	 while($bi <= $blockIndex)
+	 {
+		$blockOrder[$phaseIndex][$bi] = $bi+1;
+		$bi++;
+	 }
+	 echo "<br><br>";
+	 var_dump($percentCorrect);
+	 echo "<br>";
+	 var_dump($blockOrder);
+	 echo "<br>";
+	 var_dump($highestBlockIndex+1);
  }
 
 ?>
