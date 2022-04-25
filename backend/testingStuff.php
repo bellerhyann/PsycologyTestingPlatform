@@ -2,12 +2,12 @@
 	//Author: Skyeler Knuuttila
 	//given blockID, return array of all stim and stimTypes
 	//in form ["A1.png", "image", "B1.wav", "sound", .....]
-	/*$blockID = 1; //given from json
+	$blockID = 1; //given from json
 
 	$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 	if (!$conn)
         	die("BlockID not found: Database Error.".mysqli_connect_error());
-	
+	/*
 	//start with an array of trialID's
 	$trialList = array(); //empty array
 	$queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
@@ -19,7 +19,7 @@
 	//get array of stimuli by trial
 	$stimList = array();*/
 	//for ($i = 0; $i <= sizeOf($trialList); $i++) {
-		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = \"A2C2\" AND stimIDOne = stimID OR trialID = \"A2C2\" AND stimIDTwo = stimID;");
+		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = \"A2C2\" AND stimIDOne = stimID OR trialID = \"A2C2\" AND stimIDTwo = stimID");
 	      	$result =  mysqli_query($conn, $queryString);
 	      	while($row = mysqli_fetch_array($result)) {
 			echo $row['stimID'];
