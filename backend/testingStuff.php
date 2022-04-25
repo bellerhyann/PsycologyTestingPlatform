@@ -18,7 +18,7 @@
 
 	//get array of stim and stimType by trial
 	$stimList = array();
-	for ($i = 0; $i <= sizeOf($trialList); $i++) {
+	for ($i = 0; $i <= sizeOf($trialList)-1; $i++) {
 		//$trialList[$i] is a string, we need an int
 		$trialID = intval($trialList[$i]);
 		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
