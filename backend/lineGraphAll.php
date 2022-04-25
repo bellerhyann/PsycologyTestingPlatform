@@ -116,7 +116,7 @@ while(i<=(<?php echo $phaseIndex; ?>))
 	//check if phase has 2 or more blocks.
 	if(yArray[i].length > 1)
 	{
-		var data[i - dontInclude] = [{x: xArray[i], y: yArray[i], mode:"lines", name:phaseIDs[i]}];
+		var data[i] = [{x: xArray[i], y: yArray[i], mode:"lines", name:phaseIDs[i]}];
 	}
 	else
 	{
