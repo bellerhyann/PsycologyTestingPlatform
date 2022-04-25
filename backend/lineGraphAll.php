@@ -49,9 +49,6 @@
 				}
 				$phaseIndex++;
 				$usedPhases[$phaseIndex] = $currPhase;
-				echo "current phase : ";
-				var_dump($currPhase);
-				echo ";<br>";
 				if($highestBlockIndex <$blockIndex) $highestBlockIndex = $blockIndex;
 				$blockIndex = 0;
 			}
@@ -85,10 +82,7 @@
             $sumCorrect++;
         }
         $numTrials++;
-		echo "block index : ";
-		var_dump($blockIndex);
-		echo ";<br>";
-		$prevPhase = $currPhase;
+	$prevPhase = $currPhase;
         $prevBlock = $currBlock;
         $prevTrial = $trialID;
      }
@@ -101,12 +95,6 @@
 		$blockOrder[$phaseIndex][$bi] = $bi+1;
 		$bi++;
 	 }
-	 echo "<br><br>";
-	 var_dump($percentCorrect);
-	 echo "<br>";
-	 var_dump($blockOrder);
-	 echo "<br>";
-	 var_dump($highestBlockIndex+1);
  }
 
 ?>
