@@ -11,18 +11,21 @@
                 var container = document.getElementById("blocksContainer");
 
                 while (container.hasChildNodes()) {
+                    // Clear out everything before hand
                     container.removeChild(container.lastChild);
                 }
+
                 var lineBreak = document.createElement("br");
                 for (i=0;i<number;i++){
                     // Append a node with a block number
                     container.appendChild(document.createTextNode("Block" + (i+1)));
-                    container.appendChild(lineBreak);
+                    container.appendChild(lineBreak.cloneNode());
                     // Create an <select> element, set its type and name attributes
                     var selectID = document.createElement("select");
                     selectID.id = "blockID" + (i+1);
                     selectID.name = "blockID" + (i+1);
                     for (j=1;j<=10;j++) {
+                        // Create all <option> elements for a select element
                         var option = document.createElement("option");
                         option.value = j;
                         option.text = String(j);
@@ -30,7 +33,7 @@
                     }
                     container.appendChild(selectID);
                     // Append a line break 
-                    container.appendChild(lineBreak);
+                    container.appendChild(lineBreak.cloneNode());
                 }
             }
         </script>
