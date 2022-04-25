@@ -19,8 +19,6 @@
 	  $queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
 	  $result =  mysqli_query($conn, $queryString);
 	  while($row = mysqli_fetch_array($result)) {
-    			array_push($blockList, $row);
+    		echo gettype($row);
 	  }
-    echo implode(" ", $blockList[0]);
-    echo implode(" ", $blockList[1]);
 ?>
