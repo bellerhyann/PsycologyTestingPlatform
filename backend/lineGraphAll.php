@@ -110,7 +110,7 @@ console.log(upperRange);
 // Define Data
 var i = 0;
 var dontInclude = 0;
-var data = new Array(10);
+var data = new Array();
 while(i<=(<?php echo $phaseIndex; ?>))
 {
 	//check if phase has 2 or more blocks.
