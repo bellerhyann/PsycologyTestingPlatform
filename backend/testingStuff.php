@@ -12,6 +12,7 @@
 	$trialList = array(); //empty array
 	$queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
 	$result =  mysqli_query($conn, $queryString);
+	echo gettype($result);
 	while($row = mysqli_fetch_assoc($result)) {
     		array_push($trialList, $row['trialID']);
 	}
@@ -19,10 +20,9 @@
 	//get array of stim and stimType by trial
 	$stimList = array();
 	for ($i = 0; $i <= sizeOf($trialList); $i++) {
-		$trialID = $trialList[$i];
-		echo gettype($trialID);
-		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
+		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialList[$i] AND stimIDOne = stimID OR trialID = $trialList[$i] AND stimIDTwo = stimID");
 	      	$result =  mysqli_query($conn, $queryString);
+		echo gettype($result);
 	      	while($row = mysqli_fetch_assoc($result)) {
     			array_push($stimList, $row['stimID']);
 			array_push($stimList, $row['stimType']);
