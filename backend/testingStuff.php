@@ -21,6 +21,6 @@
 	  while($row = mysqli_fetch_array($result)) {
     			array_push($blockList, $row);
 	  }
-
     echo implode(" ", $blockList[0]);
+    echo implode(" ", $blockList[1]);
 ?>
