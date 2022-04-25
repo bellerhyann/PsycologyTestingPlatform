@@ -125,7 +125,7 @@
             {
                 //printf("Select returned %d rows.\n", $result->phaseID)
                 echo "<tr> <td>".$row["phaseID"]."</td>"."<td>".$row["blockID"]."</td>".
-                "<td>".$row["order"]."</td> </tr>";
+                "<td>".$row["blockOrder"]."</td> </tr>";
             }
 
             //close connection
