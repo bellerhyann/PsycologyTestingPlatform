@@ -3,6 +3,37 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./src/styles.css">
+        <script type="text/javascript">
+            function addBlocks() {
+                var numBlocks = window.alert("How many Blocks are in this phase? ", "1");
+                var number = parseInt(numBlocks, 10);
+
+                var container = document.getElementById("blocksContainer");
+
+                while (container.hasChildNodes()) {
+                    container.removeChild(container.lastChild);
+                }
+                var lineBreak = document.createElement("br");
+                for (i=0;i<number;i++){
+                    // Append a node with a block number
+                    container.appendChild(document.createTextNode("Block" + (i+1)));
+                    container.appendChild(lineBreak);
+                    // Create an <select> element, set its type and name attributes
+                    var selectID = document.createElement("select");
+                    selectID.id = "blockID" + (i+1);
+                    selectID.name = "blockID" + (i+1);
+                    for (j=1;j<=10;j++) {
+                        var option = document.createElement("option");
+                        option.value = j;
+                        option.text = String(j);
+                        selectID.add(option);
+                    }
+                    container.appendChild(selectID);
+                    // Append a line break 
+                    container.appendChild(lineBreak);
+                }
+            }
+        </script>
         <title>Phase Editor</title>
     </head>
     <style>
@@ -64,7 +95,7 @@
             cursor: pointer;
         }
     </style>
-    <body class="background">
+    <body class="background" onload="addBlocks()">
         <h1 class="center">Edit Phase: Pretraining</h1>
         <div class="box3">
         <div class="boxMain">
@@ -81,97 +112,26 @@
         </div>
 
         <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
-
-
-            <p>Block 1</p><br>
-            <input type="checkbox" id="isEnabled1" name="isEnabled1" value="True"><label for="isEnabled1">Enabled?</label><br>
             <p>Shows the Scoreboards</p>
-            <input type="radio" id="trueSb1" name="showScoreboard1" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falseSb1" name="showScoreboard1" value="false"> <label for="false">False</label>
+            <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
 
             <p>Gives the option to ask for Prompt</p>
-            <input type="radio" id="truePrompt1" name="askPrompt1" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falsePrompt1" name="askPrompt1" value="false"> <label for="false">False</label>
+            <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
             
             <p>Written Prompt: </p>
-            <textarea id="text_prompt1" name="prompt1" rows="5" cols="50"></textarea>
+            <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
             </br>
             </br>
-            <label for="block_id1">Block ID:</label>
-            <select id="block_id1" name="blockid1">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-           
-            <br>
-            <br>
 
-            <p>Block 2</p><br>
-            <input type="checkbox" id="isEnabled2" name="isEnabled2" value="True"><label for="isEnabled2">Enabled?</label><br>
-            <p>Shows the Scoreboards</p>
-            <input type="radio" id="trueSb2" name="showScoreboard2" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falseSb2" name="showScoreboard2" value="false"> <label for="false">False</label>
-
-            <p>Gives the option to ask for Prompt</p>
-            <input type="radio" id="truePrompt2" name="askPrompt2" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falsePrompt2" name="askPrompt2" value="false"> <label for="false">False</label>
+            <div id="blocksContainer"></div>
+            <!--
+                Baseline relations blocks 1 - 10         1 - 10
+                Symmetry relations blocks 1 - 5         11 - 15
+                Transitivity relations blocks 1 - 5         16 - 20
+            -->
             
-            <p>Written Prompt: </p>
-            <textarea id="text_prompt2" name="prompt2" rows="5" cols="50"></textarea>
-            </br>
-            </br>
-            <label for="block_id2">Block ID:</label>
-            <select id="block_id2" name="blockid2">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-
-            <br>
-            <br>
-            
-            <p>Block 3</p><br>
-            <input type="checkbox" id="isEnabled3" name="isEnabled3" value="True"><label for="isEnabled1">Enabled?</label><br>
-            <p>Shows the Scoreboards</p>
-            <input type="radio" id="trueSb3" name="showScoreboard3" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falseSb3" name="showScoreboard3" value="false"> <label for="false">False</label>
-
-            <p>Gives the option to ask for Prompt</p>
-            <input type="radio" id="truePrompt3" name="askPrompt3" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falsePrompt3" name="askPrompt3" value="false"> <label for="false">False</label>
-            
-            <p>Written Prompt: </p>
-            <textarea id="text_prompt3" name="prompt3" rows="5" cols="50"></textarea>
-            </br>
-            </br>
-            <label for="block_id3">Block ID:</label>
-            <select id="block_id3" name="blockid3">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
             <input type="submit" name="submit" value="Update">
         </form>
         </div>
