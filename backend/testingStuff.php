@@ -20,6 +20,7 @@
 	  $result =  mysqli_query($conn, $queryString);
 	  while($row = mysqli_fetch_array($result)) {
     			array_push($blockList, $row);
-		}
+	  }
+
     echo implode(" ",$blockList);
 ?>
