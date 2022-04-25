@@ -89,7 +89,7 @@ var data = [{
   y: yArray,
   mode:"lines"
 }];
-
+console.log(data);
 // Define Layout
 var layout = {
   xaxis: {range: [1, upperRange], title: "Block"},
