@@ -7,7 +7,9 @@
             function addBlocks() {
                 var numBlocks = window.prompt("How many Blocks are in this phase? ", "1");
                 var number = parseInt(numBlocks, 10);
-
+                
+                var phpInfo = document.getElementById("number");
+                phpInfo.textContent =  numBlocks;
                 var container = document.getElementById("blocksContainer");
 
                 while (container.hasChildNodes()) {
@@ -128,6 +130,7 @@
             </br>
             </br>
 
+            <input id="number" name="numberOfBlock">
             <div id="blocksContainer"></div>
             <!--
                 Baseline relations blocks 1 - 10         1 - 10
