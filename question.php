@@ -45,7 +45,7 @@
 		$blockList = array();
 	      	$queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
 	      	$result =  mysqli_query($conn, $queryString);
-	      	while($row = mysqli_fetch_array($result)) {
+	      	while($row = mysqli_fetch_assoc($result)) {
     			array_push($blockList, $row['blockID']);
 		}
 	     ?>
