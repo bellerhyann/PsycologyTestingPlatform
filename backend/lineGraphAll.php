@@ -116,6 +116,7 @@ while(i<=(<?php echo $phaseIndex; ?>))
 	if(yArray[i].length > 1)
 	{
 		data.push({x: xArray[i], y: yArray[i], mode:"lines", name:phaseIDs[i]});
+		console.log(phaseIDs[i]);
 	}
 	i++;
 }
