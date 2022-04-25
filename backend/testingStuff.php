@@ -20,6 +20,7 @@
 	$stimList = array();
 	for ($i = 0; $i <= sizeOf($trialList); $i++) {
 		$trialID = $trialList[$i];
+		echo gettype($trialID)
 		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
 	      	$result =  mysqli_query($conn, $queryString);
 	      	while($row = mysqli_fetch_assoc($result)) {
