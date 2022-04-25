@@ -108,7 +108,7 @@ var upperRange = <?php echo ($highestBlockIndex+1); ?>;
 var i = 0;
 while(i<=(<?php echo $phaseIndex; ?>))
 {
-	var data[i] = [{x: <?php echo json_encode($blockOrder[i]); ?>, y: <?php echo json_encode($percentCorrect); ?>, mode:"lines", name:<?php echo json_encode($usedPhases[i]); ?>}];
+	var data[i] = [{x: <?php echo json_encode($blockOrder[i]); ?>, y: <?php echo json_encode($percentCorrect[i]); ?>, mode:"lines", name:<?php echo json_encode($usedPhases[i]); ?>}];
 	i++;
 }
 // Define Layout
