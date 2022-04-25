@@ -115,8 +115,8 @@ while(i<=(<?php echo $phaseIndex; ?>))
 	//check if phase has 2 or more blocks.
 	if(yArray[i].length > 1)
 	{
-		data.push({x: xArray[i], y: yArray[i], mode:"lines", name:phaseIDs[i]});
-		console.log(phaseIDs[i]);
+		data.push({x: xArray[i], y: yArray[i], mode:"lines", name:"Phase: " + phaseIDs[i]});
+		console.log("Phase: " + phaseIDs[i]);
 	}
 	i++;
 }
