@@ -124,6 +124,7 @@ while(i<=(<?php echo $phaseIndex; ?>))
 	}
 	i++;
 }
+console.log(data);
 // Define Layout
 var layout = {
   xaxis: {range: [1, upperRange], title: "Block"},
