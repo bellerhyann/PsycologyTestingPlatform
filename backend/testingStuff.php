@@ -12,7 +12,6 @@
 	$trialList = array(); //empty array
 	$queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
 	$result =  mysqli_query($conn, $queryString);
-	echo gettype($result);
 	while($row = mysqli_fetch_assoc($result)) {
     		array_push($trialList, $row['trialID']);
 	}
@@ -24,7 +23,6 @@
 		$trialID = intval($trialList[$i]);
 		$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
 	      	$result =  mysqli_query($conn, $queryString);
-		echo gettype($result);
 	      	while($row = mysqli_fetch_assoc($result)) {
     			array_push($stimList, $row['stimID']);
 			array_push($stimList, $row['stimtype']);
