@@ -99,10 +99,13 @@
 
 ?>
 var xArray = <?php echo json_encode($blockOrder); ?>;
+console.log(xArray);
 var yArray = <?php echo json_encode($percentCorrect); ?>;
-
+console.log(yArray);
 var phaseIDs = <?php echo json_encode($usedPhases); ?>;
+console.log(phaseIDs);
 var upperRange = <?php echo ($highestBlockIndex+1); ?>;
+console.log(upperRange);
 
 // Define Data
 var i = 0;
