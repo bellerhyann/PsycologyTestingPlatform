@@ -102,7 +102,7 @@
             cursor: pointer;
         }
     </style>
-    <body class="background">
+    <body class="background" onload="addBlocks()">
         <h1 class="center">Edit Phase: Pretraining</h1>
         <div class="box3">
         <div class="boxMain">
@@ -132,7 +132,7 @@
             </br>
             </br>
 
-            <input type="text" id="numBlocks" value="">Number of Blocks:<br>
+            Number of Blocks:<input type="text" id="numBlocks" value=""><br>
             
             <div id="blocksContainer"></div>
             <!--
