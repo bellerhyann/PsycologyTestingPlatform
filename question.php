@@ -82,11 +82,7 @@
 
             $i = 0; // incrementor variable
             ?>
-
-
-          
-          //stims = ?php echo json_encode($stims); ?>;  //converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
-          //numStims = ?php echo $numOfStims; ?>; // stores total number of stims in database*/
+            console.log(<?php echo json_encode($block) ?>);
         }
 
         function getNextComparison(index)
