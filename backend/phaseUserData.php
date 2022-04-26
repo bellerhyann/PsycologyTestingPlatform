@@ -64,7 +64,7 @@ while ($row = mysqli_fetch_row($block))
 	$userF = $userrps->fetch_assoc();
 	$userF = $userF['clicked'];
 
-        if ($useAns == $userF)
+        if ($useANS == $userF)
         {
             //user gave the correct response
             $printANS = "+";
