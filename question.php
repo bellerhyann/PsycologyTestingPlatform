@@ -75,7 +75,6 @@
               {
                 //$trialRows holds the trialID so now let's grab each stim in that trial 
                 $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
-                log($queryString);
                 $infoQuery = mysqli_query($conn, $queryString);
                 $trialInfo = mysqli_fetch_row($infoQuery);
               }
@@ -83,6 +82,7 @@
 
             $i = 0; // incrementor variable
             ?>
+            
 
           
           //stims = ?php echo json_encode($stims); ?>;  //converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
