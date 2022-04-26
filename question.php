@@ -24,7 +24,6 @@
 	
         function getBlockList()
         { 
-          console.log(
             <?php 
               //Author: Skyeler Knuuttila
               session_start();
@@ -47,7 +46,8 @@
               {
                 array_push($blockList, $row['blockID']);
               }
-	          ?>);
+	          ?>
+            console.log(<?php echo json_encode($userPH); ?>);
 	        //grab the array '$blockList' from the php 
         }
 
@@ -82,7 +82,7 @@
 
             $i = 0; // incrementor variable
             ?>
-            
+
 
           
           //stims = ?php echo json_encode($stims); ?>;  //converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
