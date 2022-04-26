@@ -26,10 +26,10 @@
                     var selectID = document.createElement("select");
                     selectID.id = "blockID" + (i+1);
                     selectID.name = "blockID" + (i+1);
-                    for (j=1;j<=10;j++) {
+                    for (j=1;j<=5;j++) {
                         // Create all <option> elements for a select element
                         var option = document.createElement("option");
-                        option.value = j;
+                        option.value = j+10;
                         option.text = String(j);
                         selectID.add(option);
                     }
