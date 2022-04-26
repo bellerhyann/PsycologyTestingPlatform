@@ -3,6 +3,42 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./src/styles.css">
+        <script type="text/javascript">
+            function addBlocks() {
+                var numBlocks = window.prompt("How many Blocks are in this phase? ", "1");
+                var number = parseInt(numBlocks, 10);
+                
+                document.getElementById("numBlocks").value = numBlocks;
+                
+                var container = document.getElementById("blocksContainer");
+
+                while (container.hasChildNodes()) {
+                    // Clear out everything before hand
+                    container.removeChild(container.lastChild);
+                }
+
+                var lineBreak = document.createElement("br");
+                for (i=0;i<number;i++){
+                    // Append a node with a block number
+                    container.appendChild(document.createTextNode("Block" + (i+1)));
+                    container.appendChild(lineBreak.cloneNode());
+                    // Create an <select> element, set its type and name attributes
+                    var selectID = document.createElement("select");
+                    selectID.id = "blockID" + (i+1);
+                    selectID.name = "blockID" + (i+1);
+                    for (j=1;j<=5;j++) {
+                        // Create all <option> elements for a select element
+                        var option = document.createElement("option");
+                        option.value = j+15;
+                        option.text = String(j);
+                        selectID.add(option);
+                    }
+                    container.appendChild(selectID);
+                    // Append a line break 
+                    container.appendChild(lineBreak.cloneNode());
+                }
+            }
+        </script>
         <title>Phase Editor</title>
     </head>
     <style>
@@ -64,45 +100,41 @@
             cursor: pointer;
         }
     </style>
-    <body class="background">
+    <body class="background" onload="addBlocks()">
         <h1 class="center">Edit Phase: Transitivity Pretest</h1>
         <div class="box3">
         <div class="boxMain">
 
         <!-- --------FORM to send data to editPhase.php---------->
+        <div>
+            <a href="/editPhase1.html" class="button">Pretraining</a>
+            <a href="/editPhase2.html" class="button">Symmetry Pretest</a>
+            <a href="/editPhase3.html" class="button">Transitivity Pretest</a>
+            <a href="/editPhase4.html" class="button">Baseline Training</a>
+            <a href="/editPhase5.html" class="button">Baseline Test</a>
+            <a href="/editPhase6.html" class="button">Symmetry Test</a>
+            <a href="/editPhase7.html" class="button">Transitivity Test</a>
+        </div>
+
 
         <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
-            <div>
-                <a href="/editPhase1.html" class="button">Pretraining</a>
-                <a href="/editPhase2.html" class="button">Symmetry Pretest</a>
-                <a href="/editPhase3.html" class="button">Transitivity Pretest</a>
-                <a href="/editPhase4.html" class="button">Baseline Training</a>
-                <a href="/editPhase5.html" class="button">Baseline Test</a>
-                <a href="/editPhase6.html" class="button">Symmetry Test</a>
-                <a href="/editPhase7.html" class="button">Transitivity Test</a>
-                <br>
-                <p>Shows the Scoreboards</p>
-                <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
-                <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
-            </div>
+            <p>Shows the Scoreboards</p>
+            <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
+
             <p>Gives the option to ask for Prompt</p>
-                <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
-                <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
+            <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
+            <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
             
             <p>Written Prompt: </p>
             <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
-                </br>
-                </br>
-            <label for="block_id">Block ID:</label>
-            <select id="block_id" name="blockid">
-                <option value="16">1</option>
-                <option value="17">2</option>
-                <option value="18">3</option>
-                <option value="19">4</option>
-                <option value="20">5</option>
-            </select>
-            <br>
-            <br>
+            </br>
+            </br>
+
+            Number of Blocks:<input type="text" id="numBlocks" value=""><br>
+            
+            <div id="blocksContainer"></div>
+            
             <input type="submit" name="submit" value="Update">
         </form>
         </div>
