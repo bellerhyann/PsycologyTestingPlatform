@@ -9,6 +9,7 @@
                 var number = parseInt(numBlocks, 10);
                 
                 document.getElementById("numBlocks").value = numBlocks;
+                document.getElementById("phaseID").value = 7;
                 
                 var container = document.getElementById("blocksContainer");
 
@@ -131,7 +132,9 @@
                     </br>
                     </br>
         
-                    Number of Blocks:<input type="text" id="numBlocks" value=""><br>
+                    Number of Blocks (Do not change):<input type="number" id="numBlocks" value=""><br>
+
+                    Phase ID (Do not change):<input type="number" id="phaseID" value=""><br>
                     
                     <div id="blocksContainer"></div>
                     <!--
