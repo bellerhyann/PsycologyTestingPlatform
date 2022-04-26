@@ -62,11 +62,12 @@ while ($row = mysqli_fetch_row($block))
         $queryString = "SELECT clicked FROM data_T WHERE trialID = \"$trialRows[0]\" AND blockID = $row[0] AND userID = $user";
         $userrps = mysqli_query($conn, $queryString);
 	$userF = $userrps->fetch_assoc();
+	$userF = $userF['clicked']
 	
 	    
 	//if the user has a response for this - sometimes it can be empty due to the nature of some phases 
 	//letting users move on once a certain score is reached 
-	if ($userF = $userF['clicked'])
+	if ($userF != NULL)
 	{
         	if ($useANS == $userF)
         	{
