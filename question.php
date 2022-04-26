@@ -35,7 +35,7 @@
               $userID = $_SESSION["userID"];
               $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
               $result =  mysqli_query($conn, $queryString);
-              $userPH = $result->fetch_assoc();
+              $userPH = $result->fetch_assoc() ?? - 1;
               $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
     
               //create an array of blockID's from that phase 
