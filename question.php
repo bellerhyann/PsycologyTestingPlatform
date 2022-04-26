@@ -3,7 +3,6 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
-    <title>Question</title>
     <script type = "text/javascript">
         var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
         var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
@@ -25,33 +24,32 @@
 	
         function getBlockList()
         { 
-          console.log
-          (
+          console.log(
             <?php 
-		//Author: Skyeler Knuuttila
-              	session_start();
-              	$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
-              	if (!$conn)
-                  	die("Database Error.".mysqli_connect_error());
-		  
-	      	//find current phase
-              	$userID = $_SESSION["userID"];
-              	$queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
-              	$result =  mysqli_query($conn, $queryString);
-	      	$userPH = $result->fetch_assoc();
-	      	$userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
-	
-	      	//create an array of blockID's from that phase 
-		$blockList = array();
-	      	$queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
-	      	$result =  mysqli_query($conn, $queryString);
-	      	while($row = mysqli_fetch_assoc($result)) {
-    			array_push($blockList, $row['blockID']);
-		}
-	     ?>
-          );
-	  //grab the array '$blockList' from the php 
+              //Author: Skyeler Knuuttila
+              session_start();
+              $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
+              if (!$conn)
+                die("Database Error.".mysqli_connect_error());
+        
+              //find current phase
+              $userID = $_SESSION["userID"];
+              $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
+              $result =  mysqli_query($conn, $queryString);
+              $userPH = $result->fetch_assoc();
+              $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
+    
+              //create an array of blockID's from that phase 
+              $blockList = array();
+              $queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
+              $result =  mysqli_query($conn, $queryString);
+              while($row = mysqli_fetch_assoc($result)) {
+                array_push($blockList, $row['blockID']);
+              }
+	          ?>);
+	        //grab the array '$blockList' from the php 
         }
+
         // get question data from database, convert PHP to JS and store
         // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData()
@@ -61,39 +59,38 @@
             if (!$conn)
                 die("Database Error.".mysqli_connect_error());
 		
-	     //grab the blocks for the phase 
-	     $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ";
-	     $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
-		
-	     while ($row = mysqli_fetch_row($row))
-	     {
-	       //Now grab the TrialID's for each block
-               $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
-               $trials = mysqli_query($conn, $queryString);
-	
-	       //loops through each trial in each block 
-	       while ($trialRows = mysqli_fetch_row($trials))
-	       {
-		 //$trialRows holds the trialID so now let's grab each stim in that trial 
-		 $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
-		 $infoQuery = mysqli_query($conn, $queryString);
-		  
-		 $trialInfo = mysqli_fetch_row($infoQuery);
-		 //$trialInfo[0] = trialID     ^
-		 //$trialInfo[1] = stimIDOne   ^
-		 //$trialInfo[2] = stimIDTwo   ^
-		 //$trialInfo[3] = isCorrect   ^
-		       
-		 //stim ID's are in a java variable      
-		 //stimOne = <?php echo json_encode($trialInfo[1]); ?>;
-	  	 //stimTwo = <?php echo json_encode($trialInfo[2]); ?>;
-		
-		//Create 2 2d arrays for each stim and their type then json_encode them
-		       
-		 //So now inside this loop I would call what you need to display for each trial
-		       
-	       }
-	     }
+            //grab the blocks for the phase 
+            $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ";
+            $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
+          
+            while ($row = mysqli_fetch_row($row))
+            {
+              //Now grab the TrialID's for each block
+              $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
+              $trials = mysqli_query($conn, $queryString);
+        
+              //loops through each trial in each block 
+              while ($trialRows = mysqli_fetch_row($trials))
+              {
+                //$trialRows holds the trialID so now let's grab each stim in that trial 
+                $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
+                $infoQuery = mysqli_query($conn, $queryString);
+                  
+                $trialInfo = mysqli_fetch_row($infoQuery);
+                //$trialInfo[0] = trialID     ^
+                //$trialInfo[1] = stimIDOne   ^
+                //$trialInfo[2] = stimIDTwo   ^
+                //$trialInfo[3] = isCorrect   ^
+                      
+                /*stim ID's are in a java variable      
+                //stimOne = <?php echo json_encode($trialInfo[1]); ?>;
+                //stimTwo = <?php echo json_encode($trialInfo[2]); ?>;*/
+                
+                //Create 2 2d arrays for each stim and their type then json_encode them
+                      
+                //So now inside this loop I would call what you need to display for each trial
+              }
+            }
             
             //$queryString = ("SELECT stimID, stimType FROM stimuli_T"); // grab stim data from stimuli datatable
             //$stimIDs = mysqli_query($conn, $queryString); // query with above info
@@ -106,11 +103,11 @@
             //}
             //$numOfStims = $stimIDs -> num_rows; // grab total # of rows in database
 
-          ?>
+            ?>
 
-	 
-          //stims = <?php echo json_encode($stims); ?>; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
-          //numStims = <?php echo $numOfStims; ?>; // stores total number of stims in database
+          
+          //stims = ?php echo json_encode($stims); ?>;  //converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
+          //numStims = ?php echo $numOfStims; ?>; // stores total number of stims in database*/
         }
 
         function getNextComparison(index)
@@ -138,6 +135,7 @@
 
 
     </script>
+    <title>Question</title>
   </head>
   <style>
     #imgtoimgBody
@@ -168,7 +166,7 @@
       justify-content: center;
     }
   </style>
-  <body onload = "onLoad()">
+  <body class="background">
     <img id="questionHelpButton" src="./images/questionHelpButton.png" width="50" height="50">
     <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
