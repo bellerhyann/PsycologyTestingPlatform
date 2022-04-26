@@ -1,10 +1,9 @@
 <?php
 
-//!!!Need these values postes from Front End !!!
 //$phaseNum = $_POST["phaseNum"];
-//$user = $_POST["user"];
-$phaseNum = 1;
-$user = 1223;
+$user = $_POST["userID"];
+$phaseNum = 4111;
+//$user = 1223;
 
 
 //connect to the database
