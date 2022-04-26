@@ -31,6 +31,7 @@ fwrite($txt, " avg response time (ms): ".$phasetavg."\n");
 //****************************************************************************************************************************
 //info about blocks in phase 
 
+
 $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $phaseNum";
 $block = mysqli_query($conn, $queryString);
 //loops through each block in the phase
@@ -50,6 +51,9 @@ while ($row = mysqli_fetch_row($block))
     //loop through each trial 
 	
     fwrite($txt,"TrialID:   |  avg response time (ms) |  Correct Response \n"); 
+	
+    //used to make sure that the trials are displayed in the correct order 
+    $trialOrder = 1;
     while ($trialRows = mysqli_fetch_row($trials))
     {
         //grab the correct the response for the trial 
