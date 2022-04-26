@@ -85,7 +85,7 @@ while ($row = mysqli_fetch_row($block))
 
 
 
-        	fwrite($txt,$trialRows[0]."     | ".$timeP."      | ".$printANS"\n");
+        	fwrite($txt,$trialRows[0]."     | ".$timeP."      | ".$printANS."\n");
 	}
     }
 
