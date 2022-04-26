@@ -19,7 +19,7 @@
           getBlockList();
           getQuestionData(); // gets all question data from database
           getNextComparison(0); // gets next comparison
-        }
+        }2
 
 	
         function getBlockList()
@@ -43,7 +43,8 @@
               $blockList = array();
               $queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
               $result =  mysqli_query($conn, $queryString);
-              while($row = mysqli_fetch_assoc($result)) {
+              while($row = mysqli_fetch_assoc($result)) 
+              {
                 array_push($blockList, $row['blockID']);
               }
 	          ?>);
@@ -74,35 +75,13 @@
               {
                 //$trialRows holds the trialID so now let's grab each stim in that trial 
                 $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
+                log($queryString);
                 $infoQuery = mysqli_query($conn, $queryString);
-                  
                 $trialInfo = mysqli_fetch_row($infoQuery);
-                //$trialInfo[0] = trialID     ^
-                //$trialInfo[1] = stimIDOne   ^
-                //$trialInfo[2] = stimIDTwo   ^
-                //$trialInfo[3] = isCorrect   ^
-                      
-                /*stim ID's are in a java variable      
-                //stimOne = <?php echo json_encode($trialInfo[1]); ?>;
-                //stimTwo = <?php echo json_encode($trialInfo[2]); ?>;*/
-                
-                //Create 2 2d arrays for each stim and their type then json_encode them
-                      
-                //So now inside this loop I would call what you need to display for each trial
               }
             }
-            
-            //$queryString = ("SELECT stimID, stimType FROM stimuli_T"); // grab stim data from stimuli datatable
-            //$stimIDs = mysqli_query($conn, $queryString); // query with above info
 
             $i = 0; // incrementor variable
-            //while($row = mysqli_fetch_array($stimIDs)) // fetch data
-            //{
-              //  $stims[$i] = array('stimID' => $row['stimID'], 'stimType' => $row['stimType']); // store values in PHP array
-               // $i++; // next index
-            //}
-            //$numOfStims = $stimIDs -> num_rows; // grab total # of rows in database
-
             ?>
 
           
