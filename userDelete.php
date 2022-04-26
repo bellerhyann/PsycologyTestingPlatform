@@ -17,9 +17,7 @@ $cmd = "DELETE FROM user_T WHERE userID = '$user_id'";
 $result1 = mysqli_query($conn, $cmd);
 if (!$result1) {
    	print("Failed to delete data<br>");
-} else {
-	print("Success to delete data<br>");
-}
+} 
  
 mysqli_close($conn);
 echo "<a href=", $link_main ,">", "Go back to Main Page","</a>";
