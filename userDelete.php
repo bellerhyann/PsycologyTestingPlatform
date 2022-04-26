@@ -9,15 +9,9 @@ if (!$conn) {
 	die("Unable to Connect.".mysqli_connect_error());
 }
 
-$user_id = $_POST["user_id"];
+$stmt = $mysqli->prepare('DELETE * FROM user_T WHERE Password IS NULL');
 
-
-//Delete specific data
-$cmd = "DELETE FROM user_T WHERE userID = '$user_id'";
-$result1 = mysqli_query($conn, $cmd);
-if (!$result1) {
-   	print("Failed to delete data<br>");
-} 
+$stmt->execute();
  
 mysqli_close($conn);
 echo "<a href=", $link_main ,">", "Go back to Main Page","</a>";
