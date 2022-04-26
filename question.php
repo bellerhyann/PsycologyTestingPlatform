@@ -63,7 +63,7 @@
             $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ";
             $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
           
-            while ($row = mysqli_fetch_row($row))
+            while ($row = mysqli_fetch_row($block))
             {
               //Now grab the TrialID's for each block
               $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
