@@ -118,12 +118,12 @@
           if(stims[index].stimType == "sound")
           {
             //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
-            soundStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/sounds/" + stims[index].stimID + ".wav";
+            soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".wav";
             console.log("Got sound file: ", soundStim.src);
           }
           else stimType == "image"
           {
-            imageStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + stims[index].stimID + ".png";
+            imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".png";
             console.log("Got image file: ", imageStim.src);
           }
         }
