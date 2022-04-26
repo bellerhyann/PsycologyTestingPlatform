@@ -8,6 +8,8 @@
                 var numBlocks = window.prompt("How many Blocks are in this phase? ", "1");
                 var number = parseInt(numBlocks, 10);
                 
+                document.getElementById("numBlocks").value = numBlocks;
+
                 var phpInfo = document.getElementById("number");
                 phpInfo.innerHTML =  numBlocks;
                 var container = document.getElementById("blocksContainer");
@@ -100,7 +102,7 @@
             cursor: pointer;
         }
     </style>
-    <body class="background" onload="addBlocks()">
+    <body class="background">
         <h1 class="center">Edit Phase: Pretraining</h1>
         <div class="box3">
         <div class="boxMain">
@@ -130,7 +132,8 @@
             </br>
             </br>
 
-            <input id="number" name="numberOfBlock">
+            <input type="text" id="numBlocks" value="">Number of Blocks:<br>
+            
             <div id="blocksContainer"></div>
             <!--
                 Baseline relations blocks 1 - 10         1 - 10
