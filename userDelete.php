@@ -9,7 +9,7 @@ $user_id = $_POST["user_id"];
 
 
 //Delete specific data
-$cmd = 'DELETE FROM user_T WHERE userID = $user_id';
+$cmd = "DELETE FROM user_T WHERE userID = '$user_id'";
 $result1 = mysqli_query($conn, $cmd);
 if (!$result1) {
     print("Failed to delete data<br>");
