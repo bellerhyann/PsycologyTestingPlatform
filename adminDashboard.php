@@ -121,8 +121,9 @@
          </div>
          <div>
                 <a href="experimentBuilder.php" class="button">Edit Lab</a>
-                <a href="dataCenter.html" class="button">View Data</a
-                <br>
+		<a href="dataCenter.html" class="button">View Data</a>
+                <a href="userDelete.html" class="button">Delete User<a/>
+		<br>
          </div>
         
     </body>
