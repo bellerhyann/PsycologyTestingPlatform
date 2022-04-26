@@ -1,9 +1,7 @@
 <?php
 //get blockID from post
-//$blockID = $_POST["blockID"];
-//$userID = $_POST["userID"];
-$blockID = 1;
-$userID = 1223;
+$blockID = $_POST["blockID"];
+$userID = $_POST["userID"];
 
 //open connection to database
 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
