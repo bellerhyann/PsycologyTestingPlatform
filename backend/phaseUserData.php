@@ -1,8 +1,8 @@
 <?php
 
-//$phaseNum = $_POST["phaseNum"];
+$phaseNum = $_POST["phaseNum"];
 $user = $_POST["userID"];
-$phaseNum = 4111;
+//$phaseNum = 4111;
 //$user = 1223;
 
 
