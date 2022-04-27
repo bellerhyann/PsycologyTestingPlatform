@@ -19,6 +19,7 @@ if (!$conn) {
 else {
 	echo " connected!";
 }
+echo "\n".$prompt."   ".$score;
 
 //first update the phase_T with new phase info
 $queryString = "UPDATE phase_T SET instructions prompt = \"$prompt\" AND scoreboard = $score  AND askPrompt = $askPrompt WHERE phaseID = $phaseNum";
