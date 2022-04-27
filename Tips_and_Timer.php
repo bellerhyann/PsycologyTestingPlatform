@@ -13,7 +13,7 @@
         hour=minute=second=0;//
         var millisecond=0;//millisecond
         var int;
-        function Reset()//reset
+        function reset()//reset
         {
             window.clearInterval(int);
             millisecond=hour=minute=second=0;
