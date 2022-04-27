@@ -22,7 +22,7 @@ else {
 echo "\n".$prompt."   ".$score . "<br>";
 
 //first update the phase_T with new phase info
-$queryString = "UPDATE phase_T SET prompt = \"$prompt\", scoreBoard = $score, askPrompt = $askPrompt WHERE phaseID = $phaseNum";
+$queryString = "UPDATE phase_T SET prompt = \"$prompt\", scoreBoard = $score, askPromp = $askPrompt WHERE phaseID = $phaseNum";
 echo $queryString . "<br>";
 $result = mysqli_query($conn, $queryString);
 echo $result;
