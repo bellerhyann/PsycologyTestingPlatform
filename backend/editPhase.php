@@ -24,13 +24,14 @@ echo "\n".$prompt."   ".$score;
 //first update the phase_T with new phase info
 $queryString = "UPDATE phase_T SET prompt = \"$prompt\", scoreBoard = $score, askPrompt = $askPrompt WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
+echo $result;
 
 //next we need to loop and add each block that is in the phase 
 //this will be in the phaseblock_T
 //frist lets delete aany existing data for this phase 
 $queryString = "DELETE FROM phaseblock_t WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
-echo $result;
+
 
 while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
 {
