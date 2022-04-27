@@ -24,6 +24,7 @@
 	
         function getBlockList()
         { 
+          console.log(
             <?php 
               //Author: Skyeler Knuuttila
               session_start();
@@ -37,7 +38,7 @@
               $result =  mysqli_query($conn, $queryString);
               $userPH = $result->fetch_assoc() ?? - 1;
               $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
-              echo json_encode($userPH);
+              echo "User PhaseID:", json_encode($userPH);
     
               //create an array of blockID's from that phase 
               $blockList = array();
@@ -48,6 +49,7 @@
                 array_push($blockList, $row['blockID']);
               }
 	          ?>
+            )
 	        //grab the array '$blockList' from the php 
         }
 
