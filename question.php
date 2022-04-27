@@ -49,7 +49,7 @@
                 array_push($blockList, $row['blockID']);
               }
 	          ?>
-            )
+            );
 	        //grab the array '$blockList' from the php 
         }
 
