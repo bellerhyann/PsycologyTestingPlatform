@@ -1,13 +1,13 @@
 <?php
   //Back end is waiting on front end for two post fixes listed below 
   //this needs to be sending multiple values 
-  $blockID = $_POST['blockid'];
+  $blockNum = $_POST['numBlocks'];
+  $askPromp = $_POST['askPrompt'];
   $prompt = $_POST['prompt'];
-  $time = $_POST['seconds'];
-  $score = $_POST['trueSb'];
+  $score = $_POST['showScoreboard'];
 
   //We also still need something from front end to identify which base like baseline ect 
-  $phaseNum = $_POST['prompt']; //add 4000
+  $phaseNum = $_POST['prompt']; 
 
   //this keeps track when we put in the order
   $count = 1;
@@ -30,9 +30,12 @@ $result = mysqli_query($conn, $queryString);
 $queryString = "DELETE FROM phaseblock_t WHERE phaseID = "$phaseNum\"";
 $result = mysqli_query($conn, $queryString);
 
-while ($blockID)//unsure how to do this waiting on front end to update code 
+while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
 {
- $queryString = "INSERT INTO phaseblock_t values (\"$phaseNum\", \"$blockID\", $count)"; 
+ $blockRQ = "block";
+ 
+ $blockID = $_POST['block'.count];
+ $queryString = "INSERT INTO phaseblock_t values ($phaseNum, $blockID, $count)"; 
  $result = mysqli_query($conn, $queryString);
  $count = $count + 1;
 }
