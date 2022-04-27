@@ -17,7 +17,7 @@
         {
             window.clearInterval(int);
             millisecond=hour=minute=second=0;
-            document.getElementById('timetext').value='00hours00min00sec000msec';
+            console.log("Reset called");
         }
  
         function start()//start
@@ -44,8 +44,7 @@
                 minute=0;
                 hour=hour+1;
             }
-            document.getElementById('timetext').value=hour+'Hours'+minute+'min'+second+'sec'+millisecond+'msec';
- 
+            console.log(hour+'Hours'+minute+'min'+second+'sec'+millisecond+'msec');
         }
  
         function stop()//stop
@@ -54,9 +53,8 @@
         }
     </script>
 </head>
-<body onload="start()">
+<body onload="reset();start();">
 <div style="text-align: center">
-    <input type="text" id="timetext" value="00时00分00秒" readonly><br>
     <!--<button type="button" onclick="start()">Start</button> 
 	<button type="button" onclick="stop()">Stop</button> 
 	<button type="button" onclick="Reset()">Reset</button>-->
