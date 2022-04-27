@@ -1,13 +1,13 @@
 <?php
   //Back end is waiting on front end for two post fixes listed below 
   //this needs to be sending multiple values 
-  $blockNum = $_POST['numBlocks'];
-  $askPrompt = $_POST['askPrompt'];
-  $prompt = $_POST['prompt'];
-  $score = $_POST['showScoreboard'];
+  $blockNum = $_POST["numBlocks"];
+  $askPrompt = $_POST["askPrompt"];
+  $prompt = $_POST["prompt"];
+  $score = $_POST["showScoreboard"];
 
   //We also still need something from front end to identify which base like baseline ect 
-  $phaseNum = $_POST['phaseID']; 
+  $phaseNum = $_POST["phaseID"]; 
 
   //this keeps track when we put in the order
   $count = 1;
