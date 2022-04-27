@@ -77,12 +77,12 @@
                 $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
                 $infoQuery = mysqli_query($conn, $queryString);
                 $trialInfo = mysqli_fetch_row($infoQuery);
+                echo json_encode($trialInfo);
               }
             }
 
             $i = 0; // incrementor variable
             ?>
-            console.log(<?php echo json_encode($block) ?>);
         }
 
         function getNextComparison(index)
