@@ -57,34 +57,43 @@
         // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData()
         {
-          <?php
-            $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
-            if (!$conn)
-                die("Database Error.".mysqli_connect_error());
 		
-            //grab the blocks for the phase 
-            $queryString = "SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ";
-            $block = mysqli_query($conn, $queryString); //holds all of the blockID's in our phase
-          
-            while ($row = mysqli_fetch_row($block))
-            {
-              //Now grab the TrialID's for each block
-              $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
-              $trials = mysqli_query($conn, $queryString);
-        
-              //loops through each trial in each block 
-              while ($trialRows = mysqli_fetch_row($trials))
-              {
-                //$trialRows holds the trialID so now let's grab each stim in that trial 
-                $queryString = "SELECT * FROM trial_T WHERE trialID = \"$trialRows\"";
-                $infoQuery = mysqli_query($conn, $queryString);
-                $trialInfo = mysqli_fetch_row($infoQuery);
-                echo json_encode($trialInfo);
-              }
-            }
+		//this needs to be put in a for loop and needs to post one blockID
+		
+		<?php 
+			//Author: Skyeler Knuuttila
+			//given blockID, return array of all stim and stimTypes
+			//in form ["A1.png", "image", "B1.wav", "sound", .....]
+			$blockID = $_POST["____"];
 
-            $i = 0; // incrementor variable
-            ?>
+			$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+			if (!$conn)
+        			die("BlockID not found: Database Error.".mysqli_connect_error());
+	
+			//start with an array of trialID's
+			$trialList = array(); //empty array
+			$queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
+			$result =  mysqli_query($conn, $queryString);
+			while($row = mysqli_fetch_assoc($result)) {
+    				array_push($trialList, $row['trialID']);
+			}
+
+			//get array of stim and stimType by trial
+			$stimList = array();
+			for ($i = 0; $i <= sizeOf($trialList)-1; $i++) {
+				//$trialList[$i] is a string, we need an int
+				$trialID = intval($trialList[$i]);
+				$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
+	      			$result =  mysqli_query($conn, $queryString);
+	      			while($row = mysqli_fetch_assoc($result)) {
+    					array_push($stimList, $row['stimID']);
+					array_push($stimList, $row['stimtype']);
+				}	
+			}
+			//$stimList is the array frontend will need to pull
+		?>
+		
+		
         }
 
         function getNextComparison(index)
