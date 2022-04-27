@@ -33,6 +33,7 @@ $result = mysqli_query($conn, $queryString);
 while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
 {
  $blockRQ = "block";
+ //need to convert count to a string and add it to blockRQ to then post the value
  
  $blockID = $_POST['block'.count];
  $queryString = "INSERT INTO phaseblock_t values ($phaseNum, $blockID, $count)"; 
