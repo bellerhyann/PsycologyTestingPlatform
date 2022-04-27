@@ -37,6 +37,7 @@
               $result =  mysqli_query($conn, $queryString);
               $userPH = $result->fetch_assoc() ?? - 1;
               $userPH = 4111; // $userPH['phaseID'] userPH now stores the phase the user is on 
+              echo json_encode($userPH);
     
               //create an array of blockID's from that phase 
               $blockList = array();
@@ -47,7 +48,6 @@
                 array_push($blockList, $row['blockID']);
               }
 	          ?>
-            console.log(<?php echo json_encode($userPH); ?>);
 	        //grab the array '$blockList' from the php 
         }
 
