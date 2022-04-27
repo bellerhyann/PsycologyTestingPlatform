@@ -23,9 +23,7 @@ echo "\n".$prompt."   ".$score . "<br>";
 
 //first update the phase_T with new phase info
 $queryString = "UPDATE phase_T SET prompt = \"$prompt\", scoreBoard = $score, askPromp = $askPrompt WHERE phaseID = $phaseNum";
-echo $queryString . "<br>";
 $result = mysqli_query($conn, $queryString);
-echo $result;
 
 //next we need to loop and add each block that is in the phase 
 //this will be in the phaseblock_T
@@ -43,6 +41,7 @@ while ($count <= $blockNum)//unsure how to do this waiting on front end to updat
 	
  $blockID = $_POST["$blockRQ"];
  $queryString = "INSERT INTO phaseblock_t values ($phaseNum, $blockID, $count)"; 
+ echo $queryString;
  $result = mysqli_query($conn, $queryString);
  $count = $count + 1;
 }
