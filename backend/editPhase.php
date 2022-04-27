@@ -30,6 +30,7 @@ $result = mysqli_query($conn, $queryString);
 //frist lets delete aany existing data for this phase 
 $queryString = "DELETE FROM phaseblock_t WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
+echo $result;
 
 while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
 {
