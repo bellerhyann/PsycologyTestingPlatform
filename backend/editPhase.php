@@ -7,7 +7,7 @@
   $score = $_POST['showScoreboard'];
 
   //We also still need something from front end to identify which base like baseline ect 
-  $phaseNum = $_POST['prompt']; 
+  $phaseNum = $_POST['phaseID']; 
 
   //this keeps track when we put in the order
   $count = 1;
@@ -34,8 +34,10 @@ while ($count <= $blockNum)//unsure how to do this waiting on front end to updat
 {
  $blockRQ = "block";
  //need to convert count to a string and add it to blockRQ to then post the value
- 
- $blockID = $_POST['block'.count];
+ $holder = strval($count);
+ $blockRQ .=$holder;
+	
+ $blockID = $_POST[$blockRQ];
  $queryString = "INSERT INTO phaseblock_t values ($phaseNum, $blockID, $count)"; 
  $result = mysqli_query($conn, $queryString);
  $count = $count + 1;
