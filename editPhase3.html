@@ -5,8 +5,12 @@
         <link rel="stylesheet" href="./src/styles.css">
         <script type="text/javascript">
             function addBlocks() {
-                var numBlocks = window.prompt("How many Blocks are in this phase? ", "1");
-                var number = parseInt(numBlocks, 10);
+                var numBlocks = "";
+                var number = 0;
+                while (!(number>=1 && number<=5)) {
+                    numBlocks = window.prompt("How many Blocks are in this phase? ", "1");
+                    number = parseInt(numBlocks, 10);
+                }
                 
                 document.getElementById("numBlocks").value = numBlocks;
                 document.getElementById("phaseID").value = 3;
