@@ -32,7 +32,7 @@ $result = mysqli_query($conn, $queryString);
 
 while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
 {
- $blockRQ = "block";
+ $blockRQ = "blockID";
  //need to convert count to a string and add it to blockRQ to then post the value
  $holder = strval($count);
  $blockRQ .=$holder;
