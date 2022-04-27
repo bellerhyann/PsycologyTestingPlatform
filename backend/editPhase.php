@@ -2,7 +2,7 @@
   //Back end is waiting on front end for two post fixes listed below 
   //this needs to be sending multiple values 
   $blockNum = $_POST['numBlocks'];
-  $askPromp = $_POST['askPrompt'];
+  $askPrompt = $_POST['askPrompt'];
   $prompt = $_POST['prompt'];
   $score = $_POST['showScoreboard'];
 
@@ -21,13 +21,13 @@ else {
 }
 
 //first update the phase_T with new phase info
-$queryString = "UPDATE phase_T SET allowedTime \"$time\" AND instructions \"$prompt\" AND scoreboard \"$score\" WHERE phaseID = \"$phaseNum\"";
+$queryString = "UPDATE phase_T SET instructions prompt = \"$prompt\" AND scoreboard = $score  AND askPrompt = $askPrompt WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
 
 //next we need to loop and add each block that is in the phase 
 //this will be in the phaseblock_T
 //frist lets delete aany existing data for this phase 
-$queryString = "DELETE FROM phaseblock_t WHERE phaseID = "$phaseNum\"";
+$queryString = "DELETE FROM phaseblock_t WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
 
 while ($count <= $blockNum)//unsure how to do this waiting on front end to update code 
