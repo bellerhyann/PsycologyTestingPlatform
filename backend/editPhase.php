@@ -22,7 +22,7 @@ else {
 echo "\n".$prompt."   ".$score;
 
 //first update the phase_T with new phase info
-$queryString = "UPDATE phase_T SET prompt = \"$prompt\" AND scoreBoard = $score AND askPrompt = $askPrompt WHERE phaseID = $phaseNum";
+$queryString = "UPDATE phase_T SET prompt = \"$prompt\", scoreBoard = $score, askPrompt = $askPrompt WHERE phaseID = $phaseNum";
 $result = mysqli_query($conn, $queryString);
 
 //next we need to loop and add each block that is in the phase 
