@@ -44,7 +44,6 @@
                 minute=0;
                 hour=hour+1;
             }
-            console.log(hour+'Hours'+minute+'min'+second+'sec'+millisecond+'msec');
         }
  
         function stop()//stop
