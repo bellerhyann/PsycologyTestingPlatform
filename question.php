@@ -49,11 +49,16 @@
               {
                 array_push($blockList, $row['blockID']);
               }
+
+              $blockList_Javascript = json_encode($blockList);
+              echo "var blockList = ". $blockList_Javascript . ";\n";
 	          ?>
             );
-	        //grab the array '$blockList' from the php 
-          var blockList = <?php echo json_encode($blockList); ?>;
-          console.log(blockList[1]);
+	        //grab the array '$blockList' from the php
+
+          //var users = <php echo json_encode($userArray); ?>;
+          //var blockList = <php echo json_encode($blockList); ?>;
+          //console.log(blockList[1]);
         }
 
         // get question data from database, convert PHP to JS and store
