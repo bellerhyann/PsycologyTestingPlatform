@@ -1,3 +1,7 @@
+//Author: Bernadette Kornberger 
+//
+//Updates phase_T and phaseBlock_T to hold the new values 
+//from what the admin edits from the editPhase#.html
 <?php
   //Back end is waiting on front end for two post fixes listed below 
   //this needs to be sending multiple values 
