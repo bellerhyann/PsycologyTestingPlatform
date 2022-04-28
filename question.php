@@ -50,12 +50,17 @@
                 array_push($blockList, $row['blockID']);
               }
 
-              $blockList_Javascript = json_encode($blockList);
-              echo "var blockList = ". $blockList_Javascript . ";\n";
+	      $returnThis = "";
+	      foreach ($blockList as $cell){
+		// since this array is unknown, use clever separator
+            	$returnThis .= $cell.",,"; 
+              }
+              //$blockList_Javascript = json_encode($blockList);
+              //echo "var blockList = ". $blockList_Javascript . ";\n";
 	          ?>
             );
 	        //grab the array '$blockList' from the php
-
+	  var blockList = '<?php echo $returnThis; ?>'.split(',,');
           //var users = <php echo json_encode($userArray); ?>;
           //var blockList = <php echo json_encode($blockList); ?>;
           console.log(blockList[1]);
