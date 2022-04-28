@@ -5,7 +5,7 @@ if (!$conn) {
 	 die("Unable to Connect.".mysqli_connect_error());
      }
 
-$queryString = "SELECT * FROM user_T";
+$queryString = "SELECT * FROM user_T WHERE password = /"/"";
 $result = mysqli_query($conn, $queryString);
 
 echo "<table border=1>";
