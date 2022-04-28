@@ -17,6 +17,7 @@
           imageStim = document.getElementById("imageStim");
           soundStim = document.getElementById("soundStim");
           getBlockList();
+          // automatically start loop based on phase ID
           getQuestionData(); // gets all question data from database
           getNextComparison(0); // gets next comparison
         }
@@ -52,6 +53,7 @@
             );
 	        //grab the array '$blockList' from the php 
           blockList = <?php echo json_encode($blockList); ?>;
+          console.log(blockList);
         }
 
         // get question data from database, convert PHP to JS and store
@@ -61,6 +63,7 @@
 		
 		//this needs to be put in a for loop and needs to post one blockID
 		
+    // add a loop to give block id 
 		<?php 
 			//Author: Skyeler Knuuttila
 			//given blockID, return array of all stim and stimTypes
