@@ -19,7 +19,7 @@
           getBlockList();
           getQuestionData(); // gets all question data from database
           getNextComparison(0); // gets next comparison
-        }2
+        }
 
 	
         function getBlockList()
