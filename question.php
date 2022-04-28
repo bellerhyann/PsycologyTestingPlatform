@@ -58,7 +58,7 @@
 	        //grab the array '$blockList' from the php
           //var users = <php echo json_encode($userArray); ?>;
           blockList = <?php echo json_encode($blockList); ?>;
-          console.log(blockList[1]);
+          console.log(blockList);
         }
 
         // get question data from database, convert PHP to JS and store
