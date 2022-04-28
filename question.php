@@ -56,9 +56,8 @@
 	          ?>
             );
 	        //grab the array '$blockList' from the php
-	  //var blockList = '<?php echo $returnThis; ?>'.split(',,');
           //var users = <php echo json_encode($userArray); ?>;
-          var blockList = <php echo json_encode($blockList); ?>;
+          var blockList = <?php echo json_encode($blockList); ?>;
           console.log(blockList[1]);
         }
 
