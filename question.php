@@ -47,7 +47,6 @@
 
         //given blockID, return array of all stim and stimTypes
         //in form ["A1.png", "image", "B1.wav", "sound", .....]
-        // temporary: echo sizeOf($blockList);
         for($j = 0; $j<sizeOf($blockList); $j++)
         {
           $blockID = $blockList[$j];
@@ -75,9 +74,8 @@
             }
           }
           // push out array here
-          // turns out as "var stimListi = {data here, data here, data here};\n"
-          //echo "\tvar stimList", $i, " = ", json_encode($stimList), "; \n";
-          echo "\tvar stimList", $j, " = ", json_encode($stimList), "; \n";
+          // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
+          echo "\tvar block", $j, " = ", json_encode($stimList), "; \n";
         }
       ?>
     }
