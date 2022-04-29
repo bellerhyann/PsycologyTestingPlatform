@@ -50,8 +50,7 @@
         // temporary: echo sizeOf($blockList);
         for($j = 0; $j<sizeOf($blockList); $j++)
         {
-          //echo "console.log(" , "'Current Block ID: '," , $i , "); \n";
-          $blockID = $j;
+          $blockID = $blockList[$j];
 
           //start with an array of trialID's
           $trialList = array(); //empty array
