@@ -125,10 +125,6 @@
                         <option value="C3">C3</option>
                     </select>
 
-                    <select id="stim_ext" name="stim_ext">
-                        <option value="image">image</option>
-                        <option value="sound">sound</option>
-                    </select>
                     </div>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" class="dropbtn"></div>
                 </form>
