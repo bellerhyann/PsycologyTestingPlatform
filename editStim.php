@@ -28,12 +28,6 @@
             width: 20pc;
             height: 100pc;
         }
-
-        #content
-        {
-            margin-left: 250px;
-        }
-
         table, th, td 
         {
             background-color: white;
@@ -141,37 +135,42 @@
             width: 50%;
             padding: 20px;
         }
+        .tablePos{
+            margin-left: auto;
+            margin-right: auto;
+        }
     </style>
     <body id="edit_stim_body">
         <div id="dashboard">
             <h1 id="title" class="h1">Edit Stimuli</h1>
             <br>
             <br>
-            <?php
-            //connect to SQL using Username Password Ect
-            $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
-            if (!$conn) {
-                die("Unable to Connect.".mysqli_connect_error());
+            <div class="tablePos">
+                <?php
+                //connect to SQL using Username Password Ect
+                $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+                if (!$conn) {
+                    die("Unable to Connect.".mysqli_connect_error());
+                    }
+                
+    
+
+                $queryString = "SELECT * FROM stimuli_t";
+                $result = mysqli_query($conn, $queryString);
+
+                echo "<table border=1>";
+                echo "<tr> <th>Stimuli ID</th> <th>Stimuli Type</th> <th>Group ID</th> </tr>";
+                while ($row = mysqli_fetch_array($result))
+                {
+                    //printf("Select returned %d rows.\n", $result->phaseID)
+                    echo "<tr> <td>".$row["stimID"]."</td>"."<td>".$row["stimtype"]."</td>".
+                    "<td>".$row["groupID"]."</td></tr>";
                 }
-            
-   
 
-            $queryString = "SELECT * FROM stimuli_t";
-            $result = mysqli_query($conn, $queryString);
-
-            echo "<table border=1>";
-            echo "<tr> <th>Stimuli ID</th> <th>Stimuli Type</th> <th>Group ID</th> </tr>";
-            while ($row = mysqli_fetch_array($result))
-            {
-                //printf("Select returned %d rows.\n", $result->phaseID)
-                echo "<tr> <td>".$row["stimID"]."</td>"."<td>".$row["stimtype"]."</td>".
-                "<td>".$row["groupID"]."</td></tr>";
-            }
-
-            //close connection
-            mysqli_close($conn);
-            ?>
-            
+                //close connection
+                mysqli_close($conn);
+                ?>
+            </div>
             <div id="boxMain">
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <input name="imgFile" type="file" class="dropbtn">
