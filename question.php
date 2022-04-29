@@ -37,7 +37,6 @@
         $result =  mysqli_query($conn, $queryString);
         $userPH = $result->fetch_assoc() ?? -1;
         $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
-        echo "User PhaseID: ", json_encode($userPH);
 
         //create an array of blockID's from that phase 
         $blockList = array();
@@ -51,6 +50,7 @@
         //in form ["A1.png", "image", "B1.wav", "sound", .....]
         for($i = 0; $i<=sizeOF($blockList); $i++)
         {
+          echo "console.log(" , "'Current Block ID: '," , $i , "); \n";
           $blockID = $i;
 
           //start with an array of trialID's
