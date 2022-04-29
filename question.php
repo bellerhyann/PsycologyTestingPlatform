@@ -65,13 +65,14 @@
         // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData(index)
         {
+          document.cookie = "index = " + index; 
         //this needs to be put in a for loop and needs to post one blockID
         // add a loop to give block id 
         <?php 
           //Author: Skyeler Knuuttila
           //given blockID, return array of all stim and stimTypes
           //in form ["A1.png", "image", "B1.wav", "sound", .....]
-          $blockID = $_POST["index"];
+          $blockID = $_COOKIE["index"];
 
           $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
           if (!$conn)
