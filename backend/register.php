@@ -40,6 +40,6 @@ mysqli_query($conn, $queryString);
 //close connection
 mysqli_close($conn);
 
-echo echo "<script> alert('Completed. Please contact admin for further instructions.');window.location='register.html'</script>";
+echo "<script> alert('Completed. Please contact admin for further instructions.');window.location='register.html'</script>";
 
 ?>
