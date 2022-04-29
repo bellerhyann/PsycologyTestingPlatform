@@ -94,7 +94,7 @@
             }
           }
           // push out array here
-          echo "var stimList", $i, " = ", json_encode($stimList);
+          echo "var stimList", $i, " = ", json_encode($stimList), "; \n";
 
         }
         //$stimList is the array frontend will need to pull
