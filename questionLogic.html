@@ -4,9 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
-        var timer = 8; // number of seconds for timer
-        document.getElementById("title").innerHTML = timer;
-        var interval =  setInterval(checkTimer(false), 1000); // calls checkTimer every 1000 milliseconds (1 second)
+        var timer;
+        var interval;
+        function onLoad()
+        {
+            timer = 8; // number of seconds for timer
+            document.getElementById("title").innerHTML = timer;
+            interval =  setInterval(checkTimer(false), 1000); // calls checkTimer every 1000 milliseconds (1 second)
+        }
         function checkTimer(isClicked)
         {
             if(timer == 0)
