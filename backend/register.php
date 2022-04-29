@@ -18,7 +18,7 @@ $result = mysqli_query($conn, $queryString);
 
 //Updated code to check if User exists - 3/31/2022
 if(mysqli_num_rows($result) > 0){
-    echo "<script> alert("User already exists!");window.location='register.html'</script>";
+    echo "<script> alert('User already exists!');window.location='register.html'</script>";
 }
 
 //generate random userID
@@ -40,6 +40,6 @@ mysqli_query($conn, $queryString);
 //close connection
 mysqli_close($conn);
 
-echo echo "<script> alert(""Completed. Please contact admin for further instructions."");window.location='register.html'</script>";
+echo echo "<script> alert('Completed. Please contact admin for further instructions.');window.location='register.html'</script>";
 
 ?>
