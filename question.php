@@ -79,8 +79,6 @@
           // turns out as "var stimListi = {data here, data here, data here};\n"
           //echo "\tvar stimList", $i, " = ", json_encode($stimList), "; \n";
           echo "\tvar stimList", $j, " = ", json_encode($stimList), "; \n";
-          echo "\tvar stimList", $j, " = ", json_encode($stimList), "; \n";
-          echo "\tvar stimList", $j, " = ", json_encode($stimList), "; \n";
         }
       ?>
     }
