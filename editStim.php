@@ -167,7 +167,8 @@
                 mysqli_close($conn);
                 ?>
             </div>
-            
+                <br>
+                <br>
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <input name="imgFile" type="file" class="dropbtn">
                     <br>
@@ -187,6 +188,8 @@
                     <br>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" id="btn"></div>
                 </form>
+                <br>
+                <br>
             </div>
         </div>
     </body>

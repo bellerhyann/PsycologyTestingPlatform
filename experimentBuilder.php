@@ -27,7 +27,7 @@
             background-color: #6C2037;
             padding: 2px;
             box-sizing: content-box;
-            width: 50%;
+            width: 30%;
             color: white;
             justify-content: center;            
         }
@@ -126,6 +126,8 @@
                         <br>
                         <a href="editStim.php" style="text-decoration: none;"><button id="btn">EDIT STIMULI</button></a>
                 </div>
+            <br>
+            <br>
         </div>
     </body>
 </html>
