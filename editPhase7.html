@@ -55,47 +55,39 @@
             text-align: center;
             color: white;
         }
-
+        #title
+        {
+            text-align: center;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F0C975;
+            color: #6C2037;
+            width: 25pc;
+            font-size: 25px;
+            padding: 10px;
+        }
         .background
         {
-            background-color: rgb(26, 16, 41);
+            background-color: #37111d;
             text-align: center;
             
         }
-
         .boxMain
         {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            justify-content: center;
-            color: white;
-        }
-
-        .box2
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 50px;
-            justify-content: center;
-            color: white;
-            border: 1px solid grey;
-            background-color: grey;
+            margin: auto;
+            border-radius: 5px;
+            background-color: #6C2037;
             padding: 10px;
-        }
-
-        .box3
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            border: 1px solid grey;
-            background-color: grey;
-            padding: 10px;
+            box-sizing: content-box;
+            width: 60%;
+            color: white;
+            
         }
         .button{
-            background-color: #384e5c;
+            background-color: #F0C975;
             border: none;
-            color: white;
+            color: #6C2037;
             padding: 5px 10px;
             text-align: center;
             text-decoration: none;
@@ -103,11 +95,11 @@
             font-size: 15px;
             margin: 4px 2px;
             cursor: pointer;
+            font-weight: 600;
         }
     </style>
     <body class="background" onload="addBlocks()">
-        <h1 class="center">Edit Phase: Transitivity Test </h1>
-        <div class="box3">
+        <h1 class="center" id="title">Edit Phase: Transitivity Test </h1>
             <div class="boxMain">
 
                 <!-- --------FORM to send data to editPhase.php---------->
@@ -137,19 +129,18 @@
                     </br>
         
                     Number of Blocks (Do not change):<input type="number" id="numBlocks" name="numBlocks"><br>
-
+                    <br>
                     Phase ID (Do not change):<input type="number" id="phaseID" name="phaseID"><br>
-                    
+                    <br>
                     <div id="blocksContainer"></div>
                     <!--
                         Baseline relations blocks 1 - 10         1 - 10
                         Symmetry relations blocks 1 - 5         11 - 15
                         Transitivity relations blocks 1 - 5         16 - 20
                     -->
-                    
+                    <br>
                     <input type="submit" name="submit" value="Update">
                 </form>
             </div>
-        </div>
     </body>
 </html>

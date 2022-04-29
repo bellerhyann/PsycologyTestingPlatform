@@ -47,7 +47,7 @@
         <title>Phase Editor</title>
     </head>
     <style>
-        body{
+         body{
             font-family: 'Verdana', sans-serif;
         }
         .center
@@ -55,47 +55,39 @@
             text-align: center;
             color: white;
         }
-
+        #title
+        {
+            text-align: center;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F0C975;
+            color: #6C2037;
+            width: 25pc;
+            font-size: 25px;
+            padding: 10px;
+        }
         .background
         {
-            background-color: rgb(26, 16, 41);
+            background-color: #37111d;
             text-align: center;
             
         }
-
         .boxMain
         {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            justify-content: center;
-            color: white;
-        }
-
-        .box2
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 50px;
-            justify-content: center;
-            color: white;
-            border: 1px solid grey;
-            background-color: grey;
+            margin: auto;
+            border-radius: 5px;
+            background-color: #6C2037;
             padding: 10px;
-        }
-
-        .box3
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            border: 1px solid grey;
-            background-color: grey;
-            padding: 10px;
+            box-sizing: content-box;
+            width: 60%;
+            color: white;
+            
         }
         .button{
-            background-color: #384e5c;
+            background-color: #F0C975;
             border: none;
-            color: white;
+            color: #6C2037;
             padding: 5px 10px;
             text-align: center;
             text-decoration: none;
@@ -103,54 +95,54 @@
             font-size: 15px;
             margin: 4px 2px;
             cursor: pointer;
+            font-weight: 600;
         }
     </style>
     <body class="background" onload="addBlocks()">
-        <h1 class="center">Edit Phase: Symmetry Pretest </h1>
-        <div class="box3">
-        <div class="boxMain">
+        <h1 class="center" id="title">Edit Phase: Symmetry Pretest </h1>
+            <div class="boxMain">
 
-        <!-- --------FORM to send data to editPhase.php---------->
+            <!-- --------FORM to send data to editPhase.php---------->
 
-        <div>
-            <a href="/editPhase1.html" class="button">Pretraining</a>
-            <a href="/editPhase2.html" class="button">Symmetry Pretest</a>
-            <a href="/editPhase3.html" class="button">Transitivity Pretest</a>
-            <a href="/editPhase4.html" class="button">Baseline Training</a>
-            <a href="/editPhase5.html" class="button">Baseline Test</a>
-            <a href="/editPhase6.html" class="button">Symmetry Test</a>
-            <a href="/editPhase7.html" class="button">Transitivity Test</a>
-        </div>
-
-        <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
             <div>
-                <p>Shows the Scoreboards</p>
-            <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
+                <a href="/editPhase1.html" class="button">Pretraining</a>
+                <a href="/editPhase2.html" class="button">Symmetry Pretest</a>
+                <a href="/editPhase3.html" class="button">Transitivity Pretest</a>
+                <a href="/editPhase4.html" class="button">Baseline Training</a>
+                <a href="/editPhase5.html" class="button">Baseline Test</a>
+                <a href="/editPhase6.html" class="button">Symmetry Test</a>
+                <a href="/editPhase7.html" class="button">Transitivity Test</a>
+            </div>
 
-            <p>Gives the option to ask for Prompt</p>
-            <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
-            <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
-            
-            <p>Written Prompt: </p>
-            <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
-            </br>
-            </br>
+            <form action="./backend/editPhase.php" id="edit_phase" method="post" enctype="multipart/form-data">
+                <div>
+                    <p>Shows the Scoreboards</p>
+                <input type="radio" id="trueSb" name="showScoreboard" value="true"> <label for="true">True</label><br>
+                <input type="radio" id="falseSb" name="showScoreboard" value="false"> <label for="false">False</label>
 
-            Number of Blocks (Do not change):<input type="number" id="numBlocks" name="numBlocks"><br>
+                <p>Gives the option to ask for Prompt</p>
+                <input type="radio" id="truePrompt" name="askPrompt" value="true"> <label for="true">True</label><br>
+                <input type="radio" id="falsePrompt" name="askPrompt" value="false"> <label for="false">False</label>
+                
+                <p>Written Prompt: </p>
+                <textarea id="text_prompt" name="prompt" rows="5" cols="50"></textarea>
+                </br>
+                </br>
 
-            Phase ID (Do not change):<input type="number" id="phaseID" name="phaseID"><br>
-            
-            <div id="blocksContainer"></div>
-            <!--
-                Baseline relations blocks 1 - 10         1 - 10
-                Symmetry relations blocks 1 - 5         11 - 15
-                Transitivity relations blocks 1 - 5         16 - 20
-            -->
-            
-            <input type="submit" name="submit" value="Update">
-        </form>
-        </div>
-        </div>
+                Number of Blocks (Do not change):<input type="number" id="numBlocks" name="numBlocks"><br>
+                <br>
+                Phase ID (Do not change):<input type="number" id="phaseID" name="phaseID"><br>
+                
+                <div id="blocksContainer"></div>
+                <!--
+                    Baseline relations blocks 1 - 10         1 - 10
+                    Symmetry relations blocks 1 - 5         11 - 15
+                    Transitivity relations blocks 1 - 5         16 - 20
+                -->
+                <br>
+
+                <input type="submit" name="submit" value="Update">
+            </form>
+            </div>
     </body>
 </html>

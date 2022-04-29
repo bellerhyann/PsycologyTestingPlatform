@@ -9,46 +9,36 @@
         body{
             font-family: 'Verdana', sans-serif;
         }
-        .center
+        .h1
         {
             text-align: center;
-            color: white;
+            color: #F0C975;
         }
-
+        #title
+        {
+            text-align: center;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F0C975;
+            color: #6C2037;
+            width: 28pc;
+            font-size: 30px;
+        }
         .background
         {
-            background-color: rgb(26, 16, 41);
+            background-color: #37111d;
             text-align: center;
         }
-
         .boxMain
         {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 10px;
-            justify-content: center;
-            color: white;
-        }
-
-        .box2
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 50px;
-            justify-content: center;
-            color: white;
-            border: 1px solid grey;
-            background-color: grey;
+            margin: auto;
+            border-radius: 5px;
+            background-color: #6C2037;
             padding: 10px;
-        }
-
-        .box3
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            border: 1px solid grey;
-            background-color: grey;
-            padding: 10px;
+            box-sizing: content-box;
+            width: 60%;
+            color: white;
         }
         .button{
             background-color: #384e5c;
@@ -90,8 +80,9 @@
         }
     </script>
     <body class="background">
-        <h1 class="center">Welcome to the Data Center</h1>
-        <div class="box3">
+        <h1 class="h1" id="title">Welcome to the Data Center</h1>
+        <!-- Block Specific-->
+        <div class="boxMain">
             <p class="text">Phase Specific Data: </p>
             <div class="boxMain">
                 <form name="phaseForm" action="/" id="phaseUserForm" method="post">
@@ -171,7 +162,6 @@
             <br>
             <br>
             
-
             <p class="text">Line Graphs: </p>
             <!-- User -->
             <div class="boxMain">
@@ -180,7 +170,8 @@
 
                     <label for="userID">User ID:</label>
                     <textarea id="userID" name="ID" rows="1" cols="10"></textarea>
-
+                    <br>
+                    <br>
                     <input type="submit" name="submit" value="Download">
                 </form>
             </div>
