@@ -4,30 +4,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
-        var timer = 8;
-        var interval = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (1 second)
+        var timer = 8; // number of seconds for timer
+        var questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
         
         function onLoad()
         {
-            // set initial value of timer
-            document.getElementById("title").innerHTML = timer;
+            document.getElementById("title").innerHTML = timer; // remove when done testing
         }
         
         function checkTimer()
         {
             if(timer == 1)
             {
-                document.getElementById("title").innerHTML = "TIMER DONE";
-                clearInterval(interval);
+                document.getElementById("title").innerHTML = "TIMER DONE";// remove when done testing
+                clearInterval(questionTimer);
+                document.getElementById("button")
                 // do code here for once the timer is over
+                if(clicked == 1)
             }
             else // timer != 0
             {
                 timer--;
 
-                // remove these three lines when done testing
-                // line below is used to visually show the timer for testing
-                document.getElementById("title").innerHTML = timer;
+                document.getElementById("title").innerHTML = timer;// remove when done testing
             }
         }
 
@@ -92,7 +91,7 @@
     <h1 class="center" id="title">Fake Question</h1>
     <div class="boxMain">
 
-        <button class="button" id="button" alt="Summon">Summon</button>
+        <button class="button" id="summonButton" alt="Summon">Summon</button>
 
 
     </div>
