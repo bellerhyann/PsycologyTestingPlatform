@@ -27,7 +27,7 @@
             background-color: #6C2037;
             padding: 2px;
             box-sizing: content-box;
-            width: 30%;
+            width: 20%;
             color: white;
             justify-content: center;            
         }

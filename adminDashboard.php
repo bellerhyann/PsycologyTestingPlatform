@@ -16,6 +16,7 @@
             margin-bottom: auto;
             margin-left: 340px;
             margin-right: 142px;
+            color: #
         }
 
         body{
@@ -63,23 +64,53 @@
             background-color: grey;
             padding: 10px;
         }
-        .button{
-            background-color: #384e5c;
-            border: none;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
+        #btn
+        {
+            display: flex;
+            background-color: #6C2037;
+            border-radius: 5px;
+            width: 10pc;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            color: #F0C975;
             text-decoration: none;
-            display: inline-block;
-            font-size: 15px;
-            margin: 4px 2px;
-            cursor: pointer;
+            padding: 10px;
+            font-size: 14px;
+            font-family: 'Verdana', sans-serif;
         }
 
+        #btn:hover
+        {
+            background-color: #F0C975;
+            color: #6C2037;
+        }
+        .button_position{
+            margin: auto;
+            width: 50%;
+            padding: 20px;
+        }
+        .h1
+        {
+            text-align: center;
+            color: #F0C975;
+        }
+        #title
+        {
+            text-align: center;
+            border-radius: 5px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #F0C975;
+            color: #6C2037;
+            width: 15pc;
+            font-size: 40px;
+            padding: 20px;
+        }
     </style>
     <body class="body">
         <div class="body_content">
-            <h1 id="welcomeUserMsg">Welcome, <?php session_start(); 
+            <h1 id="title" class="h1">Welcome, <?php session_start(); 
 		    				$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
 		    				if (!$conn)
         						die("Database Error.".mysqli_connect_error());
@@ -90,11 +121,8 @@
 							echo $row[0];	
 						}
 		    			      ?>!</h1>
-
-        
-            
-            
             <?php
+
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn) {
@@ -105,7 +133,6 @@
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
-            echo "<caption>Lab Users</caption>";
             echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th><th>Phase ID</th></tr>";
             while ($row = mysqli_fetch_array($result))
             {
@@ -119,10 +146,10 @@
             ?>
         
          </div>
-         <div>
-                <a href="experimentBuilder.php" class="button">Edit Lab</a>
-		<a href="dataCenter.html" class="button">View Data</a>
-                <a href="userDelete.html" class="button">Delete User<a/>
+         <div class="button_position">
+                <a href="experimentBuilder.php"><button id="btn">EDIT LAB</button></a>
+		        <a href="dataCenter.html"><button id="btn">VIEW DATA</button></a>
+                <a href="userDelete.html"><button id="btn">DELETE USER</button></a>
 		<br>
          </div>
         
