@@ -28,6 +28,13 @@
             }
         }
 
+        function clicked()
+        {
+            document.getElementById("title").innerHTML = "Button Clicked";// remove when done testing
+            clearInterval(questionTimer); // stops the timer
+            document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
+        }
+
     </script>
 
 
@@ -89,7 +96,7 @@
     <h1 class="center" id="title">Fake Question</h1>
     <div id="boxMain">
 
-        <button class="button" id="clickButton" alt="click">Click</button>
+        <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
 
 
     </div>
