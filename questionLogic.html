@@ -5,14 +5,14 @@
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
         var timer = 8;
-        var interval =  setInterval(checkTimer(false), 1000); // calls checkTimer every 1000 milliseconds (1 second)
+        var interval = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (1 second)
         
         function onLoad()
         {
             document.getElementById("title").innerHTML = timer;
         }
         
-        function checkTimer(isClicked)
+        function checkTimer()
         {
             if(timer == 0)
             {
