@@ -27,18 +27,10 @@
             background-color: #6C2037;
             padding: 10px;
             box-sizing: content-box;
-            width: 60%;
-            color: white;
-        }
-        .boxMain
-        {
-            margin: auto;
-            border-radius: 5px;
-            background-color: #6C2037;
-            padding: 10px;
-            box-sizing: content-box;
             width: 50%;
             color: white;
+            display: flex;
+            justify-content: center;            
         }
         #dashboard
         {
