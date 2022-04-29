@@ -25,13 +25,13 @@
             margin: auto;
             border-radius: 5px;
             background-color: #6C2037;
-            padding: 10px;
+            padding: 2px;
             box-sizing: content-box;
             width: 50%;
             color: white;
             justify-content: center;            
         }
-        
+
         table, th, td 
         {
             background-color: white;
@@ -46,10 +46,9 @@
             justify-content: center;
             width: 30pc;
             vertical-align: center;
-            margin-top: auto;
             margin-bottom: auto;
-            margin-left: 340px;
-            margin-right: 142px;
+            margin-left: auto;
+            margin-right: auto;
             font-family: 'Verdana', sans-serif;
             color:#F0C975;
             margin-top: 5%;
