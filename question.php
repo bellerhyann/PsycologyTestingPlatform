@@ -151,11 +151,11 @@
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
   <h1 class="center" id="title">Fake Question</h1>
-    <div id="boxMain">
-        <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
-        <img id="imageStim"></img>
-        <audio id="soundStim" src="" type="audio/wav" controls></audio>
-    </div>
+  <div id="boxMain">
+      <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
+      <img id="imageStim"></img>
+      <audio id="soundStim" src="" type="audio/wav" controls></audio>
+  </div>
 </body>
 
 </html>
