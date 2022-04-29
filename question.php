@@ -19,7 +19,10 @@
           soundStim = document.getElementById("soundStim");
           getBlockList();
           // automatically start loop based on phase ID
-          getQuestionData(); // gets all question data from database
+          for (let i = 0; i < blockList.length(); i++) 
+          {
+            getQuestionData(i); // gets all question data from database
+          } 
           getNextComparison(0); // gets next comparison
         }
 
@@ -50,60 +53,52 @@
               {
                 array_push($blockList, $row['blockID']);
               }
-
-	     
-              //$blockList_Javascript = json_encode($blockList);
-              //echo "var blockList = ". $blockList_Javascript . ";\n";
 	          ?>
             );
+
 	        //grab the array '$blockList' from the php
           //var users = <php echo json_encode($userArray); ?>;
           blockList = <?php echo json_encode($blockList); ?>;
-          console.log(blockList);
         }
 
         // get question data from database, convert PHP to JS and store
         // getQuestionData() written by Chris B & Nick Wood
-        function getQuestionData()
+        function getQuestionData(index)
         {
-		
-		//this needs to be put in a for loop and needs to post one blockID
-		
-    // add a loop to give block id 
-		<?php 
-			//Author: Skyeler Knuuttila
-			//given blockID, return array of all stim and stimTypes
-			//in form ["A1.png", "image", "B1.wav", "sound", .....]
-			$blockID = $_POST["____"];
+        //this needs to be put in a for loop and needs to post one blockID
+        // add a loop to give block id 
+        <?php 
+          //Author: Skyeler Knuuttila
+          //given blockID, return array of all stim and stimTypes
+          //in form ["A1.png", "image", "B1.wav", "sound", .....]
+          $blockID = $_POST["index"];
 
-			$conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
-			if (!$conn)
-        			die("BlockID not found: Database Error.".mysqli_connect_error());
-	
-			//start with an array of trialID's
-			$trialList = array(); //empty array
-			$queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
-			$result =  mysqli_query($conn, $queryString);
-			while($row = mysqli_fetch_assoc($result)) {
-    				array_push($trialList, $row['trialID']);
-			}
+          $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
+          if (!$conn)
+                  die("BlockID not found: Database Error.".mysqli_connect_error());
+      
+          //start with an array of trialID's
+          $trialList = array(); //empty array
+          $queryString = ("SELECT trialID FROM blockTrial_T WHERE blockID = $blockID ORDER BY trialOrder");
+          $result =  mysqli_query($conn, $queryString);
+          while($row = mysqli_fetch_assoc($result)) {
+                array_push($trialList, $row['trialID']);
+          }
 
-			//get array of stim and stimType by trial
-			$stimList = array();
-			for ($i = 0; $i <= sizeOf($trialList)-1; $i++) {
-				//$trialList[$i] is a string, we need an int
-				$trialID = intval($trialList[$i]);
-				$queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
-	      			$result =  mysqli_query($conn, $queryString);
-	      			while($row = mysqli_fetch_assoc($result)) {
-    					array_push($stimList, $row['stimID']);
-					array_push($stimList, $row['stimtype']);
-				}	
-			}
-			//$stimList is the array frontend will need to pull
-		?>
-		
-		
+          //get array of stim and stimType by trial
+          $stimList = array();
+          for ($i = 0; $i <= sizeOf($trialList)-1; $i++) {
+            //$trialList[$i] is a string, we need an int
+            $trialID = intval($trialList[$i]);
+            $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
+                  $result =  mysqli_query($conn, $queryString);
+                  while($row = mysqli_fetch_assoc($result)) {
+                  array_push($stimList, $row['stimID']);
+              array_push($stimList, $row['stimtype']);
+            }	
+          }
+          //$stimList is the array frontend will need to pull
+        ?>
         }
 
         function getNextComparison(index)
@@ -128,7 +123,6 @@
           else // questionHelpPrompt.style.display == "flex"
             questionHelpPrompt.style.display = "none"; 
         }
-
 
     </script>
     <title>Question</title>
