@@ -28,15 +28,15 @@
             width: 20pc;
             height: 100pc;
         }
+
         table, th, td 
         {
             background-color: white;
             border-radius: 5px;
-            margin-top: 10px;
-            margin-left: 280px;
             color: black;
             border: 1px solid black;
-        }  
+            margin: auto;
+        }   
 
         .dropbtn {
             background-color: #6C2037;
@@ -135,17 +135,13 @@
             width: 50%;
             padding: 20px;
         }
-        .tablePos{
-            margin-left: auto;
-            margin-right: auto;
-        }
     </style>
     <body id="edit_stim_body">
         <div id="dashboard">
             <h1 id="title" class="h1">Edit Stimuli</h1>
             <br>
             <br>
-            <div class="tablePos">
+            <div id="boxMain">
                 <?php
                 //connect to SQL using Username Password Ect
                 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
@@ -171,7 +167,7 @@
                 mysqli_close($conn);
                 ?>
             </div>
-            <div id="boxMain">
+            
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
                     <input name="imgFile" type="file" class="dropbtn">
                     <br>
