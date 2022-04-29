@@ -17,13 +17,12 @@
 
       imageStim = document.getElementById("imageStim");
       soundStim = document.getElementById("soundStim");
-      getBlockList();
-      // automatically start loop based on phase ID
-      getNextComparison(0); // gets next comparison
+      getQuestionData();
+      //getNextComparison(0); // gets next comparison
     }
 
 
-    function getBlockList() {
+    function getQuestionData() {
       <?php
         //Author: Skyeler Knuuttila
         session_start();
@@ -82,15 +81,6 @@
         }
         //$stimList is the array frontend will need to pull
       ?>
-
-      //grab the array '$blockList' from the php
-      //var users = <php echo json_encode($userArray); ?>;
-    }
-
-    // get question data from database, convert PHP to JS and store
-    // getQuestionData() written by Chris B & Nick Wood
-    function getQuestionData(index) 
-    {
     }
 
     function getNextComparison(index) {
