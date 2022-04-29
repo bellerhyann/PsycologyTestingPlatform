@@ -6,17 +6,43 @@
         <title>Experiment Builder</title>
     </head>
     <style>
+        body{
+            background-color: #37111d;
+        }
         #experiment_builder_body
         {
-            background: url("images/backgroundphoto1.jpg");
+            background-color: #37111d;
             background-size: cover;
+            margin-top: 20%;
+            margin-bottom: 20%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
             justify-content: center;
-            vertical-align: center;
         } 
-
+        .boxMain
+        {
+            margin: auto;
+            border-radius: 5px;
+            background-color: #6C2037;
+            padding: 10px;
+            box-sizing: content-box;
+            width: 60%;
+            color: white;
+        }
+        .boxMain
+        {
+            margin: auto;
+            border-radius: 5px;
+            background-color: #6C2037;
+            padding: 10px;
+            box-sizing: content-box;
+            width: 60%;
+            color: white;
+        }
         #dashboard
         {
-            color: #6C2037;
+            color: #F0C975;
             border-radius: 50px;
             margin-top: 5%;
             margin-bottom: auto;
@@ -38,59 +64,41 @@
 
         #welcomeUserMsg
         {
-            text-decoration: underline;
             justify-content: center;
-            width: 275px;
+            width: 30pc;
             vertical-align: center;
             margin-top: auto;
             margin-bottom: auto;
             margin-left: 340px;
             margin-right: 142px;
+            font-family: 'Verdana', sans-serif;
         }
 
-        .dropbtn 
+        #btn
         {
-            background-color: #04AA6D;
-            color: white;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-        }
-
-        .dropdown 
-        {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-content 
-        {
-            display: none;
-            position: absolute;
-            background-color: #f1f1f1;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        .dropdown-content a 
-        {
-            color: black;
-            padding: 12px 16px;
+            display: flex;
+            background-color: #6C2037;
+            border-radius: 5px;
+            width: 10pc;
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+            color: #F0C975;
             text-decoration: none;
-            display: block;
+            padding: 10px;
+            font-size: 14px;
+            font-family: 'Verdana', sans-serif;
         }
 
-        .dropdown-content a:hover {
-            background-color: #ddd;
+        #btn:hover
+        {
+            background-color: #F0C975;
+            color: #6C2037;
         }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .dropdown:hover .dropbtn {
-            background-color: #3e8e41;
+        .button_position{
+            margin: auto;
+            width: 50%;
+            padding: 20px;
         }
     </style>
     <body class="body">
@@ -108,7 +116,8 @@
             }
                   ?>
                 !</h1>
-  
+                <br>
+        <div class="boxMain">
 <?php
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
@@ -132,14 +141,13 @@
             mysqli_close($conn);
             ?>
             
-            
-            <div class="dropdown">
-                <button class="dropbtn"><a href="editPhase1.html">EDIT PHASE</a></button>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn"><a href="editStim.php">EDIT STIMULI</a></button>
-            </div>
-           
+                <div class="button_position">
+                        <a href="editPhase1.html" style="text-decoration: none;"><button id="btn">EDIT PHASE</button></a>
+                        <br>
+                        <a href="editStim.php" style="text-decoration: none;"><button id="btn">EDIT STIMULI</button></a>
+                </div>
+        </div>
+
         </div>
     </body>
 </html>

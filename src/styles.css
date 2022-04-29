@@ -10,7 +10,7 @@
 .body
 {
     /*background: url("../images/backgroundphoto1.jpg");*/
-    background-color: gray;
+    background-color: #37111d;
     background-size: cover;
     margin-bottom: 20%;
     display: flex;
