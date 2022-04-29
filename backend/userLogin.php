@@ -36,6 +36,5 @@ if (is_numeric($userID))
 }
 else 
 	echo "<script> alert('Please enter a number!');window.location='../userLogin.html'</script>";
-}
 
 ?>
