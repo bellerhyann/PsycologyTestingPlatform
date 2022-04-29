@@ -122,34 +122,12 @@
   <title>Question</title>
 </head>
 <style>
-  #imgtoimgBody {
-    background-color: white;
-    margin-top: 20%;
-    margin-bottom: 20%;
-    display: flex;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
+  /*#body{
 
-  #image {
-    position: fixed;
-    /* or absolute */
-    top: 50%;
-    left: 50%;
-  }
-
-  #pressButton {
-    display: flex;
-    vertical-align: center;
-    width: 19pc;
-    margin-left: auto;
-    margin-right: auto;
-    justify-content: center;
-  }
+  }*/
 </style>
 
-<body class="background" onload="onLoad()">
+<body id="body" onload="onLoad()">
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
