@@ -17,9 +17,8 @@
             if(timer == 1)
             {
                 document.getElementById("title").innerHTML = "TIMER DONE";// remove when done testing
-                clearInterval(questionTimer);
-                document.getElementById("boxMain").style.visibility = "hidden"; // hide the click button
-                // do code here for once the timer is over
+                clearInterval(questionTimer); // stops the timer
+                document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
             }
             else // timer != 0
             {
