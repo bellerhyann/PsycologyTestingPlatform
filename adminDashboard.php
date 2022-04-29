@@ -101,7 +101,7 @@
                 die("Unable to Connect.".mysqli_connect_error());
                 }
 
-            $queryString = "SELECT * FROM user_T WHERE NULLIF(password, \'\') is null";
+            $queryString = "SELECT * FROM user_T WHERE password is null";
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
