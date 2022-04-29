@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/styles.css">
+    <script type="text/javascript">
+        var timer = 8; // number of seconds for timer
+        var questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+        
+        function onLoad()
+        {
+            document.getElementById("title").innerHTML = timer; // remove when done testing
+        }
+        
+        function checkTimer()
+        {
+            if(timer == 1)
+            {
+                document.getElementById("title").innerHTML = "TIMER DONE";// remove when done testing
+                clearInterval(questionTimer); // stops the timer
+                document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
+            }
+            else // timer != 0
+            {
+                timer--;
+
+                document.getElementById("title").innerHTML = timer;// remove when done testing
+            }
+        }
+
+        function clicked()
+        {
+            document.getElementById("title").innerHTML = "Button Clicked";// remove when done testing
+            clearInterval(questionTimer); // stops the timer
+            document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
+        }
+
+    </script>
+
+
+    
+    <title>Trial</title>
+</head>
+<style>
+    body {
+        font-family: 'Verdana', sans-serif;
+    }
+
+    .center {
+        text-align: center;
+        color: white;
+    }
+
+    #title {
+        text-align: center;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #F0C975;
+        color: #6C2037;
+        width: 25pc;
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .background {
+        background-color: #37111d;
+        text-align: center;
+    }
+
+    #boxMain {
+        margin: auto;
+        border-radius: 5px;
+        background-color: #6C2037;
+        padding: 10px;
+        box-sizing: content-box;
+        width: 60%;
+        color: white;
+    }
+
+    .button {
+        background-color: #F0C975;
+        border: none;
+        color: #6C2037;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+</style>
+<body class="background" onload="onLoad()">
+    <h1 class="center" id="title">Fake Question</h1>
+    <div id="boxMain">
+
+        <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
+
+
+    </div>
+    <a id="temp"></a>
+</body>
+
+        
+</html>
