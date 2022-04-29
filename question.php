@@ -77,7 +77,7 @@
             }
           }
           // push out array here
-          echo "var stimList", $i, " = ", json_encode($stimList), "; \n";
+          echo "var stimList", $i, " = ", json_encode($stimList), "; \n\t";
 
         }
         //$stimList is the array frontend will need to pull
@@ -85,7 +85,6 @@
 
       //grab the array '$blockList' from the php
       //var users = <php echo json_encode($userArray); ?>;
-      blockList = <?php echo json_encode($blockList); ?>;
     }
 
     // get question data from database, convert PHP to JS and store
