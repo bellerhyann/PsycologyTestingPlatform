@@ -7,7 +7,7 @@
   <script type="text/javascript">
     //Contributor for PHP: Skyeler Knuutila
     //Contributor for JS: Chris Barry
-    
+
     var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
     var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
     var numStims; // used for total number of stims in database
@@ -150,7 +150,7 @@
 </style>
 
 <body class="background" onload="onLoad()">
-  <img id="questionHelpButton" src="./images/questionHelpButton.png" width="50" height="50">
+  <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
   <h1 class="center" id="title">Fake Question</h1>
