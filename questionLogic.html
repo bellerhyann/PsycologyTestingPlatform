@@ -7,7 +7,7 @@
         var timer = 8;
         function onLoad()
         {
-            document.getElementBy("title").innerHTML = string(timer);
+            document.getElementById("title").innerHTML = string(timer);
             // execute timer() function every 8000 milliseconds
             while(timer > 0)
             {
@@ -17,7 +17,7 @@
         function timer()
         {
             timer--;
-            document.getElementBy("title").innerHTML = timer;
+            document.getElementById("title").innerHTML = string(timer);
         }
    
     </script>
