@@ -4,15 +4,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
-        var timer = 8;
-        var interval =  setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (1 second)
-        function checkTimer()
+        var timer = 8; // number of seconds for timer
+        document.getElementById("title").innerHTML = timer;
+        var interval =  setInterval(checkTimer(false), 1000); // calls checkTimer every 1000 milliseconds (1 second)
+        function checkTimer(isClicked)
         {
             if(timer == 0)
+            {
                 clearInterval(interval);
+                // do code here for once the timer is over
+            }
             else // timer != 0
             {
                 timer--;
+
+                // remove line 22 when done testing
+                // line 22 is used to visually show the timer
                 document.getElementById("title").innerHTML = timer;
             }
         }
