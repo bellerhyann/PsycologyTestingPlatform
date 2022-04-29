@@ -18,7 +18,7 @@
             {
                 document.getElementById("title").innerHTML = "TIMER DONE";// remove when done testing
                 clearInterval(questionTimer);
-                document.getElementsByClassName("boxMain").style.display = "none"; // hide the click button
+                document.getElementById("boxMain").style.display = "none"; // hide the click button
                 // do code here for once the timer is over
             }
             else // timer != 0
@@ -62,7 +62,7 @@
         text-align: center;
     }
 
-    .boxMain {
+    #boxMain {
         margin: auto;
         border-radius: 5px;
         background-color: #6C2037;
@@ -88,7 +88,7 @@
 </style>
 <body class="background" onload="onLoad()">
     <h1 class="center" id="title">Fake Question</h1>
-    <div class="boxMain">
+    <div id="boxMain">
 
         <button class="button" id="clickButton" alt="click">Click</button>
 
