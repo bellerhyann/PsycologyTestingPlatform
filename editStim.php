@@ -166,7 +166,7 @@
                 //close connection
                 mysqli_close($conn);
                 ?>
-            </div>
+            
                 <br>
                 <br>
                 <form action="./backend/uploadStimuli.php" id="upload_stim" method="post" enctype="multipart/form-data">
