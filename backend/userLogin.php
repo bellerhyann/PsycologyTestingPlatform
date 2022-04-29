@@ -16,7 +16,8 @@ $query = "SELECT * FROM user_T WHERE userID = $userID"; //int doesn't need to be
 $result = mysqli_query($conn, $query);
 if(mysqli_fetch_assoc($result) == NULL) {
 	//credentials do not match
-	die("UserID not found.");
+	echo "<script> alert('Account not found!');window.location='../userLogin.html'</script>";
+	//die("UserID not found.");
 } else {
 	//credentials do match
 	//close connection
