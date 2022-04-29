@@ -32,18 +32,6 @@
             display: flex;
             justify-content: center;            
         }
-        #dashboard
-        {
-            color: #F0C975;
-            border-radius: 50px;
-            margin-top: 5%;
-            margin-bottom: auto;
-            margin-left: auto;
-            margin-right: auto;
-            width: 60pc;
-            height: 35pc;
-        }
-
         table, th, td 
         {
             background-color: white;
@@ -64,6 +52,8 @@
             margin-left: 340px;
             margin-right: 142px;
             font-family: 'Verdana', sans-serif;
+            color:#F0C975;
+            margin-top: 5%;
         }
 
         #btn
@@ -94,7 +84,6 @@
         }
     </style>
     <body>
-        <div id="dashboard">
             <h1 id="welcomeUserMsg">Welcome, 
                 <?php session_start(); 
                 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
@@ -138,8 +127,6 @@
                         <br>
                         <a href="editStim.php" style="text-decoration: none;"><button id="btn">EDIT STIMULI</button></a>
                 </div>
-        </div>
-
         </div>
     </body>
 </html>
