@@ -8,7 +8,7 @@ $userID = $_POST["userID"];
 $_SESSION["userID"] = $userID;
 
 //first check to make sure user is giving us a number and not a string 
-if (is_numeric($num))
+if (is_numeric($userID))
 {
 
 	//reach out to database to see if the userID exists
@@ -32,6 +32,7 @@ if (is_numeric($num))
 		//redirect to dashboard.html
 		header("location: /userDashboard.php");
 		exit;
+	}
 }
 else 
 	echo "<script> alert('Please enter a number!');window.location='../userLogin.html'</script>";
