@@ -125,6 +125,20 @@
   #body{
     background-color: #6C2037;
   }
+
+  .button {
+        background-color: #F0C975;
+        border: none;
+        color: #6C2037;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-weight: 600;
+    }
 </style>
 
 <body id="body" onload="onLoad()">
