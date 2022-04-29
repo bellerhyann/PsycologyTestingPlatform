@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./src/styles.css">
+    <script type="text/javascript">
+
+
+
+        document.getElementById("button").onclick = function () {
+            doSingle();
+            document.getElementById("button").style.visibility = "hidden"
+        setTimeout(function(){document.getElementById("button").style.visibility = "visible"}, 10000)
+};
+function doSingle() { };
+        // your function
+   
+    </script>
+
+
+    
+    <title>Trial</title>
+</head>
+<style>
+    body {
+        font-family: 'Verdana', sans-serif;
+    }
+
+    .center {
+        text-align: center;
+        color: white;
+    }
+
+    #title {
+        text-align: center;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #F0C975;
+        color: #6C2037;
+        width: 25pc;
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .background {
+        background-color: #37111d;
+        text-align: center;
+    }
+
+    .boxMain {
+        margin: auto;
+        border-radius: 5px;
+        background-color: #6C2037;
+        padding: 10px;
+        box-sizing: content-box;
+        width: 60%;
+        color: white;
+    }
+
+    .button {
+        background-color: #F0C975;
+        border: none;
+        color: #6C2037;
+        padding: 5px 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 15px;
+        margin: 4px 2px;
+        cursor: pointer;
+        font-weight: 600;
+    }
+</style>
+<body class="background" onload="addBlocks()">
+    <h1 class="center" id="title">Fake Question</h1>
+    <div class="boxMain">
+
+        <button class="button" id="button" alt="Summon">Summon</button>
+
+
+    </div>
+</body>
+
+        
+</html>
