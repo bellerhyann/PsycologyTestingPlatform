@@ -9,9 +9,13 @@
         {
             document.getElementById("title").innerHTML = String(timer);
             // execute timer() function every 8000 milliseconds
-            setInterval(function(){timer--; document.getElementById("title").innerHTML = String(timer);}, 1000);
+            setInterval(checkTimer(), 1000);
         }
-        
+        function checkTimer()
+        {
+
+        }
+
     </script>
 
 
