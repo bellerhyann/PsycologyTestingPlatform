@@ -5,16 +5,10 @@
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
         var timer = 10;
-        function onLoad()
-        {
-            document.getElementById("title").innerHTML = String(timer);
-            // execute timer() function every 8000 milliseconds
-            setInterval(checkTimer(), 1000);
-        }
+        setInterval(checkTimer, 1000);
         function checkTimer()
         {
             timer--;
-
             document.getElementById("title").innerHTML = timer;
         }
 
