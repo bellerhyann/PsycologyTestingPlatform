@@ -4,16 +4,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
-
-
-
-        document.getElementById("button").onclick = function () {
-            doSingle();
-            document.getElementById("button").style.visibility = "hidden"
-        setTimeout(function(){document.getElementById("button").style.visibility = "visible"}, 10000)
-};
-function doSingle() { };
-        // your function
+        var timer = 0;
+        function onLoad()
+        {
+            // execute timer() function every 8000 milliseconds
+            setInterval(timer(), 1000);
+        }
+        function timer()
+        {
+            document.getElementById("title").innerHTML += 1;
+        }
    
     </script>
 
@@ -72,7 +72,7 @@ function doSingle() { };
         font-weight: 600;
     }
 </style>
-<body class="background" onload="addBlocks()">
+<body class="background" onload="onLoad()">
     <h1 class="center" id="title">Fake Question</h1>
     <div class="boxMain">
 
