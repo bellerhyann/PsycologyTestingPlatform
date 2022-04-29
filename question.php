@@ -139,6 +139,16 @@
         cursor: pointer;
         font-weight: 600;
     }
+
+    #boxMain {
+        margin: auto;
+        border-radius: 5px;
+        background-color: #6C2037;
+        padding: 10px;
+        box-sizing: content-box;
+        width: 60%;
+        color: white;
+    }
 </style>
 
 <body id="body" onload="onLoad()">
