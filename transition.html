@@ -1,81 +1,197 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Logic and Phase Progression</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #myDIV1 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV2 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV3 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV4 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV5 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV6 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV7 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+
+        #myDIV8 {
+            width: 80%;
+            padding: 50px 0;
+            text-align: center;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+    </style>
+    <script>function onLoad() {
+    let Score1 = 100;
+	let Score2 = 10;
+	let Score3 = 50;
+	let Score4 = 100;
+	let Score5 = 100;
+	let Score6 = 100;
+	let Score7 = 100;
+	let Score8 = 100;
+
+    let SymmetryPretestDiv1 = 67;
+	let TransitivityPretestDiv2 = 67;
+	let BaselineTrainingDiv3 = 100;
+	let BaselineTestDiv4 = 100;
+	let SymmetryTestDiv5 = 92;
+	let TransitivityTestDiv6 = 94;
+
+    let element = document.getElementById("button1");
+
+  let hidden = document.getElementById("button1").getAttribute("hidden");
+
+
+  if (Score1<=SymmetryPretestDiv1) {
+    document.getElementById("button1").removeAttribute("hidden");
+  } else {
+    document.getElementById("button1").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score2<=TransitivityPretestDiv2) {
+    document.getElementById("button2").removeAttribute("hidden");
+  } else {
+    document.getElementById("button2").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score3>=BaselineTrainingDiv3) {
+    document.getElementById("button3").removeAttribute("hidden");
+  } else {
+    document.getElementById("button3").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score4>=BaselineTestDiv4) {
+    document.getElementById("button4").removeAttribute("hidden");
+  } else {
+    document.getElementById("button4").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score5>=SymmetryTestDiv5) {
+    document.getElementById("button5").removeAttribute("hidden");
+  } else {
+    document.getElementById("button5").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score6>=TransitivityTestDiv6) {
+    document.getElementById("button6").removeAttribute("hidden");
+  } else {
+    document.getElementById("button6").setAttribute("hidden", "hidden");
+  }
+	if (Score7>=paContinueed) {
+    document.getElementById("button7").removeAttribute("hidden");
+  } else {
+    document.getElementById("button7").setAttribute("hidden", "hidden");
+  }
+
+
+	if (Score8>=paContinueed) {
+    document.getElementById("button8").removeAttribute("hidden");
+  } else {
+    document.getElementById("button8s").setAttribute("hidden", "hidden");
+  }
+}</script>
 </head>
+<body onLoad="onLoad()">
+    <center>
+        <h>Great job on that phase!</h> <br />
+        <p>The Next Phase your going to work on is</p>
 
-<body>
-    <h1>Logic and Phase Progression</h1>
-    <p>
-        Upon completion of each phase <br> <br>
-        <!--If (phasepassed ) print "Great work! Click the button when your ready for the next phase"-->
-        <!--(Phase = Phase +1) button appears which leads back to Question.php-->
-        <!--If (!phasepased) print "Thank you for your participation, your done with this lab" -->
+        <h2>Baseline Pretest</h2>
+        <div id="myDIV0">
+            This is Transitivity pretest.
+            <button type="button" id="button2">Continue</button>
+        </div>
 
-        <br> <br> <b>Pretraining </b> Logic in html file.<br>
-        needs 8 consecutive trials<br>
-        <!-- int i = 0;bool phasepassed = false; if (i = 7){phasepassed = true}; if (trial < correct){i++};if (trial > incorrect){i = 0};-->
+        <h2>Symmetry Pretest</h2>
+        <div id="myDIV1">
+            This is Transitivity pretest.
+            <button type="button" id="button2">Continue</button>
+        </div>
 
-        <br> <br> <b>Symmetry pretest</b>  <br>
-        needs below (67%) on each block to continue<br>
-        If any block is above 67%, discontinue<br>
-        <!--    -->
-        <br><br> <b>Transitivity pretest</b> <br>
-        needs below (67%) on each block to continue<br>
-        If any block is above 67%, discontinue<br>
-        <!--    -->
-        <br> <br> <b>Baseline training</b>   <br>
-        needs:<br>
-        Prompt (“Click”) at 4 seconds after white box appears only during go trials<br>
-        2 blocks at 100% without prompting to continue to testing<br>
-        Up to 24 blocks to meet criterion, if not discontinuez<br>
+        <h2>Transitivity Pretest</h2>
+        <div id="myDIV2">
+            This is Transitivity pretest.
+            <button type="button" id="button2">Continue</button>
+        </div>
 
+        <h2>Baseline Training</h2>
+        <div id="myDIV3">
+            This is Baseline training.
+            <button type="button" id="button3">Continue</button>
+        </div>
 
-        <br> <br> <b>Baseline test</b>   <br>
-        needs:<br>
-        1 block at 100% to continue <br>
-        If below 100%, return to baseline training <br>
-        criterion is not met within 24 blocks, discontinue (note: 24 blocks means cumulative total from first baseline training and return to baseline training)<br>
+        <h2>Baseline Test</h2>
+        <div id="myDIV4">
+            This is Baseline test.
+            <button type="button" id="button4">Continue</button>
+        </div>
 
-        If participant meets criterion within 24 blocks during return to baseline training, progress to baseline test <br>
-        If participant scores below 100% on baseline test again, discontinue <br>
+        <h2>Symmetry Test</h2>
+        <div id="myDIV5">
+            This is Symmetry Test.
+            <button type="button" id="button5">Continue</button>
+        </div>
 
-        <br> <br> <b>Symmetry Test</b> <br>
-        needs
-        No points/sounds from computer and no prompting
-
-        22/24 or above (92%) across 2 blocks, then progress to transitivity test
-
-        As long as participant continue to have an increasing trend in percentages, continue to test until progression criterion is met
-
-        If participants score below 92% at a stable (e.g., participant scores 80%, 81%, and 80% consecutively) or decreasing trend (e.g., participant scores 67%, 50%, and 42% consecutively) across three consecutive blocks, discontinue symmetry testing but still progress to transitivity testing
-
-        <br> <br> <b>Transitivity Test</b> <br>
-        needs
-
-        No points/sounds from computer and no prompting<br>
-
-        34/36 or above (94%) across 2 blocks<br>
-
-        As long as participant continue to have an increasing trend in percentages, continue to test until criterion is met<br>
-
-        Once criterion is met, conclude the session; If participants score below 94% at a stable
-        <br>(e.g., participant scores 80%, 81%, and 80% consecutively) or decreasing trend
-        <br>(e.g., participant scores 67%, 50%, and 42% consecutively) across three consecutive blocks,
-        <br>discontinue and conclude the session
+        <h2>Transitivity Test</h2>
+        <div id="myDIV6">
+            This is Transitivity Test.
+            <button type="button" id="button6">Continue</button>
+        </div>
 
 
-
-
-
-    </p>
-
-
-
-    <!-- i = Phase
-         x = scoreNeeded (phase)= [0, 67%, 67%, ]
-        -->
-
+    </center>
 
 
 </body>
