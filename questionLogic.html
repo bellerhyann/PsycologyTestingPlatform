@@ -9,12 +9,13 @@
         
         function onLoad()
         {
+            // set initial value of timer
             document.getElementById("title").innerHTML = timer;
         }
         
         function checkTimer()
         {
-            if(timer == 0)
+            if(timer == 1)
             {
                 document.getElementById("title").innerHTML = "TIMER DONE";
                 clearInterval(interval);
