@@ -25,6 +25,7 @@
           document.cookie = escape(name) + "=" + 
               escape(value) + expires + "; path=/";
         }
+        
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
