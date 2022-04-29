@@ -84,7 +84,7 @@
         //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
-      } else stimType == "image" {
+      } else{ //stimType == "image"
         imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".png";
         console.log("Got image file: ", imageStim.src);
       }
