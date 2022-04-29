@@ -48,7 +48,7 @@
 
         //given blockID, return array of all stim and stimTypes
         //in form ["A1.png", "image", "B1.wav", "sound", .....]
-        for($i = 0; $i<=sizeOF($blockList); $i++)
+        for($i = 0; $i<=sizeOf($blockList); $i++)
         {
           echo "console.log(" , "'Current Block ID: '," , $i , "); \n";
           $blockID = $i;
