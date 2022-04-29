@@ -29,18 +29,17 @@
             box-sizing: content-box;
             width: 50%;
             color: white;
-            display: flex;
             justify-content: center;            
         }
+        
         table, th, td 
         {
             background-color: white;
             border-radius: 5px;
-            margin-top: 10px;
-            margin-left: 280px;
             color: black;
             border: 1px solid black;
-        }  
+            margin: auto;
+        }   
 
         #welcomeUserMsg
         {
@@ -99,7 +98,7 @@
                 !</h1>
                 <br>
         <div class="boxMain">
-<?php
+            <?php
             //connect to SQL using Username Password Ect
             $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
             if (!$conn) {
@@ -121,7 +120,8 @@
             //close connection
             mysqli_close($conn);
             ?>
-            
+            <br>
+            <br>
                 <div class="button_position">
                         <a href="editPhase1.html" style="text-decoration: none;"><button id="btn">EDIT PHASE</button></a>
                         <br>
