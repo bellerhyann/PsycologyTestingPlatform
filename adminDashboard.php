@@ -133,7 +133,6 @@
             $result = mysqli_query($conn, $queryString);
 
             echo "<table border=1>";
-            echo "<caption>Lab Users</caption>";
             echo "<tr> <th>First Name</th> <th>Last Name </th><th>User ID</th><th>Phase ID</th></tr>";
             while ($row = mysqli_fetch_array($result))
             {
