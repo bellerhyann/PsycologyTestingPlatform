@@ -76,7 +76,7 @@
             }
           }
           // push out array here
-          echo "var stimList", $i, " = ", json_encode($stimList), "; \n\t";
+          echo "\tvar stimList", $i, " = ", json_encode($stimList), "; \n";
         }
         //$stimList is the array frontend will need to pull
       ?>
