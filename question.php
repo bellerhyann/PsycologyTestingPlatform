@@ -47,8 +47,8 @@
 
         //given blockID, return array of all stim and stimTypes
         //in form ["A1.png", "image", "B1.wav", "sound", .....]
-        echo sizeOf($blockList);
-        for($i = 0; $i<=sizeOf($blockList); $i++)
+        // temporary: echo sizeOf($blockList);
+        for($i = 0; $i<sizeOf($blockList); $i++)
         {
           echo "console.log(" , "'Current Block ID: '," , $i , "); \n";
           $blockID = $i;
@@ -77,7 +77,6 @@
           }
           // push out array here
           echo "var stimList", $i, " = ", json_encode($stimList), "; \n\t";
-
         }
         //$stimList is the array frontend will need to pull
       ?>
