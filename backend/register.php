@@ -4,7 +4,7 @@ $FName = $_POST["FName"];
 $LName = $_POST["LName"];
 //reach out to database to add the name and generate a userID
 //connect to database
-echo "Attempting to connect to DB server: ...";
+//echo "Attempting to connect to DB server: ...";
 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn) {
 	die("Unable to Connect.".mysqli_connect_error());
