@@ -107,11 +107,11 @@
 
     // get question data from database, convert PHP to JS and store
     // getQuestionData() written by Chris B & Nick Wood
-    function getQuestionData(index) {
-      createCookie("gfg", "GeeksforGeeks", "10");
+    function getQuestionData(index) 
+    {
       //this needs to be put in a for loop and needs to post one blockID
       // add a loop to give block id 
-      <?php
+      /*<php
       //Author: Skyeler Knuuttila
       //given blockID, return array of all stim and stimTypes
       //in form ["A1.png", "image", "B1.wav", "sound", .....]
@@ -142,7 +142,7 @@
         }
       }
       //$stimList is the array frontend will need to pull
-      ?>
+      ?>*/
     }
 
     function getNextComparison(index) {
