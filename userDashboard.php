@@ -75,7 +75,7 @@
             echo $row[0];	
           }
 		    ?>
-        !
+      !
       </h1>
           <!-- Iron out the example test -->
           <!-- For CSS, make new id for begin session button-->
