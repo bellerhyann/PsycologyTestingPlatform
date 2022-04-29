@@ -9,6 +9,22 @@
         var numStims; // used for total number of stims in database
         var blockList;
         
+        function createCookie(name, value, days) 
+        {
+          var expires;
+            
+          if (days) {
+              var date = new Date();
+              date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+              expires = "; expires=" + date.toGMTString();
+          }
+          else {
+              expires = "";
+          }
+            
+          document.cookie = escape(name) + "=" + 
+              escape(value) + expires + "; path=/";
+        }
         function onLoad()
         {
           questionHelpButton = document.getElementById("questionHelpButton");
@@ -18,7 +34,6 @@
           imageStim = document.getElementById("imageStim");
           soundStim = document.getElementById("soundStim");
           getBlockList();
-          createCookie("gfg", "GeeksforGeeks", "10");
           // automatically start loop based on phase ID
           for (let i = 0; i < blockList.length(); i++) 
           {
