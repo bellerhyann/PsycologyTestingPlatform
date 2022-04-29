@@ -102,19 +102,19 @@
 
     function checkTimer() {
       if (timer == 1) {
-        document.getElementById("title").innerHTML = "TIMER DONE"; // remove when done testing
+        //document.getElementById("title").innerHTML = "TIMER DONE"; // remove when done testing
         clearInterval(questionTimer); // stops the timer
         document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
       } else // timer != 0
       {
         timer--;
 
-        document.getElementById("title").innerHTML = timer; // remove when done testing
+        //document.getElementById("title").innerHTML = timer; // remove when done testing
       }
     }
 
     function clicked() {
-      document.getElementById("title").innerHTML = "Button Clicked"; // remove when done testing
+      //document.getElementById("title").innerHTML = "Button Clicked"; // remove when done testing
       clearInterval(questionTimer); // stops the timer
       document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
     }
@@ -155,7 +155,7 @@
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
-  <h1 class="center" id="title">Fake Question</h1>
+  <h1 id="title">Fake Question</h1>
   <div id="boxMain">
       <img id="imageStim"></img>
       <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
