@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./src/styles.css">
   <script type="text/javascript">
+    //Contributor for PHP: Skyeler Knuutila
+    //Contributor for JS: Chris Barry
+    
     var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
     var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
     var numStims; // used for total number of stims in database
@@ -26,7 +29,6 @@
 
     function getQuestionData() {
       <?php
-      //Author: Skyeler Knuuttila
       session_start();
       $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
       if (!$conn)
@@ -74,6 +76,7 @@
         }
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
+        // go to webpage, right click, view page source to view the output
         echo "\tvar block", $j, " = ", json_encode($stimList), "; \n";
       }
       ?>
