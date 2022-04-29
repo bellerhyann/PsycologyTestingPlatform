@@ -65,7 +65,7 @@
         // getQuestionData() written by Chris B & Nick Wood
         function getQuestionData(index)
         {
-          document.cookie = "index = " + index + ";"; 
+          createCookie("index", index, "10");
         //this needs to be put in a for loop and needs to post one blockID
         // add a loop to give block id 
         <?php 
