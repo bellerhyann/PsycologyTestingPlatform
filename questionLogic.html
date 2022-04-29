@@ -4,20 +4,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./src/styles.css">
     <script type="text/javascript">
-        var timer = 8;
-        function timer()
-        {
-            timer--;
-            document.getElementById("title").innerHTML = String(timer);
-        }
+        var timer = 10;
         function onLoad()
         {
             document.getElementById("title").innerHTML = String(timer);
             // execute timer() function every 8000 milliseconds
-            while(timer > 0)
-            {
-                setInterval(function(){timer--; document.getElementById("title").innerHTML = String(timer);}(), 8000);
-            }
+            setInterval(timer, 1000);
+        }
+
+        function timer()
+        {
+            timer--;
+            document.getElementById("title").innerHTML = String(timer);
         }
    
     </script>
