@@ -9,7 +9,7 @@
         function onLoad()
         {
             timer = 8; // number of seconds for timer
-            document.getElementById("title").innerHTML = timer;
+            document.getElementById("title").innerHTML = String(timer);
             interval =  setInterval(checkTimer(false), 1000); // calls checkTimer every 1000 milliseconds (1 second)
         }
         function checkTimer(isClicked)
@@ -25,7 +25,7 @@
 
                 // remove line 22 when done testing
                 // line 22 is used to visually show the timer
-                document.getElementById("title").innerHTML = timer;
+                document.getElementById("title").innerHTML = String(timer);
             }
         }
 
