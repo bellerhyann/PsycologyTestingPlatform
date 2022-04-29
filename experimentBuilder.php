@@ -37,7 +37,7 @@
             background-color: #6C2037;
             padding: 10px;
             box-sizing: content-box;
-            width: 60%;
+            width: 50%;
             color: white;
         }
         #dashboard
@@ -101,7 +101,7 @@
             padding: 20px;
         }
     </style>
-    <body class="body">
+    <body>
         <div id="dashboard">
             <h1 id="welcomeUserMsg">Welcome, 
                 <?php session_start(); 
