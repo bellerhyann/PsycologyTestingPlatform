@@ -12,6 +12,9 @@
  if (!$conn) {
    	die("Unable to Connect.".mysqli_connect_error());
  }
+	
+echo "<script> alert('Stand By! Working on Graphic...');window.location='../dataCenter.html'</script>";
+	
 //THE LINE BELOW THIS STILL NEEDS TO BE GIVEN PHASE ID FROM USER
  $queryString = ("SELECT * FROM data_T ORDER BY phaseID ASC, blockID ASC, BO ASC, userID ASC"); // grab data from data table ordered as shown
  $data = mysqli_query($conn, $queryString); // query with above info
