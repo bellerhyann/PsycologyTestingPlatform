@@ -21,7 +21,7 @@ if (is_numeric($num))
 	$query = "SELECT * FROM user_T WHERE userID = $userID"; //int doesn't need to be in quotations
 	$result = mysqli_query($conn, $query);
 
-	if(mysqli_fetch_assoc($result) == NULL || ) {
+	if(mysqli_fetch_assoc($result) == NULL ) {
 		//credentials do not match
 		echo "<script> alert('Account not found!');window.location='../userLogin.html'</script>";
 
