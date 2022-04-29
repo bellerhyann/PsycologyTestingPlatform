@@ -8,6 +8,8 @@ $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a7
 if (!$conn)
         die("BlockID not found: Database Error.".mysqli_connect_error());
 
+echo "<script> alert('Stand By! Downloading User Block Results...');window.location='../dataCenter.html'</script>";
+
 //find how many trials are in this block
 $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
 $trialNum =  mysqli_query($conn, $queryString);
