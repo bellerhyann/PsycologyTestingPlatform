@@ -122,9 +122,9 @@
   <title>Question</title>
 </head>
 <style>
-  /*#body{
-
-  }*/
+  #body{
+    background-color: #6C2037;
+  }
 </style>
 
 <body id="body" onload="onLoad()">
