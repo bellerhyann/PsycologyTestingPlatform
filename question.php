@@ -18,6 +18,7 @@
           imageStim = document.getElementById("imageStim");
           soundStim = document.getElementById("soundStim");
           getBlockList();
+          createCookie("gfg", "GeeksforGeeks", "10");
           // automatically start loop based on phase ID
           for (let i = 0; i < blockList.length(); i++) 
           {
