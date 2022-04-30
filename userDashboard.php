@@ -6,9 +6,11 @@
     <title>User Dashboard</title>
   </head>
   <style>
+    body{
+      background-color: #37111d;
+    }
     #user_dashboard_body
     {
-      background: url("images/backgroundphoto1.jpg");
       background-size: cover;
     } 
 

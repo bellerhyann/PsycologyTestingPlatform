@@ -41,17 +41,22 @@
             margin: auto;
         }   
 
-        #welcomeUserMsg
+        .h1
         {
-            justify-content: center;
-            width: 30pc;
-            vertical-align: center;
-            margin-bottom: auto;
+            text-align: center;
+            color: #F0C975;
+        }
+        #title
+        {
+            text-align: center;
+            border-radius: 5px;
             margin-left: auto;
             margin-right: auto;
-            font-family: 'Verdana', sans-serif;
-            color:#F0C975;
-            margin-top: 5%;
+            background-color: #F0C975;
+            color: #6C2037;
+            width: 15pc;
+            font-size: 40px;
+            padding: 20px;
         }
 
         #btn
@@ -82,7 +87,7 @@
         }
     </style>
     <body>
-            <h1 id="welcomeUserMsg">Welcome, 
+            <h1 id="title" class="h1">Welcome, 
                 <?php session_start(); 
                 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac"); 
                 if (!$conn)
@@ -119,8 +124,6 @@
             //close connection
             mysqli_close($conn);
             ?>
-            <br>
-            <br>
                 <div class="button_position">
                         <a href="editPhase1.html" style="text-decoration: none;"><button id="btn">EDIT PHASE</button></a>
                         <br>
