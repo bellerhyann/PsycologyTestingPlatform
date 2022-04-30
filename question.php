@@ -159,7 +159,7 @@
     }
 
     #clickButton:hover{
-      background-color: #6C2037;
+      background-color: #401421;
       color: #F0C975;
     }
 
