@@ -148,6 +148,8 @@
         box-sizing: content-box;
         width: 60%;
         color: white;
+        margin-top: 284px;
+        margin-left: 501px;
     }
 
     #questionHelpPrompt{
