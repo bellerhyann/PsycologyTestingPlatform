@@ -185,6 +185,7 @@
     font-size: 40px;
     background-color: #6C2037;
     border: none;
+    border-radius: 5px;
     color: #F0C975;
     text-align: center;
     text-decoration: none;
