@@ -142,6 +142,14 @@
             var popup = document.getElementById("myPopup2");
             popup.classList.toggle("show");
         }
+        function popUp3(){
+            var popup = document.getElementById("myPopup3");
+            popup.classList.toggle("show");
+        }
+        function popUp4(){
+            var popup = document.getElementById("myPopup4");
+            popup.classList.toggle("show");
+        }
     </script>
     <body class="background">
         <h1 class="h1" id="title">Welcome to the Data Center</h1>
@@ -225,7 +233,7 @@
                     <br>
                     <div class="popup" onclick="popUp2()">
                         <input type="submit" name="submit" value="Download" onclick="blockFormChange()">
-                        <span class="popuptext" id="myPopup2">Downloading Block...</span>
+                        <span class="popuptext" id="myPopup2">Downloading...</span>
                     </div>
                 </form>
             </div>
@@ -242,9 +250,9 @@
                     <textarea id="userID" name="ID" rows="1" cols="10"></textarea>
                     <br>
                     <br>
-                    <div class="popup" onclick="popUp()">
+                    <div class="popup" onclick="popUp3()">
                         <input type="submit" name="submit" value="Download">
-                        <span class="popuptext" id="myPopup">Downloading...</span>
+                        <span class="popuptext" id="myPopup3">Downloading...</span>
                     </div>
                 </form>
             </div>
@@ -257,9 +265,9 @@
                 <form action="./backend/lineGraphAll.php" id="edit_phase" method="post" enctype="multipart/form-data">
 
                    <p class="text">Lab Line Graph</p> 
-                   <div class="popup" onclick="popUp()">
+                   <div class="popup" onclick="popUp4()">
                     <input type="submit" name="submit" value="Download">
-                    <span class="popuptext" id="myPopup">Downloading...</span>
+                    <span class="popuptext" id="myPopup4">Downloading...</span>
                 </div>
                 </form>
             </div>
