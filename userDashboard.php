@@ -8,6 +8,7 @@
   <style>
     body{
       background-color: #37111d;
+      font-family: 'Verdana', sans-serif;
     }
     #user_dashboard_body
     {
