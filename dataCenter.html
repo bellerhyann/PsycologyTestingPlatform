@@ -134,7 +134,11 @@
                     document.blockForm.action ="./backend/displayUserBlockResults.php";
                 }
         }
-        function popUp(){
+        function popUp1(){
+            var popup = document.getElementById("myPopup");
+            popup.classList.toggle("show");
+        }
+        function popUp2(){
             var popup = document.getElementById("myPopup");
             popup.classList.toggle("show");
         }
@@ -162,7 +166,7 @@
                     </select>
                     <br>
                     <br>
-                    <div class="popup" onclick="popUp()">
+                    <div class="popup" onclick="popUp1()">
                         <input type="submit" name="submit" value="Download" onclick="phaseFormChange()">
                         <span class="popuptext" id="myPopup">Downloading...</span>
                     </div>
@@ -219,7 +223,7 @@
                     </select>
                     <br>  
                     <br>
-                    <div class="popup" onclick="popUp()">
+                    <div class="popup" onclick="popUp2()">
                         <input type="submit" name="submit" value="Download" onclick="blockFormChange()">
                         <span class="popuptext" id="myPopup">Downloading...</span>
                     </div>
