@@ -24,7 +24,7 @@
       imageStim = document.getElementById("imageStim");
       soundStim = document.getElementById("soundStim");
       getQuestionData();
-      //getNextComparison(0); // gets next comparison
+      getNextComparison(0); // gets first comparison
     }
 
     function getQuestionData() {
@@ -83,14 +83,17 @@
     }
 
     function getNextComparison(index) {
-      if (stims[index].stimType == "sound") {
+
+
+
+      /*if (stims[index].stimType == "sound") {
         //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
       } else{ //stimType == "image"
         imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".png";
         console.log("Got image file: ", imageStim.src);
-      }
+      }*/
     }
 
     function helpToolTip() {
@@ -105,6 +108,7 @@
         //document.getElementById("title").innerHTML = "TIMER DONE"; // remove when done testing
         clearInterval(questionTimer); // stops the timer
         document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
+        getNextComparison();
       } else // timer != 0
       {
         timer--;
