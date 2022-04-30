@@ -148,11 +148,9 @@
       background-color: #6C2037;
       border: none;
       color: #F0C975;
-      padding: 5px 10px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
-      font-size: 15px;
       cursor: pointer;
       font-weight: 600;
     }
