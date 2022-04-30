@@ -132,6 +132,7 @@
   }
 
   #boxMain {
+    display: none;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
