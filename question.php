@@ -13,7 +13,7 @@
     var numStims; // used for total number of stims in database
     var blockList;
     var timer = 8; // number of seconds user has to answer
-    var questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+    var questionTimer;
     var clickTime = 0; // how long it takes user to click
 
     function onLoad() {
@@ -110,6 +110,9 @@
 
     function nextQuestionClicked() {
       nextQuestionButton.style.display = "none";
+      if(nextQuestionButton.innerHTML == "Start") {
+        questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+      }
     }
 
     function checkTimer() {
