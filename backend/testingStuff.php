@@ -48,5 +48,6 @@
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
         echo implode(" ", $stimList);
+        echo "/n";
       }
       ?>
