@@ -203,7 +203,7 @@
 
 <body id="body" onload="onLoad()">
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
-  <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
+  <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div><br>
 
   <a id="nextQuestionButton"></a>
   <div id="boxMain">
