@@ -108,7 +108,7 @@
         //document.getElementById("title").innerHTML = "TIMER DONE"; // remove when done testing
         clearInterval(questionTimer); // stops the timer
         document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
-        getNextComparison();
+        //getNextComparison();
       } else // timer != 0
       {
         timer--;
