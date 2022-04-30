@@ -177,7 +177,8 @@
   }
 
   #nextQuestionButton {
-    margin-left: 90px;
+    margin-left: 664px;
+    margin-top: 326px;
     padding: 20px;
     font-size: 40px;
     background-color: #6C2037;
