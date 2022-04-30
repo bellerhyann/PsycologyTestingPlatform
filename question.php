@@ -130,20 +130,6 @@
     background-color: #37111d;
   }
 
-  .button {
-        background-color: #F0C975;
-        border: none;
-        color: #6C2037;
-        padding: 5px 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 15px;
-        margin: 4px 2px;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
     #boxMain {
         margin: auto;
         border-radius: 5px;
@@ -159,11 +145,21 @@
       margin-left: 90px;
       padding: 20px;
       font-size: 40px;
+      background-color: #6C2037;
+      border: none;
+      color: #F0C975;
+      padding: 5px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 15px;
+      cursor: pointer;
+      font-weight: 600;
     }
 
     #clickButton:hover{
-      background-color: #401421;
-      color: #F0C975;
+      background-color: #F0C975;
+      color: #6C2037;
     }
 
     #questionHelpPrompt{
