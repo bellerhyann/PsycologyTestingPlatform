@@ -155,8 +155,8 @@
     box-sizing: content-box;
     width: 60%;
     color: white;
-    margin-top: 284px;
-    margin-left: 501px;
+    margin-top: -130px;
+    margin-left: 563px;
   }
 
   #clickButton {
