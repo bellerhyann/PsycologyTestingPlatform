@@ -8,7 +8,7 @@
     //Contributor for PHP: Skyeler Knuutila
     //Contributor for JS: Chris Barry
 
-    var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2;
+    var questionHelpButton, questionHelpPrompt, image_stim1, image_stim2, sound_stim1, sound_stim2, nextQuestionButton;
     var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
     var numStims; // used for total number of stims in database
     var blockList;
@@ -24,6 +24,9 @@
 
       imageStim = document.getElementById("imageStim");
       soundStim = document.getElementById("soundStim");
+      
+      nextQuestionButton = document.getElementById("nextQuestionButton");
+      nextQuestionButton.innerHTML = "Start";
       getQuestionData();
       getNextComparison(0); // gets first comparison
     }
@@ -191,8 +194,8 @@
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
+  <a id="nextQuestionButton"></a>
   <div id="boxMain">
-    <a id="nextQuestionButton"></a>
     <img id="imageStim"></img>
     <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
     <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
