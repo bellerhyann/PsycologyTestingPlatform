@@ -152,6 +152,17 @@
         margin-left: 501px;
     }
 
+    #clickButton{
+      margin-left: 90px;
+      padding: 20px;
+      font-size: 40px;
+    }
+
+    #clickButton:hover{
+      background-color: #6C2037;
+      color: #F0C975;
+    }
+
     #questionHelpPrompt{
       display: none;
     }
