@@ -12,8 +12,9 @@
     var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
     var numStims; // used for total number of stims in database
     var blockList;
-    var timer = 8; // number of seconds for timer
+    var timer = 8; // number of seconds user has to answer
     var questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+    var clickTime = 0; // how long it takes user to click
 
     function onLoad() {
       //document.getElementById("title").innerHTML = timer; // remove when done testing
@@ -126,43 +127,63 @@
   <title>Question</title>
 </head>
 <style>
-  #body{
+  #body {
     background-color: #37111d;
   }
 
-    #boxMain {
-        margin: auto;
-        border-radius: 5px;
-        padding: 10px;
-        box-sizing: content-box;
-        width: 60%;
-        color: white;
-        margin-top: 284px;
-        margin-left: 501px;
-    }
+  #boxMain {
+    margin: auto;
+    border-radius: 5px;
+    padding: 10px;
+    box-sizing: content-box;
+    width: 60%;
+    color: white;
+    margin-top: 284px;
+    margin-left: 501px;
+  }
 
-    #clickButton{
-      margin-left: 90px;
-      padding: 20px;
-      font-size: 40px;
-      background-color: #6C2037;
-      border: none;
-      color: #F0C975;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      cursor: pointer;
-      font-weight: 600;
-    }
+  #clickButton {
+    margin-left: 90px;
+    padding: 20px;
+    font-size: 40px;
+    background-color: #6C2037;
+    border: none;
+    color: #F0C975;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 600;
+  }
 
-    #clickButton:hover{
-      background-color: #F0C975;
-      color: #6C2037;
-    }
+  #clickButton:hover {
+    background-color: #F0C975;
+    color: #6C2037;
+  }
 
-    #questionHelpPrompt{
-      display: none;
-    }
+  #nextQuestionButton {
+    margin-left: 90px;
+    padding: 20px;
+    font-size: 40px;
+    background-color: #6C2037;
+    border: none;
+    color: #F0C975;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #nextQuestionButton:hover {
+    background-color: #F0C975;
+    color: #6C2037;
+  }
+
+
+  #questionHelpPrompt {
+    display: none;
+  }
 </style>
 
 <body id="body" onload="onLoad()">
@@ -170,9 +191,10 @@
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
   <div id="boxMain">
-      <img id="imageStim"></img>
-      <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
-      <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
+    <a id="nextQuestionButton"></a>
+    <img id="imageStim"></img>
+    <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
+    <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
   </div>
 </body>
 
