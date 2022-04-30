@@ -31,13 +31,15 @@
         while ($row = mysqli_fetch_assoc($result)) {
           array_push($trialList, $row['trialID']);
         }
-        echo implode(" ", $trialList);
+        //echo implode(" ", $trialList);
             
         //get array of stim and stimType by trial
         $stimList = array();
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
           //$trialList[$i] is a string, we need an int
           $trialID = intval($trialList[$i]);
+          echo $trialList[$i];
+          echo "/n";
           $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
