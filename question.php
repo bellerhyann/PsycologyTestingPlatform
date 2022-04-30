@@ -38,13 +38,19 @@
       $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
       if (!$conn)
         die("Database Error." . mysqli_connect_error());
-
+      
       //find current phase
       $userID = $_SESSION["userID"];
       $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
       $result =  mysqli_query($conn, $queryString);
       $userPH = $result->fetch_assoc() ?? -1;
-      $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on 
+      $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on
+
+      //Gets Phase Prompt
+      $queryString = "SELECT prompt FROM phase_T WHERE phaseID = $phaseID";
+      $result=  mysqli_query($conn, $queryString);
+      $prompt= $result->fetch_assoc();
+      $prompt= $prompt['prompt'];  
 
       //create an array of blockID's from that phase 
       $blockList = array();
