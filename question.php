@@ -109,11 +109,12 @@
     }
 
     function nextQuestionClicked() {
-      nextQuestionButton.style.display = "none";
+      nextQuestionButton.style.visibility = "hidden";
       if(nextQuestionButton.innerHTML == "Start") {
-        document.getElementById("boxMain").style.visibility = "visible";
-        questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+        nextQuestionButton.innerHTML = "Next";
       }
+      document.getElementById("boxMain").style.visibility = "visible";
+      questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
     }
 
     function checkTimer() {
@@ -134,6 +135,7 @@
       //document.getElementById("title").innerHTML = "Button Clicked"; // remove when done testing
       clearInterval(questionTimer); // stops the timer
       document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
+      nextQuestionButton.style.visibility = "visible";
     }
   </script>
   <title>Question</title>
