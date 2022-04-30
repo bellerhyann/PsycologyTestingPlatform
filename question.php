@@ -149,6 +149,10 @@
         width: 60%;
         color: white;
     }
+
+    #questionHelpPrompt{
+      display: none;
+    }
 </style>
 
 <body id="body" onload="onLoad()">
