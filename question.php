@@ -26,6 +26,7 @@
       soundStim = document.getElementById("soundStim");
       
       nextQuestionButton = document.getElementById("nextQuestionButton");
+      nextQuestionButton.addEventListener("click", nextQuestionClicked);
       nextQuestionButton.innerHTML = "Start";
       getQuestionData();
       getNextComparison(0); // gets first comparison
@@ -105,6 +106,10 @@
         questionHelpPrompt.style.display = "flex";
       else // questionHelpPrompt.style.display == "flex"
         questionHelpPrompt.style.display = "none";
+    }
+
+    function nextQuestionClicked() {
+      nextQuestionButton.style.display = "none";
     }
 
     function checkTimer() {
