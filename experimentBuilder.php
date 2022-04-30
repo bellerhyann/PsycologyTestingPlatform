@@ -8,6 +8,7 @@
     <style>
         body{
             background-color: #37111d;
+            font-family: 'Verdana', sans-serif;
         }
         #experiment_builder_body
         {
