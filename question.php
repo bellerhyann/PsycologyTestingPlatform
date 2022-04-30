@@ -16,7 +16,7 @@
     var questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
     function onLoad() {
-      document.getElementById("title").innerHTML = timer; // remove when done testing
+      //document.getElementById("title").innerHTML = timer; // remove when done testing
       questionHelpButton = document.getElementById("questionHelpButton");
       questionHelpButton.addEventListener("click", helpToolTip);
       questionHelpPrompt = document.getElementById("questionHelpPrompt");
@@ -155,7 +155,6 @@
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div>
 
-  <h1 id="title">Fake Question</h1>
   <div id="boxMain">
       <img id="imageStim"></img>
       <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
