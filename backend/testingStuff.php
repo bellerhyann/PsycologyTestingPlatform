@@ -5,7 +5,7 @@
         die("Database Error." . mysqli_connect_error());
 
       //find current phase
-      $userID = 1;
+      $userID = 1223;
       $queryString = ("SELECT phaseID FROM user_T WHERE userID = $userID");
       $result =  mysqli_query($conn, $queryString);
       $userPH = $result->fetch_assoc() ?? -1;
