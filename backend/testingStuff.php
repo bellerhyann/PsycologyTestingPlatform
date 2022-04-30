@@ -37,14 +37,13 @@
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
           //$trialList[$i] is a string, we need an int
           $trialID = intval($trialList[$i]);
+          echo strval($trialID);
+          echo " ";
           $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
             array_push($stimList, $row['stimID']);
             array_push($stimList, $row['stimtype']);
-            echo $row['stimID'];
-            echo $row['stimtype'];
-            echo "\n";
           }
         }
         // push out array here
@@ -53,4 +52,4 @@
         //echo implode(" ", $stimList);
         //echo "\n";
       }
-      ?>
+?>
