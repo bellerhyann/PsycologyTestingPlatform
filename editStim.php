@@ -36,17 +36,7 @@
             color: black;
             border: 1px solid black;
             margin: auto;
-        }   
-
-        .dropbtn {
-            background-color: #6C2037;
-            color: black;
-            padding: 16px;
-            font-size: 16px;
-            border: none;
-            border-radius: 5px;
         }
-
         .dropdown {
             position: relative;
             display: inline-block;

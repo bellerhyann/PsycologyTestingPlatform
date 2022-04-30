@@ -6,6 +6,18 @@
         <title>Admin Dashboard</title>
     </head>
     <style>
+        body{
+            font-family: 'Verdana', sans-serif;
+            justify-content: center;
+        }
+        table, th, td 
+        {
+            background-color: white;
+            border-radius: 5px;
+            color: black;
+            border: 1px solid black;
+            margin: auto;
+        }
         #welcomeUserMsg
         {
             text-decoration: underline;
@@ -18,23 +30,6 @@
             margin-right: 142px;
             color: #
         }
-
-        body{
-            font-family: 'Verdana', sans-serif;
-        }
-        .center
-        {
-            text-align: center;
-            color: white;
-        }
-
-        .background
-        {
-            background-color: rgb(26, 16, 41);
-            text-align: center;
-            
-        }
-
         .boxMain
         {
             margin-right: 20px;
@@ -42,27 +37,6 @@
             margin-top: 10px;
             justify-content: center;
             color: white;
-        }
-
-        .box2
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            margin-top: 50px;
-            justify-content: center;
-            color: white;
-            border: 1px solid grey;
-            background-color: grey;
-            padding: 10px;
-        }
-
-        .box3
-        {
-            margin-right: 20px;
-            margin-left: 20px;
-            border: 1px solid grey;
-            background-color: grey;
-            padding: 10px;
         }
         #btn
         {
@@ -147,9 +121,9 @@
         
          </div>
          <div class="button_position">
-                <a href="experimentBuilder.php"><button id="btn">EDIT LAB</button></a>
-		        <a href="dataCenter.html"><button id="btn">VIEW DATA</button></a>
-                <a href="userDelete.html"><button id="btn">DELETE USER</button></a>
+                <a href="experimentBuilder.php" style="text-decoration: none;"><button id="btn">EDIT LAB</button></a>
+		        <a href="dataCenter.html" style="text-decoration: none;"><button id="btn">VIEW DATA</button></a>
+                <a href="userDelete.html" style="text-decoration: none;"><button id="btn">DELETE USER</button></a>
 		<br>
          </div>
         
