@@ -123,6 +123,7 @@
         clearInterval(questionTimer); // stops the timer
         document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
         nextQuestionButton.style.visibility = "visible";
+        timer = 8;
         //getNextComparison();
       } else // timer != 0
       {
