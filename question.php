@@ -111,6 +111,7 @@
     function nextQuestionClicked() {
       nextQuestionButton.style.display = "none";
       if(nextQuestionButton.innerHTML == "Start") {
+        document.getElementById("boxMain").style.visibility = "visible";
         questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
       }
     }
@@ -143,7 +144,7 @@
   }
 
   #boxMain {
-    display: none;
+    visibility: hidden;
     margin: auto;
     border-radius: 5px;
     padding: 10px;
