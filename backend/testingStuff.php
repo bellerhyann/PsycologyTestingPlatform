@@ -42,9 +42,10 @@
           while ($row = mysqli_fetch_assoc($result)) {
             array_push($stimList, $row['stimID']);
             array_push($stimList, $row['stimtype']);
+            echo $row['stimID'];
+            echo $row['stimtype'];
+            echo "\n";
           }
-          echo implode(" ", $stimList);
-          echo "\n";
         }
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
