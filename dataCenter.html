@@ -135,11 +135,11 @@
                 }
         }
         function popUp1(){
-            var popup = document.getElementById("myPopup");
+            var popup = document.getElementById("myPopup1");
             popup.classList.toggle("show");
         }
         function popUp2(){
-            var popup = document.getElementById("myPopup");
+            var popup = document.getElementById("myPopup2");
             popup.classList.toggle("show");
         }
     </script>
@@ -168,7 +168,7 @@
                     <br>
                     <div class="popup" onclick="popUp1()">
                         <input type="submit" name="submit" value="Download" onclick="phaseFormChange()">
-                        <span class="popuptext" id="myPopup">Downloading...</span>
+                        <span class="popuptext" id="myPopup1">Downloading...</span>
                     </div>
                 </form>
             </div>
@@ -225,7 +225,7 @@
                     <br>
                     <div class="popup" onclick="popUp2()">
                         <input type="submit" name="submit" value="Download" onclick="blockFormChange()">
-                        <span class="popuptext" id="myPopup">Downloading...</span>
+                        <span class="popuptext" id="myPopup2">Downloading Block...</span>
                     </div>
                 </form>
             </div>
