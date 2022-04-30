@@ -31,7 +31,8 @@
         while ($row = mysqli_fetch_assoc($result)) {
           array_push($trialList, $row['trialID']);
         }
-
+        echo implode(" ", $trialList);
+            
         //get array of stim and stimType by trial
         $stimList = array();
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
@@ -47,7 +48,7 @@
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
-        echo implode(" ", $stimList);
-        echo "/n";
+        //echo implode(" ", $stimList);
+        //echo "/n";
       }
       ?>
