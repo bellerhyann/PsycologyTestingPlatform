@@ -78,7 +78,6 @@
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
           //$trialList[$i] is a string, we need an int
           $trialID = intval($trialList[$i]);
-          echo json_encode($trialID);
           $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
