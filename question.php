@@ -78,7 +78,7 @@
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
           //$trialList[$i] is a string, we need an int
           $trialID = $trialList[$i];
-          $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = $trialID AND stimIDOne = stimID OR trialID = $trialID AND stimIDTwo = stimID");
+          $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = \"$trialID\" AND stimIDOne = stimID OR trialID = \"$trialID\" AND stimIDTwo = stimID");
           echo "\tvar string", " = " , json_encode($queryString), "; \n";
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
