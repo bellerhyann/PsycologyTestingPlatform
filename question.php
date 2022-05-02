@@ -47,7 +47,7 @@
       $userPH = $userPH['phaseID']; //userPH now stores the phase the user is on
 
       //Gets Phase Prompt
-      $queryString = "SELECT prompt FROM phase_T WHERE phaseID = $phaseID";
+      $queryString = "SELECT prompt FROM phase_T WHERE phaseID = $userPH";
       $result=  mysqli_query($conn, $queryString);
       $prompt= $result->fetch_assoc();
       $prompt= $prompt['prompt'];  
