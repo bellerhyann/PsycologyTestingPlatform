@@ -1,3 +1,7 @@
+//Author: CJ Hess 
+//
+// Updates the files stored in S3 Bucket for the stimuli
+// Also updates the stimuli_T with same information
 <?php
   // File that uploads stimuli to S3 and adds info the SQL DB
 
@@ -30,6 +34,7 @@
   $stimName = $_POST['stim_key'];
   $stimTYP = $_POST['stim_ext'];
 
+  // SQL - Done by Bernadette Kornberger
   $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
   if (!$conn)
     die("Username or Password not found: Database Error.".mysqli_connect_error());
