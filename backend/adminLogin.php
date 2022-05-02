@@ -15,19 +15,30 @@ $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a7
 if (!$conn)
         die("Username or Password not found: Database Error.".mysqli_connect_error());
 
-	//check if userID and password matches an admin
-$query = "SELECT * FROM user_T WHERE userID = $adminUserID and password = \"$password\"";
+//check if userID exists
+$query = "SELECT * FROM user_T WHERE userID = $adminUserID";
 $result = mysqli_query($conn, $query);
-if(mysqli_fetch_assoc($result) == NULL) {
-	//credentials do not match
-	die("Username or Password not found." . mysqli_connect_error());
+$dataRow = mysqli_fetch_array($result);
+
+if($dataRow == NULL) {
+	//credentials do not match. User doesn't exist.
+	die("Username not found." . mysqli_connect_error());
+
 } else {
-	//credentials do match
-	//close connection
-  mysqli_close($conn);
-	//redirect to adminDashboard.php
-	header("location: /adminDashboard.php");
-	exit;
+	//credentials might match
+	//check if given password matches password for given userID
+	$valid = password_verify($password, $dataRow["Password"]);
+	if($valid == true){
+		//credentials match
+		//close connection
+		mysqli_close($conn);
+		redirect to adminDashboard.php
+		header("location: /adminDashboard.php");
+		exit;
+	} else {
+		//password 
+		die("Incorrect password." . mysqli_connect_error());
+	}
 }
 
 ?>
