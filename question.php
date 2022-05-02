@@ -81,8 +81,10 @@
           $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = \"$trialID\" AND stimIDOne = stimID OR trialID = \"$trialID\" AND stimIDTwo = stimID");
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
-            array_push($stimList, $row['stimID']);
-            array_push($stimList, $row['stimtype']);
+            $stim = (object) array("stimID" => $row['stimID'], "stimType" => $row['stimtype']);
+            array_push($stimList, $stim);
+            //array_push($stimList, $row['stimID']);
+            //array_push($stimList, $row['stimtype']);
           }
         }
         // push out array here
