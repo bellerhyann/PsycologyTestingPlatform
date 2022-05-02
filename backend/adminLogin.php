@@ -32,7 +32,7 @@ if($dataRow == NULL) {
 		//credentials match
 		//close connection
 		mysqli_close($conn);
-		redirect to adminDashboard.php;
+		//redirect to adminDashboard.php;
 		header("location: /adminDashboard.php");
 		exit;
 	} else {
