@@ -176,6 +176,12 @@
                     </select>
                     <br>
                     <br>
+                    <select id="stim_ext" name="stim_ext">
+                        <option value="image">image</option>
+                        <option value="sound">sound</option>
+                    </select>
+                    <br>
+                    <br>
                     <div class="dropdown"><input type="submit" name="submit" value="Upload" id="btn"></div>
                 </form>
                 <br>

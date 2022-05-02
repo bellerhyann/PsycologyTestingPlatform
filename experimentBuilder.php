@@ -126,7 +126,7 @@
             mysqli_close($conn);
             ?>
                 <div class="button_position">
-                        <a href="editPhase1.html" style="text-decoration: none;"><button id="btn">EDIT PHASE</button></a>
+                        <a href="editPhaseLanding.html" style="text-decoration: none;"><button id="btn">EDIT PHASE</button></a>
                         <br>
                         <a href="editStim.php" style="text-decoration: none;"><button id="btn">EDIT STIMULI</button></a>
                 </div>
