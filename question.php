@@ -89,16 +89,8 @@
       console.log("All blocks loaded");
     }
 
-    function getNextQuestion() {
-      nextQuestionButton.style.visibility = "hidden";
-      if(nextQuestionButton.innerHTML == "Start") {
-        nextQuestionButton.innerHTML = "Next";
-      }
-      document.getElementById("boxMain").style.visibility = "visible";
-      questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
-
-      eval("block = " + "block" + currBlock); // sets the current block properly
-
+    function getStimuli()
+    {
       // get the first stimuli for this comparison
       console.log("Block",currBlock,"[",currIndex,"]"," FileName: ", block[currIndex]);
       if (block[currIndex+1]== "sound") {
@@ -114,6 +106,21 @@
         currBlock ++;
         currIndex = 0;
       }
+    }
+    function getNextQuestion() {
+      nextQuestionButton.style.visibility = "hidden";
+      if(nextQuestionButton.innerHTML == "Start") {
+        nextQuestionButton.innerHTML = "Next";
+      }
+      document.getElementById("boxMain").style.visibility = "visible";
+      questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+
+      eval("block = " + "block" + currBlock); // sets the current block properly
+      // get stim 1
+      getStimuli();
+      // wait 3 seconds
+      // get stim 2
+      getStimuli();
     }
 
     function helpToolTip() {
@@ -215,7 +222,7 @@
   <a id="nextQuestionButton" onclick="getNextQuestion()"></a>
   <div id="boxMain">
     <img id="imageStim"></img>
-    <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
+    <audio id="soundStim" src="" type="audio/wav"></audio><br>
     <button class="button" id="clickButton" alt="click" onclick="clicked()"></button>
   </div>
 </body>
