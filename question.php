@@ -179,7 +179,7 @@
     font-weight: 600;
   }
 
-  #clickButton::hover{
+  #clickButton:hover{
     background-color: #969696;
   }
 
