@@ -16,6 +16,7 @@
     var questionTimer;
     var clickTime = 0; // how long it takes user to click
     var block0,block1,block2,block3,block4,block5,block6,block7,block8,block9,block10;
+    var currIndex = 0;
 
     function onLoad() {
       //document.getElementById("title").innerHTML = timer; // remove when done testing
@@ -30,7 +31,6 @@
       nextQuestionButton.addEventListener("click", nextQuestionClicked);
       nextQuestionButton.innerHTML = "Start";
       getQuestionData();
-      getNextComparison(0); // gets first comparison
     }
 
     function getQuestionData() {
@@ -52,7 +52,7 @@
       $result=  mysqli_query($conn, $queryString);
       $prompt= $result->fetch_assoc();
       $prompt= $prompt['prompt'];  
-      
+
       //create an array of blockID's from that phase 
       $blockList = array();
       $queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
@@ -89,20 +89,20 @@
         // go to webpage, right click, view page source to view the output
         echo "block", $j, " = ", json_encode($stimList), ";\n";
       }?>
+      console.log("All blocks loaded");
     }
 
-    function getNextComparison(index) {
-
-
-
-      /*if (stims[index].stimType == "sound") {
+    function getNextComparison(block, index) {
+      if (block[index+1].stimType == "sound") {
         //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
-        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".wav";
+        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
-      } else{ //stimType == "image"
-        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + stims[index].stimID + ".png";
+      } else{ //block[index+1] == "image"
+        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".png";
         console.log("Got image file: ", imageStim.src);
-      }*/
+      }
+      currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
+      // currIndex represents our global variable
     }
 
     function helpToolTip() {
@@ -119,29 +119,27 @@
       }
       document.getElementById("boxMain").style.visibility = "visible";
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+      // eval(varString + " = " + newValue);
+      getNextComparison()
     }
 
     function checkTimer() {
       if (timer == 1) {
-        //document.getElementById("title").innerHTML = "TIMER DONE"; // remove when done testing
         clearInterval(questionTimer); // stops the timer
         document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
-        nextQuestionButton.style.visibility = "visible";
+        nextQuestionButton.style.visibility = "visible"; // show the next question button
         timer = 8;
-        //getNextComparison();
       } else // timer != 0
       {
         timer--;
 
-        //document.getElementById("title").innerHTML = timer; // remove when done testing
       }
     }
 
     function clicked() {
-      //document.getElementById("title").innerHTML = "Button Clicked"; // remove when done testing
       clearInterval(questionTimer); // stops the timer
       document.getElementById("boxMain").style.visibility = "hidden"; // hide the main box
-      nextQuestionButton.style.visibility = "visible";
+      nextQuestionButton.style.visibility = "visible"; // show next question button
     }
   </script>
   <title>Question</title>
