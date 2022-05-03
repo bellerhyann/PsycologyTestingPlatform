@@ -208,6 +208,7 @@
 
   #questionHelpPrompt {
     display: none;
+    color: #F0C975;
   }
 </style>
 
