@@ -110,8 +110,7 @@
       }
       currIndex += 2; // advance to next stimID in block list
 
-      console.log("Block Size is", block.size());
-      if(currIndex == block.size()-1) // reached end of current block
+      if(currIndex == block.length-1) // reached end of current block
         currBlock ++;
 
     }
