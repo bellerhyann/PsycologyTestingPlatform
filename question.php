@@ -119,7 +119,9 @@
       // get stim 1
       getStimuli();
       if(soundStim.paused == true) // if previous stim done playing
-        console.log("made it");
+      {
+        setTimeout(function(){console.log("I am the third log after 5 seconds");},5000);
+      }
       // get stim 2
       getStimuli();
     }
