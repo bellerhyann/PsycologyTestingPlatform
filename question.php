@@ -169,7 +169,7 @@
     padding: 20px;
     font-size: 40px;
     background-color: #ffffff;
-    width: 
+    width: 192px;
     border: none;
     border-radius: 5px;
     text-align: center;
