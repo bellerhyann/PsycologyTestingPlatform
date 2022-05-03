@@ -17,6 +17,7 @@
     var clickTime = 0; // how long it takes user to click
     var block0,block1,block2,block3,block4,block5,block6,block7,block8,block9,block10;
     var currIndex = 0;
+    var currBlock = 0;
 
     function onLoad() {
       //document.getElementById("title").innerHTML = timer; // remove when done testing
@@ -102,6 +103,8 @@
         console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
+      if(currIndex == block.size()) // reached end of current block
+        currBlock ++;
       // currIndex represents our global variable
     }
 
