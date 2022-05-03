@@ -102,10 +102,10 @@
       // get the first stimuli for this comparison
       console.log("Block",currBlock,"[",currIndex,"]"," FileName: ", block[currIndex]);
       if (block[currIndex+1]== "sound") {
-        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
+        soundStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/sounds/" + block[currIndex] + ".wav";
         //console.log("Got sound file: ", soundStim.src);
       } else{ //block[currIndex+1] == "image"
-        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
+        imageStim.src = "https://elasticbeanstalk-us-west-1-391170265189.s3.us-west-1.amazonaws.com/stimuli/images/" + block[currIndex] + ".png";
         //console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // advance to next stimID in block list
