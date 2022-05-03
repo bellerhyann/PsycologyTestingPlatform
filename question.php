@@ -112,7 +112,7 @@
       if(currIndex == block.length) // reached end of current block
       {
         currBlock ++;
-        console.log("entered function");
+        currIndex = 0;
       }
     }
 
