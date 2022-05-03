@@ -15,6 +15,7 @@
     var timer = 8; // number of seconds user has to answer
     var questionTimer;
     var clickTime = 0; // how long it takes user to click
+    var block0,block1,block2,block3,block4,block5,block6,block7,block8,block9,block10;
 
     function onLoad() {
       //document.getElementById("title").innerHTML = timer; // remove when done testing
@@ -87,7 +88,7 @@
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
-        echo "\tvar block", $j, " = ", json_encode($stimList), "; \n";
+        echo "block", $j, " = ", json_encode($stimList), ";\n";
       }
       ?>
     }
