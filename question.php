@@ -103,7 +103,7 @@
       console.log("Block",currBlock,"[",currIndex,"]"," FileName: ", block[currIndex]);
       if (block[currIndex+1]== "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
-        //console.log("Got sound file: ", soundStim.src);
+        console.log("Got sound file: ", soundStim.src);
       } else{ //block[currIndex+1] == "image"
         imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
         //console.log("Got image file: ", imageStim.src);
