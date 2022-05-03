@@ -35,7 +35,7 @@
         //get array of stim and stimType by trial
         $stimList = array();
         for ($i = 0; $i <= sizeOf($trialList) - 1; $i++) {
-          $trialID2 = $trialID[i];
+          $trialID2 = $trialID[$i];
           $queryString = ("SELECT * FROM trial_T, stimuli_T WHERE trialID = \"$trialID2\" AND stimIDOne = stimID OR trialID = \"$trialID2\" AND stimIDTwo = stimID");
           $result =  mysqli_query($conn, $queryString);
           while ($row = mysqli_fetch_assoc($result)) {
