@@ -100,7 +100,7 @@
       eval("block = " + "block" + currBlock); // sets the current block properly
 
       // get the first stimuli for this comparison
-      console.log("Block",currBlock,"[",currIndex,"]");
+      console.log("Block",currBlock,"[",currIndex,"]"," FileName: ", block[currIndex]);
       if (block[currIndex+1]== "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
         //console.log("Got sound file: ", soundStim.src);
