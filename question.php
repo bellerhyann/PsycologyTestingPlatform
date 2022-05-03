@@ -109,7 +109,7 @@
         console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
-      if(currIndex == block.size()) // reached end of current block
+      if(currIndex == block.size()-1) // reached end of current block
         currBlock ++;
 
     }
