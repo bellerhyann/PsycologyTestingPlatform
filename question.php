@@ -99,8 +99,7 @@
       document.getElementById("boxMain").style.visibility = "visible";
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
-      block = eval("block" + currBlock);
-      console.log(block);
+      eval("block = " + "block" + currBlock);
       /*if (block[index+1].stimType == "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
