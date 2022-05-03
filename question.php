@@ -180,7 +180,7 @@
   }
 
   #clickButton::hover{
-    background-color: #f8f8ff;
+    background-color: #DCDCDC;
   }
 
   #nextQuestionButton {
