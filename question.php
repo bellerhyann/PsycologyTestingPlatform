@@ -52,7 +52,7 @@
       $result=  mysqli_query($conn, $queryString);
       $prompt= $result->fetch_assoc();
       $prompt= $prompt['prompt'];  
-
+      
       //create an array of blockID's from that phase 
       $blockList = array();
       $queryString = ("SELECT blockID FROM phaseBlock_T WHERE phaseID = $userPH ORDER BY blockOrder");
@@ -60,7 +60,6 @@
       while ($row = mysqli_fetch_assoc($result)) {
         array_push($blockList, $row['blockID']);
       }
-
       //given blockID, return array of all stim and stimTypes
       //in form ["A1.png", "image", "B1.wav", "sound", .....]
       for ($j = 0; $j < sizeOf($blockList); $j++) {
@@ -89,8 +88,7 @@
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
         echo "block", $j, " = ", json_encode($stimList), ";\n";
-      }
-      ?>
+      }?>
     }
 
     function getNextComparison(index) {
