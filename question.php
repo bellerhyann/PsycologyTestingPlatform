@@ -99,13 +99,14 @@
       document.getElementById("boxMain").style.visibility = "visible";
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
-      eval("block = " + "block" + currBlock);
-      questionHelpPrompt.innerHTML = block;
-      if (block[index+1].stimType == "sound") {
-        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".wav";
+      eval("block = " + "block" + currBlock); // sets the current block properly
+      console.log("Current Block is: ", currBlock);
+      console.log("Block Data:", block);
+      if (block[currIndex+1].stimType == "sound") {
+        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
-      } else{ //block[index+1] == "image"
-        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".png";
+      } else{ //block[currIndex+1] == "image"
+        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex].stimID + ".png";
         console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
