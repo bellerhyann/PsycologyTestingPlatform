@@ -118,7 +118,8 @@
       eval("block = " + "block" + currBlock); // sets the current block properly
       // get stim 1
       getStimuli();
-      // wait 3 seconds
+      if(soundStim.paused == false) // if previous stim done playing
+        console.log("made it");
       // get stim 2
       getStimuli();
     }
