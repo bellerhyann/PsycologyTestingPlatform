@@ -109,7 +109,7 @@
         //console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // advance to next stimID in block list
-      if(currIndex == block.length-1) // reached end of current block
+      if(currIndex == block.length) // reached end of current block
       {
         currBlock ++;
         console.log("entered function");
