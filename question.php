@@ -100,8 +100,8 @@
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
       eval("block = " + "block" + currBlock);
-      console.log(block);
-      /*if (block[index+1].stimType == "sound") {
+      questionHelpPrompt.innerHTML = block;
+      if (block[index+1].stimType == "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
       } else{ //block[index+1] == "image"
@@ -110,7 +110,7 @@
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
       if(currIndex == block.size()) // reached end of current block
-        currBlock ++;*/
+        currBlock ++;
 
     }
 
