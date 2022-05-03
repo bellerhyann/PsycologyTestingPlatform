@@ -121,7 +121,7 @@
         
          </div>
          <div class="button_position">
-                <a href="experimentBuilder.php" style="text-decoration: none;"><button id="btn">EDIT LAB</button></a>
+                <a href="experimentBuilder.php" style="text-decoration: none;"><button id="btn">EDIT EXPERIMENT</button></a>
 		        <a href="dataCenter.html" style="text-decoration: none;"><button id="btn">VIEW DATA</button></a>
                 <a href="userDelete.html" style="text-decoration: none;"><button id="btn">RESET DATA</button></a>
 		<br>
