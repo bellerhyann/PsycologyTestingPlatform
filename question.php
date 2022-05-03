@@ -222,7 +222,7 @@
   <a id="nextQuestionButton" onclick="getNextQuestion()"></a>
   <div id="boxMain">
     <img id="imageStim"></img>
-    <audio id="soundStim" src="" type="audio/wav" autoplay></audio><br>
+    <audio id="soundStim" src="" type="audio/wav" controls autoplay></audio><br>
     <button class="button" id="clickButton" alt="click" onclick="clicked()"></button>
   </div>
 </body>
