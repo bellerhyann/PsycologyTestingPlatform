@@ -168,20 +168,14 @@
     margin-left: 90px;
     padding: 20px;
     font-size: 40px;
-    background-color: #6C2037;
+    background-color: #ffffff;
     border: none;
     border-radius: 5px;
-    color: #F0C975;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     cursor: pointer;
     font-weight: 600;
-  }
-
-  #clickButton:hover {
-    background-color: #F0C975;
-    color: #6C2037;
   }
 
   #nextQuestionButton {
@@ -220,7 +214,7 @@
   <div id="boxMain">
     <img id="imageStim"></img>
     <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
-    <button class="button" id="clickButton" alt="click" onclick="clicked()">Click</button>
+    <button class="button" id="clickButton" alt="click" onclick="clicked()"></button>
   </div>
 </body>
 
