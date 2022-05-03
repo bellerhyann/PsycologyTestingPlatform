@@ -20,9 +20,9 @@ $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a7
 if (!$conn) {
 	die("Unable to Connect.".mysqli_connect_error());
 }
-else {
-	echo " connected!";
-}
+//else {
+//	echo " connected!";
+//}
 echo "\n".$prompt."   ".$score . "<br>";
 
 //first update the phase_T with new phase info
@@ -51,4 +51,6 @@ while ($count <= $blockNum)//unsure how to do this waiting on front end to updat
 
   //echo "Block ID: " . $blockID . PHP_EOL;
   //echo "Prompt: " . $prompt . PHP_EOL;
+
+header("location: /editPhaseLanding.html");
 ?>
