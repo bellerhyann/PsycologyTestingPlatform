@@ -27,9 +27,7 @@
 
       imageStim = document.getElementById("imageStim");
       soundStim = document.getElementById("soundStim");
-      
       nextQuestionButton = document.getElementById("nextQuestionButton");
-      nextQuestionButton.addEventListener("click", nextQuestionClicked);
       nextQuestionButton.innerHTML = "Start";
       getQuestionData();
     }
@@ -93,9 +91,17 @@
       console.log("All blocks loaded");
     }
 
-    function getNextComparison(block, index) {
-      if (block[index+1].stimType == "sound") {
-        //soundStim.innerHTML += "<source src='https://behaviorsci-assets.s3.us-west-1.amazonaws.com/A1.wav' type='audio/wav'>";
+    function getNextQuestion() {
+      nextQuestionButton.style.visibility = "hidden";
+      if(nextQuestionButton.innerHTML == "Start") {
+        nextQuestionButton.innerHTML = "Next";
+      }
+      document.getElementById("boxMain").style.visibility = "visible";
+      questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
+
+      block = eval("block" + currBlock);
+      console.log(block);
+      /*if (block[index+1].stimType == "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[index].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
       } else{ //block[index+1] == "image"
@@ -104,8 +110,8 @@
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
       if(currIndex == block.size()) // reached end of current block
-        currBlock ++;
-      // currIndex represents our global variable
+        currBlock ++;*/
+
     }
 
     function helpToolTip() {
@@ -113,17 +119,6 @@
         questionHelpPrompt.style.display = "flex";
       else // questionHelpPrompt.style.display == "flex"
         questionHelpPrompt.style.display = "none";
-    }
-
-    function nextQuestionClicked() {
-      nextQuestionButton.style.visibility = "hidden";
-      if(nextQuestionButton.innerHTML == "Start") {
-        nextQuestionButton.innerHTML = "Next";
-      }
-      document.getElementById("boxMain").style.visibility = "visible";
-      questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
-      // eval(varString + " = " + newValue);
-      getNextComparison()
     }
 
     function checkTimer() {
@@ -215,7 +210,7 @@
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div><br>
 
-  <a id="nextQuestionButton"></a>
+  <a id="nextQuestionButton" onclick="getNextQuestion()"></a>
   <div id="boxMain">
     <img id="imageStim"></img>
     <audio id="soundStim" src="" type="audio/wav" controls></audio><br>
