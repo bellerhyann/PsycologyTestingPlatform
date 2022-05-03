@@ -100,8 +100,7 @@
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
       eval("block = " + "block" + currBlock); // sets the current block properly
-      console.log("Current Block is: ", currBlock);
-      console.log("Block Data:", block);
+      console.log("Block",currBlock,"[",currIndex,"]");
       if (block[currIndex+1].stimType == "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex].stimID + ".wav";
         console.log("Got sound file: ", soundStim.src);
