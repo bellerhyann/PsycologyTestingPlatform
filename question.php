@@ -8,10 +8,7 @@
     //Contributor for PHP: Skyeler Knuutila
     //Contributor for JS: Chris Barry
 
-    var questionHelpButton, questionHelpPrompt, imageStim1, imageStim2, soundStim1, soundStim2, nextQuestionButton;
-    var stims; // converts PHP array and stores in JS array of {stimID: name, stimType: type} objects
-    var numStims; // used for total number of stims in database
-    var blockList;
+    var questionHelpButton, questionHelpPrompt, imageStim, soundStim, nextQuestionButton;
     var timer = 8; // number of seconds user has to answer
     var questionTimer;
     var clickTime = 0; // how long it takes user to click
@@ -25,10 +22,8 @@
       questionHelpButton.addEventListener("click", helpToolTip);
       questionHelpPrompt = document.getElementById("questionHelpPrompt");
 
-      imageStim1 = document.getElementById("imageStim1");
-      imageStim2 = document.getElementById("imageStim2");
-      soundStim1 = document.getElementById("soundStim1");
-      soundStim2 = document.getElementById("soundStim2");
+      imageStim = document.getElementById("imageStim");
+      soundStim = document.getElementById("soundStim");
 
       nextQuestionButton = document.getElementById("nextQuestionButton");
       nextQuestionButton.innerHTML = "Start";
@@ -106,23 +101,14 @@
 
       // get the first stimuli for this comparison
       console.log("Block",currBlock,"[",currIndex,"]");
-      if (block[currIndex+1].stimType == "sound") {
-        soundStim1.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
+      if (block[currIndex+1]== "sound") {
+        soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
         //console.log("Got sound file: ", soundStim.src);
       } else{ //block[currIndex+1] == "image"
-        imageStim1.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
+        imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
         //console.log("Got image file: ", imageStim.src);
       }
-      currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
-
-      // get next stimuli for comparison
-      if (block[currIndex+1].stimType == "sound") {
-        soundStim2.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
-        //console.log("Got sound file: ", soundStim.src);
-      } else{ //block[currIndex+1] == "image"
-        imageStim2.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
-        //console.log("Got image file: ", imageStim.src);
-      }
+      currIndex += 2; // advance to next stimID in block list
 
       console.log("Block Size is", block.size());
       if(currIndex == block.size()-1) // reached end of current block
