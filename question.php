@@ -169,6 +169,7 @@
     padding: 20px;
     font-size: 40px;
     background-color: #ffffff;
+    width: 
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -176,6 +177,10 @@
     display: inline-block;
     cursor: pointer;
     font-weight: 600;
+  }
+
+  #clickButton::hover{
+    background-color: #f8f8ff;
   }
 
   #nextQuestionButton {
