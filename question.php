@@ -103,10 +103,10 @@
       console.log("Block",currBlock,"[",currIndex,"]");
       if (block[currIndex+1].stimType == "sound") {
         soundStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".wav";
-        console.log("Got sound file: ", soundStim.src);
+        //console.log("Got sound file: ", soundStim.src);
       } else{ //block[currIndex+1] == "image"
         imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
-        console.log("Got image file: ", imageStim.src);
+        //console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // since block = ["A1", "sound", "A2", "sound"], skip over two indexes to get next stimName
       console.log("Block Size is", block.size());
