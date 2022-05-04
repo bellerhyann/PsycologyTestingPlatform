@@ -76,10 +76,10 @@ while ($row = mysqli_fetch_row($block))
         	if ($useANS == $userF)
         	{
             	//user gave the correct response
-            	$printANS = "+";
+            	$printANS = "Y";
        	 	}
         	else 
-            	$printANS = "-";
+            	$printANS = "N";
         
         	//grab resp time
         	$queryString = "SELECT clickTime FROM data_T WHERE trialID = \"$trialRows[0]\" AND blockID = $row[0] AND userID = $user";
