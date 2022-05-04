@@ -8,11 +8,14 @@ $LName = $_POST["LName"];
 if(empty($FName) || empty($LName)){
 	echo "<script> alert('Please enter a first AND last name!');window.location='../register.html'</script>";
 }
-for(int $i = 0; $i < strlen($FName); $i++){
+int $i = 0;
+while($i < strlen($FName)){
 	if(ctype_digit($FName[$i])){
 		echo "<script> alert('Please don't enter any numbers into first name!');window.location='../register.html'</script>";
 	}
+	$i++;
 }
+$i = 0;
 for(int $i = 0; $i < strlen($LName); $i++){
 	if(ctype_digit($LName[$i])){
 		echo "<script> alert('Please don't enter any numbers into last name!');window.location='../register.html'</script>";
