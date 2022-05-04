@@ -16,10 +16,11 @@ while($i < strlen($FName)){
 	$i++;
 }
 $i = 0;
-for(int $i = 0; $i < strlen($LName); $i++){
+while($i < strlen($LName)){
 	if(ctype_digit($LName[$i])){
 		echo "<script> alert('Please don't enter any numbers into last name!');window.location='../register.html'</script>";
 	}
+	$i++;
 }
 
 //reach out to database to add the name and generate a userID
