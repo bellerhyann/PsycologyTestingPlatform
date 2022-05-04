@@ -47,9 +47,9 @@ while($row = mysqli_fetch_assoc($stats)) {
         
   //fix the "clicked" row to display Y/N 
   if($row["isCorrect"] == $row["clicked"]) {
-        $correct = "+";
+        $correct = "Y";
   } else {
-        $correct = "-";
+        $correct = "N";
   }
   
   $txt = $row["stimIDOne"] . "\t| " . $row["stimIDTwo"] . "\t| " . $row["isCorrect"] . "\t| " . $row["clickTime"] . "\t\t   | " . $correct . "\n";
