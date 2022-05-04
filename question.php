@@ -116,9 +116,14 @@
       questionTimer = setInterval(checkTimer, 1000); // calls checkTimer every 1000 milliseconds (every 1 second)
 
       eval("block = " + "block" + currBlock); // sets the current block properly
-      // get stim 1
+      
+      // get stim 1 & play/show
       getStimuli();
-      document.getElementById("soundStim").addEventListener("ended", getStimuli());
+
+      // if sound, wait 3 seconds after soundStim finishes playing=
+      // otherwise, its an image, so give user 5 seconds to view photo
+
+      // get stim 2 & play/show
     }
 
     function helpToolTip() {
