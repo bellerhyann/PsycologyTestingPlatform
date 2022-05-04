@@ -118,12 +118,7 @@
       eval("block = " + "block" + currBlock); // sets the current block properly
       // get stim 1
       getStimuli();
-      if(soundStim.paused == true) // if previous stim done playing
-      {
-        setTimeout(function(){console.log("I am the third log after 5 seconds");},5000);
-      }
-      // get stim 2
-      getStimuli();
+      document.getElementById("soundStim").addEventListener("ended", getStimuli());
     }
 
     function helpToolTip() {
