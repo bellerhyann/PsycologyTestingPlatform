@@ -1,7 +1,17 @@
 <?php
+//Author(s): Skyeler Knuuttila; Nicholas Wood;
 //get the session log in
 $FName = $_POST["FName"];
 $LName = $_POST["LName"];
+
+//check if FName and LName were entered correctly
+if(empty($FName) || empty($LName)){
+	echo "<script> alert('Please enter a first AND last name!');window.location='../register.html'</script>";
+}
+if(is_numeric($FName) || is_numeric($LName)){
+	echo "<script> alert('Please don't enter any numbers into first or last name!');window.location='../register.html'</script>";
+}
+
 //reach out to database to add the name and generate a userID
 //connect to database
 //echo "Attempting to connect to DB server: ...";
