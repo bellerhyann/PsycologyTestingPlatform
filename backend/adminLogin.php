@@ -1,3 +1,6 @@
+//Login for Admins 
+//Authors: Skyeler K. and Nick W.
+
 <?php
 //get the login info from frontend html
 $adminUserID = $_POST["userID"];
