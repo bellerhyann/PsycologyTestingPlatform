@@ -16,7 +16,7 @@ $_SESSION["password"] = $password;
 	//connect to database
 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn)
-        die("Username or Password not found: Database Error.".mysqli_connect_error());
+        die("Database Error.".mysqli_connect_error());
 
 //check if userID exists
 $query = "SELECT * FROM user_T WHERE userID = $adminUserID";
@@ -25,7 +25,8 @@ $dataRow = mysqli_fetch_array($result);
 
 if($dataRow == NULL) {
 	//credentials do not match. User doesn't exist.
-	die("Username not found." . mysqli_connect_error());
+	echo "<script> alert('Account not found!');window.location='../adminLogin.html'</script>";
+
 
 } else {
 	//credentials might match
@@ -40,7 +41,7 @@ if($dataRow == NULL) {
 		exit;
 	} else {
 		//password 
-		die("Incorrect password." . mysqli_connect_error());
+		echo "<script> alert('Password Inncorrect!');window.location='../adminLogin.html'</script>";
 	}
 }
 
