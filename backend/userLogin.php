@@ -1,6 +1,7 @@
-//Author: Bernadette????? Did anyone else work on this??
-
 <?php
+//Author: Bernadette K.
+//Let's users login
+
 session_start();
 $userID = $_POST["userID"];
 
