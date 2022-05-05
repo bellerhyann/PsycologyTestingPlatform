@@ -1,14 +1,14 @@
+//Downloads a file to users PC that displays a blocks data 
+//Author: Bernadette K.
+
 <?php
 //get blockID from post
-//$blockID = $_POST["blockID"];
-$blockID = 1;
+$blockID = $_POST["blockID"];
 
 //open connection to database
 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn)
         die("BlockID not found: Database Error.".mysqli_connect_error());
-
-//echo "<script> alert('Stand By! Downloading Block Results...');window.location='../dataCenter.html'</script>";
 
 //find how many trials are in this block
 $queryString = "SELECT trialNum FROM block_T WHERE blockID = $blockID";
