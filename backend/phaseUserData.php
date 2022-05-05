@@ -1,4 +1,6 @@
 <?php
+//Author: Bernadette K. 
+//Downloads a file of a user's preformance in a phase 
 
 $phaseNum = $_POST["phaseNum"];
 $user = $_POST["userID"];
@@ -43,7 +45,7 @@ while ($row = mysqli_fetch_row($block))
    $blockavg = $blockt->fetch_assoc();
    $blockavg = $blockavg['result'];
 	   
-   fwrite($txt,"BlockID: ".$row[0]." avg response time (ms): ".$blockavg."\n"); 
+   fwrite($txt,"\nBlockID: ".$row[0]." avg response time (ms): ".$blockavg."\n"); 
     
 	
     $queryString = "SELECT trialID FROM blockTrial_T WHERE blockID = $row[0]";
@@ -89,7 +91,7 @@ while ($row = mysqli_fetch_row($block))
 
 
 
-        	fwrite($txt,$trialRows[0]."     | ".$timeP."      | ".$printANS."\n");
+        	fwrite($txt,$trialRows[0]."       |       ".$timeP."        | ".$printANS."\n");
 	}
     }
 
