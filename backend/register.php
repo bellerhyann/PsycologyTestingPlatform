@@ -1,5 +1,5 @@
 <?php
-//Author(s): Skyeler Knuuttila; Nicholas Wood;
+//Author(s): Skyeler K. Nick W.
 //get the session log in
 $FName = $_POST["FName"];
 $LName = $_POST["LName"];
