@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
+<!-- Below javascript for plotting data on line graph
+Coded by Nick W. -->
+	
+	
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <body>
 
 <div id="myPlot" style="width:100%;max-width:700px"></div>
 	
-<!-- Below javascript for plotting data on line graph
-Coded by Nick W. -->
+
 	
 <script type = "text/javascript">
   <?php
