@@ -1,5 +1,8 @@
 function updateDB() {
       <?php
+//Author: Skyeler K. 
+//Updates Databse from user side 
+
         //given an array of clickTime's for each blockID
         //blockID, phaseID, trialID's, and userID are given
         session_start();
