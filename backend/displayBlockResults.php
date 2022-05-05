@@ -1,6 +1,6 @@
 <?php
 //Downloads a file to users PC that displays a blocks data 
-//Author: Bernadette K.
+//Author: Skyeler K.
 
 //get blockID from post
 $blockID = $_POST["blockID"];
