@@ -1,4 +1,6 @@
 <?php 
+//Author: Bernadette K.
+//Downloads a file of data for a phase. 
 
 $conn = new mysqli("us-cdbr-east-05.cleardb.net:3306", "b5541841c18a2e", "ee93a776", "heroku_8eb08016ed835ac");
 if (!$conn) {
@@ -111,7 +113,6 @@ readfile($file);
 //close connection
 mysqli_close($conn);
 
-echo "Phase Data sucessfully Downloaded!\n";
 
 ?>
 
