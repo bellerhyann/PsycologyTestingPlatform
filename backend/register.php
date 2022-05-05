@@ -63,10 +63,11 @@ if($hasNumber == true){
 else{
 	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
 	mysqli_query($conn, $queryString);
+	
+	echo "<script> alert('Completed. Please contact admin for further instructions.');window.location='../register.html'</script>";
 }
 //close connection
 mysqli_close($conn);
 
-echo "<script> alert('Completed. Please contact admin for further instructions.');window.location='../register.html'</script>";
 
 ?>
