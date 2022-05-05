@@ -57,9 +57,13 @@ $result = $conn->query("SELECT * FROM user_T WHERE userID = $userID");
 	}	
 
 //add new user to database
-$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
-mysqli_query($conn, $queryString);
-
+if($hasNumber == true){
+	echo "<script> alert('Please don't enter any numbers into last name!');window.location='../register.html'</script>";
+}
+else{
+	$queryString = ("INSERT INTO user_T values ($userID, \"$FName\", \"$LName\", 1, NULL)");
+	mysqli_query($conn, $queryString);
+}
 //close connection
 mysqli_close($conn);
 
