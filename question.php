@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="./src/styles.css">
   <script type="text/javascript">
-    //Contributor for PHP: Skyeler Knuutila
+    //Contributor for PHP: Skyeler Knuuttila and Bernadette Kornberger
     //Contributor for JS: Chris Barry
 
     var questionHelpButton, questionHelpPrompt, imageStim, soundStim, nextQuestionButton;
