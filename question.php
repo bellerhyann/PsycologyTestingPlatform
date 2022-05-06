@@ -226,7 +226,7 @@
 <body id="body" onload="onLoad()">
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
   <div id="questionHelpPrompt">
-        1.	At the beginning of each phase a “Start” button will appar on the screan, <br>
+        1.	At the beginning of each phase a “Start” button will appear on the screan, <br>
             after being clicked, a Sound will automatically play through the browser, <br>or an image will display on the screen for up to 5 seconds. 
     <br>2.	3 seconds after the first image/sound plays another image/sound will display/play. 
     <br>3.	Once the second sound/image finishes, a white box will appear, the user has up to 8 seconds to <br>click the box if the sound/image pair matches or are similar. 
