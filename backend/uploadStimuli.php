@@ -67,6 +67,6 @@
       echo $e->getMessage();
     }
 
-    print('<a href="editStim.php">Return to Edit Stim</a>')
+    print('<a href="editStim.php">Return to Edit Stim</a>');
   }
 ?>
