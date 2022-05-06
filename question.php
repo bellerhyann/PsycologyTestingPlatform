@@ -125,9 +125,8 @@
 
       // if sound, wait 3 seconds after soundStim finishes playing
       // otherwise, its an image, so give user 5 seconds to view photo
-      setTimeout(function () {}, 10000);
+      setTimeout(function () {imageStim.visibility = "visible";}, 3000);
       // get stim 2 & play/show
-      imageStim.visibility = "visible";
     }
 
     function helpToolTip() {
@@ -145,8 +144,8 @@
         timer = 8;
       } else // timer != 0
       {
+        checkTimer += 1000; // add one second to click timer
         timer--;
-
       }
     }
 
