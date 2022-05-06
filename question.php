@@ -102,7 +102,7 @@
         console.log("Got sound file: ", soundStim.src);
       } else{ //block[currIndex+1] == "image"
         imageStim.src = "https://behaviorsci-assets.s3.us-west-1.amazonaws.com/" + block[currIndex] + ".png";
-        //console.log("Got image file: ", imageStim.src);
+        console.log("Got image file: ", imageStim.src);
       }
       currIndex += 2; // advance to next stimID in block list
       if(currIndex == block.length) // reached end of current block
