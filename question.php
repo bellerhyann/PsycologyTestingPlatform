@@ -83,7 +83,7 @@
             array_push($stimList, $row['stimtype']);
           }
         }
-        
+
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
@@ -225,7 +225,13 @@
 
 <body id="body" onload="onLoad()">
   <img id="questionHelpButton" src="../images/questionHelpButton.png" width="50" height="50">
-  <div id="questionHelpPrompt">Insert question help here:<br>Line 2 <br>Line 3 <br></div><br>
+  <div id="questionHelpPrompt">
+      i.	After the user clicks “Begin Session” on the User Dashboard Page (2d), it will take them to the question page, 
+  <br>ii.	At the beginning of each phase a “Start” button will appar on the screan, after being clicked, a Sound will automatically play through the browser, or an image will display on the screen for up to 5 seconds. 
+  <br>iii.	3 seconds after the first image/sound plays another image/sound will display/play. 
+  <br>iv.	Once the second sound/image finishes, a white box will appear, the user has up to 8 seconds to click the box if the sound/image pair matches or are similar. 
+  <br>v.	The process then repeats until the end of the phase.
+<br>Line 2 <br>Line 3 <br></div><br>
 
   <a id="nextQuestionButton" onclick="getNextQuestion()"></a>
   <div id="boxMain">
