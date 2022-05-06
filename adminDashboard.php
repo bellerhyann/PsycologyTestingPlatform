@@ -28,7 +28,7 @@
             margin-bottom: auto;
             margin-left: 340px;
             margin-right: 142px;
-            color: #
+            color: #;
         }
         .boxMain
         {
