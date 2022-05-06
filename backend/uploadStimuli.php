@@ -61,12 +61,11 @@
       $result = $uploader->upload();
       if ($result['@metadata']['statusCode'] == '200') {
         print('<p>File successfully uploaded to ' . $result["ObjectURL"] . '.</p><br>'); 
+        print('<a href="editStim.php">Return to Edit Stim</a>');
       }
     }
     catch (Aws\S3\Exception\S3Exception $e) {
       echo $e->getMessage();
     }
-
-    print('<a href="editStim.php">Return to Edit Stim</a>');
   }
 ?>
