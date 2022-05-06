@@ -83,13 +83,12 @@
             array_push($stimList, $row['stimtype']);
           }
         }
-        //close connection
-        mysqli_close($conn);
+        
         // push out array here
         // pushes out to javascript code as "var stimListi = {data here, data here, data here};\n"
         // go to webpage, right click, view page source to view the output
         echo "block", $j, " = ", json_encode($stimList), ";\n";
-      }?>
+      }mysqli_close($conn);?>
       console.log("All blocks loaded");
     }
 
